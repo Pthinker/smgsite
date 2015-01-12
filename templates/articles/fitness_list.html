@@ -1,0 +1,15 @@
+{% extends 'one_column_layout.html' %}
+
+{% block head_title %}Summit Medical Group - Fitness{% endblock head_title %}
+{% block page_title %}Fitness{% endblock %}
+
+{% block content %}
+<p>Want to learn ways to start and maintain an exercise program? Are you a fit person looking for helpful tips to enhance your workout, protect your joints, and get the most from your fitness routine? Welcome to our new Fitness column! It will feature monthly articles that address exercise for people at all levels of fitness.</p>                                                             
+<ul>
+{% for feature in page.object_list %}
+    <li><a href="{{ feature.get_absolute_url }}">{{ feature.headline|safe }}</a></li>
+{% endfor %}
+</ul> 
+{% include 'includes/pagination.html' %}
+
+{% endblock content %}

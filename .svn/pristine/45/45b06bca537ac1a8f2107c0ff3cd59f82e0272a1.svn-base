@@ -1,0 +1,39 @@
+{% extends "page_content.html" %}
+
+{% block head_title %}Summit Medical Group - Live Well Library{% endblock head_title %}
+
+{% load helpers %}
+
+{% block content_well %}
+
+{% if printable %}
+
+
+
+{% else %}
+
+<div id="tab_box_765_top"><img src="{{ MEDIA_URL }}/images/765x40_tab_head_library.gif" alt="Live Well Library" width="765" height="40" /></div>
+
+<!-- start 765px WHITE TAB BOX BOTTOM -->
+<div id="tab_box_765">
+
+{% include 'site/page_controls.html' %}
+
+{% if notfound %}
+<br />
+<p>The article you are trying to access could not be found in the library.</p>
+{% endif %}
+<br />
+<p>We're currently making major updates to the Live Well Library. Please visit us again soon. Our apologies for any inconvenience. If your question is urgent, please contact our <a href="http://summitmedicalgroup.com/service/Urgent-Care-Center/">Urgent Care Center</a> or call 911.</p>
+
+<div id="index_col_left_365">
+	&nbsp;
+</div>
+
+<div class="clearfloats"></div>
+</div>
+<!-- end 765px WHITE TAB BOX  BOTTOM -->
+
+{% endif %}
+
+{% endblock content_well %}

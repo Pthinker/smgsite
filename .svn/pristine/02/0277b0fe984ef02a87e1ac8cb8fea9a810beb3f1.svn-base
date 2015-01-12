@@ -1,0 +1,75 @@
+{% extends "admin/base_site.html" %}
+{% load admin_list i18n %}
+
+{% block extrahead %}
+<script src="https://admin.summitmedicalgroup.com/media/js/prototype.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+<script type="text/javascript">
+
+function validate_form(thisform) {
+return true;
+}
+</script>
+
+{% endblock extrahead %}
+
+{% block bodyclass %}change-list{% endblock %}
+{% if not is_popup %}{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/">{% trans "Home" %}</a> &rsaquo; <a href="/admin/doctors/">Doctors</a> &rsaquo; Doctors and Practitioners</div>{% endblock %}{% endif %}
+{% block coltype %}flex{% endblock %}
+{% block pretitle %}
+{% endblock %}
+{% block content %}
+<div id="content-main">
+
+{% if error %}
+	<h2>There was an error processing your submission. Please try again.</h2>
+	<br /><br />
+{% endif %}
+
+<p>When optional accepting text is entered, that is what will be displayed on the site an the accepting flag will not be used and it does not matter what value the flag is set to.<br />
+Remember that anything you enter will be preceded by the phrase 'I am...' Be sure to enter your phrase accordingly.</p>
+
+<form action="/admin/doctors/doctor/set-accepting/" onsubmit="return validate_form(this)" method="post">
+<table cellspacing="0">
+<thead>
+<tr>
+<th>
+Doctor
+</th><th class="sorted descending">
+Accepting Flag
+</th><th>
+Optional Accepting Text
+</th>
+</tr>
+</thead>
+<tbody>
+
+{% for doctor in doctors %}
+<tr class="{% cycle 'row1' 'row2' %}"><th>{{ doctor.list_name }}</th><td>
+	<select name="accepting_flag_{{ doctor.id }}" class="leader_promo" id="flag_{{ doctor.id }}">
+		{% for option in accepting_options %}
+		<option value="{{ option|first }}" {% ifequal option|first doctor.accepting_flag %}selected="selected"{% endifequal %}>{{ option|last }}</option>
+		{% endfor %}
+	</select>
+	</td><td>
+		<input name="accepting_text_{{ doctor.id }}" id="text_{{ doctor.id }}" size="75" value="{{ doctor.accepting }}" />
+		</td></tr>
+
+{% endfor %}
+
+<tr>
+	<td colspan="4">
+	<div class="submit-row">
+	<input type="submit" value="Save" class="default"name="_save" />
+	</div>
+	</td>
+</tr>
+
+</tbody>
+</table>
+
+</form>
+
+</div>
+{% endblock %}

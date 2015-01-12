@@ -1,0 +1,61 @@
+{% extends "mysmg/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - About Us{% endblock head_title %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+					
+					
+					<div class="create_account">								
+						<h1 class="login_page">Request Password Reset</h1>
+						<p>Please enter your e-mail address. Your new password will be sent to that address.</p>
+						
+						<p>If you do not receive your new password by e-mail, your e-mail service may have flagged it as spam. Please check your spam folder, and add register@summitmedicalgroup.com to your list of allowed senders.</p>
+						
+						{% if form.errors %}
+							<h2><span class="red_bold">Please correct the errors below highlighted in red.</span></p></h2>
+							{% for field in form %}
+									<p>{{ field.errors }}</p>
+							{% endfor %}
+						{% endif %}
+						
+						<form method="POST" action="" class="login_form">
+						
+						<table>
+							<tr class="inp-st"><td {% if form.username.errors %}style="color:#C03;"{% endif %} align="right" class="inp-label">E-Mail Address:</td><td>{{ form.username }}</td></tr>
+							
+							<tr><td colspan="2" align="right"><input type="submit" name="submit" value="Request Reset" /></td></tr>
+						</table>
+						
+						</form>
+						
+						<p>If you do not have a profile or if you would like to create a new profile, you can <a href="/mysummitmedicalgroup/register/">create a profile</a> or <a href="/">continue as a guest</a>.</p>
+
+						
+					</div>
+					
+				</div>
+				
+			
+			</div>
+			<!-- end of main blocks column right -->
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

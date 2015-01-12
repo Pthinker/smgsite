@@ -1,0 +1,49 @@
+{% extends "services/base.html" %}
+{% load helpers %}
+
+{% block content %}		
+<!-- start of main blocks -->
+<div class="main_block">		
+	<!-- start of main blocks column right -->
+	<div class="right_main_block">
+		<div class="right_sub_main_block">	
+			<h1 class="big">Our Services</h1>
+			<a name="top"></a>
+			<div class="h1_sub_info bottom_dash">
+				<p>Here is a list of services and specialties at <b>Summit Medical Group</b>. Click on any service to learn more about it or to find the right specialist for you in New Jersey.</p>
+			</div>
+			
+			{% alphabet_list services 'space' %}
+			
+			{% for letter_list in letters %}
+			<div class="services">
+			<a id="letter-{{ letter_list.letter }}" name="letter-{{ letter_list.letter }}"></a><div class="our_doctors_letter"><div class="back_top"><a href="#top">back to top</a></div>{{ letter_list.letter }}</div>
+			<div class="our_services_letter">
+				{% for row in letter_list.rows %}
+				<div class="row_services">
+					{% for service in row %}
+					<div class="service">
+						<h2><a href="{{ service.get_absolute_url }}">{{ service.name }}</a></h2>
+						<p>{{ service.description_short }}</p>
+					</div>
+					{% endfor %}
+				</div>
+				{% endfor %}
+			</div>
+			</div>
+			
+			{% endfor %}
+		<div class="clear"></div>	
+		</div>	
+	</div>
+	<!-- end of main blocks column right -->
+
+	<!-- start of main blocks column left -->
+	<div class="left_main_block">						
+		{% banner %}
+	</div>
+	<!-- end of main blocks column left -->
+	<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

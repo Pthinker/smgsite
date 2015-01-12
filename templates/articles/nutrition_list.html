@@ -1,0 +1,16 @@
+{% extends 'one_column_layout.html' %}
+
+{% block head_title %}Summit Medical Group - Nutrition{% endblock head_title %}
+{% block page_title %}Nutrition{% endblock %}
+
+{% block content %}
+<p><i>Reviewed by <a href="/doctor/scanonico/">Susan Canonico, RD</a></i> for Summit Medical Group</p>
+<p>Want to know more about what's happening in nutrition? Our Nutrition column can help keep you abreast of recent research about foods, supplements, vitamins, and minerals. Each month, our medical writer and nutritionist will publish a new article accompanied with a recipe to help you live well and stay well.</p>                                                             
+<ul>
+{% for feature in page.object_list %}
+    <li><a href="{{ feature.get_absolute_url }}">{{ feature.headline|safe }}</a></li>
+{% endfor %}
+</ul> 
+{% include 'includes/pagination.html' %}
+
+{% endblock content %}

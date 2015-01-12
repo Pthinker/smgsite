@@ -1,0 +1,44 @@
+{% extends 'one_column_layout.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ advisor.name }}{% endblock head_title %}
+{% block meta_info %}Summit Medical Group offers extensive health and wellness information for you and your family.{% endblock meta_info %}
+{% block page_title %}{{ advisor.name }}{% endblock %}
+
+{% block breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="/library/">Live Well Library</a></li>
+    <li class="active">{{ advisor.name }}</li>
+
+    {% include 'site/includes/share.html' %}
+</ol>
+{% endblock breadcrumbs %}
+
+{% block content %}
+{% alphabet_list articles '' %}
+{% for letter_list in letters %}
+
+    <h3 id="letter-{{ letter_list.section }}">{{ letter_list.section }}</h3>
+    
+    <div class="row section">
+
+        <div class="col-md-6">  
+            <ul class="list-unstyled">  
+                {% for article in letter_list.first_column %}
+                <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-6">  
+            <ul class="list-unstyled">  
+                {% for article in letter_list.second_column %}
+                <li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+{% endfor %}
+
+{% endblock content %}

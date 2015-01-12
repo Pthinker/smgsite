@@ -1,0 +1,11 @@
+{% extends 'one_column_layout.html' %}
+{% load helpers %}
+
+{% block meta_info %}{% meta_info page %}{% endblock meta_info %}
+{% block seo_keywords %}{% seo_keywords page %}{% endblock seo_keywords %}
+{% block head_title %}{{ page.title }} | Summit Medical Group{% endblock head_title %}
+{% block page_title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+{{ page.content|safe }}
+{% endblock content %}

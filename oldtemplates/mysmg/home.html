@@ -1,0 +1,167 @@
+{% extends "mysmg/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - My Summit Medical Group{% endblock head_title %}
+
+{% block content %}
+<input type="hidden" id="refreshed" value="no">
+<script type="text/javascript">
+onload=function(){
+var e=document.getElementById("refreshed");
+if(e.value=="no")e.value="yes";
+else{e.value="no";location.reload();}
+}
+</script>
+			
+<!-- start of main box -->
+<div id="main_box" class="msmgp_home">
+	<!-- start of left main column -->
+	<div id="left_207_main_box">
+					
+		<div class="banner_left">{% banner %}</div>
+		
+	</div>
+	<!-- end of left main column -->
+	
+	<!-- start of right main column -->
+	<div id="right_doubled_main_box">	
+		<div class="subheader_msmgp">			
+			<h1>My Summit Medical Group</h1>
+		</div>
+		<div class="cols_2_fix_right_187">
+			<!-- start of left sub column -->
+			<div class="left_cols_2_fix_right_187">
+			  <div class="left_sub_cols_2_fix_right_187">
+					
+					<!-- start of My Tools -->
+					<div class="my_tools_msmgp">
+						<p class="welcoming_my_tools"><font style="font-size:14px"><strong>We’re making positive changes to meet your needs!</strong></font></p> 
+						<p class="welcoming_my_tools">As a result of the recent merger between Summit Medical Group and Paramount Medical Group, we now have 2 separate systems you can use to interact with certain doctors online. As we move to single system, we will keep both systems active for your convenience.</p>
+						<p>&nbsp;</p>
+						<p class="welcoming_my_tools" align="center"><strong>Only certain Summit Medical Group doctors participate. If your doctor is <br />not on one of the lists, he or she does not participate at this time.</strong></p>
+						<p>&nbsp;</p>
+						<p class="welcoming_my_tools">To access the system for your doctor, click the link below that applies to you:</p>
+						<p>&nbsp;</p>
+						<p class="welcoming_my_tools"><strong>I was a Summit Medical Group Patient before October 1, 2011.</strong></br>
+						<a href="/about/My%20Summit_Medical_Group_Doctors/">Click here</a> for a list of doctors you may access online. Then, click your doctor's name to begin.</p>
+						<p>&nbsp;</p>
+						<p class="welcoming_my_tools"><strong>I was a Paramount Medical Group Patient before October 1, 2011.</strong><br />
+						<a href="http://www.paramountmedicalgroup.com/">Click here</a> for a list of former Paramount doctors you may access online. Then, click your doctor's name to begin.</p>
+						<p>&nbsp;</p>
+						<p class="welcoming_my_tools"><strong>I am a new patient.</strong><br />
+						Click the <a href="/doctors">Practitioners tab</a> above. Then, click your doctor's name. Look for his or her contact details in the box on the right that includes your doctor's phone number. If your doctor participates, you will be able to click the email link; if your doctor does not participate, the link will not be visible.</a></p>
+						<p>&nbsp;</p>
+						<p>&nbsp;</p>
+						
+					</div>
+					<!-- end of My Tools -->
+					
+					<!--
+					{% ifequal added "duplicate" %}
+					<h3 align="center" style="color:#C03;">Note: You added this page in a previous visit to the site.</h3>
+					{% endifequal %} 								
+					-->
+					
+					<!--
+					{% if doctors %}			
+									
+					<div class="my_box">
+						<a name="doctor"><p class="title">My Doctors</p>{% ifequal added "doctor" %}<p><b>You added a new doctor.</b></p>{% endifequal %} 
+						<div class="my_doctors">
+							{% for doctor in doctors %}
+							<div class="my_doctor">
+								<div class="doctor_photo">
+									<div class="shadowed_img"><em><em><em><em><em><img src={% if doctor.cropped_image %}"{{ doctor.cropped_image.url }}"{% else %}"{{ MEDIA_URL }}/images/37x37_not_avail.jpg"{% endif %} alt="our_doctor" width="37" height="37" /></em></em></em></em></em></div>
+								</div>
+								<div class="doctor_info">
+									<p class="list_item">{% ifequal added "doctor" %}{% ifequal item doctor.pkstr %}<font style="color:#C03;">Just added</font>
+{% endifequal %}{% endifequal %} <a href="/doctor/{{ doctor.urlname }}/">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}</a></p>
+									<em><a href="/mysummitmedicalgroup/?action=remove&amp;type=doctor&amp;pk={{ doctor.pk }}">x remove</a></em>
+									<span>{{ doctor.title_service.name }}, {{ doctor.phone }}</span>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						<div class="add_more_my_box"><a href="/doctors/">Add More Doctors</a></div>
+					</div>
+					
+					{% endif %}
+					-->
+
+					<!--
+					<div class="h10"></div>
+					
+					{% if services %}
+					
+					<div class="my_box">
+						<a name="service"><p class="title">My Services</p>{% ifequal added "service" %}<p><b>You added a new service.</b></p>{% endifequal %}
+						<div class="my_box_sub">
+							{% for service in services %}
+							<div class="list_item_my_box">
+								{% ifequal added "service" %}{% ifequal item service.pkstr %}<font style="color:#C03;">Just added</font>
+{% endifequal %}{% endifequal %} <em><a href="/mysummitmedicalgroup/?action=remove&amp;type=service&amp;pk={{ service.pk }}">x remove</a></em>
+								<p class="list_item"><a href="/service/{{ service.urlname }}">{{ service.name }}</a></p>
+							</div>
+							{% endfor %}
+						</div>
+						<div class="add_more_my_box"><a href="/services/">Add More Services</a></div>
+					</div>
+					
+					{% endif %}
+
+					<div class="h14"></div>
+					
+					-->
+					
+					<!--
+
+					{% if library %}
+					
+					<div class="my_box">
+						<a name="library"><p class="title">My Library</p>{% ifequal added "library" %}<p><b>You added new content.</b></p>{% endifequal %}
+						<div class="my_box_sub">
+							{% for link in library %}
+							<div class="list_item_my_box">
+								{%ifequal added "library" %}{% ifequal item link|first %}<font style="color:#C03;">Just added</font>{% endifequal %}{%endifequal %} <em><a href="/mysummitmedicalgroup/?action=remove&amp;type=library&amp;url={{ link|first }}">x remove</a></em>
+								<p class="list_item"><a href="{{ link|first }}">{{ link|last }}</a></p>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					
+					{% endif %}
+
+					<div class="h14"></div>
+					
+					-->
+					
+				</div>
+			</div>
+			<!-- end of left sub column -->
+			
+			<!-- start of right sub column -->
+			<div class="right_cols_2_fix_right_187">
+
+				<div class="tool_tips">
+					<h3>Tool Tips <em>&nbsp;</em></h3>
+					<div class="rain_box">
+						<div class="rain_box_sub">					
+							<div class="privacy_remind">
+								<p>These tools are private and secure.</p>
+								<a href="/media/db/media-library/Notice_of_Privacy_Practices_Form_1.pdf">View our privacy and security policy for more details &raquo;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- end of right sub column -->
+		</div>
+		
+	</div>
+	<!-- end of right main column -->
+	<div class="clear"></div>
+</div>
+<!-- end of main box -->
+
+{% endblock content %}

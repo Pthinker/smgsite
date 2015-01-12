@@ -1,0 +1,7 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools %}
+<div style="text-align:left;"><h3><a href="/admin/doctors/doctor/accepting/">Bulk edit Accepting Flags & Text</a></h3></div>
+{{ block.super }}
+{% endblock %}
+

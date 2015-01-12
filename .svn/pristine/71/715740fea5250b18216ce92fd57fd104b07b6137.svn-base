@@ -1,0 +1,326 @@
+from django.db import models
+from django.template import RequestContext, loader
+from django.shortcuts import render_to_response, render
+from django.http import HttpResponse
+from django.http import Http404
+from django.core.paginator import Paginator, InvalidPage
+from django.utils.text import capfirst
+from django.utils.encoding import force_unicode
+
+from smgsite.site.paginator import DiggPaginator
+from smgsite.search.interface import search, ResultGroup
+from smgsite.search.containers import *
+
+MAX_AJAX_GROUP_RESULTS = 100
+
+RESULTS_PER_PAGE = 10
+ADDITIONAL_PAGES_LISTED = 6 # Pages on each side of the current page, must be an even number
+
+
+def ajax_search(request, kind, model, order):
+	"""
+	Return XML results for an AJAX query.
+	"""
+	if model == 'ALL':
+		model = ''
+	try:
+		request_id = request.REQUEST['request_id']
+	except KeyError:
+		request_id = ''
+	try:
+		name = request.REQUEST['name']
+	except KeyError:
+		name = ''
+	try:
+		body = request.REQUEST['body']
+	except KeyError:
+		body = ''
+        if model == '_':
+            model = None
+	(count, results) = search(MAX_AJAX_GROUP_RESULTS, kind, model, order, name, body)
+	filtered = {}
+	urls = dict()
+	result_data = dict() # [Limit, Keys, Count, More]
+	for result in results:
+		if result.model == 'Keyword':
+			continue
+		else:
+			(app_name, model_name) = result.model.split('.')
+			model = models.get_model(app_name, model_name)
+			limit = None
+			if result.model not in result_data:
+				result_data[result.model] = [limit, [], 0, False]
+		if not limit or result_data[result.model][2] < limit:
+			if result.model != 'Keyword':
+				urls[result.url] = True
+			try:
+				live = model.is_live(result.key)
+			except AttributeError:
+				live = True
+			if live:
+				result_data[result.model][1].append(result)
+				result_data[result.model][2] += 1
+
+	result_groups = [ResultGroup(key, 0, 0, result_data[key][1], '') for key in result_data.keys()]
+	t = loader.get_template('search/results.xml')
+	c = RequestContext(request, {'request_id': request_id, 'query': name, 'count': count, 'result_groups': result_groups})
+	return HttpResponse(t.render(c), mimetype='application/xml')
+
+
+def search_narrow(request, kind, model, order):
+	"""
+	Return results for a focused search.
+	"""
+	raise Http404
+
+
+def search_full(request, model, page=1):
+	"""
+	Return results for a sidewide search.
+	"""
+	try:
+		query = request.REQUEST['search-input']
+	except KeyError:
+		query = ''
+	if model == 'smg.smgnews':
+		(count1, results1) = search(0, 'complete', 'articles.Article', 'alpha', query, query)
+		(count2, results2) = search(0, 'complete', 'articles.PressRelease', 'alpha', query, query)
+		count = count1 + count2
+		results = results1 + results2
+	elif model == 'smg.feature':
+		(count1, results1) = search(0, 'complete', 'articles.Feature', 'alpha', query, query)
+		(count2, results2) = search(0, 'complete', 'articles.Recipe', 'alpha', query, query)
+		count = count1 + count2
+		results = results1 + results2
+	elif model == 'smg.events':
+		(count1, results1) = search(0, 'complete', 'events.Event', 'alpha', query, query)
+		(count2, results2) = search(0, 'complete', 'events.Class', 'alpha', query, query)
+		count = count1 + count2
+		results = results1 + results2
+	elif model == 'smg.article':
+		(count, results) = search(0, 'complete', 'articles.Article', 'alpha', query, query)
+	elif model == 'smg.page':
+		(count, results) = search(0, 'complete', 'pages.Page', 'alpha', query, query)
+	else:
+		(count, results) = search(0, 'complete', model, 'alpha', query, query)
+	filtered = {}
+	newresults = []
+	for result in results:
+		if result.url in filtered:
+			continue
+		filtered[result.url] = True
+		newresults.append(result)
+	results = newresults
+	result_data = dict() # [Limit, Keys, Count, More, Order, Pretty_name]
+	if 'CAREER' in query.upper() or 'JOB' in query.upper():
+		count = str(int(count) + 1)
+		results.append(Result(['Keyword', '', '/careers/', 'Careers']))
+	if (query.upper().startswith('LOC') or query.upper().startswith('HOU')
+			or query.upper().startswith('DIR') or query.upper().startswith('OPE')):
+		try:
+			count = str(int(count) + 1)
+		except ValueError:
+			raise Http404
+		results.append(Result(['Keyword', '', '/locations/', 'Locations, Directions, and Hours']))
+	if (query.upper().startswith('PORT') or query.upper().startswith('ONLI')):
+		try:
+			count = str(int(count) + 1)
+		except ValueError:
+			raise Http404
+	for result in results:
+		if result.model == 'articles.PressRelease':
+			result.model = 'smg.smgnews'
+			result.limit = 10
+		if result.model == 'articles.Article':
+			result.model = 'smg.smgnews'
+			result.limit = 10
+		if result.model == 'articles.Feature':
+			result.model = 'smg.feature'
+			result.limit = 10
+		if result.model == 'articles.Recipe':
+			result.model = 'smg.feature'
+			result.limit = 10
+		if result.model == 'events.Event' or result.model == 'events.Class':
+			result.model = 'smg.events'
+			result.limit = 10
+		try:
+			limit = result_data[result.model][0]
+		except KeyError:
+			if result.model == 'Keyword':
+				continue
+				omodel = model
+				result_data[result.model] = [None, [], 0, False, 0, 'Top Matches']
+			else:
+				(app_name, model_name) = result.model.split('.')
+				omodel = models.get_model(app_name, model_name)
+				try:
+					limit = omodel.search_limit
+				except AttributeError:
+					limit = None
+				if result.model == 'smg.smgnews':
+					display_name = 'Summit Medical Group Articles and Pages'
+					result_data[result.model] = [limit, [], 0, False, 8, display_name]
+				elif result.model == 'smg.events':
+					display_name = 'Events and Classes'
+					result_data[result.model] = [limit, [], 0, False, 4, display_name]
+				elif result.model == 'smg.feature':
+					display_name = 'Fitness, Nutrition, and Recipes'
+					result_data[result.model] = [limit, [], 0, False, 7, display_name]
+				elif result.model == 'doctors.Doctor':
+					display_name = 'Doctors'
+					result_data[result.model] = [limit, [], 0, False, 1, display_name]
+				else:
+					display_name = force_unicode(capfirst(omodel._meta.verbose_name_plural))
+					result_data[result.model] = [limit, [], 0, False, omodel.search_order, display_name]
+		result_data[result.model][1].append(result)
+		result_data[result.model][2] += 1
+	result_groups = [ResultGroup(key, result_data[key][3], result_data[key][4], result_data[key][1], result_data[key][5]) for key in result_data.keys()]
+	if not result_groups:
+		raise Http404
+	result_groups.sort(lambda x, y: x.order-y.order)
+	if result_groups[0].name == 'Keyword':
+		paged_results = result_groups[1]
+	else:
+		paged_results = result_groups[0]
+	paginator = DiggPaginator(paged_results.results, RESULTS_PER_PAGE)
+
+	try:
+		pages = paginator.page(page)
+	except (EmptyPage, InvalidPage):
+		pages = paginator.page(paginator.num_pages)
+
+	ctx = {
+		'query': query, 
+		'model': model,  
+		'display_name': display_name, 
+		'result_groups': result_groups, 
+		'page':pages,
+		'url': '/search/%s/' % paged_results.name,
+	}
+	return render(request, 'search/results.html', ctx)
+
+
+def search_all(request):
+	"""
+	Return results for a sitewide search.
+	"""
+	try:
+		query = request.REQUEST['search-input']
+	except KeyError:
+		query = ''
+	(count, results) = search(0, 'complete', 'all', 'alpha', query, query)
+	#results.reverse()
+
+	"""
+	# Strip out duplicates
+	filtered = {}
+	newresults = []
+	for result in results:
+		if result.url in filtered:
+			continue
+		filtered[result.url] = True
+		newresults.append(result)
+	results = newresults
+	"""
+
+	urls = dict()
+	result_data = dict() # [Limit, Keys, Count, More, Order, Pretty_name]
+	if 'CAREER' in query.upper() or 'JOB' in query.upper():
+		count = str(int(count) + 1)
+		results.append(Result(['Keyword', '', '/careers/', 'Careers']))
+	if (query.upper().startswith('LOC') or query.upper().startswith('HOU')
+			or query.upper().startswith('DIR') or query.upper().startswith('OPE')):
+		try:
+			count = str(int(count) + 1)
+		except ValueError:
+			raise Http404
+		results.append(Result(['Keyword', '', '/locations/', 'Locations, Directions, and Hours']))
+	if (query.upper().startswith('PORT') or query.upper().startswith('ONLI')):
+		try:
+			count = str(int(count) + 1)
+		except ValueError:
+			raise Http404
+	for result in results:
+		if result.model == 'articles.PressRelease':
+			continue
+		if result.model == 'articles.Article':
+			result.model = 'smg.article'
+			result.limit = 10
+		if result.model == 'pages.Page':
+			result.model = 'smg.page'
+			result.limit = 10
+		if result.model == 'articles.Feature':
+			result.model = 'smg.feature'
+			result.limit = 10
+		if result.model == 'articles.Recipe':
+			result.model = 'smg.feature'
+			result.limit = 10
+		if result.model == 'events.Event' or result.model == 'events.Class':
+			result.model = 'smg.events'
+			result.limit = 10
+		try:
+			limit = result_data[result.model][0]
+		except KeyError:
+			if result.model == 'Keyword':
+				result_data[result.model] = [None, [], 0, False, 0, 'Top Matches']
+				limit = None
+			elif result.model.startswith('Editor'):
+				result_data[result.model] = [None, [], 0, False, 10, 'Summit Medical Group Articles and Pages']
+				limit = None
+			else:
+				(app_name, model_name) = result.model.split('.')
+				model = models.get_model(app_name, model_name)
+				try:
+					limit = model.search_limit
+				except AttributeError:
+					try:
+						limit = result.limit
+					except AttributeError:
+						limit = None
+				if result.model == 'smg.article':
+					display_name = 'Summit Medical Group News'
+					result_data[result.model] = [limit, [], 0, False, 8, display_name]
+				elif result.model == 'smg.page':
+					display_name = 'Additional Site Content'
+					result_data[result.model] = [limit, [], 0, False, 8, display_name]
+				elif result.model == 'smg.events':
+					display_name = 'Events and Classes'
+					result_data[result.model] = [limit, [], 0, False, 4, display_name]
+				elif result.model == 'smg.feature':
+					display_name = 'Fitness, Nutrition, and Recipes'
+					result_data[result.model] = [limit, [], 0, False, 7, display_name]
+				elif result.model == 'doctors.Doctor':
+					display_name = 'Doctors'
+					result_data[result.model] = [limit, [], 0, False, 1, display_name]
+				else:
+					display_name = force_unicode(capfirst(model._meta.verbose_name_plural))
+					result_data[result.model] = [limit, [], 0, False, model.search_order, display_name]
+		if not limit or result_data[result.model][2] < limit:
+			if result.model != 'Keyword':
+				urls[result.url] = True
+			result_data[result.model][1].append(result)
+			result_data[result.model][2] += 1
+		elif limit and result_data[result.model][2] >= limit:
+			result_data[result.model][3] = True
+
+	# Strip Top Matches
+	try:
+		newresults = []
+		kwresults = result_data['Keyword'][1]
+		for kw in kwresults:
+			try:
+				if not kw.url in urls:
+					newresults.append(kw)
+			except AttributeError:
+				pass
+		result_data['Keyword'][1] = newresults
+		if len(result_data['Keyword'][1]) == 0:
+			del result_data['Keyword']
+	except KeyError:
+		pass
+
+	result_groups = [ResultGroup(key, result_data[key][3], result_data[key][4], result_data[key][1], result_data[key][5]) for key in result_data.keys()]
+	result_groups.sort(lambda x, y: x.order-y.order)
+	modellist = [(x.name, x.display_name) for x in result_groups if x.name != 'Keyword']
+	return render_to_response('search/results.html', {'query': query, 'count': count, 'result_groups': result_groups, 'models': modellist}, context_instance=RequestContext(request))
+

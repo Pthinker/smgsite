@@ -1,0 +1,59 @@
+{% extends "articles/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Live Well Library{% endblock head_title %}
+
+{% block meta_info %}Summit Medical Group offers extensive health and wellness information for you and your family.{% endblock meta_info %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<!-- start of main blocks column right -->
+	<div class="right_main_block">
+		<div class="right_sub_main_block">		
+			<h1 class="big">Live Well Library</h1>
+			<div class="h1_sub_info bottom_dash">
+				<p>Looking for reliable NJ/ NY health information? Our extensive libraries have what you need!</p>
+ 
+<p>Our libraries are now organized in 4 sections:</p>
+
+<ol>
+<li>Adult Care Advisor</li>
+<li>Adult Health Advisor</li>
+<li>Medications Advisor</li>
+<li>Pediatric Health Advisor</li>
+
+</ol>
+ 
+<p>Our Women's Health Advisor, Behavioral Health Advisor, Cardiology Advisor, Eye Advisor, and Sports Medicine Advisor are now included in the Adult Health Advisor.</p>
+ 
+<p>Our Medications and Pediatric Health Advisors remain the same.<p>
+ 
+<p>Use the search box above to explore a topic, or click on any link below to see a list of our topics and articles.</p>				
+			</div>
+			<div class="library_list_block">
+				<ul class="library_list">
+					{% for advisor in advisors %}
+						{% ifequal forloop.counter0 half %}
+							</ul>
+							</div>
+							<div class="library_list_block">
+							<ul class="library_list"> 				
+						{% endifequal %}
+						<li><a href="{{ advisor.get_absolute_url }}">{{ advisor.name }}</a></li>
+					{% endfor %}
+				</ul>
+			 </div>					
+			<div style="clear:both">&nbsp;</div>
+		</div>	
+	</div>
+	<!-- end of main blocks column right -->
+	<!-- start of main blocks column left -->
+	<div class="left_main_block">
+		<div class="mt10">{% banner %}</div>
+	</div>
+	<!-- end of main blocks column left -->
+	<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

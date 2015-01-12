@@ -1,0 +1,41 @@
+<div id="right_col_177_box" class="right_col_doctors_box">
+
+	<div id="right_col_doctor_box_header"><img  class="right_col_doctor_header" src="{{ MEDIA_URL }}/images/cardio_100x10_our_doctors.gif" alt="Our Doctors" width="100" height="10"></div>
+	<p class="font_minus_1">
+	<ul class="right_col_ul_doctors">
+			
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/rsachs/" onmouseover="photoOn(this, '/media/db/doctor-images/rsachs__thumbnail__.jpg', 'R. Gregory Sachs, MD, FACC')" onmouseout="photoOff()" onclick="photoOff()">R. Gregory Sachs</a></span>, MD, FACC</li>
+			
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/rslama/" onmouseover="photoOn(this, '/media/db/doctor-images/rslama__thumbnail__.jpg', 'Robert D. Slama, MD, FACC')" onmouseout="photoOff()" onclick="photoOff()">Robert D. Slama</a></span>, MD, FACC</li>
+			
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/abeamer/" onmouseover="photoOn(this, '/media/db/doctor-images/abeamer__thumbnail__.jpg', 'Andrew D. Beamer, MD, FACC')" onmouseout="photoOff()" onclick="photoOff()">Andrew D. Beamer</a></span>, MD, FACC</li>
+			
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/agreene/" onmouseover="photoOn(this, '/media/db/doctor-images/agreene__thumbnail__.jpg', 'Andrew C. Greene, MD, FACC')" onmouseout="photoOff()" onclick="photoOff()">Andrew C. Greene</a></span>, MD, FACC</li>
+			
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/wtansey/" onmouseover="photoOn(this, '/media/db/doctor-images/wtansey__thumbnail__.jpg', 'William A. Tansey, III, MD, FACC')" onmouseout="photoOff()" onclick="photoOff()">William A. Tansey, III</a></span>, MD, FACC</li>
+			
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/dschwartz/" onmouseover="photoOn(this, '/media/db/doctor-images/dschwartz__thumbnail__.jpg', 'Daniel R. Schwartz, MD, FACC, FACP')" onmouseout="photoOff()" onclick="photoOff()">Daniel R. Schwartz</a></span>, MD, FACC, FACP</li>
+		
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/akothavale/" onmouseover="photoOn(this, '/media/db/doctor-images/akothavale__thumbnail__.jpg', 'Avinash A. Kothavale, MD')" onmouseout="photoOff()" onclick="photoOff()">Avinash A. Kothavale</a></span>, MD</li>
+			</ul>
+			
+			<div id="right_col_doctor_box_header"><img  class="right_col_doctor_header" src="{{ MEDIA_URL }}/images/cardio_64x10_our_staff.gif" alt="Our Staff" width="64" height="10"></div>
+			
+			<ul class="right_col_ul_doctors">
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/kprado/" onmouseover="photoOn(this, '/media/db/doctor-images/kprado__thumbnail__.jpg', 'Kimberly Prado, NP')" onmouseout="photoOff()" onclick="photoOff()">Kimberly Prado</a></span>, NP</li>
+			
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/wgaydos/" onmouseover="photoOn(this, '/media/db/doctor-images/site_GaydosWhitney0006.md__thumbnail__.jpg', 'Whitney  Gaydos, PA-C')" onmouseout="photoOff()" onclick="photoOff()">Whitney  Gaydos</a></span>, PA-C</li>
+		
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/tmadden/" onmouseover="photoOn(this, '/media/db/doctor-images/tmadden__thumbnail__.jpg', 'Theresa A. Madden, MS, PA-C')" onmouseout="photoOff()" onclick="photoOff()">Theresa A. Madden</a></span>, PA-C</li>
+		
+			<li class="right_col_li_doctors"><span class="bold"><a class="dark_green" href="/doctor/mshaferman/" onmouseover="photoOn(this, '', 'Marina  Shaferman, MS, RPA-C')" onmouseout="photoOff()" onclick="photoOff()">Marina  Shaferman</a></span>, RPA-C</li>
+	</ul></p>
+
+	</div>
+	
+	<div id="doctor_photo_flyover" class="doctor_photo_flyover">
+		<center>
+			<img id="doctor_image" src="{{ MEDIA_URL }}/images/100x130Load.gif" />
+			<p id="doctor_name"></p>
+		</center>
+	</div>

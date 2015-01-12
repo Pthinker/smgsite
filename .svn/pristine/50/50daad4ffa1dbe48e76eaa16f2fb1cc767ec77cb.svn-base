@@ -1,0 +1,8 @@
+{% if article.byline %}
+{% if article.byline_link %}
+<a href="{{ article.byline_link }}" >{{ article.byline }} </a>
+{% else %}
+{{ article.byline }}
+{% endif %}
+{% endif %}
+

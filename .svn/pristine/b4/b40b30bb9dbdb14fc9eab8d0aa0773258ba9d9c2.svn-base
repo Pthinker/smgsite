@@ -1,0 +1,22 @@
+<div class="title">
+    {# date title content fields different from articles - headline, display_time and content so need seperate template #}
+    {# TODO: can we change the field names to consolidate templates and make more standard? #}
+    <h2 class="top">{{ article.title|safe }}</h2>
+    <span class="date">Last updated: {{ post.postdate|date:"M d, Y" }}</span> 
+</div>
+
+{% if article.byline %}
+    <span class="byline">By 
+    {% if article.byline_link %}
+        <a href="{{ article.byline_link }}" >{{ article.byline }}</a>
+    {% else %}
+        {{ article.byline }}
+    {% endif %} 
+    for Summit Medical Group</span>
+{% endif %}
+    
+{% if article.reviewed_by %}
+    <br><span class="byline">Reviewed by <a href="{{ article.reviewed_by_link }}">{{ article.reviewed_by }}</a></span>
+{% endif %}
+
+{{ article.body|safe }}

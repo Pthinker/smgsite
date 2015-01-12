@@ -1,0 +1,47 @@
+{% extends "mysmg/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Confirmation{% endblock head_title %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+					
+					
+					<div class="smg_general_container">
+						<div><font face="Georgia"><b><i><a href="/mysummitmedicalgroup/">My Summit Medical Group</a></i></b></font> &gt; Account Confirmation</div>
+						
+						<br />
+
+						<h1>Password Reset</h1>
+						
+						<p>Your reset request has been submitted. A confirmation key has been sent to the e-mail address you provided. Please check your inbox for this message and follow the instructions in the e-mail to reactivate your account.</p>
+				
+					</div>
+					
+				</div>
+				
+			
+			</div>
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

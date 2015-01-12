@@ -1,0 +1,98 @@
+{% extends "articles/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ article.title }}{% endblock head_title %}
+{% block meta_info %}{% meta_info article %}{% endblock meta_info %}
+
+{% block content %}		
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<!-- start of main blocks column right -->
+	<div class="right_main_block">
+		<div class="right_sub_main_block">						
+			<!-- start of pages navigation -->
+			<div class="navigation">			
+				{% include 'site/share.html' %}				
+				<div class="clear" style="min-height:23px; height:23px;"></div>			
+				<div class="pages">
+					<a href="/library/">Live Well Library</a>&nbsp;&gt;&nbsp;
+					<a href="{{ article.advisor.get_absolute_url }}">{{ article.advisor.name }}</a>&nbsp;&gt;&nbsp; 
+					<span id="breadcrumb_thispage">{{ article.title }}</span>
+				</div>
+				
+				<div class="clear"></div>				
+			</div>
+			<div class="clear"></div>
+			<!-- end of pages navigation -->
+			
+			<!-- start of main content -->
+			<!--<div class="cols_2_fix_right_160">-->
+
+				<!-- start of left column of main content -->
+				<!--<div class="cols_2_left">
+				  <div class="cols_2_left_sub">-->
+						
+					<!-- start LIBRARY TOPIC BODY -->
+					<div id="library_topic_body">				
+					<h1>{{ article.title }}</h1>
+					{% if article.images.all %}
+					<div id="library_rh_img_thumbnail">{% for image in article.images.all %}<a href="{{ image.image.url }}" target="pop_up_library_image"><img class="white_border_img" src="{{ image.thumbnail.url }}" width="100" /></a><br /><p><a href="{{ image.image.url }}" target="pop_up_library_image">View image</a></p>{% endfor %}
+					</div>
+					{% endif %}
+					{% include article.template %}
+
+					{% if article.references %}
+					<a href="/library/{{ article.references.urlname }}">References</a>
+					{% endif %}
+					</div>
+					<!-- end LIBRARY TOPIC BODY -->																					
+				  <!--</div>
+				</div>-->
+				<!-- end of left column of main content -->
+				
+				<!-- start of right column of main content -->
+				<div class="cols_2_right">
+
+					
+				</div>
+				<!-- end of right column of main content -->
+				<!-- </div> -->
+			<!-- end of main content -->
+		</div>
+	</div>
+	<!-- end of main blocks column right -->
+
+	<!-- start of main blocks column left -->
+	<div class="left_main_block">
+
+		<div class="box_207 box_207_blue">
+			<div class="box_207_bottom">
+				<div class="box_207_top">
+					<div class="box_arrowed_list">
+						{% if article.related.all %}
+							<h2>You Might Also Like</h2>
+							<ul class="arrows">
+								{% for rel in article.related.all %}
+								<li><a href="{{ rel.get_absolute_url }}">{{ rel.title }}</a></li>
+								{% endfor %}
+							</ul>									
+						{% endif %}
+						<h2>Live Well Libraries</h2>
+						<ul class="arrows">
+						<li><a href="/library/adult_care/">Adult Care Advisor</a></li>
+						<li><a href="/library/adult_health/">Adult Health Advisor</a></li>
+						<li><a href="/library/medications/">Medications Advisor</a></li>
+						<li><a href="/library/pediatric_health/">Pediatric Health Advisor</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="mt10">{% banner %}</div>
+	</div>
+	<!-- end of main blocks column left -->
+	<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

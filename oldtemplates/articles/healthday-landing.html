@@ -1,0 +1,172 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Health In The News{% endblock head_title %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/newseventsblog.css" type="text/css" media="screen" />
+	<link rel="stylesheet"  href="/dynamic-css/search.css" type="text/css" media="screen" />
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+				
+												
+					<!-- start of main content -->
+					<div class="cols_2_fix_right_160">
+
+						<!-- start of left column of main content -->
+						<div class="cols_2_left">
+						  <div class="cols_2_left_sub">
+								
+							<div id="healthnews_landing_container">
+							<!--Today's Health Highlights (News Type: WebScout).  display most recent headline first-->
+								
+								<h1>Health in the News</h1>
+								 
+								<div class="healthnews_highlights">
+								
+								<h2>Today’s Health Highlights: <span>{{ ws_last_updated }}</span></h2> 
+								<ul class="healthnews_highlights_list">
+									<li><a href="{{ webscout.get_absolute_url }}">{{ webscout.blurb|safe }}</a></li>												
+								</ul>										
+								</div>
+								
+								<div style="padding: 0 0 0 40px;">
+									<b><a href="/healthday/Webscout/1/">More Headlines</a> &raquo;</b>
+								</div>
+								
+								
+								
+								<div class="healthnews_topstories">
+								
+									<h2>Today’s Top Stories&nbsp;<span>Last Updated: {{ st_last_updated }}</span></h2> 
+
+									<ul class="healthnews_topstories_list">
+									<!--Latest Health News (News Type: News) My understanding is that the images are part of the feed.  display most recent headline first-->
+									{% for article in stories %}
+										{% if article.feature_image %}
+										<li class="with_image">
+											<div class="blurb_image_border">
+												<div class="blurb_image_left">
+													<img src="{{ article.feature_image }}" width="110" alt="" />
+												</div>
+											</div>
+										{% else %}
+										<li class="no_image">
+										{% endif %}
+										<a href="{{ article.get_absolute_url }}">{{ article.headline }}</a><br/>
+										<span class="blurb">{{ article.blurb|safe }}</span>
+										<div align="right">
+											<a href="{{ article.get_absolute_url }}">read more</a> &raquo;
+										</div>
+									</li>
+									{% endfor %}
+									</ul>
+								</div>	
+								
+							</div>	
+								
+								<br />
+								<div class="clear"></div>
+							
+								<div class="addition_page" id="healthnews_subdiv_container">
+									<div class="subdiv first_subdiv">
+										<h2>Latest FDA Approvals</h2>
+										<!--FDA Approvals (News Type: FDA Approvals).  display most recent first-->
+										<ul class="list_quotes">
+											{% for article in fda %}
+												<li><a href="{{ article.get_absolute_url }}">{{ article.headline }}</a></li>
+											{% endfor %}
+									</div>
+								</div>
+								
+								<div align="right">
+									<a href="/healthday/FDA Approvals/1/">More Headlines</a> &raquo;
+								</div>
+													
+						  </div>
+						</div>
+						<!-- end of left column of main content -->
+						
+						<!-- start of right column of main content -->
+						<div class="cols_2_right">
+
+							
+							<div class="box_160 box_160_blue">
+								<div class="box_160_top">
+									<div class="box_160_bottom">
+										<div class="box_160_wrap">
+										<!--FYIs (News Type: FYI)-->
+											<h3>Live Well Tips</h3>
+											<ul class="list_quotes">
+												{% for article in fyi %}
+													<li><a href="{{ article.get_absolute_url }}">{{ article.headline }}</a></li>
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+
+						</div>
+						<!-- end of right column of main content -->
+					</div>
+					<!-- end of main content -->
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+
+				
+				<div class="box_207 box_207_blue mt10">
+					<div class="box_207_bottom">
+						<div class="box_207_top">
+
+							<h2 class="quick_links">Categories</h2>
+							<div class="rain_box_wrap_0_6_28">
+								<div class="rain_box">
+									<div class="quick_links_categories">
+									
+										<p>Choose one of our special categories to view or subscribe</p>
+										<!-- categories are the collections of topics as defined within the admin tool-->
+										<ul>
+												{% for category in categories %}
+												<li><a href="/healthday/all/1/?category={{ category.pk }}">{{ category }}</a></la>
+												{% endfor %}
+										</ul>
+										<div>&nbsp;</div>
+									
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+
+			
+				<div class="mt10">
+					{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+			
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

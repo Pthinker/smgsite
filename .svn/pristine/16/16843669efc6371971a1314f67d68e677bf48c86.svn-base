@@ -1,0 +1,16 @@
+{% extends "page_base.html" %}
+
+{% block head_extra %}
+<link rel="stylesheet"  href="/dynamic-css/location.css" type="text/css" media="screen" />
+{% endblock head_extra %}
+
+{% block body %}
+{% include 'helpers/_menu_locations.html' %}
+<div id="main">
+    <div class="main-container">
+		{% block content %}
+		{% endblock content %}
+	<div class="clear"></div>
+	</div>	
+</div><!--main-->
+{% endblock body %}

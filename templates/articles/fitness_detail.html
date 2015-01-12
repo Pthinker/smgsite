@@ -1,0 +1,20 @@
+{% extends 'one_column_layout.html' %}
+
+{% block head_title %}Summit Medical Group - {{ article.headline }}{% endblock head_title %}
+{% block page_title %}{{ content }}{% endblock %}
+
+{% block breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="/features/Fitness/">Fitness</a></li>
+    <li class="active">{{ article.headline|safe}}</li>
+
+    {% include 'site/includes/share.html' %}
+</ol>
+{% endblock breadcrumbs %}
+
+
+{% block content %}
+<div class="article_content">
+    {% include 'articles/includes/feature_post.html' %}
+</div>
+{% endblock content %}

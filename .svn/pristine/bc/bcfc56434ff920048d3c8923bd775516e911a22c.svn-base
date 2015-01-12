@@ -1,0 +1,10 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+        <link rel="stylesheet"  href="/dynamic-css/global.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="/media/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="/media/ckeditor/adapters/jquery.js"></script>
+	<script src="/media/js/admin/editor.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/media/js/admin/service.js" type="text/javascript" charset="utf-8"></script>
+{% endblock extrahead %}

@@ -1,0 +1,6 @@
+<h2>Stay Connected</h2>
+<div class="connected">
+    <a href="https://www.youtube.com/user/SMGNJ"><img src="{{ STATIC_URL }}images/icons/youtube_square.png"/></a>
+    <a href="https://plus.google.com/+summitmedicalgroup/posts"><img src="{{ STATIC_URL }}images/icons/google_square.png"/></a>
+    <a href="https://www.pinterest.com/source/summitmedicalgroup.com/"><img src="{{ STATIC_URL }}images/icons/pinterest_square.png"/></a>
+</div>

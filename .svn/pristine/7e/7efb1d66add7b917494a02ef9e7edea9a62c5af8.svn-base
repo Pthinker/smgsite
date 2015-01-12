@@ -1,0 +1,17 @@
+<div class="media video-section">
+    <div class="pull-left">
+        <span class="media-object">
+            {{ template.template|safe }}
+        <span>
+    </div>
+
+    <div class="media-body">
+        <h3 class="media-heading">{{ template.description }}</h3> 
+        <p>{{ template.summary }}</p>
+        <a class="btn btn-healthy pull-right section btn-block" target="_new" href="https://www.youtube.com/user/SMGNJ">See All Summit Medical Videos</a>
+        <a class="btn btn-healthy pull-right btn-block" href="/about/Press_Room/Radio-SMG/">Listen to SMGRadio health podcasts</a>
+    </div>
+
+</div>
+
+

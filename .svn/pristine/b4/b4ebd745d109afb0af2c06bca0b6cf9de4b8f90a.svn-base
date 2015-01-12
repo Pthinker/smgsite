@@ -1,0 +1,77 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Search Results{% endblock head_title %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/search.css" type="text/css" media="screen" />
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+				
+
+
+
+					<div id="search_results_landing_container">
+
+
+{% if showpages %}
+<div id="articles_pages_nav_box"><p class="align_right_p"><strong>Pages:</strong> {% for newpage in pagelist %}
+{% ifequal page newpage %}
+	<span class="red_bold">{{ newpage }}</span>
+{% else %}
+	<a href="/search/{{ model }}/{{ newpage }}/?search-input={{ query }}">{{ newpage }}</a>
+{% endifequal %}
+{% endfor %}</p></div>
+{% endif %}
+
+
+{% for group in result_groups %}
+<p class="search_group_title_p"><b>{{ group.display_name }}</b></p>
+{% for result in group.results %}
+<p class="indent_30_p"><a href="{{ result.url }}">{{ result.name|safe }}</a></p>
+{% endfor %}
+{% endfor %}
+
+{% if showpages %}
+<div id="articles_pages_nav_box"><p class="align_right_p"><strong>Pages:</strong> {% for newpage in pagelist %}
+{% ifequal page newpage %}
+	<span class="red_bold">{{ newpage }}</span>
+{% else %}
+	<a href="/search/{{ model }}/{{ newpage }}/?search-input={{ query }}">{{ newpage }}</a>
+{% endifequal %}
+{% endfor %}</p></div>
+{% endif %}
+
+					</div>
+			
+			
+					
+				</div>
+				
+			
+			</div>
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

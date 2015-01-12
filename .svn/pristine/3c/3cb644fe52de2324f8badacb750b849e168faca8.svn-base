@@ -1,0 +1,19 @@
+
+@icon-font-path: '/static/bootstrap/fonts/';
+
+@font-family-sans-serif:  "PT Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@navbar-inverse-bg:                         #363636;
+
+@container-large-desktop:      ((940px + @grid-gutter-width));
+@container-tablet:      ((940px + @grid-gutter-width));
+
+@main-nav-link: #7f7f7f;
+
+@headings-font-weight: normal;
+
+@font-size-h2: 18px;
+
+@font-size-h3: 18px;
+
+@font-size-h4: 16px;

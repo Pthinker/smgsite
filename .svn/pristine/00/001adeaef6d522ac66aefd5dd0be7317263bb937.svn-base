@@ -1,0 +1,63 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}Recent News | Summit Medical Group{% endblock head_title %}
+
+{% block body %}
+
+<div class="container">
+
+    <div class="row section">
+
+        <div class="col-md-3">
+            {% include 'articles/newsroom/includes/navigation.html' %}
+        </div>
+
+        <div class="col-md-9">
+            {% display_front_slider %}
+        </div>
+
+    </div>
+
+    <div class="row coverage-section">
+
+        <div class="col-md-8">
+
+            <div class="section-header-coverage">
+                <div class="line"></div>
+                <div class="container">
+                    <div class="row">
+                        <h2><span class="glyphicon glyphicon-pushpin"></span> Recent News</h2>     
+                    </div>
+                </div>
+            </div>
+
+            <div class="coverage-preview section">
+                {% for item in mediaresults %}
+                    
+                {% include 'articles/newsroom/includes/preview_item.html' %}
+
+                {% endfor %}
+                <h3 class="pull-right"><a href="/articles/">See All Articles</a></h3>
+                
+            </div>
+
+            {% include 'articles/newsroom/includes/trending_topics.html' %}
+
+        </div>
+
+        <div class="col-md-4">
+            {% include 'articles/newsroom/includes/twitter_feed.html' %}
+
+            {% include 'articles/newsroom/includes/facebook_feed.html' %}
+
+            {# {% include 'articles/newsroom/includes/connected.html' %} #}
+
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock body %}

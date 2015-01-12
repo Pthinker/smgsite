@@ -1,0 +1,45 @@
+{% extends "page_content.html" %}
+
+{% block content_well %}
+
+<!--start of center column-->
+<div id="cent_col_573">
+
+<div id="tab_box_573">
+
+{% if authenticated %}
+<p>You are currently logged in with the email address {{ user.username }}.</p>
+<p><a href="/mysmg/logout/?redirect=/mysmg/view/">Log out</a></p>
+{% else %}
+<p>You are not currently logged in. To save pages permanently, you can <a href="/mysmg/login/">log in</a> or <a href="/mysmg/register/">register a new account</a>.</p>
+{% endif %}
+
+{% if services %}
+	My Services:
+	{% for service in services %}
+		<p><a href="/service/{{ service.urlname }}/">{{ service.name }}</a></p>
+	{% endfor %}
+{% endif %}
+<hr/>
+{% if doctors %}
+	My Doctors:
+	{% for doctor in doctors %}
+		<p><a href="/doctor/{{ doctor.urlname }}/">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }} - {{ doctor.title_service.name }}</a></p>
+	{% endfor %}
+{% endif %}
+<hr/>
+{% if library %}
+	My Library:
+	{% for link in library %}
+		<p><a href="{{ link|first }}">{{ link|last }}</a></p>
+	{% endfor %}
+{% endif %}
+
+<div class="clearfloats"></div>
+</div>
+<!--end tab_box_573 box-->
+
+</div>
+<!--end of center column-->
+
+{% endblock content_well %}

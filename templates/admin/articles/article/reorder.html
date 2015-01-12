@@ -1,0 +1,121 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrahead %}
+<script src="https://admin.summitmedicalgroup.com/media/js/prototype.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+var leader_options = new Array();
+{% for option in leader_options %}
+	leader_options[{{ option|first }}] = 0;
+{% endfor %}
+var headline_options = new Array();
+{% for option in headline_options %}
+	headline_options[{{ option|first }}] = 0;
+{% endfor %}
+
+function validate_form(thisform) {
+	for (var x in leader_options) {
+		leader_options[x] = 0;
+	}
+	atleast = false;
+	var a = $$('select.leader_promo');
+	for (var i=0; i<a.length; i++) {
+		leader_options[a[i].value]++;
+		if (a[i].value != 0) {
+			atleast = true;
+			if (leader_options[a[i].value] > 1) {
+				alert("Leader promo position " + a[i].value + " has been selected more than once. Please correct.");
+				return false;
+			}
+		}
+	}
+	if (!atleast) {
+		alert("There must be at least one leader promo. Please correct.");
+		return false;
+	}
+	for (var x in headline_options) {
+		headline_options[x] = 0;
+	}
+	atleast = false;
+	var a = $$('select.headline_promo');
+	for (var i=0; i<a.length; i++) {
+		headline_options[a[i].value]++;
+		if (a[i].value != 0) {
+			atleast = true;
+			if (headline_options[a[i].value] > 1) {
+				alert("Headline promo position " + a[i].value + " has been selected more than once. Please correct.");
+				return false;
+			}
+		}
+	}
+	if (!atleast) {
+		alert("There must be at least one headline promo. Please correct.");
+		return false;
+	}
+	return true;
+}
+</script>
+{% endblock extrahead %}
+
+{% block bodyclass %}change-list{% endblock %}
+{% if not is_popup %}{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/">"Home"</a> &rsaquo; <a href="/admin/articles/">Articles</a> &rsaquo; SMG Articles</div>{% endblock %}{% endif %}
+{% block coltype %}flex{% endblock %}
+{% block pretitle %}
+{% endblock %}
+{% block content %}
+<div id="content-main">
+
+{% if error %}
+	<h2>There was an error processing your submission. Please try again.</h2>
+	<br /><br />
+{% endif %}
+
+<form action="/admin/articles/article/set-reorder/" onsubmit="return validate_form(this)" method="post">
+<table cellspacing="0">
+<thead>
+<tr>
+<th>
+Headline
+</th><th class="sorted descending">
+Posting time
+</th><th>
+Leader promo
+</th><th>
+Headline promo
+</th>
+</tr>
+</thead>
+<tbody>
+
+{% for article in articles %}
+<tr class="{% cycle 'row1' 'row2' %}"><th>{{ article.headline }}</th><td class="nowrap">{{ article.posting_time }}</td><td>
+	<select name="leader_promo_{{ article.id }}" class="leader_promo" id="promo_{{ article.id }}">
+		{% for option in leader_options %}
+		<option value="{{ option|first }}" {% ifequal option|first article.leader_promo %}selected="selected"{% endifequal %}>{{ option|last }}</option>
+		{% endfor %}
+	</select>
+	</td><td>
+		<select name="headline_promo_{{ article.id }}" class="headline_promo" id="headline_{{ article.id }}">
+			{% for option in headline_options %}
+			<option value="{{ option|first }}" {% ifequal option|first article.headline_promo %}selected="selected"{% endifequal %}>{{ option|last }}</option>
+			{% endfor %}
+		</select>
+		</td></tr>
+
+{% endfor %}
+
+<tr>
+	<td colspan="4">
+	<div class="submit-row">
+	<input type="submit" value="Save" class="default"name="_save" />
+	</div>
+	</td>
+</tr>
+
+</tbody>
+</table>
+
+</form>
+
+</div>
+{% endblock %}

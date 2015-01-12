@@ -1,0 +1,110 @@
+from django import forms
+from django.forms.widgets import Input, TextInput
+
+from haystack.views import FacetedSearchView
+from haystack.forms import FacetedSearchForm, SearchForm
+from haystack.query import SearchQuerySet
+
+from smgsite.doctors.models import Doctor
+
+from . import facets
+
+
+class SearchInput(Input):
+    '''
+    Defining a search type widget
+
+    This is an HTML5 thing and works nicely with Safari, other browsers default
+    back to using the default "text" type
+    '''
+    input_type = 'search'
+
+
+class MultiFacetedSearchForm(FacetedSearchForm):
+    '''
+    An extension of the regular faceted search form to alow for multiple facets
+    '''
+    # Use a tabindex of 1 so that users can hit tab on any page and it will
+    # focus on the search widget.
+    q = forms.CharField(
+        required=False, label='Search2',
+        widget=SearchInput({"placeholder": 'Search',
+                            "tabindex": "1",
+                            "class":"form-control"}))
+
+    def search(self):
+        if not self.is_valid():
+            sqs = self.searchqueryset.all()
+            q = None
+        else:    
+            q = self.cleaned_data.get('q')
+
+        if not q:
+            sqs = self.searchqueryset.all()
+        else:
+            #sqs = self.searchqueryset.filter(specialties=q)
+            sqs = self.searchqueryset.auto_query(self.cleaned_data['q'])
+        for facet in self.selected_facets:
+            if ":" not in facet:
+                continue
+
+            field, value = facet.split(":", 1)
+
+            if value:
+                sqs = sqs.narrow(u'%s:"%s"' % (field, sqs.query.clean(value)))
+
+        return sqs
+
+
+    def no_query_found(self):
+        """ return all results if no query """
+        return self.searchqueryset.all()
+
+def get_sqs():
+    """
+    Return the SQS required by a the Haystack search view
+    """
+    sqs = SearchQuerySet().models(Doctor).order_by('last_name')
+    sqs = sqs.facet('services')
+    sqs = sqs.facet('hospitals')
+    sqs = sqs.facet('languages')
+    sqs = sqs.facet('locations')
+    sqs = sqs.facet('gender')
+    sqs = sqs.facet('accepting')
+
+    return sqs
+
+class MultiFacetedSearchView(FacetedSearchView):
+    """
+    Search view for multifaceted searches
+    """
+    template = 'doctors/results.html'
+    results_per_page = 10000 #we dont want paignation
+
+    def extra_context(self):
+        extra = super(MultiFacetedSearchView, self).extra_context()
+
+        if self.results.query.backend.include_spelling:
+            suggestion = self.form.get_suggestion()
+            if suggestion != self.query:
+                extra['suggestion'] = suggestion
+
+        # Convert facet data into a more useful datastructure
+    
+        if 'fields' in extra['facets']:
+            extra['facet_data'] = facets.facet_data(self.request, self.form, self.results)
+            #has_facets = any([len(data['results']) for
+                              #data in extra['facet_data'].values()])
+            #extra['has_facets'] = has_facets
+
+        # Pass list of selected facets so they can be included in the sorting
+        # form.
+        extra['selected_facets'] = self.request.GET.getlist('selected_facets')
+        extra['doctor_count'] = get_sqs().count()
+
+        return extra
+
+
+
+
+

@@ -1,0 +1,18 @@
+{% for headline in headlines %}
+{% load helpers %}
+<div class="block">
+	<div class="date">{{ headline.posting_time|date }}</div>
+	<div class="title"><a href="{{ headline.get_absolute_url }}">{{ headline.headline|safe }}</a></div>
+	<div class="text">{{ headline.content|strip_tags|safe|truncatewords:15|remove_date }}</div>
+	<a href="{{ headline.get_absolute_url }}" class="arrow"></a>
+</div>
+{% endfor %}
+{% comment %}<!-- old temaplate -->
+<ul class="arrows">
+{% for headline in headlines %}
+	{{ headline.display_time_for_display }} <a href="{{ headline.get_absolute_url }}">{{ headline.headline|safe }}</a>
+{{ headline.content|safe|truncatewords:15 }}{{ headline.body|safe|truncatewords:15 }}
+</li>
+{% endfor %}
+</ul>
+{% endcomment %}

@@ -1,0 +1,41 @@
+{% extends 'one_column_layout.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Unsubscribe{% endblock head_title %}
+
+{% block page_title %}Unsubscribe{% endblock %}
+
+{% block content %}
+
+<h2 class="top">Unsubscribe From Healthy Connections</h2>
+
+<p>Unsubscribing from our print newsletter, Healthy Connections? Please know that it may take one to two mailing cycles after your unsubscribe information is received before you are completely removed from our newsletter mailing list. </p>
+
+{% if form.errors %}
+<h2 style="color:#C03;">Please correct the errors below highlighted in red.</h2>
+{% endif %}
+
+<form name="unsubscribeform" method="post" action="">
+
+<h3 {% if form.reasons.errors %}style="color:#C03;"{% endif %}>1. We're sorry to see you go! Please take a moment to tell us why you no longer wish to receive our newsletter:</h3>
+{{ form.reasons }}
+
+<h3>2. Unsubscribe information (all fields required unless otherwise indicated)</h3>
+<table class="table">
+    <tr><td {% if form.first_name.errors %}style="color:#C03;"{% endif %}>First name:</td><td>{{ form.first_name }}</td><td>(Max. 100 chars)</td></tr>
+    <tr><td {% if form.last_name.errors %}style="color:#C03;"{% endif %}>Last name:</td><td>{{ form.last_name }}</td><td>(Max. 100 chars)</td></tr>
+    <tr><td {% if form.street_1.errors %}style="color:#C03;"{% endif %}>Street address 1:</td><td>{{ form.street_1 }}</td><td>(Max. 200 chars)</td></tr>
+    <tr><td {% if form.street_2.errors %}style="color:#C03;"{% endif %}>Street address 2:</td><td>{{ form.street_2 }}</td><td>(Max. 200 chars)</td></tr>
+    <tr><td {% if form.city.errors %}style="color:#C03;"{% endif %}>City:</td><td>{{ form.city }}</td><td>(Max. 100 chars)</td></tr>
+    <tr><td {% if form.state.errors %}style="color:#C03;"{% endif %}>State:</td><td>{{ form.state }}</td><td></td></tr>
+    <tr><td {% if form.zipcode.errors %}style="color:#C03;"{% endif %}>Zip Code:</td><td>{{ form.zipcode }}</td><td>(Please provide either 5 digit or 9 digit format)</td></tr>
+    <tr><td {% if form.email.errors %}style="color:#C03;"{% endif %}>E-mail:</td><td>{{ form.email }}</td><td></td></tr>
+</table>
+
+<br />
+<br />
+<input class="btn btn-smg"  type="button" name="Cancel" value="Cancel" onclick="javascript:history.go(-1)"/>
+<input class="btn btn-smg" type="submit" name="Unsubscribe" value="Unsubscribe"/>
+</form>
+
+{% endblock content %}

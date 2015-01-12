@@ -1,0 +1,84 @@
+{% extends "blogs/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Our News{% endblock head_title %}
+{% block meta_info %}View a list of news articles about Summit Medical Group's doctors, services, and facilities.{% endblock meta_info %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/about.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+					<div class="create_account">									
+						<!-- start of pages navigation -->
+						<div class="navigation">
+						{% include 'site/share.html' %}
+						<div class="clear"></div>
+						</div>
+						
+						<!-- end of pages navigation -->
+					
+						<h1>Summit Medical Group News</h1>
+						
+						<p>We want our patients to know all the latest about what's going on at Summit Medical Group. Click on the headline of any article that interests you.</p>
+						<p>For Media contacts, releases and other resources, please visit our <a href="/press-releases/">Media Room</a>.</p>
+						<p><b>Articles last updated on {{ first_article.display_time|date:"M d, Y" }}.</b>
+						{% if showpages %}
+								<div class="pages">
+									<p>Pages: {% for newpage in pagelist %}
+									{% ifequal page newpage %}
+										<b>{{ newpage }}</b>
+									{% else %}
+										<a href="/articles/{{ newpage }}">{{ newpage }}</a>
+									{% endifequal %}
+								{% endfor %}</p></div>
+							{% endif %}							
+						<ul>
+						{% for article in articles %}
+							{% ifequal article.leader_promo 0 %} 
+							{% ifchanged article.relative_age %}
+								<!--p><b>{{ article.relative_age }}</b></p-->
+							{% endifchanged %}
+							<li><a href="{{ article.get_absolute_url }}">{{ article.headline|safe }}</a> <!--<span>({{ article.display_time_for_display }})</span>--></li>
+							{% endifequal %} 
+						{% endfor %}
+						</ul>
+						<!-- start of pages navigation -->
+						<div class="navigation">										
+							{% if showpages %}
+								<div class="pages">
+									<p>Pages: {% for newpage in pagelist %}
+									{% ifequal page newpage %}
+										<b>{{ newpage }}</b>
+									{% else %}
+										<a href="/articles/{{ newpage }}">{{ newpage }}</a>
+									{% endifequal %}
+								{% endfor %}</p></div>
+							{% endif %}
+						</div>
+						<!-- end of pages navigation -->
+					</div>
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

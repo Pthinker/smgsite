@@ -1,0 +1,65 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrahead %}
+<script src="https://admin.summitmedicalgroup.com/media/js/prototype.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+</script>
+{% endblock extrahead %}
+
+{% block bodyclass %}change-list{% endblock %}
+{% if not is_popup %}{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/">"Home"</a> &rsaquo; <a href="/admin/articles/">Articles</a> &rsaquo; SMG Articles</div>{% endblock %}{% endif %}
+{% block coltype %}flex{% endblock %}
+{% block pretitle %}
+{% endblock %}
+{% block content %}
+<div id="content-main">
+
+{% if error %}
+	<h2>There was an error processing your submission. Please try again.</h2>
+	<br /><br />
+{% endif %}
+
+<h4>Choose 0 to remove a Media Result from the top 5 positions.</h4>
+
+<form action="/admin/articles/mediaresult/set-reorder/" onsubmit="return validate_form(this)" method="post">
+<table cellspacing="0">
+<thead>
+<tr>
+<th>
+Headline
+</th><th class="sorted descending">
+Posting time
+</th><th>
+Sort order
+</th>
+</tr>
+</thead>
+<tbody>
+
+{% for mediaresult in mediaresults %}
+<tr class="{% cycle 'row1' 'row2' %}"><th>{{ mediaresult.headline }}</th><td class="nowrap">{{ mediaresult.posting_time }}</td><td>
+	<select name="mediaresult_{{ mediaresult.id }}" class="leader_promo" id="promo_{{ mediaresult.id }}">
+		{% for option in sort_options %}
+		<option value="{{ option }}" {% ifequal option mediaresult.sort_order %}selected="selected"{% endifequal %}>{{ option }}</option>
+		{% endfor %}
+	</select>
+	</td></tr>
+
+{% endfor %}
+
+<tr>
+	<td colspan="4">
+	<div class="submit-row">
+	<input type="submit" value="Save" class="default"name="_save" />
+	</div>
+	</td>
+</tr>
+
+</tbody>
+</table>
+
+</form>
+
+</div>
+{% endblock %}

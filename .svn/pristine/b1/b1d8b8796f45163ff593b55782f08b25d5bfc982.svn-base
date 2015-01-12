@@ -1,0 +1,37 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group{% endblock head_title %}
+
+{% block body %}
+    {% include 'includes/top_banner.html' %}
+
+    <div class="section-header-smg">
+        <div class="line"></div>
+        <div class="container">
+            <div class="row">
+                <h2><span class="fa fa-file-text-o"></span> {% block page_title %}{% endblock %}</h2>     
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+    {% block breadcrumbs %}{% endblock breadcrumbs %}
+    </div>
+    
+    <div class="container">
+        <div class="row" id="content">
+
+            <div class="col-md-9 col-md-push-3">
+            {% block content %}
+            {% endblock content %}
+            </div>
+
+            <div class="col-md-3 col-md-pull-9">
+            {% block sidebar %}
+            {% endblock sidebar %}
+            </div>
+
+        </div>
+    </div>
+{% endblock body %}

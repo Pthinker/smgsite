@@ -1,0 +1,694 @@
+p {
+	font-size: 1.1em;
+}
+
+.form_login {
+	padding: 0 0 18px 13px;
+}
+
+.form_login p {
+	color: #0047a8;
+	font: bold 1.2em/27px Arial, Helvetica, sans-serif;
+	padding: 5px 0 0 0;
+}
+
+.form_login input.inp {
+	border: 1px solid #a5acb2;
+	padding: 0 5px 1px 5px;
+	width: 140px;
+}
+
+.form_login label {
+	display: block;
+	color: #406c90;
+	font-size: 1.1em;
+	font-weight: bold;
+	padding: 14px 0 3px 0;
+}
+
+.form_login input.button_login {
+	display: block;
+	margin-top: 17px;
+	margin-left: 85px;
+	border: 0;
+	cursor: pointer;
+	background: url({{ MEDIA_URL }}/images/85x33_button_login_msmgp.gif);
+	width: 85px;
+	height: 33px;
+}
+
+.create_account h1 {
+	color: #205eb3;
+	font: bold 1.3em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.create_account p {
+	line-height: 1.45em;
+	padding: 0 0 4px 0;
+}
+
+.form_create_account {
+	padding: 0 0 0 7px; 
+	*height: 1%;
+	overflow: hidden;
+}
+
+.form_create_account p {
+	color: #0047a8;
+	font-weight: bold;
+	font-size: 1.2em;
+	padding: 0 0 0 3px;
+}
+
+.form_create_account fieldset {
+	border: 0;
+	margin: 0;
+	padding: 11px 0 15px 0;
+	border-bottom: 1px dotted #dcdcdc;
+}
+
+.form_create_account fieldset.last {
+	background: none;
+}
+
+.form_create_account fieldset.last li {
+	list-style-type: none;
+}
+
+.form_create_account div {
+	overflow: hidden; 
+	*height: 1%;
+	padding-top: 11px;
+}
+
+.form_create_account label {
+	display: block;
+	float: left;
+	width: 147px;
+	text-align: right;
+	padding: 0 15px 0 0;
+	color: #003b6b;
+	font: 1.1em Arial, Helvetica, sans-serif;
+}
+
+.form_create_account input.inp {
+	border: 1px solid #a5acb2;
+	background: url({{ MEDIA_URL }}/images/1x2_input_top_bg.gif) top repeat-x;
+	padding: 0 5px 1px 5px;
+	width: 220px;
+	float: left;
+}
+
+.form_create_account input.inp_short {
+	width: 220px;
+}
+
+.form_create_account span {
+	font-size: 0.85em;
+	line-height: 1.15em;
+}
+
+.form_create_account span.floated {
+	float: left;
+	margin-left: 8px;
+	margin-top: -3px;
+}
+
+.form_create_account span.box {
+	display: block;
+	padding: 0 0 0 3px;
+}
+
+.form_create_account textarea {
+	border: 1px solid #a5acb2;
+	float: left;
+	width: 245px;
+	height: 52px;
+	line-height: 1.15em;
+	padding-left: 5px;
+}
+
+.form_create_account .last span {
+	font-size: 1.1em;
+	line-height: 1.5em;
+	padding-top: 2px;
+	padding-right: 30px;
+}
+
+.form_create_account div.radio_buttons {
+	padding-left: 8px;
+}
+
+.form_create_account div.radio_buttons * {
+	vertical-align: middle;
+}
+
+.form_create_account div.radio_buttons label {
+	display: inline;
+	float: none;
+}
+
+.form_create_account #new_subscribe_no {
+	margin-left: 27px;
+}
+
+.form_create_account div.buttons {
+	padding: 20px 0 0 147px;
+	height: 35px;
+}
+
+.form_create_account input.button_create_account {
+	background: url({{ MEDIA_URL }}/images/196x35_create_my_account.gif);
+	width: 196px;
+	height: 35px;
+	border: 0;
+	cursor: pointer;
+	margin-right: 30px;
+}
+
+.form_create_account input.button_reset {
+	background: url({{ MEDIA_URL }}/images/126x35_cancel.gif);
+	width: 126px;
+	height: 35px;
+	border: 0;
+	cursor: pointer;
+}
+
+.msmgp_home {
+	/* background: url({{ MEDIA_URL }}/images/1x47_stripe_top.gif) top repeat-x; */
+	padding: 0 8px 0 9px !important;
+}
+
+.msmgp_home #right_doubled_main_box {
+	float: right;
+	width: 720px;
+}
+
+.h10 {
+	height: 10px;
+	visibility: hidden;
+	overflow: hidden;
+	font-size: 0;
+}
+
+.h14 {
+	height: 14px;
+	visibility: hidden;
+	overflow: hidden;
+	font-size: 0;
+}
+
+.msmgp_home .box_207_blue .box_207_top {
+	background-image: url({{ MEDIA_URL }}/images/207x10_frame_blue_top.gif);
+}
+
+.user_briefly {
+	padding: 12px 12px 13px 14px;
+}
+
+.user_briefly p.name {
+	color: #0047a8;
+	font-weight: bold;
+	padding: 0 0 0 2px;
+	font-size: 1.2em;
+}
+
+.user_briefly p.email {
+	padding: 5px 0 0 2px;
+	font: 0.8em Verdana, Arial, Helvetica, sans-serif;
+}
+
+.user_briefly p.email a {
+	color: #282828;
+	text-decoration: none;
+}
+
+.user_briefly p.email a:hover {
+	text-decoration: underline;
+}
+
+.user_briefly p.edit_profile {
+	padding: 4px 0 0 0;
+	font: 1.2em Verdana, Arial, Helvetica, sans-serif;
+}
+
+.user_briefly p.edit_profile a {
+	color: #fe4819;
+	text-decoration: none;
+}
+
+.subheader_msmgp {
+	overflow: hidden;
+	margin-bottom: 10px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid #D6D9DC
+}
+
+.subheader_msmgp h1 {
+	float: left;
+	width: 515px;
+	margin: 0;
+	padding: 0;
+	color: #00457c;
+	font: normal 1.5em Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+}
+
+.subheader_msmgp .right_subheader_msmgp {
+	float: right;
+	width: 185px;
+	
+}
+
+.subheader_msmgp a.help_button_msmgp {
+	background: url({{ MEDIA_URL }}/images/65x27_help_button.gif) no-repeat;
+	display: block;
+	width: 65px;
+	height: 27px;
+	text-indent: -999px;
+	margin: 0 23px 0 auto;
+}
+
+.left_cols_2_fix_right_187 {
+	padding-top: 5px;
+}
+
+.left_sub_cols_2_fix_right_187 {
+	border-right: 1px solid #d6d9dc;
+	padding-right: 9px;
+}
+
+.tool_tips {
+	padding-left: 3px;
+}
+
+.tool_tips h3 {
+	color: #0047a8;
+	font: bold 1.2em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0 0 0 7px;
+}
+
+.tool_tips h3 em {
+	padding-left: 5px;
+	background: url({{ MEDIA_URL }}/images/15x15_flash_icon.gif) left top no-repeat;
+	padding-right: 10px;
+}
+
+.tool_tips .rain_box {
+	margin-top: 5px;
+}
+
+.tool_tips .rain_box_sub {
+	padding: 0 17px 0 12px;
+}
+
+.tool_tips .tool_tip {
+	padding: 10px 0 10px 0;
+}
+
+.tool_tips p {
+	color: #656769;
+	font-size: 1em;
+	line-height: 1.5em;
+}
+
+.tool_tips a {
+	color: #0270de;
+	line-height: 2em;
+	text-decoration: none;
+}
+
+.tool_tips a:hover {
+	text-decoration: underline;
+}
+
+.tool_tips .privacy_remind {
+	padding-top: 13px;
+	border-top: 1px dotted #dcdcdc;
+}
+
+.tool_tips .privacy_remind p {
+	padding-bottom: 5px;
+}
+
+.tool_tips .privacy_remind a {
+	line-height: 1.25em;
+}
+
+.welcoming_my_tools {
+	font-size: 1em;
+	line-height: 1.55em;
+}
+
+.first_time_my_tools {
+	color: #656769;
+	font-size: 1.15em;
+	padding: 15px 0 0 0;
+	text-align: center;
+}
+
+.first_time_my_tools a {
+	color: #0270de;
+	text-decoration: none;
+}
+
+.first_time_my_tools a:hover {
+	text-decoration: underline;
+}
+
+.my_box {
+	padding-top: 14px;
+	background: url({{ MEDIA_URL }}/images/1x25_rain_bg.gif) left 34px repeat-x;
+}
+
+.my_box p.title {
+	color: #205c8c;
+	font: bold 1.3em Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	padding: 0;
+}
+
+.my_box .my_box_sub {
+	padding: 10px 8px 10px 56px;
+}
+
+.my_box .list_item_my_box { 
+	*height: 1%;
+	overflow: hidden;
+	padding: 8px 0 4px 0;
+	border-bottom: 1px dotted #dcdcdc;
+}
+
+.my_box p.list_item {
+	padding: 0 0 0 2px;
+	font: 0.95em Verdana, Arial, Helvetica, sans-serif;
+}
+
+.my_box p.list_item a {
+	text-decoration: none;
+	color: #004c75;
+}
+
+.my_box em {
+	font-style: normal;
+	float: right;
+}
+
+.my_box em a {
+	color: #fe4819;
+	font: 0.9em Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+.my_box .add_more_my_box {
+	padding: 11px 0 0 12px;
+	height: 18px;
+	overflow: hidden;
+}
+
+.my_box .add_more_my_box a {
+	background: url({{ MEDIA_URL }}/images/14x14_plus_icon.gif) left center no-repeat;
+	padding-left: 18px;
+	text-decoration: none;
+	color: #0270de;
+	font: 0.85em/ 14px Verdana, Arial, Helvetica, sans-serif;
+	display: block;
+	float: left;
+	height: 14px;
+}
+
+fieldset ul li {
+	list-style-type: none;
+}
+
+.my_tools_msmgp .tools_links {
+	padding: 5px 0 24px 24px;
+	margin: 0; 
+	*height: 1%;
+	overflow: hidden;
+}
+
+.my_tools_msmgp .tools_links ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+	width: 49%;
+}
+
+.my_tools_msmgp .tools_links ul li {
+	margin: 0;
+	padding: 17px 0 0 0;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+
+.my_tools_msmgp .tools_links ul li a {
+	display: block;
+	height: 16px;
+	padding-left: 24px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	color: #0270de;
+	text-decoration: none;
+}
+
+.my_tools_msmgp .tools_links .email_to {
+	background-image: url({{ MEDIA_URL }}/images/16x14_email_office_staff.gif);
+}
+
+.my_tools_msmgp .tools_links .request_lab_results {
+	background-image: url({{ MEDIA_URL }}/images/15x13_request_lab_results.gif);
+}
+
+.my_tools_msmgp .tools_links .request_appointments {
+	background-image: url({{ MEDIA_URL }}/images/15x16_email_me.gif);
+}
+
+.my_tools_msmgp .tools_links .pay_bills {
+	background-image: url({{ MEDIA_URL }}/images/16x12_check_icon.gif);
+}
+
+.my_tools_msmgp .tools_links .billing_questions {
+	background-image: url({{ MEDIA_URL }}/images/16x16_envelop_icon.gif);
+}
+
+.my_tools_msmgp .tools_links .help {
+	background-image: url({{ MEDIA_URL }}/images/16x14_help.gif);
+}
+
+p.doctor_avaible_msmgp {
+	text-align: center;
+	color: #656769;
+	padding: 12px 0 0 0;
+	border-top: 1px solid #d6d9dc;
+}
+
+p.view_participating_msmgp {
+	text-align: center;
+	padding: 3px 0 0 0;
+}
+
+p.view_participating_msmgp a {
+	color: #0270de;
+	text-decoration: none;
+}
+
+p.view_participating_msmgp a:hover {
+	text-decoration: underline;
+}
+
+.my_doctors {
+	padding: 10px 8px 0 6px;
+}
+
+.my_doctors .my_doctor {
+	padding: 8px 0 0 0;
+	margin: 0; 
+	*height: 1%;
+	overflow: hidden;
+}
+
+.my_doctors .my_doctor .doctor_photo {
+	float: left;
+	width: 10%;
+}
+
+.my_doctors .my_doctor .doctor_info {
+	float: left;
+	width: 90%;
+	overflow: hidden; 
+	*height: 1%;
+	color: #656769;
+	padding: 7px 0 3px 0;
+	border-bottom: 1px dotted #dcdcdc;
+	font: 0.95em Verdana, Arial, Helvetica, sans-serif;
+}
+
+.my_doctors .my_doctor .doctor_photo .shadowed_img img {
+	padding: 2px;
+	border-color: #bebfc1;
+}
+
+.my_doctor .doctor_info span {
+	padding-left: 2px;
+}
+
+/*login page styling*/
+div#create_new_account {
+	color: rgb(0, 71, 168);
+	background: transparent	url('{{ MEDIA_URL }}/images/new_account_bkg.jpg') no-repeat center 18px;
+	padding: 150px 0px 10px 27px;
+}
+
+div#create_new_account h3 {
+	line-height: 1.25em;
+	margin-bottom: 12px;
+}
+
+div#create_new_account h3 a {
+	text-decoration: none;
+}
+
+div#create_new_account h3 a:hover {
+	text-decoration: underline;
+}
+
+div#msmgp_guest_link h3 {
+	line-height: 1.25em;
+	margin-bottom: 12px;
+	text-align: center;
+	margin-top: 12px;
+}
+
+div#msmgp_guest_link h3 a {
+	text-decoration: none;
+}
+
+div#msmgp_guest_link h3 a:hover {
+	text-decoration: underline;
+}
+
+div#msmgp_login_container {
+	clear: both;
+	padding-bottom: 112px
+}
+
+div#msmgp_login_container  h3,div#msmgp_login_container  h4 {
+	color: #004c75;
+	margin-bottom: 18px;
+}
+
+div#msmgp_login_container  h4 {
+	color: #004c75;
+	margin-bottom: 18px;
+}
+
+form#msmgp_login_form input {
+	margin-bottom: 18px;
+}
+
+div.login_button input {
+	cursor: pointer;
+	border: none;
+	background: url('{{ MEDIA_URL }}/images/125x43_login_button.gif') no-repeat top left;
+	width: 125px;
+	height: 43px;
+}
+
+div#left_sub_cols_2_fix_right_187_login {
+	border: none;;
+}
+
+div.main_box_special {
+	background: transparent url('{{ MEDIA_URL }}/images/msmgp_bkg.gif') repeat-x top left;
+}
+
+div.right_710_main_box_special {
+	position: relative;
+	top: -22px;
+}
+
+div#update_account {
+	padding-bottom: 18px;
+}
+
+div#update_account h1 {
+	color: #0047a8;
+	font-weight: bold;
+	font-size: 1.2em;
+	padding: 0 0 0 3px;
+}
+
+span.greyouttext {
+	color: #1a1d1f;
+}
+
+form#form_update_email,form#form_update_password {
+	padding-left: 54px;
+	border-bottom: 1px dotted #dcdcdc;
+}
+
+form#form_update_email fieldset {
+	border-bottom: 0;
+}
+
+form#form_update_email p,form#form_update_password p {
+	color: #0047a8;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 9px;
+}
+
+form#form_update_email input,form#form_update_password input {
+	display: block;
+	float: none;
+	margin: 5px 0 4px 0;
+}
+
+form#form_update_email label {
+	display: inline;
+	float: none;
+	width: 147px;
+	text-align: right;
+	padding: 0 15px 0 0;
+	color: #003b6b;
+	font: 1.1em Arial, Helvetica, sans-serif;
+}
+
+form#form_update_password label {
+	display: inline;
+	float: none;
+	width: 147px;
+	text-align: right;
+	padding: 0 15px 0 0;
+	color: #003b6b;
+	font: 1.1em Arial, Helvetica, sans-serif;
+}
+
+div.update_button input {
+	cursor: pointer;
+	border: none;
+	background: url('{{ MEDIA_URL }}/images/85x33_update_button.gif') no-repeat top left;
+	width: 85px;
+	height: 33px;
+	margin: 0;
+	padding: 0;
+}
+
+form.form_create_account input.button_save_changes {
+	background: url('{{ MEDIA_URL }}/images/196x35_save_changes_button.gif');
+	width: 196px;
+	height: 35px;
+	border: 0;
+	cursor: pointer;
+	margin-right: 30px;
+}
+
+div#buttons_edit_profile {
+	padding-left: 161px;
+}

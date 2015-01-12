@@ -1,0 +1,56 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}Summit Medical Group{% endblock head_title %}
+
+{% block body %}
+    {% include 'includes/top_banner.html' %}
+
+    <div class="container">
+    {% block breadcrumbs %}{% endblock breadcrumbs %}
+    </div>
+    
+    <div class="container">
+        <div class="row" id="content">
+            
+            <div class="col-md-3">
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Categories</h4>   
+                        <p>Choose one of our special categories to view or subscribe</p>
+                    </div>
+                    <div class="list-group">
+                        
+                        {% for category in categories %}
+                        <a class="list-group-item" href="/healthday/all/1/?category={{ category.pk }}">{{ category }}</a>
+                        {% endfor %}
+                    </div> 
+                </div>   
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4>Live Well Tips</h4>
+                    </div>
+                    <div class="list-group">
+                        {% for article in fyi %}
+                            <a class="list-group-item" href="{{ article.get_absolute_url }}">{{ article.headline }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-9">
+                {% block main_content %}{% endblock main_content %}
+            </div> 
+
+        </div>
+    </div>
+{% endblock body %}
+
+
+
+
+

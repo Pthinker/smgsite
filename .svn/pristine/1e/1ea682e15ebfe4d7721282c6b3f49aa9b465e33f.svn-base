@@ -1,0 +1,219 @@
+{% extends "page_base.html" %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}Summit Medical Group - Doctors - {{ doctor.name }}{% endblock head_title %}
+
+{% block meta_info %}{% meta_info doctor %}{% endblock meta_info %}
+{% block seo_keywords %}{% seo_keywords doctor %}{% endblock seo_keywords %}
+
+{% block body %}
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-doctor">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="fa fa-plus-square"></span> Our Doctors and Practitioners</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="/doctors/">Doctors</a></li>
+        <li class="active">{{ doctor.name }}</li>
+
+        {% include 'site/includes/share.html' %}
+    </ol>
+</div>
+
+<div class="container">
+    <div class="row doctor-details" id="content">
+    
+        <div class="col-md-3">
+            <div class="visible-xs">
+                <h2 class="title">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}</h2>
+                <div class="services">{{ doctor.list_services_by_line|safe }}</div>
+            </div>
+            {% thumbnail doctor.original_image "190x280" crop="center" as im %}
+            <img class="main-image" src="{{ im.url }}" alt="{{ doctor.display_name|escapejs }}" />
+            {% empty %}
+            <img class="main-image" src="{{ STATIC_URL }}images/no_doctor_large.jpg" alt="{{ doctor.display_name|escapejs }}" />
+            {% endthumbnail %}
+
+            <div class="row section visible-xs">
+                {% for location in doctor.location_set.all %}
+                <div class="col-md-4">
+                    {% include 'doctors/includes/location.html' %}
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="creds">
+                <i class="fa fa-graduation-cap"></i> 
+                <div class="cont">
+                
+                {% for degree in doctor.get_degrees %}
+                    <span class="title">{{ degree.letters }}:</span>
+                    <p class="description">{{ degree.description }}</p>
+                {% endfor %}
+
+                {% regroup doctor.get_accreditations by name as accreditation_groups %}
+                {% for group in accreditation_groups %}
+                    <span class="title">
+                    {% if group.list|length_is:"1" %}{{ group.grouper.name }}{% else %}{{ group.grouper.name_plural }}{% endif %}:
+                    </span>
+                    <p class="description">
+                    {% for accreditation in group.list %}
+                        {% if forloop.first %}{% else %}; {% endif %}
+                        {{ accreditation.description }}
+                    {% endfor %}
+                    </p>
+                {% endfor %}
+
+                {% if doctor.get_hospitals|length_is:"0" %}
+                {% else %}
+
+                <span class="title">Hospital Affiliations:</span>
+
+                <p class="description">
+                    {% for hospital in doctor.get_hospitals %}
+                    {% spaceless %}
+                        {{ hospital.hospital }}{% if forloop.last %}{% else %}; {% endif %}
+                    {% endspaceless %}
+                    {% endfor %}
+                </p>
+                {% endif %}
+
+                <span class="title">Languages:</span>
+                <p class="description">
+                    {% for language in doctor.languages.all %}
+                    {{ language }}<br>
+                    {% endfor %}
+                </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div class="hidden-xs">
+                <h2 class="title">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}</h2>
+                <div class="services">{{ doctor.list_services_by_line|safe }}</div>
+            </div>
+            <div class="row section">
+                <div class="col-md-6 status">
+                    {% include 'doctors/includes/accepting.html' %}
+                </div>
+                <div class="col-md-6">
+                    {% if doctor.participating %}
+                    <a href="{{ doctor.get_portal_url }}"><b>Click here for the patient portal.</b></a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="row hidden-xs">
+                {% for location in doctor.location_set.all %}
+                <div class="col-md-4">
+                    {% include 'doctors/includes/address.html' %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row section hidden-xs">
+                {% for location in doctor.location_set.all %}
+                <div class="col-md-4">
+                    {% include 'doctors/includes/phone.html' %}
+                </div>
+                {% endfor %}
+            </div>
+            
+            {% if doctor.phone_note %}
+            <p class="phone-note"><i class="glyphicon glyphicon-info-sign"></i> <b class="cont">{{ doctor.phone_note }}</b></p>
+            {% endif %}
+
+            <div class="notes">
+                <h3><b>Personal Notes:</b></h2>
+                {{ doctor.touch|strip_font_style }}
+            </div>
+
+            <div class="row doctor-foot">
+                <div class="col-md-7">
+
+                    {% if doctor.title_service.related_services.all %}
+                    <h4 class="doctor-color">You Might Also Like</h4>
+                    <ul class="list-unstyled">
+                    {% for related in doctor.title_service.related_services.all %}
+                        <li><a href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                    {% if doctor.title_service.get_nav_links %}
+                    <h4>Recommended Links</h4>
+                    <ul class="list-unstyled">
+                    {% for resource in doctor.title_service.get_nav_links %}
+                        <li><a href="{{ resource.url }}" {% if resource.remote %}target="_blank"{% endif %}>{{ resource.name }}</a></li>
+                        {% endfor %}
+                        {% for resource in doctor.get_nav_links %}
+                        <li><a href="{{ resource.url }}" {% if resource.remote %}target="_blank"{% endif %}>{{ resource.name }}</a></li>
+                    {% endfor %}
+                    </ul>
+                    {% endif %}
+
+                </div>
+
+                <div class="col-md-5">
+                    {% if doctor.participating %}
+                    <h4 class="doctor-color">Patient Portal</h4>
+
+                    <ul class="list-unstyled options">
+                    
+                        {% if doctor.has_lab_results %}
+                        <li>
+                            <a href="{{ doctor.has_lab_results }}">
+                            <i class="glyphicon glyphicon-pencil"></i> Access lab and test results</a>
+                        </li>
+                        {% endif %}
+                        
+                        {% if doctor.has_portal_refill %}
+                        <li>
+                            <a href="{{ doctor.has_portal_refill }}">
+                            <i class="glyphicon glyphicon-list-alt"></i> Request a refill</a>
+                        </li>
+                        {% endif %}
+                        
+                        {% if doctor.has_email_staff %}
+                        <li>
+                            <a href="{{ doctor.has_email_staff }}">
+                            <i class="glyphicon glyphicon-envelope"></i> Email your doctor's office</a>
+                        </li>
+                        {% endif %}
+                        
+                        {% if doctor.has_appointments %}
+                        <li>
+                            <a href="{{ doctor.has_appointments }}">
+                            <i class="glyphicon glyphicon-envelope"></i> Email an appointment request</a>
+                        </li>
+                        {% endif %}
+
+                        {% if doctor.has_portal_accounts %}
+                        <li>
+                            <a href="{{ doctor.has_portal_accounts }}">
+                            <i class="glyphicon glyphicon-credit-card"></i> Pay bills and manage accounts</a>
+                        </li>
+                        {% endif %}
+
+                    </ul>
+
+                    {% endif %}
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div> 
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "admin/base_site.html" %}
+
+{% block nav-global %}
+<div style="text-align:right; margin-right:45px;"><h3><a href="/admin/">Administration Main Page</a></h3><h3><a href="/admin/cms/">Content Management Approval Page</a></h3></div>
+{% endblock %}
+
+{% block content %}
+
+<h3>Defined keywords:</h3>
+
+<table>
+	<tr>
+		<td>Model</td><td>URL</td><td>Keywords</td>
+	</tr>
+{% for keyword in keywords %}
+	<tr>
+		<td>{{ keyword.model }}</td><td><a href="{{ keyword.searchkey.url }}">{{ keyword.searchkey.url }}</a></td><td>{{ keyword.searchkey.name }}</td>
+	</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

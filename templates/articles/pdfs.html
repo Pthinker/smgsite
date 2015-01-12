@@ -1,0 +1,33 @@
+{% extends 'one_column_layout.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Healthy Connections{% endblock head_title %}
+{% block meta_info %}View a list of Healthy Connections issues.{% endblock meta_info %}
+{% block page_title %}Healthy Connections{% endblock %}
+
+{% block content %}
+<p>Enjoy back issues of Healthy Connections, the Summit Medical Group online and print newsletter! Each issue is comprised of helpful articles that describe our services, offer information about our outstanding practitioners, list our lectures and events, and educate you about pertinent topics in health care.</p>                                                             
+{% for pdf in top_pdfs %}
+    <div class="media">  
+        <a class="pull-left" href="{{ pdf.pdf.url }}">
+            <img class="media-object" src="{{ pdf.thumbnail.url }}" />
+        </a> 
+        <div class="media-body">
+            <h3 class="media-heading"><b>Published:</b> {{ pdf.title|safe }}</h3>
+            <b>Table of Contents:</b>
+            <ul>{{ pdf.description|split_to_list:"," }}</ul>
+            <b>Date:</b> ({{ pdf.display_time_for_display }})
+        </div>
+    </div>
+
+    <hr/>
+{% endfor %}
+
+<h3>Archives</h3>                                   
+<ul>
+{% for pdf in next_pdfs %}
+    <li><a href="{{ pdf.pdf.url }}">{{ pdf.title|safe }}</a> <span>({{ pdf.display_time_for_display }})</span></li>
+{% endfor %}
+</ul>
+
+{% endblock content %}

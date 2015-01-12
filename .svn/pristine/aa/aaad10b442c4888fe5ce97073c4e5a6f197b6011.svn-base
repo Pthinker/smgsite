@@ -1,0 +1,34 @@
+{% extends 'one_column_layout.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Admin{% endblock head_title %}
+
+{% block page_title %}Admin{% endblock %}
+
+{% block content %}
+
+<h1 class="top">Welcome to the Live Well News homepage</h1>
+<p>You are currently authenticated as {{ user }}.</p>
+
+{% if blogs %}
+<h4>You are currently an author or editor on the areas listed below.</h4>
+<p>Click the blog name to link to the admin page for that area.</p>
+<table class="table">
+    <tr>
+        <th>Blog Name</th>
+        <th>Entries</th>
+        <th>Most recent entry</th>
+    <tr>
+{% for blog in blogs %}
+    <tr>
+        <td><a href="/blog/admin/{{ blog.urlname }}/">{{ blog.name }}</a></td>
+        <td>{{ blog.count }}</td>
+        <td>{{ blog.latest.postdate }}</td>
+    </tr>
+{% endfor %}
+</table>
+{% else %}
+<h4>You are not currently set as an author on any areas. If this is in error, please contact the site administrator.</h4>
+{% endif %}
+
+{% endblock content %}

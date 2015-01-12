@@ -1,0 +1,81 @@
+{% extends "doctors/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Doctor Specialty Search Results{% endblock head_title %}
+
+{{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/doctors.css" type="text/css" media="screen" />
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}images/95x95_loading.jpg";
+		var error_url = "{{ MEDIA_URL }}images/95x95_not_avail.jpg";
+	-->
+	</script>
+	<script src="/media/js/doctor-finder.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{ MEDIA_URL }}js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">			
+					<div id="search_results_landing_container">
+							<h2>The following <strong>{{ count }}</strong> practitioners are able to treat "{{ query }}"</h2>
+							<div class="our_doctors doctor_specialty">								
+								{% for doctor in doctors %}
+									{% cycle '<div class="our_doctors_row">' '' '' %}
+									<div id="div-doctor-{{ doctor.pk }}" class="our_doctor">
+										<div class="our_doctor_frame">
+											<div class="shadowed_img"><em><em><em><em><em><img src={% if doctor.cropped_image %}"{{ doctor.cropped_image.url }}"{% else %}"{{ MEDIA_URL }}/images/37x37_not_avail.jpg"{% endif %} alt="our_doctor" width="37" height="37" /></em></em></em></em></em></div>
+										</div>
+										<div class="doctor_info">
+											<p><b><a href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, {% if doctor.thumbnail %}'{{ doctor.thumbnail.url }}'{% else %}''{% endif %}, '{{ doctor.display_name|escapejs }}, {{ doctor.letters }}', '{{ doctor.list_services }}', '{{ doctor.phone }}')" onmouseout="photoOff()" onclick="photoOff()">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}</a><br />
+											{{ doctor.title_service.name }}</b><br />
+											{% if doctor.accepting %}
+											{{ doctor.accepting }}{% if doctor.unterminated %}{% endif %}
+											{% else %}
+											{% ifequal doctor.accepting_flag 'A' %}
+											Accepting new patients
+											{% else %}
+											Not accepting new patients
+											{% endifequal %}
+											{% endif %}
+											{% location doctor.primary_location %}</p>
+										</div>
+									</div>
+								{% cycle '' '' '</div>' %}									
+								{% endfor %}
+								</div>
+							</div>
+							<div class="doctor_photo_flyover" id="doctor_photo_flyover">
+								<div><img id="doctor_image" src="{{ MEDIA_URL }}/images/100x130Load.gif" /></div>
+								<p class="name" id="doctor_name"></p>
+
+								<dl>
+									<dt>Specialty:</dt>
+									<dd id="doctor_service"></dd>
+								</dl>
+								<dl>
+									<dt>Phone Number:</dt>
+									<dd id="doctor_phone"></dd>
+
+								</dl>
+							</div>
+					</div>			
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+		</div>
+	</div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

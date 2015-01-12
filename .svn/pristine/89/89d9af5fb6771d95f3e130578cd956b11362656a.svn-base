@@ -1,0 +1,78 @@
+{% extends "blogs/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ article.headline }}{% endblock head_title %}
+{% block meta_info %}{% meta_info article %}{% endblock meta_info %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+				
+					<!-- start of pages navigation -->
+					<div class="navigation">
+					
+						{% include 'site/share.html' %}
+						
+						<div class="clear" style="min-height:23px; height:23px;"></div>
+					
+						<div class="pages">
+							<a href="/articles/">Summit Medical Group News</a>&nbsp;&gt;&nbsp;
+							<span id="/articles/">{{ article.headline|safe}}</span>
+						</div>
+						
+						<div class="clear"></div>
+
+						
+					</div>
+					<div class="clear"></div>
+					<!-- end of pages navigation -->
+					
+					<br />
+					
+					<!-- start of main content -->
+					<div id="library_topic_body">
+
+			
+							<!-- start blog post  -->
+							<div class="blog_post_container">
+								<div class="blog_post_content">
+									<!-- all content within this block is  entered in the admin form-->									
+									<div class="blog_post_title">
+										<h2>{{ article.headline|safe }}</h2>
+										<p>Last updated: {{ article.display_time|date:"M d, Y, H:i A" }}</p> 
+									</div>
+									{% if article.byline %}<p><b><i>By {% if article.byline %}{% if article.byline_link %}<a href="{{ article.byline_link }}" >{{ article.byline }}</a>{% else %}{{ article.byline }}{% endif %}{% endif %} for Summit Medical Group</i></b></p>{% endif %}
+									{% if article.reviewed_by %}<p><b><i>Reviewed by <a href="{{ article.reviewed_by_link }}">{{ article.reviewed_by }}</a></i></b></p>{% endif %}
+									{% if article.marketing_banner %}
+									<a href="{{ article.marketing_banner.link.url }}"><img src="{{ article.marketing_banner.image.url }}" /></a>
+									{% endif %}
+										{{ article.content|safe }}
+								</div>
+							</div>
+							<!-- end blog post -->
+			
+					
+					</div>
+					<!-- end of main content -->
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+			
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

@@ -1,0 +1,267 @@
+h2 {
+    color: #0047A8;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.small-date {
+	font-style: italic;
+	color: #555;
+	font-size: 10px;
+	margin: 5px 0 0 0;
+}
+
+.services {
+	padding-bottom: 2px;
+	border-bottom-width: thin;
+	border-bottom-style: none;
+	border-bottom-color: #dcdcdc;
+}
+
+.empty_bottom {
+	padding-bottom: 20px;
+}
+
+.row_services { 
+	*height: 1%;
+	overflow: hidden;
+	padding: 14px 0 4px 0;
+	border-bottom: 1px
+}
+
+.service {
+	width: 20%;
+	margin-right: 1%;
+	float: left;
+	margin-left: 2%;
+}
+
+.service p {
+	font-size: 0.9em;
+	line-height: 1.25em;
+	color: #333;
+	padding: 0;
+}
+
+.service h2 a {
+	text-decoration: none;
+	color: #0047A8;
+}
+
+
+
+.main_block h1 {
+	margin: 0;
+	padding: 0 0 5px 0;
+	font: bold 1.25em Arial, Helvetica, sans-serif;
+}
+
+.description_page {
+	border-bottom: 1px dotted #dcdcdc;
+}
+
+.description_page .services_img .shadowed_img img {
+	padding: 5px;
+	border-color: #cfdef0;
+}
+
+.description_page p {
+	color: #333;
+	padding: 0 0 8px 0;
+	line-height: 1.4em;
+}
+
+.description_page p.first {
+	padding: 8px;
+}
+
+.description_page ul {
+	margin: 0;
+	padding: 3px 0 8px 15px;
+	list-style: none;
+}
+
+.description_page ul li {
+	margin: 0;
+	padding: 0 0 0 8px;
+	background: url({{ MEDIA_URL }}/images/4x4_bullet_page_description.gif) left 5px no-repeat;
+	color: #333;
+	line-height: 1.25em;
+	margin: .25em 0 .25em 0;
+}
+
+.addition_page {
+	border-top: 1px dotted #dcdcdc;
+	padding-top: 6px;
+}
+
+.addition_page .subdiv {
+	padding: 15px 0 0 2px;
+}
+
+.addition_page .first_subdiv {
+	padding-top: 5px;
+}
+
+.addition_page h2 {
+	font: bold 1.25em/ 1em Arial, Helvetica, sans-serif;
+	color: #0047A8;
+	margin: 0;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+form.go_form {
+	padding: 0 0 18px 0;
+}
+
+.go_form .wrap_select {
+	padding: 7px 0 0 2px;
+}
+
+.go_form .submit {
+	padding: 23px 4px 0 0;
+}
+
+.go_form input {
+	background: url({{ MEDIA_URL }}/images/69x31_go_button.gif);
+	width: 69px;
+	height: 31px;
+}
+
+.bottomlinks {
+	padding: 17px 0 0 8px;
+}
+
+.addition_page ul li,.box_160 ul li {
+	margin: 0;
+	padding: 5px 0 0 10px;
+	line-height: 1.25em;
+	color: #333;
+}
+
+/* conflict 
+.main_block ul li {
+	margin: 0;
+	padding: 5px 0 0 10px;
+	line-height: 1.25em;
+	color: #333;
+}
+
+.main_block ul li a {
+	color: #0047a8;
+}
+
+.main_block ul li a:hover {
+	color: #0047a8;
+}
+*/
+.main_block p {
+	
+}
+
+/* Services Flyover (not going to be used)*/
+.services_flyover {
+	border: 1px solid #a5acb2;
+	width: 220px;
+	color: #2a343d;
+	font: 12px Arial, Helvetica, sans-serif;
+	padding: 8px 8px 20px 7px;
+	background: #fff;
+	position: absolute;
+	top: 310px;
+	margin-left: 435px;
+}
+
+.services_flyover image {
+	border: 1px solid #b9babc;
+	padding: 2px;
+}
+
+.services_flyover .description {
+	padding: 7px 0 0 7px;
+}
+
+.services_flyover p {
+	margin: 0;
+	padding: 0 25px 0 0;
+	line-height: 1.5em;
+}
+
+.services_flyover p.title {
+	color: #004c75;
+	font-weight: bold;
+	padding: 0 10px 0 0;
+	font-size: 1.25em;
+	line-height: 1.1em;
+}
+
+.services_flyover ul {
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.services_flyover ul li {
+	color: #2a343d;
+	line-height: 1.4em;
+}
+
+
+
+#alphabet_nav_box {
+	padding: 8px 12px 8px 12px;
+	border: 1px dotted #333;
+	background-color: #c1d5eb;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+#alphabet_nav_box a {
+	margin-right: 4px;
+	text-decoration: none;
+	font: bold 12px Arial, sans-serif;
+}
+
+#alphabet_nav_box span.notopics {
+	margin-right: 4px;
+	color: #555;
+	font: bold 12px Arial, sans-serif;
+}
+
+h1.big {
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+	font: normal 2em/1em Arial, Helvetica, sans-serif;
+}
+
+.our_doctors_letter {
+	color: #004c75;
+	font-size: 1.2em;
+	font-weight: bold;
+	border-bottom: 1px dotted #dcdcdc;
+	margin: 8px 0 0 0;
+	padding-bottom: 3px;
+}
+
+.back_top {
+	padding: 2px 5px 0 2px;
+	text-align: right;
+	float: right;
+}
+
+.service_title h2 {
+	font: bold 1.75em/1em Arial, Helvetica, sans-serif;
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+}
+
+.service_title h1 {
+	font: bold 1.75em/1em Arial, Helvetica, sans-serif;
+	color: #0047A8;
+	margin: 0;
+	padding: 0 0 8px 0;
+}

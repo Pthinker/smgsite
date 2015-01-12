@@ -1,0 +1,335 @@
+
+
+h2 {
+	color: #0047A8;
+	margin: 0;
+	padding: 0 0 8px 2px;
+	font: bold 1.25em/1em Arial, Helvetica, sans-serif;
+}
+
+.our_doctors {
+	padding: 27px 0 15px 0;
+}
+
+.first_our_doctors {
+	padding-top: 10px;
+}
+
+.last_our_doctors {
+	padding-bottom: 4px;
+}
+
+.our_doctors .our_doctors_letter {
+	color: #004c75;
+	font-size: 1.2em;
+	font-weight: bold;
+	border-bottom: 1px dotted #dcdcdc;
+	padding-bottom: 3px;
+}
+
+.our_doctors .our_doctors_wrap {
+	padding: 5px 0 0 12px;
+}
+
+.our_doctors .our_doctors_row {
+	padding-top: 6px;
+	height: 1%;
+	overflow: hidden;
+}
+
+.our_doctors .our_doctor {
+	float: left;
+	width: 33%;
+}
+
+.our_doctors .our_doctor_frame {
+	float: left;
+	width: 49px;
+}
+
+.our_doctors .doctor_info {
+	padding-top: 4px;
+}
+
+.our_doctors .doctor_info p {
+	font-size: 0.9em;
+	line-height: 1.2em;
+	color: #333;
+	padding: 0;
+	margin-left: 49px;
+}
+
+.doctor_specialty .location {
+	
+}
+
+.doctor_specialty  .our_doctor_frame {
+	margin-top: 10px;
+}
+
+.our_doctors .doctor_info h2 {
+	font: bold 0.9em/1.2em Arial, Helvetica, sans-serif;
+	padding: 0;
+}
+
+.our_doctors .doctor_info h2 a {
+	color: #0047A8;
+	text-decoration: none;
+}
+
+.back_top {
+	padding: 2px 5px 0 2px;
+	text-align: right;
+	float: right;
+}
+
+.doctors_personal_info {
+	padding: 7px 0 0 0;
+	border-top: 1px dotted #dcdcdc;
+}
+
+.doctors_photo .shadowed_img img {
+	padding: 5px;
+	border-color: #ccdcef;
+}
+
+.doctors_personal_info dl {
+	margin: 0;
+	padding: 0 30px 0 0;
+	color: #333;
+	font-size: 1.1em;
+	line-height: 1.15em;
+}
+
+.doctors_personal_info dl dt {
+	color: #0047A8;
+	margin: 0;
+	padding: 0.75em 0 0 0;
+	font-weight: bold;
+}
+
+.doctors_personal_info dl dt.first {
+	padding-top: 0.25em;
+}
+
+.doctors_personal_info dl dd {
+	margin: 0;
+	padding: 1px 0 0 0;
+}
+
+.msmg {
+	padding: 9px 0 0 0;
+}
+
+.msmg h4 {
+	color: #205eb3;
+	margin: 0;
+	padding: 0 0 1px 0;
+	font: bold 1em Arial, Helvetica, sans-serif;
+}
+
+.msmg p.u_can_reach {
+	padding: 4px 8px 4px 24px;
+	background: url({{ MEDIA_URL }}/images/16x12_check_icon.gif) left 7px no-repeat;
+	color: #656769;
+	font-size: 0.9em;
+	line-height: 1.2em;
+}
+
+.msmg p.u_cannot_reach {
+	padding: 4px 8px 9px 24px;
+	background: url({{ MEDIA_URL }}/images/16x12_x_icon.gif) left 7px no-repeat;
+	color: #656769;
+	font-size: 0.9em;
+	line-height: 1.3em;
+}
+
+.msmg .reach_ways {
+	padding: 0 0 0 1px;
+	overflow: hidden;
+}
+
+.msmg .reach_ways a {
+	display: block;
+	min-height: 16px;
+	padding: 4px 0 5px 0;
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding-left: 22px;
+	line-height: 12px;
+	color: #0047A8;
+	font-size: 0.9em;
+	text-decoration: none;
+}
+
+.msmg .reach_ways a.msmg_email_me {
+	background-image: url({{ MEDIA_URL }}/images/15x16_email_me.gif);
+}
+
+.msmg .reach_ways a.msmg_email_office {
+	background-image: url({{ MEDIA_URL }}/images/16x14_email_office_staff.gif);
+}
+
+.msmg .reach_ways a.msmg_request_appoint {
+	background-image: url({{ MEDIA_URL }}/images/16x14_email_office_staff.gif);
+}
+
+.msmg .reach_ways a.msmg_request_lab_res {
+	background-image: url({{ MEDIA_URL }}/images/15x13_request_lab_results.gif);
+}
+
+div.personal_notes_container {
+	border-top: 1px dotted #dcdcdc;
+	padding: 5px 15px;
+	margin: 0;
+	margin-top: 15px;
+}
+
+.personal_notes {
+	padding: 15px;
+}
+
+.personal_notes h2 {
+	color: #0047A8;
+	padding: 4px 0;
+	font-size: 1.25em;
+	font-weight: normal;
+}
+
+.personal_notes h3 {
+	color: #0047A8;
+	margin-top: 7px;
+	padding: 0 0 5px 0;
+	font-size: 1.1em;
+	font-weight: normal;
+}
+
+.personal_notes p {
+	color: #333;
+	font-size: 1em;
+	line-height: 1.5em;
+	padding: 0;
+	margin: 0 0 1em 0;
+}
+
+.personal_notes ul li {
+	color: #333;
+	font-size: 1em;
+	line-height: 1.25em;
+	padding: 0;
+}
+
+div.personal_notes_container .subdiv {
+	margin-left: 16px;
+}
+
+div.personal_notes_container .bottomlinks {
+	margin-left: 27px;
+	padding: 17px 0 0 8px;
+}
+
+div.personal_notes_container .subdiv {
+	padding: 0 0 0 2px;
+}
+
+div.personal_notes_container .subdiv h2 {
+	color: #0047A8;
+	font: bold 1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 10px 0 0 0;
+}
+
+#alphabet_nav_box {
+	padding: 18px 12px 18px 12px;
+	border: 1px dotted #333;
+	background-color: #c1d5eb;
+	margin-top: 16px;
+	margin-bottom: 18px;
+}
+
+#alphabet_nav_box a {
+	margin-right: 2px;
+	text-decoration: none;
+	font: bold 12px Arial, sans-serif;
+}
+
+#alphabet_nav_box span.notopics {
+	margin-right: 4px;
+	color: #555;
+	font: bold 12px Arial, sans-serif;
+}
+
+.sky-top {
+	background: url( {{ MEDIA_URL }}images/160x10_top_box_sky.gif ) center top no-repeat;
+	height: 10px;
+	font-size: 10px;
+	line-height: 10px;
+}
+
+.sky-body {
+	margin: 0;
+	padding: 0 10px;
+	border-left: 1px solid #dfe1e1;
+	border-right: 1px solid #dfe1e1;
+}
+
+.sky-tail {
+	background: url( {{ MEDIA_URL }}images/160x17_bottom_box_services.gif ) center bottom no-repeat;
+	height: 10px;
+	font-size: 10px;
+	line-height: 10px;
+}
+
+.service_title h2 {
+	font: bold 1.75em/1em Arial, Helvetica, sans-serif;
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+}
+
+.doctors_photo {
+	width:
+}
+
+.extralocation {
+	float:left;
+	margin-left: 4px;
+	margin-top: 6px;
+	width: 520px;
+}
+
+.location {
+ 
+}
+.divider {
+	border-bottom: 1px dotted gainsboro;
+}
+
+.not_accepting {
+	font-weight: bold !important;
+}
+
+/* Custom CSS - Daniel Rothier */
+.r_image_thumbnail { float:left;  }
+.r_image_thumbnail img {  }
+.r_clearfix { float: none; clear: both; }
+.r_doctor_name { float: left; display: inline; margin-top: 8px !important; width: 520px; color: #000 !important; border-bottom: 1px dotted gainsboro; padding-bottom: 6px !important; }
+.r_doctor_details { float: left; display: inline; width: 520px; }
+.r_blue_title { color: #0047BB !important; margin-bottom: 2px !important; margin-top: 0px	}
+.r_icon_success { float: left; display: inline; font-size:24px; color: green; width: 14px; margin-top: -1px; height: 15px; margin-right: 4px; }
+.r_icon_error { float: left; display: inline; font-size:24px; color: red; width: 14px; height: 15px; margin-top: -1px; margin-right: 4px; }
+.r_text_success { font-weight: bold !important; !important; width: 140px; margin-top: 8px !important; display: block; }
+.r_text_error { font-weight: bold !important; width: 140px; margin-top: 16px !important; display: block; }
+.r_left_col { float: left; display: inline; width: 200px; margin-right: 30px; }
+.large_td { width: 362px; border-right: 1px dotted gainsboro; border-bottom: 1px dotted gainsboro; vertical-align: top; }
+.small_td { width: 158px;  padding-left: 5px; padding-bottom: 0px; border-bottom: 1px dotted gainsboro; vertical-align: top;}
+.r_doctor_extra { float: left; display: inline; clear: both; width: 682px; }
+.r_doctor_extra tr { float: left; display: inline; width: 304px; margin-right: 34px;}
+.r_doctor_extra td { float: left; display: inline; width: 304px; padding: 1px; }
+p.description { margin-top: 0px !important; width: 304px; }
+.r_doctor_about { float: left; display: inline; clear: both; position: relative; margin-top: 40px; width: 688px; min-height: 60px; background: url("{{ MEDIA_URL }}images/info_bg.gif") repeat-y; }
+.r_doctor_about_header { position: absolute; left: 0px; top: -26px; width: 688px; height: 26px; background: url("{{ MEDIA_URL }}images/info_header.gif") no-repeat; }
+.r_doctor_about_footer { position: absolute; left: 0px; bottom: -49px; width: 688px; height: 49px; background: url("{{ MEDIA_URL }}images/info_footer.gif") 0px 0px no-repeat; }
+.r_doctor_about p { width: 650px; margin-left: 20px; font-size: 13px; line-height: 16px; }
+.r_specialize { float: left; display: inline; clear: both; margin-top: 10px; width: 681px; }
+.first_tr { clear: both; }

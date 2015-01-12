@@ -1,0 +1,19 @@
+<p class="location">
+<a href="{{ location.location.get_absolute_url }}">
+	{% if location.location.display_name %}{{ location.location.display_name }}<br />{% endif %}
+	{% if location.extra1 %}
+	{{ location.extra1 }}<br />
+	{% endif %}
+	{% if location.extra2 %}
+	{{ location.extra2 }}<br />
+	{% endif %}
+	{{ location.location.address }}<br/>
+	{% if location.location.address2 %}
+	{{ location.location.address2 }}<br />
+	{% endif %}
+	{{ location.location.city }}, {{ location.location.state }}<br />
+	{% if location.extra3 %}
+	{{ location.extra3 }}<br />
+	{% endif %}
+</a>
+</p>

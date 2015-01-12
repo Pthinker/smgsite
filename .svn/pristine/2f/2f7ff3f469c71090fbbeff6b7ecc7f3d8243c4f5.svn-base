@@ -1,0 +1,32 @@
+<div class="practitioner" style="border-right:0">
+	<a class="physician_finder" href="/doctors/"></a>
+	<h1><span>Featured Practitioner</span></h1>
+	<div class="inner">
+		<div class="img">
+		<img src={% if doctor.thumbnail %}"{{ doctor.thumbnail.url }}"{% else %}"{{ MEDIA_URL }}/images/37x37_not_avail.jpg"{% endif %} alt="our_doctor" width="82" height="108" />
+		</div>
+		<div class="title"><a href="{{ doctor.get_absolute_url }}">{{ doctor.display_name }}, {{ doctor.letters }}</a></div>
+		<div class="subtitle">{{ doctor.services_links|safe }}</div>
+		<div class="text">{{ featured.blurb }}</div>
+		<a class="arrowlink" href="{{ doctor.get_absolute_url }}">Read more</a>
+	</div>
+</div>
+{% comment %}
+<!--doctor starts-->
+{% if featured %}
+<img src="{{ MEDIA_URL }}images/header-practicioner.gif" alt="" />
+<div class="our_doctor">
+	<div class="our_doctor_frame">
+		<img src={% if doctor.thumbnail %}"{{ doctor.thumbnail.url }}"{% else %}"{{ MEDIA_URL }}/images/37x37_not_avail.jpg"{% endif %} alt="our_doctor" width ="40" />
+	</div>
+	<div class="doctor_info">
+		<h2><a href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, {% if doctor.thumbnail %}'{{ doctor.thumbnail.url }}'{% else %}''{% endif %}, 
+		'{{ doctor.display_name }}, {{ doctor.letters }}', '{{ doctor.list_services }}', 
+		'{{ doctor.phone }}')" onmouseout="photoOff()" onclick="photoOff()">{{ doctor.remainder_name }} 
+		{{ doctor.last_name }}, {{ doctor.letters }}</a>, {{ doctor.services_links|safe }}</h2>
+        <p><i>{{ featured.blurb }}</i></p>
+	</div>
+</div>
+{% endif %}
+<!--doctor end-->
+{% endcomment %}

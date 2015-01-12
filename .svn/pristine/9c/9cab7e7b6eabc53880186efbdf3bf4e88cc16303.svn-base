@@ -1,0 +1,29 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrahead %}
+<script type="text/javascript" src="/media/fckeditor/fckeditor.js"></script>
+<script type="text/javascript" src="/media/js/admin/editor.js"></script>
+<script type="text/javascript" src="/media/js/admin/ceditor.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<form name="editor" method="POST">
+	<input type="hidden" name="filename" value="{{ filename }}" />
+	<h2>Page title:</h2>
+	<p><input name="title" value="{{ title }}" size="100" /><br />
+		<em style="font-size:.8em;">Enter an optional title to be used for search only; leave blank to exclude page from search.</em>
+	</p>
+	<h2>Keywords:</h2>
+	<p><input name="keywords" value="{{ keywords }}" size="100" /><br />
+		<em style="font-size:.8em;">Enter optional search keywords.</em>
+	</p>
+	
+	<h2>Page content:</h2>
+	<textarea name="content" id="id_content">{{ content }}</textarea>
+	<br/>
+	<input type="submit" name="submit" value="Upload Changes" />
+</form>
+
+{% endblock %}
+

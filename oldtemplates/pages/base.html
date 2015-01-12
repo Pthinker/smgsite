@@ -1,0 +1,28 @@
+{% extends "page_base.html" %}
+
+{% block head_extra %}
+<link rel="stylesheet"  href="/dynamic-css/about.css" type="text/css" media="screen" />
+<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block body %}
+<div class="navbar">
+	<div class="navbarinner">
+		<ul>
+			<li id="li1"><a href="/" title="Home">Home</a></li>
+			<li id="li2"><a href="/services/" title="Find a Service">Find a Service</a></li>
+			<li id="li3"><a href="/doctors/" title="Find a Practitioner">Find a Practitioner</a></li>
+			<li id="li4"><a href="/library/" title="Live Well Library">Live Well<br />Library</a></li>
+			<li id="li5"><a href="/mysummitmedicalgroup/" title=" My Summit Medical Group">My Summit<br />Medical Group</a></li>
+			<li id="li6"><a href="/locations/" title="Locations and Hours">Locations<br />and Hours</a></li><li id="li6"><a href="/locations/" title="Locations">Locations</a></li>
+		</ul>
+	</div>
+</div><!--navbar-->
+<div id="main">
+    <div class="main-container">
+		{% block content %}
+		{% endblock content %}
+	<div class="clear"></div>
+	</div>	
+</div><!--main-->
+{% endblock body %}

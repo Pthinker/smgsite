@@ -1,0 +1,66 @@
+<ul class="bxslider">
+	{% for slide in slides %}
+	<li>{{ slide.content|safe }}</li>
+	{% endfor %}
+</ul>
+
+{% comment %}
+Script included on mobile snippet:
+
+$(function() {
+
+var bx_url = "https://github.com/wandoledzep/bxslider-4/raw/master/jquery.bxslider.min.js";
+var smg_slider_url = "http://qa-smg.syncresis.com/slider/?callback=?";
+var smg_base = 'http://m.summitmedicalgroup.com/?task=get&url=http%3A%2F%2Fwww.summitmedicalgroup.com';
+  $.getScript(bx_url, function() {
+	$.getJSON(smg_slider_url, function(data) {
+		
+		$('#smg-slider').html(data.slider);
+		$('#smg-slider img').removeAttr("style");
+		$('#smg-slider a').attr('href', function(index, value) { 
+			return smg_base + value;
+		});
+		$('.bxslider').bxSlider({
+  			auto: true,
+			mode: 'fade',
+			controls: false
+			
+		});
+
+		$('#smg-slider').show();
+	});
+   });
+
+});
+
+CSS
+
+#bmob-page .bx-wrapper {position: relative;margin: 0 0 60px;padding: 0;}
+#bmob-page .bx-wrapper img {width: 100%;display: block;}
+#bmob-page .bx-wrapper .bx-viewport {-moz-box-shadow: 0 0 5px 0 rgb(136,136,136);-webkit-box-shadow: 0 0 5px 0 rgb(136,136,136);box-shadow: 0 0 5px 0 rgb(136,136,136);background: rgb(255,255,255);}
+#bmob-page .bx-wrapper .bx-pager, #bmob-page .bx-wrapper .bx-controls-auto {position: absolute;bottom: 0px;width: 100%;z-index: 2147483647;}
+#bmob-page .bx-wrapper .bx-loading {min-height: 50px;background: url("images/bx_loader.gif") center center no-repeat rgb(255,255,255);height: 100%;width: 100%;position: absolute;top: 0;left: 0;z-index: 2000;}
+#bmob-page .bx-wrapper .bx-pager {font-size: 0.85em;font-family: Arial;font-weight: bold;color: rgb(102,102,102);padding-top: 20px;}
+#bmob-page .bx-wrapper .bx-pager .bx-pager-item, #bmob-page .bx-wrapper .bx-controls-auto .bx-controls-auto-item {display: inline-block;}
+#bmob-page .bx-wrapper .bx-pager.bx-default-pager a {background: rgb(102,102,102);text-indent: -9999px;display: block;width: 10px;height: 10px;margin: 0 5px;outline: 0;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;}
+#bmob-page .bx-wrapper .bx-pager.bx-default-pager a:hover, #bmob-page .bx-wrapper .bx-pager.bx-default-pager a.active {background: rgb(0,0,0);}
+#bmob-page .bx-wrapper .bx-prev {left: 10px;background: url("") no-repeat 0 -32px;}
+#bmob-page .bx-wrapper .bx-next {right: 10px;background: url("") no-repeat -43px -32px;}
+#bmob-page .bx-wrapper .bx-prev:hover {background-position: 0 0;}
+#bmob-page .bx-wrapper .bx-next:hover {background-position: -43px 0;}
+#bmob-page .bx-wrapper .bx-controls-direction a {position: absolute;top: 50%;margin-top: -16px;outline: 0;width: 32px;height: 32px;text-indent: -9999px;z-index: 9999;}
+#bmob-page .bx-wrapper .bx-controls-direction a.disabled {display: none;}
+#bmob-page .bx-wrapper .bx-controls-auto {text-align: center;}
+#bmob-page .bx-wrapper .bx-controls-auto .bx-start {display: block;text-indent: -9999px;width: 10px;height: 11px;outline: 0;background: url("") -86px -11px no-repeat;margin: 0 3px;}
+#bmob-page .bx-wrapper .bx-controls-auto .bx-start:hover, #bmob-page .bx-wrapper .bx-controls-auto .bx-start.active {background-position: -86px 0;}
+#bmob-page .bx-wrapper .bx-controls-auto .bx-stop {display: block;text-indent: -9999px;width: 9px;height: 11px;outline: 0;background: url("") -86px -44px no-repeat;margin: 0 3px;}
+#bmob-page .bx-wrapper .bx-controls-auto .bx-stop:hover, #bmob-page .bx-wrapper .bx-controls-auto .bx-stop.active {background-position: -86px -33px;}
+#bmob-page .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {text-align: left;width: 80%;}
+#bmob-page .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {right: 0;width: 35px;}
+#bmob-page .bx-wrapper .bx-caption {position: absolute;bottom: 0;left: 0;background: rgba(80,80,80,0.75);width: 100%;}
+#bmob-page .bx-wrapper .bx-caption span {color: rgb(255,255,255);font-family: Arial;display: block;font-size: 0.85em;padding: 10px;}
+#bmob-page div#bmob-feature-1359061352500 {padding: 0px;}
+#bmob-page #smg-slider p {margin: 0;padding: 0;}
+
+
+{% endcomment %} 

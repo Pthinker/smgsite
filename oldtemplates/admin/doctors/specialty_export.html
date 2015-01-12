@@ -1,0 +1,2 @@
+{% for doctor in doctors %}{% for specialty in doctor.specialtyupdate_set.all %}"{{ doctor.list_name }}","{{ specialty.quoted }}"
+{% endfor %}{% endfor %}

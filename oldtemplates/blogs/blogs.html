@@ -1,0 +1,48 @@
+{% extends "blogs/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Blogs{% endblock head_title %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+					<div class="create_account">									
+						<!-- start of pages navigation -->
+						<div class="navigation">										
+							{% include 'site/share.html' %}
+							<div class="clear"></div>
+						</div>
+						<!-- end of pages navigation -->
+					
+						<h1>Live Well News</h1>
+						
+						<ul>
+						{% for blog in blogs %}
+						<li><a href="/blog/{{ blog.urlname }}/">{{ blog.name }}</a>{% if blog.latest %} <span>{{ blog.count }} posts, last post on {{ blog.latest.postdate|date:"D d M Y" }}</span>{% endif %}</li>
+						{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

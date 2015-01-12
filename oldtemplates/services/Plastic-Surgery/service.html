@@ -1,0 +1,164 @@
+{% extends "page_content.html" %}
+
+{% block head_title %}Summit Medical Group - {{ service.name }}{% endblock head_title %}
+
+{% block body_tag %}<body id="sb_plast">{% endblock body_tag %}
+
+{% block head_extra %}
+	    {% if printable %}
+	<link href="/dynamic-css/sb_plast.css?printable=true" rel="stylesheet" type="text/css" />
+    {% else %}
+        <link href="/dynamic-css/sb_plast.css" rel="stylesheet" type="text/css" />
+    {%endif %}
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}/images/100x130Load.gif";
+		var error_url = "{{ MEDIA_URL }}/images/100x130NoPhoto.gif";
+	-->
+	</script>
+	<script src="{{ MEDIA_URL }}/js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{ MEDIA_URL }}/js/plast_gallery.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block header %}
+<!--start of SUB-BRAND HEADER div-->
+{% if printable %}
+<div id="header">
+<img src="{{ MEDIA_URL }}/images/504x72_print_hdr_sb_plast.jpg" alt="Summit Medical Group" width="504" height="72" />
+</div>
+{% else %}
+<div id="header"><img src="{{ MEDIA_URL }}/images/plast_344x90_header_logo.jpg" alt="Plastic Surgery Center at Summit Medical Group" width="344" height="90" border="0" usemap="#plast_header_map"><map name="plast_header_map" id="plast_header_map"><area shape="rect" coords="16,2,201,88" href="/service/Plastic-Surgery/" alt="Plastic Surgery Center at Summit Medical Group" /></map></div>{% endif %}
+<!--end of SUB-BRAND HEADER div-->
+{% endblock header %}
+
+{% block nav_search %}
+<div id="nav_container_search_header"><img src="{{ MEDIA_URL }}/images/plast_51x10_nav_search.gif" alt="Search" width="51" height="10"></div>
+<div id="nav_container_search">{% include 'site/search.html' %}</div>
+{% endblock nav_search %}
+
+{% block nav_links %}
+<ul>
+<li class="left_nav_links"><a href="/service/Plastic-Surgery/Our_Doctors/"><img src="{{ MEDIA_URL }}/images/plast_180x38_nav_doctors.gif" alt="Our Doctors" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="/service/Plastic-Surgery/Our_Practice/"><img src="{{ MEDIA_URL }}/images/plast_180x38_nav_practice.gif" alt="Our Practice" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="javascript:plast_galleryPopup()"><img src="{{ MEDIA_URL }}/images/plast_180x38_nav_before.gif" alt="Before &amp; After Photos" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="/service/Plastic-Surgery/Contact_Us/"><img src="{{ MEDIA_URL }}/images/plast_180x38_nav_contact.gif" alt="Contact Us" width="180" height="38"></a></li>
+</ul>
+{% endblock nav_links %}
+
+{% block nav_extra %}
+<!--start of BACK TO SMG promo badge-->
+<div id="promo_badge">
+<a href="/"><img src="{{ MEDIA_URL }}/images/149x70_left_col_smg.jpg" alt="Back to Summit Medical Group" width="149" height="70"></a>
+</div>
+<!--end of BACK TO SMG promo badge-->
+{% endblock nav_extra %}
+
+{% block nav_bottom %}
+
+{% if service.related_services.select_related or service.get_nav_links %}
+	<!--start of RELATED RESOURCES div-->
+	<div id="nav_container" class="left_col_related_resources">
+
+	{% if service.related_services.select_related %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/plast_122x10_related_servs.gif" alt="Related Services" width="122" height="10"></div>
+		<ul class="left_col_ul_resources">
+			{% for related in service.related_services.select_related %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if service.get_nav_links %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/plast_90x10_useful_links.gif" alt="Useful Links" width="90" height="10" border="0"></div>
+		<ul class="left_col_ul_resources">
+			{% for resource in service.get_nav_links %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ resource.url }}" target="_blank">{{ resource.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	</div>
+	<!--end of RELATED RESOURCES div-->
+{% endif %}
+
+{% endblock nav_bottom %}
+
+{% block content_well %}
+
+<!--start of center column-->
+<div id="cent_col_573">
+
+<!--start PLASTIC SURGERY BOX CONTENT-->
+<div id="square_box_573_top"><img src="{{ MEDIA_URL }}/images/plast_573x20_box_top.gif" width="573" height="20" alt="Page Box Top"></div>
+
+<div id="tab_box_573">
+
+<div id="plast_welcome_box">
+<img src="{{ MEDIA_URL }}/images/plast_345x70_subhd_welcome.gif" width="345" height="70" class="plast_welcome_img">
+<div id="plast_we_provide_box"><img src="{{ MEDIA_URL }}/images/plast_133x44_subhd_we_provi.gif" alt="We Provide" width="133" height="44">
+<ul>
+<li class="indent_10_li"><p class="plast_text_blue">Cosmetic Surgery</p></li>
+<li class="indent_10_li"><p class="plast_text_blue">Skin Care</p></li>
+<li class="indent_10_li"><p class="plast_text_blue">Botox and Fillers</p></li>
+<li class="indent_10_li"><p class="plast_text_blue">Reconstructive Surgery</p></li>
+<li class="indent_10_li"><p class="plast_text_blue">Hand Surgery</p></li>
+</ul>
+</div>
+</div>
+
+<div id="plast_patient_info_box">
+<div id="plast_info_links"><p class="plast_text_blue"><a href="/service/Plastic-Surgery/Common_Questions/">Common Questions</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="/service/Plastic-Surgery/Testimonials/">Testimonials</a></p></div>
+</div>
+
+<div id="plast_magaziness_box">
+<div id="plast_magazines_img"><img src="{{ MEDIA_URL }}/images/plast_529x119_mag_covers.jpg" alt="Magazines" width="529" height="119"></div>
+</div>
+
+<div class="clearfloats"></div>
+</div>
+<!--end PLASTIC SURGERY BOX CONTENT box-->
+
+<div class="clearfloats"></div>
+</div>
+<!--end of center column-->
+
+<!-- start right column -->
+<div id="right_col_177">
+
+{% block procedures_nav %}
+
+<!-- start PROCEDURES RIGHT NAV -->
+
+{% include 'services/Plastic-Surgery/procedures_nav.html' %}
+
+<!-- end PROCEDURES RIGHT NAV -->
+
+{% endblock procedures_nav %}
+
+<div class="clearfloats"></div>
+</div>
+<!-- end right column -->
+
+{% endblock content_well %}
+
+{% block footer %}
+<!-- start FOOTER -->
+
+{% if printable %}
+
+<div id="footer">
+<p>&copy; 2008 Summit Medical Group. All rights reserved.<br />
+http://www.summitmedicalgroup.com</p>
+&nbsp;
+</div>
+
+{% else %}
+<div id="footer">
+<div id="footer_links"><p class="footer_links_font"><a href="/service/Plastic-Surgery/Insurance_Financing/">financing and insurance</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/service/Plastic-Surgery/Contact_Us/">contact&nbsp;us</a></p>
+</div>
+</a>
+<p class="footer_copyright_font">&copy; 2008 Summit Medical Group. All rights reserved.</p>
+</div>
+{% endif %}
+<!-- end FOOTER -->
+{% endblock footer %}

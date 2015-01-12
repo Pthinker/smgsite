@@ -1,0 +1,19 @@
+<ul {% if class %}class="{{ class }}" {% endif %}>
+{% for item in menu_items %}
+    {% if item.children %}
+        <li>
+            <span>{{ item.name|safe }}</span>
+            <ul>
+                {% for child_item in item.children %}
+                <li><a href="{{ child_item.url }}">{{ child_item.name|safe }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+
+    {% else %}
+    <li {% if item.active %}class="active"{% endif %}>
+        <a title="{{ item.title }}" href="{{ item.url }}">{{ item.name|safe }}</a>
+    </li>
+    {% endif %}
+{% endfor %}
+</ul>

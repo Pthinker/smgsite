@@ -1,0 +1,24 @@
+{% load thumbnail %}
+{% load static %}
+
+<div class="col-md-4 col-xs-6">
+    <div class="doctor-result" {% ifchanged doctor.last_name.0 %}data-char="{{doctor.last_name.0}}" id="surname-{{doctor.last_name.0}}"{% endifchanged%}>
+        {% thumbnail doctor.original_image "115x162" crop="center" as im %}
+        <img src="{{ im.url }}" alt="{{ doctor.display_name|escapejs }}" />
+        {% empty %}
+        <img src="{{ STATIC_URL }}images/no_doc_image.png" alt="{{ doctor.display_name|escapejs }}" />
+        {% endthumbnail %}
+
+        <div class="info">
+            <a data-container="body" data-html="true" data-content="<b>Specialty:</b><br>{{ doctor.list_services }}<br><b>Phone Number:</b><br>{{ doctor.phone }}" title="{{ doctor.display_name|escapejs }}, {{ doctor.letters }}" href="{{ doctor.get_absolute_url }}">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}</a>
+            <div class="service-name">{{ doctor.title_service.name }}</div>
+            <div class="accepting">
+                {% ifequal doctor.accepting_flag 'A' %}
+                Accepting new patients
+                {% else %}
+                Not accepting new patients
+                {% endifequal %}
+            </div>
+        </div>
+    </div>
+</div>

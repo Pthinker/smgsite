@@ -1,0 +1,162 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Health In The News{% endblock head_title %}
+{% block meta_info %}Get the latest news from the world of health and medicine.{% endblock meta_info %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/newseventsblog.css" type="text/css" media="screen" />
+	<link rel="stylesheet"  href="/dynamic-css/search.css" type="text/css" media="screen" />
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+				
+					<!-- start of pages navigation -->
+					<div class="navigation">
+						{% include 'site/share.html' %}
+						<div class="clear" style="min-height:23px; height:23px;"></div>
+						<div class="pages">
+							<a href="/healthday/">Health in the News</a>&nbsp;&gt;&nbsp;
+							<span id="breadcrumb_thispage">Search Results</span>
+						</div>
+						<div class="clear"></div>		
+					</div>
+					<!-- end of pages navigation -->
+					
+					
+					<!-- start of main content -->
+					<div class="cols_2_fix_right_160">
+
+						<!-- start of left column of main content -->
+						<div class="cols_2_left">
+						  <div class="cols_2_left_sub">
+
+							<!-- start search results  -->
+							<div id="search_results_container">
+								
+								<div class="search_results_page_nav">
+									
+									<p>Page {{ page }} of {{ pagecount }}, {{ count }} articles total</p> 
+									
+									<div class="subscribe">
+										{% if topic or category %}
+										{% if topic %}
+										<a href="/healthday/rss-topic/{{ topic.pk }}/"><b> You can subscribe to this topic to view regular updates when new articles are added</a></b>
+										{% endif %}
+										{% if category %}
+										<a href="/healthday/rss-category/{{ category.pk }}/"><b> You can subscribe to this topic to view regular updates when new articles are added</a></b>
+										{% endif %}
+										{% else %}
+										{% ifequal news_type 'all' %}
+										<a href="/healthday/rss/"><b> You can subscribe to this topic to view regular updates when new articles are added</a></b>
+										{% else %}
+										<a href="/healthday/rss-type/{{ news_type }}/"><b> You can subscribe to this topic to view regular updates when new articles are added</a></b>
+										{% endifequal %}
+										{% endif %}
+									</div>
+										
+									{% include 'articles/health_day_pagination.html' %}
+
+								</div>
+								
+								{% for article in articles %}
+								<div class="search_result">
+									<p><span class="general_date">{{ article.display_time }}:</span>
+									<a href="{{ article.get_absolute_url }}">{{ article.headline }}</a><br/>
+									{{ article.blurb|safe }}</p>
+								</div>
+								{% endfor %}
+								
+								{% include 'articles/health_day_pagination.html' %}
+								
+						
+							</div>
+							<!-- end search results  -->											
+
+
+				
+						  </div>
+						</div>
+						<!-- end of left column of main content -->
+						
+						<!-- start of right column of main content -->
+						<div class="cols_2_right">
+
+							
+							<div class="box_160 box_160_blue">
+								<div class="box_160_top">
+									<div class="box_160_bottom">
+										<div class="box_160_wrap">
+										<!--FYIs (News Type: FYI)-->
+											<h3>Live Well Tips</h3>
+											<ul class="list_quotes">
+												{% for article in fyi %}
+													<li><a href="{{ article.get_absolute_url }}">{{ article.headline }}</a></li>
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+
+						</div>
+						<!-- end of right column of main content -->
+					</div>
+					<!-- end of main content -->
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+
+				
+				<div class="box_207 box_207_blue mt10">
+					<div class="box_207_bottom">
+						<div class="box_207_top">
+
+							<h2 class="quick_links">Categories</h2>
+							<div class="rain_box_wrap_0_6_28">
+								<div class="rain_box">
+									<div class="quick_links_categories">
+									
+										<p>Choose one of our special categories to view or subscribe</p>
+										<!-- categories are the collections of topics as defined within the admin tool-->
+										<ul>
+												{% for category in categories %}
+												<li><a href="/healthday/all/1/?category={{ category.pk }}">{{ category }}</a></la>
+												{% endfor %}
+										</ul>
+										<div>&nbsp;</div>
+									
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+
+			
+				<div class="mt10">
+					{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+			
+		</div>
+	</div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

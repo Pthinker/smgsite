@@ -1,0 +1,65 @@
+{% extends 'one_column_layout.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}Summit Medical Group - Blog {{ blog.name }}{% endblock head_title %}
+
+{% block page_title %}{{ blog.name }}{% endblock %}
+
+{% block content %}
+
+<div class="blog_hero_unit">
+    <div class="title">{{ blog.blurb|safe }}</div>
+    {% if blog.image %}
+    <div class="text-center">
+    <img class="img-responsive center-block" src="{{ blog.image.url }}"/>{% endif %}
+    </div>
+</div>
+
+{% if sections %}
+<span class="">Jump to:</span>
+
+<div class="btn-group btn-group-justified">
+    {% for section in sections %}
+    <div class="btn-group">
+        <a href="#{{ section.section.pk }}" class="btn btn-default">{{ section.section.name }}</a>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+<br><br>
+<div id="blog-content">
+    {% for section in sections %}
+    <div class="media">
+        <a class="pull-left" name="{{ section.section.pk }}">
+        {% if section.section.image %}
+            {% thumbnail section.section.image "100x100" as im %}
+                <img class="media-object" alt="{{ section.section.name }}" src="{{ im.url }}">
+            {% endthumbnail %}
+        {% endif %}
+        </a>
+        <div class="media-body">
+            <h2 class="media-heading">{{ section.section.name }}</h2>
+            <h4 class="media-heading">{{ section.section.blurb|safe }}</h4>
+            <div class="media-list">
+                {% for post in section.posts %}
+                <p class="title">
+                    <a href="/blog/{{ blog.urlname }}/{{ post.urlname }}/">
+                        <span class="bold">{{ post.title }}</span>
+                    </a><br/>
+                <span class="byline">
+                    {{ post.postdate|date:"M d, Y" }}{% if post.author.first_name %}, by
+                        {{ post.author.first_name }}
+                        {{ post.author.last_name }}
+                    {% endif %}
+               </span>
+                </p>
+                {% endfor %}
+            </div>
+        </div>
+    <a class="pull-right btn btn-smg" href="/blog/landing/{{ blog.urlname }}">More articles...</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

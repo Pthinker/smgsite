@@ -1,0 +1,6 @@
+{% load helpers %}
+
+{{ object.title }}
+{{ object.short_description|striptags|unescape }}
+{{ object.description|striptags|unescape }}
+{{ object.service.name }} {{ object.related_services.name }}

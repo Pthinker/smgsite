@@ -1,0 +1,53 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+
+{% block meta_info %}{% meta_info page %}{% endblock meta_info %}
+{% block seo_keywords %}{% seo_keywords page %}{% endblock seo_keywords %}
+{% block head_title %}{{ page.title }} | Summit Medical Group{% endblock head_title %}
+
+{% block body %}
+
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-doctor">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="fa fa-info"></span> {{ page.title }}</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="/about/">About</a></li>
+        <li class="active">{{ page.title }}</li>
+        {% include 'site/includes/share.html' %}
+    </ol>
+</div>
+
+<div class="container" id="content">
+    <div class="row">
+
+        <div class="col-md-9 col-md-push-3"> 
+            {{ content|strip_font_style }}
+        </div>
+
+        <div class="col-md-3 col-md-pull-9 about-sidebar"> 
+            <h4 class="doctor-color">Patient Portal</h4>
+            
+            <ul class="list-unstyled options">
+                <li><a href="/about/MySMG/"><i class="glyphicon glyphicon-pencil"></i> Access lab and test results</a></li>
+                <li><a href="/about/MySMG/"><i class="glyphicon glyphicon-list-alt"></i> Request a refill</a></li>
+                <li><a href="/about/MySMG/"><i class="glyphicon glyphicon-envelope"></i> Email your doctor's office</a></li>
+                <li><a href="/about/MySMG/"><i class="glyphicon glyphicon-envelope"></i> Email an appointment request</a></li>
+                <li><a href="/about/MySMG/"><i class="glyphicon glyphicon-credit-card"></i> Pay bills and manage accounts</a></li>
+            </ul>
+
+        </div>
+   
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>{% block head_title %}Summit Medical Group - Email This Page To A Friend{% endblock head_title %}</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="shortcut icon" href="{{ MEDIA_URL }}/favicon.ico" type="image/vnd.microsoft.icon" />
+	<link rel="stylesheet" href="/dynamic-css/global.css" type="text/css" />
+	<link rel="stylesheet" href="/dynamic-css/basicstyle.css" type="text/css" />
+	<style type="text/css">
+	<!--
+	body {
+		background: #fff;
+		padding: 10px;
+	}
+	h2 {
+		text-align: center;
+		font-size: 14px;
+		color: #004C75;
+		padding: 0 0 1em 0;
+	}
+	p {
+		padding: 1em 0 0 0;
+	}
+	table p {
+		padding: 0;
+	}
+	.clear {
+		height: 0;
+		font-size: 0;
+		clear: both;
+	}
+	span.small-font {
+		font-size: .9em;
+		color: #aaa;
+	}
+	//-->
+	</style>
+</head>
+	<body id="home">
+		<!--start of full page container div-->
+		
+		
+		<img src="{{ MEDIA_URL }}/images/205x100_smg_header_email.jpg" align="left" />
+		<p align="right"><a href="javascript:window.close()">Close window</a></p>
+		<div class="clear"></div>
+
+		<div id="square_box_573_email">
+			<h2>Recommend This Page To A Friend</h2>
+
+            <p><b>Important</b>: This tool is for sending pages to your friends and family only. <b>You cannot use this form to contact Summit Medical Group doctors or staff.</b> To contact Summit Medical Group, you should call the number listed for your specific doctor or our main number (908) 273-4300.</p>
+			<p>Please enter the recipient's email address, your name, and your email address. You can also include a brief message to the recipient. When completed, click the "Send This Page" button.</p>
+			{% if form.errors %}
+			<p style="color:#C03;">Please correct the errors below highlighted in red.</p>
+			{% endif %}
+			{% if empty_error %}
+			<p style="color:#C03;">You must fill out the entire form before sending a link.</p>
+			{% endif %}
+			{% if email_error %}
+			<p style="color:#C03;">One of the email addresses that you have provided does not seem to be valid. Please re-enter it.</p>
+			{% endif %}
+			<br />
+			<form name="emailpage" method="post">
+				{{ form.title }}
+				{{ form.referrer }}
+				<table width="560">
+					<tr>
+						<td><p {% if form.s_name.errors %}style="color:#C03;"{% endif %} class="align_right_p"><span class="bold">Your Name:</span></p></td><td>{{ form.s_name }}</td>
+					</tr>
+					<tr>
+						<td><p {% if form.s_email.errors %}style="color:#C03;"{% endif %} class="align_right_p"><span class="bold">Your Email Address:</span><br /><span class="small-font">Example:&nbsp;recipient@aol.com</span></p></td><td>{{ form.s_email }}</td>
+					</tr>
+					<tr>
+						<td><p {% if form.r_name.errors %}style="color:#C03;"{% endif %} class="align_right_p"><span class="bold">Recipient's Name:</span></p></td><td>{{ form.r_name }}</td>
+					</tr>
+					<tr>
+						<td><p {% if form.r_email.errors %}style="color:#C03;"{% endif %} class="align_right_p"><span class="bold">Recipient's Email Address:</span></p></td><td>{{ form.r_email }}</td>
+					</tr>
+					<tr>
+						<td><p {% if form.message.errors %}style="color:#C03;"{% endif %} class="align_right_p"><span class="bold">Message:</span></p></td><td>{{ form.message }}</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><input class="button_right" type="submit" name="submit" value="Send My Recommendation" /></td>
+					</tr>
+				</table>
+			</form>		
+		</div>
+		
+		<!--end of full page container div-->
+	{# Google Analytics tracking code #}
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	var pageTracker = _gat._getTracker("UA-3924031-2");
+	pageTracker._initData();
+	pageTracker._trackPageview();
+	</script>
+    </body>
+</html>

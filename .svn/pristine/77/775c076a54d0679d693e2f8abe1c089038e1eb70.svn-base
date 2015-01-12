@@ -1,0 +1,10 @@
+{# TITLE: Our Doctors #}
+<p><a href="/service/Plastic-Surgery/Peter_Hyans/"><img src="{{ MEDIA_URL }}/images/plast_hyans_180x257_portrai.jpg" alt="Peter Hyans, MD" width="180" height="257" align="left"></a>
+<a href="/service/Plastic-Surgery/Peter_Hyans/"><b>Peter Hyans, MD</b></a><br />
+Board-certified plastic surgeon<br />
+<a href="/service/Plastic-Surgery/Peter_Hyans/">More about Dr. Hyans...</a></p><br clear="all" />
+
+<p><a href="/service/Plastic-Surgery/Reza_Momeni/"><img src="{{ MEDIA_URL }}/images/plast_momeni_180x254_portra.jpg" alt="Reza Momeni, MD" width="180" height="254" align="left"></a>
+<a href="/service/Plastic-Surgery/Reza_Momeni/"><b>Reza Momeni, MD</b></a><br />
+Board-certified plastic surgeon<br />
+<a href="/service/Plastic-Surgery/Reza_Momeni/">More about Dr. Momeni...</a></p><br clear="all" />

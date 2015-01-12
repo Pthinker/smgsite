@@ -1,0 +1,128 @@
+{% extends "blogs/base.html" %}
+{% load humanize %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Blogs{% endblock head_title %}
+
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+					
+
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+		
+					
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+						
+					<!-- start of pages navigation -->
+					<div class="navigation">
+						
+						{% include 'site/share.html' %}
+						<div style="min-height:23px; height:23px;" class="clear"></div>
+						<div class="pages">
+							Live Well News&nbsp;&gt;&nbsp;{{ blog.name }}
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+					<!-- end of pages navigation -->
+
+					
+					<!-- start of main content -->
+					<div class="cols_2_fix_right_160">
+
+						<!-- start of left column of main content -->
+						<div class="cols_2_left">
+
+                            <!-- start of main blocks column right -->
+                            <div class="blog_hero_unit">
+                                <h1 class="title">{{ blog.name }}</h1>
+                                <div class="title">{{ blog.blurb|safe }}</div>
+                                {% if blog.image %}
+                                <img src="{{ blog.image|thumbnail:'522w,crop:0 0 522 250' }}"/>{% endif %}
+                            </div>
+
+                            <div id="blog-content">
+                                <hr/>
+                                <div class="media">
+                                    <div class="media-body">
+                                        <div class="media-list">
+                                            {% for post in posts %}
+                                            <p class="title">
+                                                <a href="/blog/{{ blog.urlname }}/{{ post.urlname }}/">
+                                                    <span class="bold">{{ post.title }}</span>
+                                                </a><br/>
+                                                <span class="byline">
+                                                    <em>{{ post.postdate|naturalday }}</em>{% if post.author.first_name %}, <em>by</em>
+                                                        {{ post.author.first_name }}
+                                                        {{ post.author.last_name }}
+                                                    {% endif %}
+                                                </span>
+                                                <span class="media-more" style="position: absolute; right: 0; font-weight: normal; font-size: smaller;">
+                                                {% with post.section_list|split:'; ' as sections %}
+                                                    {% for section_name in sections %}
+                                                        {% if forloop.first %}in {% endif %}
+                                                        {% spaceless %}
+                                                            <a href="/blog/{{ blog.urlname }}/#{{ forloop.counter }}">{{ section_name }}</a>
+                                                            {% if forloop.last %}{% else %},
+                                                            {% endif %}{% endspaceless %}
+                                                    {% endfor %}
+                                                {% endwith %}
+                                                </span>
+                                            </p>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+					
+						</div>
+					</div>	
+					
+				</div>
+			</div>
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+
+				<!--<div class="box_207 box_207_blue">
+					<div class="box_207_bottom">
+						<div class="box_207_top">
+							<form action="" class="go_form">
+								<div class="rain_box_wrap_0_9">
+									<div class="rain_box">
+										<div class="wrap_form">
+											<h3>Go To Other Live Well News</h3>
+												<div class="wrap_select">
+												<select name="search_topics">
+													{% for blog in blogs %}
+													<option value="{{ blog.get_absolute_url }}">{{ blog.name }}</option>
+													{% endfor %}
+												</select>
+											</div>
+											<div class="submit"><img src="{{ MEDIA_URL }}/images/66x26_go_button.gif" /></div>
+										</div>
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</div>
+				</div>-->
+
+			
+				<div class="mt10">
+					{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+			
+
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

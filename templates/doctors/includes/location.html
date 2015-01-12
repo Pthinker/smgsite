@@ -1,0 +1,30 @@
+
+<div class="doctor-address">
+    <i class="glyphicon glyphicon-map-marker"></i>
+    <div class="cont">
+    {% if location.location.display_name %}<strong>{{ location.location.display_name }}</strong><br />{% endif %}
+    <a href="{{ location.location.get_absolute_url }}">
+    {% if location.extra1 %}{{ location.extra1 }}<br />{% endif %}
+    {% if location.extra2 %}{{ location.extra2 }}<br />{% endif %}
+    {{ location.location.address }}<br/>
+    {% if location.location.address2 %}{{ location.location.address2 }}<br />{% endif %}
+    {{ location.location.city }}, {{ location.location.state }}<br />
+    </a>
+    </div>
+</div>
+
+<div class="doctor-number">
+    <i class="glyphicon glyphicon-phone-alt"></i>
+    <div class="cont">
+        <b>Phone number:</b><br>
+        {% if location.location.urlname == 'berkeley_heights_campus' and doctor.phone %}
+        {{ doctor.phone }}
+        {% else %}
+            {% if location.extra3 %}
+                {{ location.extra3 }}
+            {% else %}
+                {{ location.location.phone }}
+            {% endif %}
+        {% endif %}
+    </div>
+</div>

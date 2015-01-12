@@ -1,0 +1,6 @@
+{% load helpers %}
+
+{{ object.title }}
+{{ object.recipe_type }}
+{{ object.description }}
+{{ object.ingredients }}

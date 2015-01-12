@@ -1,0 +1,5 @@
+<ul class="articles_index_list_ul">
+{% for post in posts %}
+	<li class="margin_bottom_10_li"><a href="/blog/{{ blog.urlname }}/{{ post.urlname }}/"><span class="bold">{{ post.title }} ({{ post.postdate|date:"D d M Y" }})</span></a></li>
+{% endfor %}
+</ul>

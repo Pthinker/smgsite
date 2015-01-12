@@ -1,0 +1,159 @@
+{% extends "blogs/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ post.title }}{% endblock head_title %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+				
+					<!-- start of pages navigation -->
+					<div class="navigation">
+					
+						{% include 'site/share.html' %}
+						
+						<div class="clear" style="min-height:23px; height:23px;"></div>
+						
+						<div class="pages">
+							Live Well News&nbsp;&gt;&nbsp;
+							<a href="/blog/{{ blog.urlname }}">{{ blog.name }}</a>&nbsp;&gt;&nbsp;
+							<span id="breadcrumb_thispage">{{ post.title }}</span>
+						</div>
+						
+						<div class="clear"></div>
+						
+					</div>
+					<div class="clear"></div>
+					<!-- end of pages navigation -->
+					
+					
+					<!-- start of main content -->
+					<div class="cols_2_fix_right_160">
+
+						<!-- start of left column of main content -->
+						<div class="cols_2_left">
+						  <div class="cols_2_left_sub">
+
+
+							
+							<!-- start blog post  -->
+							<div class="blog_post_container">
+
+								<div class="blog_post_content">
+								
+								<!-- all content within this block is  entered in the admin form-->									<div class="blog_post_title">
+										<h3>{{ post.title }}</h3>
+										<p>{{ post.postdate|date:"M d, Y" }}</p> 
+									</div>
+									{% if post.byline %}<p><b><i>By {% if post.byline %}{% if post.byline_link %}<a href="{{ post.byline_link }}" >{{ post.byline }}</a>{% else %}{{ post.byline }}{% endif %}{% endif %} for Summit Medical Group</i></b></p>{% endif %}
+									{% if post.reviewed_by %}<p><b><i>Reviewed by <a href="{{ post.reviewed_by_link }}">{{ post.reviewed_by }}</a></i></b></p>{% endif %}
+									{{ post.body|safe }}
+								</div>
+							</div>
+							<!-- end blog post -->
+						  </div>
+						</div>
+						<!-- end of left column of main content -->
+						
+						<!-- start of right column of main content -->
+						<div class="cols_2_right">
+							
+							
+							<div class="box_160 box_160_blue">
+								<div class="box_160_top">
+									<div class="box_160_bottom">
+										<div class="box_160_wrap">
+										<div class="subdiv">
+										<!-- this block displays the five most recent headlines for this blog. The  "more headlines" link  goes to the blog's headlines page.  the "subscribe" link goes to the blog's RSS feed --> 			<h2>Recent Postings From {{ blog.name }}</h2>
+											<ul class="list_quotes">
+												{% for post in posts %}
+												<li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+												{% endfor %}
+												<li><a href="{{ blog.get_absolute_url }}">More Headlines</a></li>
+											</ul>
+										</div>
+
+										<div class="bottomlinks2">
+											<a href="/blog/rss/{{ blog.urlname }}" class="subscribe"></a>
+											<a href="/blog/rss/{{ blog.urlname }}" class="first_link">Subscribe</a>
+											
+										</div>
+
+
+										</div>
+									</div>
+								</div>
+							</div>
+							
+														
+							<div class="box_160 box_160_blue">
+								<div class="box_160_top">
+									<div class="box_160_bottom">
+										<div class="box_160_wrap"> 
+										<!-- this block display  the five most recent tips I.e., news type equals FYI,from the health day news feed.--> 									<h3>Useful Live Well Tips</h3>
+											<ul class="list_quotes">
+												{% for article in fyi %}
+													<li><a href="{{ article.get_absolute_url }}">{{ article.headline }}</a></li>
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+						<!-- end of right column of main content -->
+					</div>
+					<!-- end of main content -->
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+
+				<!--<div class="box_207 box_207_blue">
+					<div class="box_207_bottom">
+						<div class="box_207_top">
+							<form action="" class="go_form">
+								<div class="rain_box_wrap_0_9">
+									<div class="rain_box">
+										<div class="wrap_form">
+											<h3>Go To Other Live Well News</h3>
+											<div class="wrap_select">
+												<select name="search_topics">
+													{% for blog in blogs %}
+													<option value="{{ blog.get_absolute_url }}">{{ blog.name }}</option>
+													{% endfor %}
+												</select>
+											</div>
+											<div class="submit"><img src="{{ MEDIA_URL }}/images/66x26_go_button.gif" /></div>
+										</div>
+									</div>
+								</div>
+							</form>
+
+						</div>
+					</div>
+				</div>-->
+
+			
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+			
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

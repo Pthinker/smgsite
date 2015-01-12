@@ -1,0 +1,4 @@
+{{ template.template|safe }}
+
+<span id="video-description">{{ template.description }}</span>
+<span id="video-views"><a target="_new" href="http://summitmedicalgroup.magnify.net/">See all videos »</a></span>

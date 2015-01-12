@@ -1,0 +1,5 @@
+{# TITLE: Pre-Visit Forms #}<h2>Online Forms</h2>
+<p>This pre-visit form will help you consolidate your medical history in preparation for your visit to our office. Please either complete this form online and print it, or print it and fill it out by hand.&nbsp;</p>
+<p>Please bring this form with you when visiting our office.</p>
+<p>Note: Completing this form online WILL NOT retain any record of your personal information. It is designed solely for your convenience, to help utilize your time with us most productively. You will need to print a second copy if you want to keep a record of this information.</p>
+<p><a href="{{ MEDIA_URL }}/html/previsit_form_700_table.html" target="_blank" title="Fill out and print pre-visit form">Fill Out Pre-Visit Form</a></p>

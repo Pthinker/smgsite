@@ -1,0 +1,74 @@
+﻿<div id="footer">
+	<div class="footerholder">
+		<div class="footerinner">   
+			<div class="patients">
+				<div class="footerheading">For Our<span>patients</span></div>
+				<ul>
+					<li><a href="/service/Urgent-Care-Center/">Urgent Care</a></li>
+					<li><b><a href="/about/Medical_Records/">Request Medical Records</a></b></li>
+					<li><a href="/doctors/">Physician Finder</a></li>
+					<li><a href="/locations/">Locations and Hours</a></li>
+					<li><a href="/about/Insurance/">Insurance</a></li>
+					<li><a href="/about/Bill_Payments/">Billing and Payments</a></li>
+					<li><a href="/site/unsubscribe/">Unsubscribe - Healthy Connections</a></li>
+					<li><a href="http://www.paramountmedicalgroup.com/" onClick="recordOutboundLink(this, 'Outbound Links', 'paramountmedicalgroup.com');return false;"><b>Paramount Medical Group Patients</b></a></li>
+				</ul>
+			</div>
+        
+			<div class="about">
+				<div class="footerheading">About<span>Summit</span><span>Medical Group</span></div>
+				<ul>
+					<li><a href="/press-releases/">Media Room</a></li>
+					<li><a href="/about/Our_Awards/">Our Awards</a></li>
+					<li><a href="/about/careers/">Careers</a></li>
+					<li><a href="/about/">About Us</a></li>
+					<li><a href="/about/Site_Help/">Site Help</a></li>
+				</ul>
+			</div>
+        
+			<div class="contact">
+				<div class="footerheading">How to<span>contact us</span></div>
+				<ul>
+					<li><a href="">Main Number:</a> 908-273-4300</li>
+					<li><a href="/service/Urgent-Care-Center/">Urgent Care Center:</a> 908-277-8880</li>
+					<li><a href="/about/Bill_Payments/">Business Office/Billing Department:</a> 908-790-6500&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fax: 908-790-6593</li>
+					<li><a href="/careers/">Employment Opportunities:</a> 908-277-8791</li>
+					<li><a href="/about/Medical_Records/">Medical Records:</a> 908-790-6520</li>
+					<li><a href="/service/Patient-Advocate-Service/">Patient Relations:</a> 908-277-8928</li>
+				</ul>
+            
+				<div class="questions" style="float:right">
+					If we have fallen short of our commitment to<br />
+					your satisfaction, please email us at<br />
+					<b><a href="mailto:complaints@smgnj.com">complaints@smgnj.com</a></b> so that we can<br />
+					better serve you.
+				</div> 
+            
+				<div class="questions">
+					Billing Questions:<br />
+					<b><a href="mailto:billing@smgnj.com">billing@smgnj.com</a></b>
+				</div>
+            
+				<div class="questions">
+					General Inquiries:<br />
+					<b><a href="mailto:wecare@smgnj.com">wecare@smgnj.com</a></b>
+				</div>                  
+                        
+			</div>
+        
+			<div class="clear"></div>
+        
+		</div> 
+    </div>  
+		<div class="clear"></div>  
+    <div class="info">
+    	<div class="infoinner">
+        	<div class="links">
+            	<a href="/about/Contact_Us/">Contact Us</a> | <a href="/about/">About Us</a>
+            </div>
+            <div class="copyright">
+            	<span>&copy;</span> Copyright 2013 - Summit Medical Group - All rights reserved. 
+            </div>
+        </div>
+    </div>
+</div><!--footer-->

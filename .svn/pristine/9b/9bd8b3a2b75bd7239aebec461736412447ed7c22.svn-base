@@ -1,0 +1,74 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ city }}{% endblock head_title %}
+
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-find-practitioner">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-search"></span> Find a Location</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="location-finder-title">Choose a city or town to see locations</h2>
+            <div id="location-finder">
+                <img src="{{ STATIC_URL }}images/location_search_header.jpg" class="img-responsive" alt="Locations" />
+                <div class="city-form">
+                    <form method="get" action="." class="form-inline" role="form">
+                        <div class="form-group" >
+                            {{ location_form.city }}
+                            <button type="submit" class="btn btn-finder">Search</button>
+                            <a href="/locations/all/" class="btn btn-finder">SEE ALL LOCATIONS</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+{% if city %}
+<div class="container">
+    <div class="row">
+    
+        <div class="col-md-4 location-sidebar">
+            <h2>{{ city }}</h2>
+
+            {% for location in locations %}
+            <div class="location"> 
+                <span class="badge">{{ forloop.counter0|to_alpha|upper }}</span>
+                <div class="address">
+                    {% if location.display_name %}{{ location.display_name }}<br>{% endif %}
+                    {{ location.address }} </b></a><br />
+                    {% if location.address2 %}{{ location.address2 }}<br>{% endif %}
+                    {{ location.city }}, {{ location.state }} {{ location.zipcode }} <br>
+                    {% if location.phone %}<strong>Phone:</strong> {{ location.phone }}{% endif %} <br>
+                </div>
+                <a class="more pull-right" href="{{ location.get_absolute_url }}">SEE LOCATION DETAILS</a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-8">
+            <div id="map" style="width:100%; height:400px;"></div>
+        </div>
+
+    </div>  
+</div>
+{% endif %}
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?{% if GOOGLE_MAP_KEY %}key={{ GOOGLE_MAP_KEY }}&{% endif %}sensor=false"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/maps.js"></script>
+<script type="text/javascript">
+    var smg_locations = {{ smg_locations|safe }};
+</script>
+{% endblock %}

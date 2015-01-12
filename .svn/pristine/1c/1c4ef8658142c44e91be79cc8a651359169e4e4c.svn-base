@@ -1,0 +1,30 @@
+{% if doctor.title_service.get_local_nav_links %}
+
+	{% if printable %}
+	<h2>Related Services</h2>
+	{% else %}
+	<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/related_services_128x10.gif" alt="Related Services" width="128" height="10" /></div>
+	{% endif %}
+	<ul class="left_col_ul_resources">
+	{% for resource in doctor.title_service.get_local_nav_links %}
+		<li class="left_col_li_resources"><a class="dark_brown" href="{{ resource.url }}">{{ resource.name }}</a></li>
+	{% endfor %}
+	</ul>
+{% endif %}
+
+{% if doctor.title_service.get_remote_nav_links or doctor.get_nav_links %}
+
+	{% if printable %}
+	<h2>Useful Links</h2>
+	{% else %}
+	<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/useful_links_94x10.jpg" alt="Useful Links" width="94" height="10" border="0" /></div>
+	{% endif %}
+	<ul class="left_col_ul_resources">
+	{% for resource in doctor.title_service.get_remote_nav_links %}
+		<li class="left_col_li_resources"><a class="dark_brown" href="{{ resource.url }}" target="_blank">{{ resource.name }}</a></li>
+	{% endfor %}
+	{% for resource in doctor.get_nav_links %}
+		<li class="left_col_li_resources"><a class="dark_brown" href="{{ resource.url }}" {% if resource.remote %}target="_blank"{% endif %}>{{ resource.name }}</a></li>
+	{% endfor %}
+	</ul>
+{% endif %}

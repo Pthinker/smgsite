@@ -1,0 +1,237 @@
+{% extends "page_content.html" %}
+
+{% block head_title %}Summit Medical Group - Apog&eacute;e Spa{% endblock head_title %}
+
+
+{% block body_tag %}<body id="sb_spa">{% endblock body_tag %}
+
+{% block head_extra %}
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}/images/100x130Load.gif";
+		var error_url = "{{ MEDIA_URL }}/images/100x130NoPhoto.gif";
+	-->
+	</script>
+	<script src="{{ MEDIA_URL }}/js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+	{% if printable %}
+	<link href="/dynamic-css/sb_spa.css?printable=true" rel="stylesheet" type="text/css" />
+    {% else %}
+        <link href="/dynamic-css/sb_spa.css" rel="stylesheet" type="text/css" />
+    {%endif %}
+{% endblock head_extra %}
+
+{% block header %}
+<!--start of SUB-BRAND HEADER div-->
+	{% if printable %}
+	<div id="header">
+<img src="{{ MEDIA_URL }}/images/504x72_print_hdr_sb_spa.jpg" alt="Summit Medical Group" width="504" height="72" /></div>
+    {% else %}
+<div id="header"><img src="{{ MEDIA_URL }}/images/spa_344x90_header_logo.gif" alt="Apog&eacute;e Spa at Summit Medical Group" width="344" height="90" usemap="#spa_header_map"><map name="spa_header_map" id="plast_header_map" /><area shape="rect" coords="16,2,201,88" href="/service/Spa-Apogee/" alt="Apog&eacute;e Spa at Summit Medical Group" /></map></div>
+    {%endif %}
+<!--end of SUB-BRAND HEADER div-->
+{% endblock header %}
+
+{% block nav_search %}
+<div id="nav_container_search_header"><img src="{{ MEDIA_URL }}/images/spa_52x10_nav_search.gif" alt="Search" width="52" height="10" /></div>
+<div id="nav_container_search">{% include 'site/search.html' %}</div>
+{% endblock nav_search %}
+
+{% block nav_links %}
+<ul>
+<li class="left_nav_links"><a href="/service/Spa-Apogee/"><img src="{{ MEDIA_URL }}/images/spa_180x38_nav_home.gif" alt="Home" width="180" height="38" /></a></li>
+<li class="left_nav_links"><a href="{{ MEDIA_URL }}/db/media-library/Jan-2009_spa_brochureF.pdf"><img src="{{ MEDIA_URL }}/images/spa_180x38_nav_menu.gif" alt="Our Menu" width="180" height="38" /></a></li>
+<li class="left_nav_links"><a href="/service/Spa-Apogee/Concierge_Service/"><img src="{{ MEDIA_URL }}/images/spa_180x38_nav_concierge.gif" alt="Concierge Service" width="180" height="38" /></a></li>
+</ul>
+{% endblock nav_links %}
+
+{% block nav_extra %}
+<!--start of BACK TO SMG promo badge-->
+<div id="promo_badge">
+<a href="/"><img src="{{ MEDIA_URL }}/images/149x70_left_col_smg.jpg" alt="Back to Summit Medical Group" width="149" height="70" /></a>
+</div>
+<!--end of BACK TO SMG promo badge-->
+{% endblock nav_extra %}
+
+{% block nav_bottom %}
+
+{% if service.related_services.select_related or service.get_nav_links %}
+	<!--start of RELATED RESOURCES div-->
+	<div id="nav_container" class="left_col_related_resources">
+
+	{% if service.related_services.select_related %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/ucc_122x10_related_services.gif" alt="Related Services" width="122" height="10" /></div>
+		<ul class="left_col_ul_resources">
+			{% for related in service.related_services.select_related %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if service.get_nav_links %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/ucc_90x10_useful_links.gif" alt="Useful Links" width="90" height="10" border="0" /></div>
+		<ul class="left_col_ul_resources">
+			{% for resource in service.get_nav_links %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ resource.url }}" target="_blank">{{ resource.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	</div>
+	<!--end of RELATED RESOURCES div-->
+{% endif %}
+
+{% endblock nav_bottom %}
+
+{% block content_well %}
+
+<!--start of center column-->
+<div id="cent_col_573">
+
+<!--start SPA CONTENT-->
+<div id="square_box_573_top"><img src="{{ MEDIA_URL }}/images/spa_573x20_box_top.gif" width="573" height="20" alt="Page Box Top" /></div>
+
+<div id="tab_box_573">
+
+{% include 'site/page_controls.html' %}
+
+<img class="header_text" src="{{ MEDIA_URL }}/images/spa_87x13_subhead_spa.gif" alt="Apog&eacute;e Spa" width="87" height="13" />
+
+{% if events %}
+	<!--start conditional UPCOMING EVENTS box-->
+	<div id="upcoming_events_170">
+	<img class="header_text" src="{{ MEDIA_URL }}/images/upcoming_events_white_heade.jpg" width="113" height="9" border="0" />
+	<p class="font_minus_1">
+	<ul class="services_ul_upcoming_events">
+		{% for event in events %}
+			<li class="services_li_upcoming_events">{{ event.datetime|date:"D M d Y, h:i A" }}<br>
+			<a href="{{ event.get_absolute_url }}">{{ event.title }}</a></li>
+		{% endfor %}
+	</ul>
+	</p>
+	</div>
+	<!--end conditional UPCOMING EVENTS box-->
+{% endif %}
+
+<p>Experience a unique approach to wellness at Summit Medical Group that goes beyond the doctor's office visit. Apog&eacute;e Spa offers a comprehensive strategy to support your well being and individualized needs by offering customized therapeutic services in a serene setting within the medical practice.</p>
+
+<p>You do not have to be a patient of Summit Medical Group to access our services, but if you are our highly skilled staff will work with your physician to develop a comprehensive plan to address your needs and ensure the most beneficial results.</p>
+
+<p><a href="#spa_flash">See Apog&eacute;e Spa's facilities</a></p>
+
+<p><span class="bold">Apog&eacute;e offers:</span></p>
+
+<ul class="spa_purple_bullet_ul">
+<li>Fully integrated blend of traditional and complementary treatment options</li>
+<li>Comprehensive selection of therapeutic massage, including clinical, sports, post surgical, deep tissue, Asian fusion, hot stone, reflexology, and aromatherapy manicures, pedicures, and medicures featuing natural nail care products</li>
+<li>Hair removal with advanced soy-based product line</li>
+<li>Head and Sinus treatment</li>
+<li>Yoga</li>
+<li>Stress reduction training</li>
+<li>Exclusive retail products</li>
+<li>Medical esthetics</li>
+</ul>
+
+<p><span class="bold">Concierge Services</span></p>
+
+<p>Our Spa Concierge can coordinate access to other Services at Summit Medical Group. Explore a healthy eating plan with our nutritionist, consult with top Plastic Surgeons for the latest beauty enhancement services, consider LASIK vision correction, varicose and spider vein treatments, and allow our Sleep Center to evaluate your sleep problems and offer solutions.</p>
+
+<ul class="spa_purple_bullet_ul">
+<li><a href="{{ MEDIA_URL }}/db/media-library/Jan-2009_spa_brochureF.pdf">Spa Menu and Price List</a></li>
+<li><a href="/service/Spa-Apogee/Concierge_Service/">Concierge Service</a></li>
+</ul>
+
+<p><span class="bold">Spa hours are:</span><br>
+Monday - Thursday: 10:00am - 6:00pm<br>
+Friday: 9:00am - 6:00pm Saturday: 9:00am - 3:00pm</p>
+
+<p><span class="bold">To make an appointment or call:</span> (908) 277-8900<br>
+<span class="bold">Location:</span> <a href="#">1 Diamond Hill Road</a></p>
+
+<a name="spa_flash"><div id="spa_flash_movie"><OBJECT codeBase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0"
+							height="488" width="462" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
+
+							<PARAM NAME="_cx" VALUE="12224">
+							<PARAM NAME="_cy" VALUE="12912">
+							<PARAM NAME="FlashVars" VALUE="">
+							<PARAM NAME="Movie" VALUE="spa_pictures.swf">
+							<PARAM NAME="Src" VALUE="{{ MEDIA_URL }}/flash/spa_pictures.swf">
+							<PARAM NAME="WMode" VALUE="Window">
+							<PARAM NAME="Play" VALUE="-1">
+							<PARAM NAME="Loop" VALUE="-1">
+							<PARAM NAME="Quality" VALUE="High">
+
+							<PARAM NAME="SAlign" VALUE="">
+							<PARAM NAME="Menu" VALUE="-1">
+							<PARAM NAME="Base" VALUE="">
+							<PARAM NAME="AllowScriptAccess" VALUE="">
+							<PARAM NAME="Scale" VALUE="ShowAll">
+							<PARAM NAME="DeviceFont" VALUE="0">
+							<PARAM NAME="EmbedMovie" VALUE="0">
+							<PARAM NAME="BGColor" VALUE="">
+							<PARAM NAME="SWRemote" VALUE="">
+
+							<PARAM NAME="MovieData" VALUE="">
+							<PARAM NAME="SeamlessTabbing" VALUE="1">
+							<PARAM NAME="Profile" VALUE="0">
+							<PARAM NAME="ProfileAddress" VALUE="">
+							<PARAM NAME="ProfilePort" VALUE="0">
+							<PARAM NAME="AllowNetworking" VALUE="all">
+							<PARAM NAME="AllowFullScreen" VALUE="false">
+							<embed src="{{ MEDIA_URL }}/flash/spa_pictures.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"type="application/x-shockwave-flash" width="462" height="488"></embed>
+							</OBJECT></div></a>
+		
+<div class="clearfloats"></div>
+</div>
+<!--end SPA CONTENT box-->
+
+{% if service.get_body_links %}
+	<!-- start PATIENT EDUCATION box -->
+	<div id="square_box_573">
+		<img class="header_text" src="{{ MEDIA_URL }}/images/ucc_108x14_library.gif" alt="Live Well Library" width="108" height="14" />
+		<p>The following topics may be of interest to people considering a visit to the Urgent Care Center:</p>
+
+		<ul class="indent_list">
+			{% for resource in service.get_body_links %}
+				<li><a href="{{ resource.url }}">{{ resource.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	<!-- end PATIENT EDUCATION box -->
+{% endif %}
+
+</div>
+<!--end of center column-->
+
+<!-- start right column -->
+<div id="right_col_177">
+
+{% if doctors %}
+	<!-- start DOCTOR LIST box -->
+	<div id="right_col_177_box" class="right_col_doctors_box">
+
+	<div id="right_col_doctor_box_header"><img  class="right_col_doctor_header" src="{{ MEDIA_URL }}/images/ucc_100x10_pink_our_docs.gif" alt="Our Doctors" width="100" height="10"></div>
+	<p class="font_minus_1">
+	<ul class="right_col_ul_doctors">
+		{% for doctor in doctors %}
+			<li class="right_col_li_doctors"><a class="dark_green" href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, '{{ doctor.get_thumbnail_url }}', '{{ doctor.display_name }}, {{ doctor.letters }}')" onmouseout="photoOff()" onclick="photoOff()"><span class="bold">{{ doctor.display_name }}</span></a>&nbsp;&#8209;&nbsp;{{ doctor.letters }}</li>
+		{% endfor %}
+	</ul>
+	</p>
+
+	</div>
+	<!-- end DOCTOR LIST box -->
+	
+	<div id="doctor_photo_flyover" class="doctor_photo_flyover">
+		<center>
+			<img id="doctor_image" src="{{ MEDIA_URL }}/images/100x130Load.gif" />
+			<p id="doctor_name"></p>
+		</center>
+	</div>
+
+{% endif %}
+
+<div class="clearfloats"></div>
+</div>
+<!-- end right column -->
+
+{% endblock content_well %}

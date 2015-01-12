@@ -1,0 +1,17 @@
+{% extends "page_base.html" %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/library.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block body %}
+{% include 'helpers/_menu_library.html' %}
+<div id="main">
+    <div class="main-container">
+		{% block content %}
+		{% endblock content %}
+	<div class="clear"></div>
+	</div>	
+</div><!--main-->
+{% endblock body %}

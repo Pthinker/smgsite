@@ -1,0 +1,183 @@
+{% extends "page_content.html" %}
+
+{% block head_title %}Summit Medical Group - Urgent Care Center{% endblock head_title %}
+
+{% block body_tag %}<body id="sb_ucc">{% endblock body_tag %}
+
+{% block head_extra %}
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}/images/100x130Load.gif";
+		var error_url = "{{ MEDIA_URL }}/images/100x130NoPhoto.gif";
+	-->
+	</script>
+	<script src="{{ MEDIA_URL }}/js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+    {% if printable %}
+	<link href="/dynamic-css/sb_ucc.css?printable=true" rel="stylesheet" type="text/css" />
+    {% else %}
+    <link href="/dynamic-css/sb_ucc.css" rel="stylesheet" type="text/css" />
+    {% endif %}
+{% endblock head_extra %}
+
+{% block header %}
+<!--start of SUB-BRAND HEADER div-->
+{% if printable %}
+<div id="header"><img src="{{ MEDIA_URL }}/images/504x72_print_hdr_sb_ucc.jpg" alt="Summit Medical Group" width="504" height="72" /></div>
+{% else %}
+<div id="header"><img src="{{ MEDIA_URL }}/images/ucc_328x90_header_logo.gif" alt="Urgent Care Center at Summit Medical Group" width="328" height="90" usemap="#ucc_header_map" /><map name="ucc_header_map" id="plast_header_map"><area shape="rect" coords="16,2,201,88" href="/service/Urgent-Care-Center/" alt="Urgent Care Center at Summit Medical Group" /></map></div>
+{% endif %}
+<!--end of SUB-BRAND HEADER div-->
+{% endblock header %}
+
+{% block nav_search %}
+<div id="nav_container_search_header"><img src="{{ MEDIA_URL }}/images/ucc_51x10_nav_search.gif" alt="Search" width="51" height="10"></div>
+<div id="nav_container_search">{% include 'site/search.html' %}</div>
+{% endblock nav_search %}
+
+{% block nav_links %}
+<ul>
+<li class="left_nav_links"><a href="/"><img src="{{ MEDIA_URL }}/images/ucc_180x38_nav_home.gif" alt="Home" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="/service/Urgent-Care-Center/Our_Doctors/"><img src="{{ MEDIA_URL }}/images/ucc_180x38_nav_doctors.gif" alt="Our Doctors" width="180" height="38"></a></li>
+</ul>
+{% endblock nav_links %}
+
+{% block nav_extra %}
+<!--start of BACK TO SMG promo badge-->
+<div id="promo_badge">
+<a href="/"><img src="{{ MEDIA_URL }}/images/149x70_left_col_smg.jpg" alt="Back to Summit Medical Group" width="149" height="70" /></a>
+</div>
+<!--end of BACK TO SMG promo badge-->
+{% endblock nav_extra %}
+
+{% block nav_bottom %}
+
+{% if service.related_services.select_related or service.get_nav_links %}
+	<!--start of RELATED RESOURCES div-->
+	<div id="nav_container" class="left_col_related_resources">
+
+	{% if service.related_services.select_related %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/ucc_122x10_related_services.gif" alt="Related Services" width="122" height="10" /></div>
+		<ul class="left_col_ul_resources">
+			{% for related in service.related_services.select_related %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if service.get_nav_links %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/ucc_90x10_useful_links.gif" alt="Useful Links" width="90" height="10" border="0" /></div>
+		<ul class="left_col_ul_resources">
+			{% for resource in service.get_nav_links %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ resource.url }}" target="_blank">{{ resource.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	</div>
+	<!--end of RELATED RESOURCES div-->
+{% endif %}
+
+{% endblock nav_bottom %}
+
+{% block content_well %}
+
+<!--start of center column-->
+<div id="cent_col_573">
+
+<!--start UCC CONTENT-->
+<div id="square_box_573_top"><img src="{{ MEDIA_URL }}/images/ucc_573x20_box_top.gif" width="573" height="20" alt="Page Box Top" /></div>
+
+<div id="tab_box_573">
+
+{% include 'site/page_controls.html' %}
+
+<img class="header_text" src="{{ MEDIA_URL }}/images/ucc_148x10_subhead_ucc.gif" alt="Urgent Care Center" width="148" height="10" />
+
+{% if events %}
+	<!--start conditional UPCOMING EVENTS box-->
+	<div id="upcoming_events_170">
+	<img class="header_text" src="{{ MEDIA_URL }}/images/upcoming_events_white_heade.jpg" width="113" height="9" border="0" />
+	<p class="font_minus_1">
+	<ul class="services_ul_upcoming_events">
+		{% for event in events %}
+			<li class="services_li_upcoming_events">{{ event.datetime|date:"D M d Y, h:i A" }}<br>
+			<a href="{{ event.get_absolute_url }}">{{ event.title }}</a></li>
+		{% endfor %}
+	</ul>
+	</p>
+	</div>
+	<!--end conditional UPCOMING EVENTS box-->
+{% endif %}
+
+{% if service.image %}
+	<div id="service_illustration"> <img src="{{ service.get_image_url }}" width="{{ service.get_image_width }}" height="{{ service.get_image_height }}" /></div>
+{% endif %}
+
+{{ service.content|safe }}
+
+<div class="clearfloats"></div>
+</div>
+<!--end SERVICE INFO box-->
+
+{% if service.get_body_links %}
+	<!-- start PATIENT EDUCATION box -->
+	<div id="square_box_573">
+		<img class="header_text" src="{{ MEDIA_URL }}/images/ucc_108x14_library.gif" alt="Live Well Library" width="108" height="14" />
+		<p>The following topics may be of interest to people considering a visit to the Urgent Care Center:</p>
+
+		<ul class="indent_list">
+			{% for resource in service.get_body_links %}
+				<li><a href="{{ resource.url }}">{{ resource.name }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	<!-- end PATIENT EDUCATION box -->
+{% endif %}
+
+
+</div>
+<!--end of center column-->
+
+<!-- start right column -->
+<div id="right_col_177">
+
+{% if doctors %}
+	<!-- start DOCTOR LIST box -->
+	<div id="right_col_177_box" class="right_col_doctors_box">
+
+	<div id="right_col_doctor_box_header"><img  class="right_col_doctor_header" src="{{ MEDIA_URL }}/images/ucc_100x10_pink_our_docs.gif" alt="Our Doctors" width="100" height="10"></div>
+	<p class="font_minus_1">
+	<ul class="right_col_ul_doctors">
+		{% for doctor in doctors %}
+			<li class="right_col_li_doctors"><a class="dark_green" href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, '{{ doctor.get_thumbnail_url }}', '{{ doctor.name }}')" onmouseout="photoOff()" onclick="photoOff()"><span class="bold">{{ doctor.display_name }}</span></a>, {{ doctor.letters }}</li>
+		{% endfor %}
+	</ul>
+	</p>
+
+	</div>
+	<!-- end DOCTOR LIST box -->
+	
+	<div id="doctor_photo_flyover" class="doctor_photo_flyover">
+		<center>
+			<img id="doctor_image" src="{{ MEDIA_URL }}/images/100x130Load.gif" />
+			<p id="doctor_name"></p>
+		</center>
+	</div>
+
+{% endif %}
+
+<div class="clearfloats"></div>
+</div>
+<!-- end right column -->
+
+{% if printable %}
+	{% if service.related_services.select_related or service.get_nav_links %}
+		<!--start of RELATED RESOURCES div-->
+		<div id="page_content_area">
+		{% include 'services/resources.html' %}
+		</div>
+		<!--end of RELATED RESOURCES div-->
+	{% endif %}
+{% endif %}
+
+{% endblock content_well %}

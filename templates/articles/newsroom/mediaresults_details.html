@@ -1,0 +1,32 @@
+{% extends 'articles/newsroom/base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}{{ article.headline }} | Summit Medical Group{% endblock head_title %}
+
+{% block content %}
+<div class="coverage-artice">
+    <h2 class="top">{{ article.headline }}</h1>
+    {% if article.byline %}
+        <div class="byline">By 
+        {% if article.byline_link %}
+            <a href="{{ article.byline_link }}">{{ article.byline }}</a>
+        {% else %}
+            {{ article.byline }}
+        {% endif %} 
+        for Summit Medical Group</div>
+    {% endif %} 
+    
+    <div class="date">Last updated: {{ article.display_time|date:"M d, Y" }}</div> 
+
+
+    {% thumbnail article.image "220x160" as im %}
+    <img class="main-image" src="{{ im.url }}" alt="{{ article.headline }}">
+    {% empty %}
+    <img class="main-image" src="holder.js/220x160" />
+    {% endthumbnail %}
+
+    {{ article.content|safe }}
+</div>
+
+{% endblock content %}

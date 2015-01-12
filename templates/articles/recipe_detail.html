@@ -1,0 +1,198 @@
+{% extends 'one_column_layout.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ recipe.title }}{% endblock head_title %}
+
+{% block meta_info %}{% meta_info recipe %}{% endblock meta_info %}
+{% block page_title %}Recipe Detail{% endblock %}
+
+{% block breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="/recipes/">Recipes</a></li>
+    <li class="active">{{ recipe.title }}</li>
+
+    {% include 'site/includes/share.html' %}
+</ol>
+{% endblock breadcrumbs %}
+
+{% block content %}
+
+<div class="recipe_post">
+    <!-- all content within this block is  entered in the admin form-->                                 
+    <div class="blog_post_title">
+        <h2 class="top">{{ recipe.title|safe }}</h2>
+        <p>Last updated: {{ recipe.display_time|date:"M d, Y" }}</p> 
+    </div>
+    {% if recipe.byline %}<p><b><i>By {% if recipe.byline %}{% if recipe.byline_link %}<a href="{{ recipe.byline_link }}" >{{ recipe.byline }}</a>{% else %}{{ recipe.byline }}{% endif %}{% endif %} for Summit Medical Group</i></b></p>{% endif %}
+    {% if recipe.reviewed_by %}<p><b><i>Reviewed by <a href="{{ recipe.reviewed_by_link }}">{{ recipe.reviewed_by }}</a></i></b></p>{% endif %}
+    <div class="recipe_details">
+        <div class="recipe_image"><img src="{{ recipe.image }}"></div>
+        <div>
+            {{ recipe.description|safe }}
+        </div>                                  
+        <div>
+            <h2>Ingredients</h2>
+            <ul>
+                {% for ingredient in recipe.ingredient_list %}
+                <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <h2>Directions</h2>
+            <ol>
+                {% for direction in recipe.direction_list %}
+                <li>{{ direction }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+    {{ recipe.protien }}                                
+    <table class="nutrition" summary="This table summarizes nutritional information">
+        <caption>Nutritional information</caption>
+        <tr>
+            <th colspan="2">Nutrition Facts</th>
+        </tr>
+        {% if recipe.serving_size %}
+        <tr id="servings">
+            <td colspan="2">Serving Size {{ recipe.serving_size }}</td>
+        </tr>
+        {% endif %}
+        <tr>
+            <td colspan="2">Amount Per Serving</td>
+        </tr>
+        {% if recipe.calories %}
+        <tr id="calories">
+            <td><strong>Calories</strong>&nbsp;{{ recipe.calories }}</td>
+            <td class="r">{% if recipe.fat_cals %}Calories from Fat {{ recipe.fat_cals }}{% endif %}</td>
+        </tr>
+        {% endif %}
+        <tr>
+            <td></td>
+            <td class="dv">% Daily Value *</td>
+        </tr>
+        {% if recipe.total_fat %}
+        <tr>
+            <td><strong>Total Fat</strong> {{ recipe.total_fat }}g</td>
+            <td class="dv">{{ recipe.pct_fat }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if recipe.saturated_fat %}
+        <tr>
+            <td class="sub">Saturated Fat {{ recipe.saturated_fat }}g</td>
+            <td class="dv">{{ recipe.pct_saturated_fat }}</td>
+        </tr>
+        {% endif %}
+        
+        <!--{% if recipe.pct_saturated_fat %}
+        <tr>
+            <td class="sub">Monounsaturated Fat 2g</td>
+            <td class="dv"></td>
+        </tr>
+        <tr>
+            <td class="sub">Polyunsaturated Fat 2g</td>
+            <td class="dv"></td>
+        </tr>
+        {% endif %}-->
+        {% if recipe.trans_fat %}
+        <tr>
+            <td class="sub">Trans Fat {{ recipe.trans_fat }}g</td>
+            <td></td>
+        </tr>
+        {% endif %}
+        
+        {% if recipe.cholesterol %}
+        <tr>
+            <td><strong>Cholesterol</strong> {{ recipe.cholesterol }}g</td>
+            <td class="dv">{{ recipe.pct_cholesterol }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if recipe.sodium %}
+        <tr>
+            <td><strong>Sodium</strong> {{ recipe.sodium }}g</td>
+            <td class="dv">{{ recipe.pct_sodium }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if recipe.potassium %}
+        <tr>
+            <td><strong>Potassium</strong> {{ recipe.potassium }}g</td>
+            <td class="dv">{{ recipe.pct_potassium }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if recipe.total_carbs %}
+        <tr>
+            <td><strong>Total Carbohydrate</strong> {{ recipe.total_carbs }}g</td>
+            <td class="dv">{{ recipe.pct_total_carbs }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if recipe.dietary_fiber %}
+        <tr>
+            <td class="sub">Dietary Fiber {{ recipe.dietary_fiber }}g</td>
+            <td class="dv">{{ recipe.pct_dietary_fiber }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if recipe.sugars %}
+        <tr>
+            <td class="sub">Sugars {{ recipe.sugars }}g</td>
+            <td></td>
+        </tr>
+        {% endif %}
+        
+        {% if recipe.protein %}
+        <tr>
+            <td><strong>Protein</strong> {{ recipe.protein }}g</td>
+            <td class="dv">{{ recipe.pct_protien }}</td>
+        </tr>
+        {% endif %}
+
+        <tr id="minerals"></tr>
+
+        {% if recipe.vit_a %}
+        <tr>
+            <td>Vitamin A</td>
+            <td class="dv">{{ recipe.vit_a }}</td>
+        </tr>
+        {% endif %}
+        
+        {% if recipe.vit_c %}
+        <tr>
+            <td>Vitamin C</td>
+            <td class="dv">{{ recipe.vit_c }}</td>
+        </tr>
+        {% endif %}
+        {% if recipe.calcium %}
+        <tr>
+            <td>Calcium</td>
+            <td class="dv">{{ recipe.calcium }}</td>
+        </tr>
+        {% endif %}
+        {% if recipe.iron %}
+        <tr>
+            <td>Iron</td>
+            <td class="dv">{{ recipe.iron }}</td>
+        </tr>
+        {% endif %}
+        <tr>
+            <td id="disclaimer" colspan="2">
+                * The Percent Daily Values are based on a 2,000 calorie diet, so your values may change depending on your calorie needs.
+                The values here may not be 100% accurate because the recipes have not been professionally evaluated nor have they been evaluated by the U.S. FDA.   
+            </td>
+        </tr>
+    </table>
+    
+    {% if recipe.notes %}
+    <div>
+        <h2>Notes</h2>
+        {{ recipe.notes|safe }}
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock content %}

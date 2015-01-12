@@ -1,0 +1,33 @@
+{% extends 'articles/newsroom/base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block trending %}{% endblock trending %}
+
+{% block content %}
+<div class="trending-topics">
+    {% for item in trendingtopics %}
+    <div class="media">
+        <span class="pull-left">
+            {% thumbnail item.image "160x120" as im %}
+            <img class="media-object" src="{{ im.url }}" alt="{{ item.headline }}">
+            {% empty %}
+            <img class="media-object" src="holder.js/160x120" />
+            {% endthumbnail %}
+        </span>
+        <div class="media-body">
+            <h3 class="media-heading">{{ item.headline }}</h3>
+            {% if item.experts.all %}
+            <span class="experts">
+                <b>Expert{{ item.experts.all|pluralize }}: </b>
+                {% for expert in item.experts.all %}
+                    <a href="{{ expert.get_absolute_url }}">{{ expert.display_name }}</a>{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </span> 
+            {% endif %}
+            <div class="content">{{ item.content }}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

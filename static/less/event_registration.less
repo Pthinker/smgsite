@@ -1,0 +1,157 @@
+
+// taken from old CSS
+.eventsinner {
+    border-right: 2px solid #E5E5E5;
+    float: left;
+    margin-top: 30px;
+    min-width: 290px;
+    padding-right: 20px;
+}
+.ie .eventsinner {
+    max-width: 270px;
+}
+.ie6 .eventsinner {
+    width: 270px;
+}
+.eventsinner {
+    width: 290px;
+}
+.eventsinner .box .blockbox {
+    width: 240px;
+}
+.eventsinner .subtitle {
+    width: 240px;
+}
+
+ul.eventdate_choices {
+    display: block;
+    height: 100%;
+    margin: 10px 0;
+    overflow: auto;
+    padding: 0 5px 40px;
+    position: relative;
+    width: 100%;
+}
+ul.eventdate_choices[data-month="unsorted"] {
+    height: 1px;
+    margin: 0;
+    max-height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+}
+.eventdate_choices .eventsinner {
+    display: inline-block;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    min-width: 30%;
+    padding: 0 9px;
+    position: relative;
+    top: 0;
+    width: 30%;
+    min-height: 61px;
+}
+.eventdate_choices .eventsinner .first_month {
+    right: 0;
+}
+.eventdate_choices .eventsinner .middle_month {
+    right: 33.3%;
+    top: 0;
+}
+.eventdate_choices .eventsinner .last_month {
+    right: 66.6%;
+    top: 0;
+}
+.eventdate_choices .eventsinner .box {
+    display: block;
+    float: left;
+    height: 100%;
+    max-height: 63px;
+    padding: 0;
+    width: 100%;
+}
+.eventdate_choices .eventsinner .box + .box {
+    margin-top: 10px;
+}
+.eventdate_choices .eventsinner .box.eventdate_selected {
+    background-color: #D1F1FF;
+}
+.eventdate_choices .eventsinner .box input[name="eventdates"] {
+}
+.eventdate_choices .eventsinner .box .blockbox {
+    height: 100%;
+    position: relative;
+
+}
+.eventdate_choices .eventsinner .title {
+    float: none;
+}
+.eventdate_choices .eventsinner .subtitle {
+    position: relative;
+    width: auto;
+}
+.eventdate_choices .eventsinner .subtitle .hoverbox {
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 1px;
+    height: auto;
+    left: -5px;
+    opacity: 0;
+    padding: 5px;
+    position: absolute;
+    top: -5px;
+    width: 100%;
+}
+.eventdate_choices .eventsinner .subtitle:hover .hoverbox {
+    opacity: 0.8;
+    z-index: 1;
+}
+form[name="eventform"] .datepicker {
+    margin: 0 5px;
+}
+form[name="eventform"] .datepicker .ui-datepicker {
+    border: medium none;
+    padding: 0.2em;
+}
+form[name="eventform"] .datepicker .ui-datepicker-group .ui-datepicker-calendar {
+    display: none;
+}
+.ui-datepicker-multi-3 .ui-datepicker-group {
+    display: inline-block;
+}
+.boxcont {
+    padding: 10px;
+}
+
+.box .date {
+    background-color: #0079D8;
+    border: 1px solid #0079D8;
+    color: #FFFFFF;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 14px;
+    //padding: 6px 0;
+    text-align: center;
+    width: 34px;
+}
+
+.ui-datepicker-title {
+
+}
+
+ul.eventdate_choices {
+    width: 804px;
+    .eventsinner {
+        width: 33%;
+    }
+    .title {
+        font-size: 12px;
+        font-weight: normal;
+    }
+    .subtitle {
+        font-size: 13px;
+        line-height: 13px;
+    }
+}

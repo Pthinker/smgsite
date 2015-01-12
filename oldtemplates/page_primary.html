@@ -1,0 +1,21 @@
+{% extends "page_base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - New Jersey's Best Physicians and Medical Services{% endblock head_title %}
+
+{% block meta_info %}Summit Medical Group has over 140 physicians in New Jersey, providing primary care, medical specialties and diagnostic services.{% endblock meta_info %}
+
+{% block head_extra_primary %}
+<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra_primary %}
+
+{% block body %}
+{% include 'helpers/_menu.html' %}
+<div id="main">
+    <div class="main-container">
+		{% block content %}
+		{% endblock content %}
+	<div class="clear"></div>
+	</div>	
+</div><!--main-->
+{% endblock body %}

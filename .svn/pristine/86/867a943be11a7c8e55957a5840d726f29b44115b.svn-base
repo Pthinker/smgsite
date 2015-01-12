@@ -1,0 +1,38 @@
+
+
+@media print {
+    a:after{
+        display:none;
+    }
+
+    .topbar {
+        display: none;
+    }
+
+    .header-navigation {
+        display: none;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .breadcrumb {
+        display: none;
+    }
+
+    .footer .main {
+        display: none;
+    }
+
+    //doctor page
+    .doctor-foot {
+        display: none;
+    }
+    .back-to-top {
+        display: none;
+    }
+    #mobile-nav {
+        display: none;
+    }
+}

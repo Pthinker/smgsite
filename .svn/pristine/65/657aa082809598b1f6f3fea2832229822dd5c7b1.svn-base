@@ -1,0 +1,260 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row section">
+    {% display_front_slider %}    
+    <a href="/blog/living-well/" class="btn btn-healthy pull-left">See more Health articles</a>
+    <a href="/articles/" class="btn btn-healthy pull-right">See more SMG News articles</a>
+    </div>
+</div>
+
+<div class="quick-bg">
+    <div class="container">
+        <div class="row">
+            <div class="quick-care">
+            <h4><a href="/about/How-Urgently-Do-You-Need-Care/">How Urgently Do You Need Care?</a> | <a href="http://www.summitmedicalgroup.com/static/pdfs/SMG_QUESTIONS_WEBversioncopy/">Questions for Your Doctor</a> | <a href="http://www.summitmedicalgroup.com/static/pdfs/SMG_PatientGuide_webcopy/">Adult Preventive Guidelines</a></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Find Doctor --> 
+<div class="section-header-find-practitioner">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-search"></span> Find a practitioner</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container finder-home">
+    <div class="row">
+        <div class="col-md-6 clearfix">
+            <form role="form" id="doc-search" class="doctor-finder-home" action="/doctors/">
+                <div class="form-group">
+                    <label for="id_specialties">Specialties</label>
+                    {{ doctor_finder_form.specialties }}
+                </div>
+                <div class="form-group">
+                    <label for="id_location">Location</label>
+                    {{ doctor_finder_form.location }}
+                </div>
+                <div class="form-group">
+                    <label for="id_hospitals">Hospital</label>
+                    {{ doctor_finder_form.hospitals }}
+                </div>
+                <div class="form-group">
+                    <label for="id_languages">Language</label>
+                    {{ doctor_finder_form.languages }}
+                </div>
+                {% comment %}
+                <div class="form-group"> 
+                    <label>Choose Gender</label>
+                    
+                    <label class="checkbox-inline" for="id_gender_1">
+                    <input id="id_gender_1" class="" type="radio" value="M" name="gender"> Male</label>
+
+                    <label class="checkbox-inline" for="id_gender_0">
+                    <input type="radio" name="gender" id="id_gender_0" value="F" checked> Female</label>
+                </div>
+                
+
+                <button type="reset" class="btn btn-doctor" href="">RESET</button>
+                
+                {% endcomment %}
+                <button type="submit" class="btn btn-doctor pull-right">SEARCH</button>
+                <a href="/doctors/" class="btn btn-doctor pull-left" href="">SEE ALL PRACTITIONERS BY NAME</a>
+            </form>
+        </div>
+        
+        <div class="col-md-6 clearfix">
+            <div class="condition-finder-home">
+                <div>
+                    <h3>Condition and treatment finder</h3>
+                    <p>Enter a diagnosis, disease, condition, or treatment. If you do not find what you need, or if
+you want a specific doctor or department, please use the search box at the top right of our website
+instead</p>
+                </div>
+                <form role="form" class="form-inline" action="/doctors/">
+                    <div class="form-group search-cont">
+                        <label class="sr-only" for="id_search">Search Condition</label>
+                        {{ condition_finder_form.q }}
+                    </div>
+                    <button type="submit" class="btn btn-doctor">Search</button>
+                    <span class="help" href=""><i class="fa fa-question-circle"> </i></span>
+                </form>
+
+                <div>
+                    <h3><a href="/about/MySMG/">Click here for our Patient Portal</a> to:</h3>
+                    {% include 'includes/patient_portal.html' %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End Find Doctor --> 
+
+{% featured %}
+
+<!-- News --> 
+<div class="section-header-news hidden-xs">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="fa fa-file-text-o"></span> Our News</h2>  
+        </div>
+    </div>
+</div>
+{% get_news_articles 'articles' 3 as news %}
+
+<div class="container hidden-xs">
+    <div class="row">
+        {% for item in news %}
+        <div class="col-md-4">
+            {% include 'helpers/front_news_item.html' %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="news-section">
+    <a href="/newsroom/" class="btn btn-news btn-lg btn-block">For More Headlines and Updates, access the Summit Medical Group Newsroom. Click here.</a>
+    </div>
+
+</div>
+
+
+{% get_news_articles 'healthday' 3 as healthday_news %}
+
+<div class="container hidden-xs">
+    <div class="row">
+        {% for item in healthday_news %}
+        <div class="col-md-4">
+            <div class="news-item">
+                <div class="date">{{ item.posting_time|date }}</div>
+                <div class="title"><a href="{{ item.get_absolute_url }}">{{ item.headline|safe }}</a></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="news-section">
+        <a href="/healthday/" class="btn btn-news pull-right">See all healthday news</a>
+    </div>
+
+    
+</div>
+<!-- End News --> 
+
+
+<!-- Living Well --> 
+<div class="section-header-living">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-leaf"></span> Living Well</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row living-well-section">
+        <div class="col-md-4 living-well">
+            <div class="media">
+                <div class="pull-left">
+                    <img class="media-object" src="{{ STATIC_URL }}images/nutrition_home.jpg" />
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">Nutrition</h2> 
+                    {% latest_feature 'Nutrition' %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 living-well">
+            <div class="media"> 
+                <div class="pull-left"> 
+                    <img class="media-object" src="{{ STATIC_URL }}images/recipes_home.jpg" />
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">Recipes</h2>   
+                    {% featured_recipe 'featured' %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 living-well"> 
+            <div class="media">  
+                <div class="pull-left"> 
+                    <img class="media-object" src="{{ STATIC_URL }}images/fitness_home.jpg" />
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">Fitness</h2>
+                    {% latest_feature 'Fitness' %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hidden-xs">
+        {% video_template 'Homepage' %}
+    </div>
+</div>
+<!-- End Living Well --> 
+
+<!-- Events --> 
+<div class="section-header-event">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-calendar"></span> Our Events</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row home-events">
+        <div class="col-md-4 hidden-xs"> 
+            <div id="events-calendar"></div>
+        </div>
+        <div class="col-md-3 clearfix"> 
+            <h3>Regular Classes</h3>
+            {% classes 3 %}                       
+            <a class="btn btn-event pull-right" href="/classes/">See all classes</a> 
+        </div>
+        <div class="col-md-5 clearfix">
+            <h3>Events, Lectures and Support Groups</h3>
+            <div id="events-content">
+                {% events_this_month 3 %}
+            </div>
+            <a class="btn btn-event pull-right" href="/events/">See all events</a> 
+        </div>
+    </div>
+</div>
+<!-- End Events --> 
+
+
+<script>
+$(function() {
+   $("#doc-search").submit(function(event) {
+        event.preventDefault();
+        var form_items = $( this ).serializeArray();
+
+        $.each(form_items, function(i, item) {
+            item.name = "selected_facets";
+            item.value = item.value.replace(/\s/g, '+');
+        });
+
+        var url = "/doctors/?" + decodeURIComponent($.param( form_items, true ));
+        window.open(url, "_parent");
+
+   });
+ });
+</script>
+
+{% endblock %}

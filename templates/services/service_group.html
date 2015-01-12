@@ -1,0 +1,36 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-services">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-search"></span> Services // {{ group.name }}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row section">
+        {% for service in services %}
+        <div class="col-md-4 service-preview">
+            <a href="{{ service.service.get_absolute_url }}" class="cont">
+                {% thumbnail service.service.display_small_image "284x196" crop="center" as im %}
+                <img src="{{ im.url }}" alt="{{ service.service.name }}" />
+                {% endthumbnail %}
+                <div class="title">{{ service.service.name }}</div>
+                <div class="summary">{{ service.service.description_short }}</div>
+                <span class="more">SEE MORE</span>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+

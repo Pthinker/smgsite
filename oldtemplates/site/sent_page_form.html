@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>{% block head_title %}Summit Medical Group - Email This Page To A Friend{% endblock head_title %}</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<link rel="shortcut icon" href="{{ MEDIA_URL }}/favicon.ico" type="image/vnd.microsoft.icon" />
+	<link rel="stylesheet" href="/dynamic-css/global.css" type="text/css" />
+	<link rel="stylesheet" href="/dynamic-css/basicstyle.css" type="text/css" />
+	<style type="text/css">
+	<!--
+	body {
+		background: #fff;
+		padding: 10px;
+	}
+	h2 {
+		text-align: center;
+		font-size: 14px;
+		color: #004C75;
+		padding: 0 0 1em 0;
+	}
+	p {
+		padding: 1em 0 0 0;
+		text-align: center;
+	}	
+	.clear {
+		height: 0;
+		font-size: 0;
+		clear: both;
+	}
+	span.small-font {
+		font-size: .9em;
+		color: #aaa;
+	}
+	//-->
+	</style>
+</head>
+	<body id="home">
+		<!--start of full page container div-->
+		
+
+		<img src="{{ MEDIA_URL }}/images/205x100_smg_header_email.jpg" />
+
+		
+			<h2>Your Email Has Been Sent</h2>
+			<p>Thank you for sharing this page with a friend.</p>
+			<p align=center><a href="javascript:window.close()">Close window</a></p>
+		
+	
+		<!--end of full page container div-->
+	{# Google Analytics tracking code #}
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	var pageTracker = _gat._getTracker("UA-3924031-2");
+	pageTracker._initData();
+	pageTracker._trackPageview();
+	</script>
+		
+
+    </body>
+</html>

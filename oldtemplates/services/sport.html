@@ -1,0 +1,266 @@
+{% extends "services/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Jersey Sports Medicine &amp; Rehab | Summit Medical Group New Jersey{% endblock head_title %}
+
+{% block meta_info %}{% meta_info service %}{% endblock meta_info %}
+{% block seo_keywords %}{% seo_keywords service %}{% endblock seo_keywords %}
+
+{% block body_tag %}<body class="sky_theme s_sports">{% endblock body_tag %}
+
+{% block content %}		
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<!-- start of main blocks column right -->
+	<div class="right_main_block">
+		<div class="right_sub_main_block">
+		
+			<!-- start of pages navigation -->
+			<div class="navigation">
+			
+				{% include 'site/share.html' %}
+				
+				<div class="clear" style="min-height:23px; height:23px;"></div>
+			
+				<div class="pages">
+					<a href="/services/">Services</a> / {{ service.name }}
+				</div>
+				
+				<div class="clear"></div>
+				
+			</div>
+			<div class="clear"></div>
+			<!-- end of pages navigation -->
+			
+			<!-- start of main content -->
+			<div class="cols_2_fix_right_160">
+
+				<!-- start of left column of main content -->
+				<div class="cols_2_left">
+				  <div class="cols_2_left_sub">
+						<div class="h1_wrap"><h1>{{ service.name }}</h1></div>
+						<!-- start of main information ("Content" from the service form)-->
+						
+						
+						<!-- start of main information -->
+						<div class="main_info">
+							{{ service.content|safe }}
+						</div>
+						<!-- end of main information -->
+						
+						{% if service.learn_more %}
+						<div class="subdiv">
+							<h2>Additional Information:</h2>
+							<!--"Learn more" from admin form. Note, list format is illustrative only (assume admin will format content as desired).-->
+							{{ service.learn_more|safe }}
+							<!--End "Learn more" from admin form-->
+						</div>
+						{% endif %}
+						
+						{% comment %}
+						{% if service.get_body_links %}
+						<div class="subdiv_1">
+							<h2>Click the links below to learn more:</h2>
+							<!--"Links for content well display" from admin form-->
+							{% for resource in service.get_body_links %}
+								<p><a href="{{ resource.url }}">{{ resource.name }}</a></p>
+							{% endfor %}
+							<!--End "Links for content well display" from admin form-->
+						</div>
+						{% endif %}
+						{% endcomment %}
+						
+						<!--Blog (only shown if selected-->
+						{% if service.blog %}
+						<div class="subdiv">
+							<h2>{{ service.blog.name }}</h2>
+							<ul class="list_quotes">
+								{% for post in service.blog_list %}
+									<li><a href="/blog/{{ service.blog.urlname }}/{{ post.urlname }}/">{{ post.title }} ({{ post.postdate|date:"D d M Y" }})</a></li>
+								{% endfor %}
+							</ul>
+						<div class="bottomlinks">
+							<a href="/blog/rss/{{ service.blog.urlname }}/" class="subscribe"></a>
+							<a href="/blog/rss/{{ service.blog.urlname }}/" class="first_link">Subscribe</a>
+							<a href="/blog/{{ service.blog.urlname }}/">More Headlines</a>
+						</div>		
+						</div>
+						{% endif %}												
+						<!--End Blog-->
+					</div>
+				</div>
+				<!-- end of left column of main content -->
+				
+				<!-- start of right column of main content -->
+				<div class="cols_2_right">
+
+					<!--Note: New requirements on Location. This will now be WYSIWYG text. -->
+								
+					<div class="box_160">
+						<div class="box_160_top">
+							<div class="box_160_bottom">
+								<div class="box_160_wrap">
+									<h3>Location{% if service.location_plural %}s{% endif %}</h3>
+									{% for location in service.locations %}
+									{% location location %}
+									{% endfor %}
+									<!--The phone number from the "Phone" field on the admin form, if present.-->
+									<p class="bolder">Main phone number:<br /> {{ service.phone }}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{% if doctors %}
+					<div class="box_160">
+						<div class="box_160_top">
+							<div class="box_160_bottom">
+								<!--Displays doctors for this service whose status is "Doctor." Hidden if none.-->
+								<!--Flyover in doctor_flyover.html-->
+								<div class="box_160_wrap">
+									<h3>Our Treatment Team</h3>
+									{% for doctor in doctors %}
+									<p><a href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, {% if doctor.thumbnail %}'{{ doctor.thumbnail.url }}'{% else %}''{% endif %}, '{{ doctor.display_name }}, {{ doctor.letters }}', '{{ doctor.list_services }}', '{{ doctor.phone }}')" onmouseout="photoOff()" onclick="photoOff()">{{ doctor.display_name }}, {{ doctor.letters }}</a></p>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+
+					{% if staff %}
+					<div class="box_160">
+						<div class="box_160_top">
+							<div class="box_160_bottom">
+								<!--Displays doctors for this service whose status is "Staff." Hidden if none.-->
+								<!--Flyover in doctor_flyover.html-->
+								<div class="box_160_wrap">
+									<h3>Our Staff</h3>
+									{% for doctor in staff %}
+									<p><a href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, {% if doctor.thumbnail %}'{{ doctor.thumbnail.url }}'{% else %}''{% endif %}, '{{ doctor.display_name }}, {{ doctor.letters }}', '{{ doctor.list_services }}', '{{ doctor.phone }}')" onmouseout="photoOff()" onclick="photoOff()">{{ doctor.display_name }}</a>, {{ doctor.letters }}</p>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					
+					{% if service.patient_tools %}
+					<div class="box_160">
+						<div class="box_160_top">
+							<div class="box_160_bottom">
+								<!--"Patient Tools" from admin form. Note, list format is illustrative only (assume admin will format content as desired).-->
+								<div class="box_160_wrap">
+									<h3>Patient Tools</h3>
+									{{ service.patient_tools|safe }}
+								</div>
+								<!--End "Patient Tools" from admin form-->
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					
+					<div class="doctor_photo_flyover" id="doctor_photo_flyover">
+						<div><img id="doctor_image" src="{{ MEDIA_URL }}/images/100x130Load.gif" /></div>
+						<p class="name" id="doctor_name"></p>
+
+						<dl>
+							<dt>Specialty:</dt>
+							<dd id="doctor_service"></dd>
+						</dl>
+						<dl>
+							<dt>Phone Number:</dt>
+							<dd id="doctor_phone"></dd>
+
+						</dl>
+					</div>
+				</div>
+				<!-- end of right column of main content -->
+			</div>
+			<!-- end of main content -->
+		</div>
+	</div>
+	<!-- end of main blocks column right -->
+	<!-- start of main blocks column left -->
+	<div class="left_main_block">
+
+		<div class="sidebox"><a href="/"><img src="{{ MEDIA_URL }}/images/204x92_smg_return.gif" alt="SMG" width="204" height="92" border="0" /></a></div>
+
+		<!-- "Offerings" from admin form.-->
+		{% if service.offerings %}
+		<div class="box_207 mt10">
+			<div class="box_207_bottom">
+				<div class="box_207_top">
+
+					<h2 class="quick_links">Our Specialties</h2>
+					{{ service.offerings|safe }}
+				</div>
+			</div>
+		</div>
+		{% endif %}
+
+		<div class="box_207 mt10">
+			<div class="box_207_bottom">
+				<div class="box_207_top">
+
+					{% if events %}
+						<div class="box_arrowed_list">
+						<h2>Upcoming Events</h2>						
+							<ul class="arrows">						
+							{% for event in events %}
+							<li>{{ event.title }}
+							<div class="small-date">{{ event.timeshort }}</div>
+							<a href="{{ event.get_absolute_url }}">Details and location</a></li>
+							{% endfor %}
+							</ul>
+						</div>
+					
+					{% endif %}
+				</div>
+			</div>
+		</div>
+
+		{% if service.related_services.all %}							
+		<div class="box_207 mt10">
+			<div class="box_207_bottom">
+				<div class="box_207_top">
+					<div class="box_arrowed_list">
+					<h2>You Might Also Like</h2>
+					<!-- "Related services" from admin form.-->
+					<ul class="arrows">
+						{% for related in service.related_services.all %}
+							<li><a href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+						{% endfor %}
+					</ul>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		{% endif %}
+
+		
+		{% if service.get_nav_links %}
+		<div class="box_207 mt10">
+			<div class="box_207_bottom">
+				<div class="box_207_top">
+					<div class="box_arrowed_list">
+					<h2>Recommended links</h2>
+					<!-- "Links for nav display" from admin form. Note we no longer distinguish local and remote links. -->
+					<ul class="arrows">
+					{% for resource in service.get_nav_links %}
+						<li><a href="{{ resource.url }}" target="_blank">{{ resource.name }}</a></li>
+					{% endfor %}
+					</ul>		
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		
+		<div class="mt10">
+			{% banner %}</div>
+	</div>
+	<!-- end of main blocks column left -->
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

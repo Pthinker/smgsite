@@ -1,0 +1,34 @@
+{% extends 'one_column_layout.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Admin{% endblock head_title %}
+
+{% block page_title %}Admin{% endblock %}
+
+{% block content %}
+
+<div>
+    <a href="/blog/admin/">Admin</a> &gt; {{ blog.name }}
+</div>
+
+<h1>Welcome to the admin page for the {{ blog.name }}.</h1>
+<p>You are currently authenticated as {{ user }}.</p>
+
+{% if editor %}
+<p>You are an editor of this blog.</p>
+{% else %}
+<p>You are an author of this blog.</p>
+{% endif %}
+
+<p>You can <a href="/blog/admin/post/{{ blog.urlname }}/">post a new entry</a>.</p>
+
+<p>{{ blog.name }} currently has {{ blog.count }} entries.</p>
+<p>The most recent entry is {{ blog.latest.postdate }}.</p>
+
+<ul class="articles_index_list_ul">
+{% for post in posts %}
+    <li class="margin_bottom_10_li"><a href="/blog/admin/post/{{ blog.urlname }}?entry={{ post.urlname }}"><span class="bold">{{ post.title }} ({{ post.postdate|date:"D d M Y" }})</span></a></li>
+{% endfor %}
+</ul>
+
+{% endblock content %}

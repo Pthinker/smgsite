@@ -1,0 +1,29 @@
+{% extends "services/oncology_base.html" %}
+{% load helpers %}
+
+{% block meta_info %}{% meta_info service %}{% endblock meta_info %}
+{% block seo_keywords %}{% seo_keywords service %}{% endblock seo_keywords %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/doctors.css" type="text/css" media="screen" />
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}/images/95x95_loading.jpg";
+		var error_url = "{{ MEDIA_URL }}/images/95x95_not_avail.jpg";
+	-->
+	</script>
+	<script src="{{ MEDIA_URL }}/js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block page_title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+<div>
+<p>{{ page.content|safe }}</p>
+</div>
+
+{% doctors_output doctors %}
+<p style="text-align: center;">
+	<strong>To contact us, please call 908-277-8890.</strong></p>
+
+{% endblock content %}

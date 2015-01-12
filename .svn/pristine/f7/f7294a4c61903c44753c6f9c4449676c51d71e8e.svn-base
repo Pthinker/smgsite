@@ -1,0 +1,14 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+	<script type="text/javascript" src="/media/ckeditor/ckeditor.js"></script>
+	<script type="text/javascript" src="/media/ckeditor/adapters/jquery.js"></script>
+	<script src="/media/js/admin/editor.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/media/js/admin/event.js" type="text/javascript" charset="utf-8"></script>
+{% endblock extrahead %}
+
+{% block object-tools %}
+<div style="text-align:left;"><h3><a href="/admin/events/clone/{{ object_id }}/">Duplicate this event to create a new event</a></h3></div>
+{{ block.super }}
+{% endblock %}

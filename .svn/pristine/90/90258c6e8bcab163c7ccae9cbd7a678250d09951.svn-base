@@ -1,0 +1,11 @@
+{% load helpers %}
+
+{{ object.name }}
+{{ object.description_short | striptags | unescape }}
+{{ object.content | striptags | unescape }}
+{{ object.offerings }}
+{{ object.learn_more | striptags | unescape }}
+{{ object.patient_tools }}
+{% for location in object.location_set.all %}
+    {{ location.location.address }} {{ location.location.address2 }} {{ location.location.city }} {{ location.location.state }} {{ location.location.display_name }}
+{% endfor %}

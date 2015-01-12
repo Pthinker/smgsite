@@ -1,0 +1,70 @@
+{% extends 'two_column_right_layout.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}Summit Medical Group - {{ article.title }}{% endblock head_title %}
+{% block meta_info %}{% meta_info article %}{% endblock meta_info %}
+{% block page_title %}{{ article.title }}{% endblock %}
+
+{% block breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="/library/">Live Well Library</a></li>
+    <li><a href="{{ article.advisor.get_absolute_url }}">{{ article.advisor.name }}</a></li>
+    <li class="active">{{ article.title }}</li>
+
+    {% include 'site/includes/share.html' %}
+</ol>
+{% endblock breadcrumbs %}
+
+{% block sidebar %}
+
+{% if article.related.all %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>You Might Also Like</h4>
+    </div>
+
+    <div class="list-group">
+        {% for rel in article.related.all %}
+        <a class="list-group-item" href="{{ rel.get_absolute_url }}">{{ rel.title }}</a>
+        {% endfor %}
+    </div> 
+</div>   
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Live Well Libraries</h4>
+    </div>
+    <div class="list-group">
+        <a class="list-group-item" href="/library/adult_care/">Adult Care Advisor</a>
+        <a class="list-group-item" href="/library/adult_health/">Adult Health Advisor</a>
+        <a class="list-group-item" href="/library/medications/">Medications Advisor</a>
+        <a class="list-group-item" href="/library/pediatric_health/">Pediatric Health Advisor</a>
+    </div>
+</div>
+
+{% endif %}
+{% endblock sidebar %}
+
+{% block content %}
+
+{% if article.images.all %}
+<div id="library_rh_img_thumbnail">
+    {% for image in article.images.all %}
+    <a href="{{ image.image.url }}" target="pop_up_library_image">
+    {% thumbnail image.image "100x200" as im %}
+        <img src="{{ im.url }}" width="100" />
+    {% endthumbnail %}
+    </a>
+    <p><a href="{{ image.image.url }}" target="pop_up_library_image">View image</a></p>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% include article.template %}
+
+{% if article.references %}
+<a href="/library/{{ article.references.urlname }}">References</a>
+{% endif %}
+
+{% endblock content %}

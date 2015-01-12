@@ -1,0 +1,58 @@
+{% extends "page_content.html" %}
+
+{% block head_title %}Summit Medical Group - Doctors By Service and Specialty{% endblock head_title %}
+
+{% block meta_info %}Find the New Jersey doctor you need. View Summit Medical Group practitioners by name, by specialty, or by location.{% endblock meta_info %}
+
+{% block head_extra %}
+	<link rel="stylesheet" href="/dynamic-css/dynamic.css" type="text/css" media="screen" />
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}/images/100x130Load.gif";
+		var error_url = "{{ MEDIA_URL }}/images/100x130NoPhoto.gif";
+	-->
+	</script>
+        <script src="{{ MEDIA_URL }}/js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block content_well %}
+
+<div id="tab_box_765_top"><img src="{{ MEDIA_URL }}/images/765x40_tab_head_doctors.gif" alt="Doctors" width="765" height="40" hspace="0" vspace="0" border="0" usemap="#tab_header"><map name="tab_header" id="tab_header"><area shape="rect" coords="7,21,137,37" href="#" alt="Doctors"></map></div>
+
+<!-- start 765px WHITE TAB BOX BOTTOM -->
+<div id="tab_box_765">
+
+{% include 'site/page_controls.html' %}
+
+<p>Below is a list of Summit Medical Group's physicians grouped by their Service and specialty. Click on a name to read more about that doctor as well as obtain contact information in order to make an appointment. Roll your cursor over a name to see a photograph of that doctor.</p>
+
+<p><a href="/doctors/">Click here to see an alphabetical list of all of our physicians</a></p>
+
+{% for service in services %}
+	<div id="doctors_alpha_list_header"><span class="doctors_index_header">{{ service.section }}</span></div>
+	<div id="doctors_alpha_list_730_box">
+		<ul class="doctors_alpha_index_left_ul">	
+			{% for doctor in service.first_column %}
+				<li class="doctors_alpha_name_li"><a href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, '{{ doctor.get_thumbnail_url }}', '{{ doctor.display_name }}, {{ doctor.letters }}')" onmouseout="photoOff()" onclick="photoOff()"><span class="bold">{{ doctor.last_name }}</span>, {{ doctor.remainder_name }}</a>, {{ doctor.letters }}</li>
+			{% endfor %}
+		</ul>
+		<ul class="doctors_alpha_index_right_ul">
+			{% for doctor in service.second_column %}
+				<li class="doctors_alpha_name_li"><a href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, '{{ doctor.get_thumbnail_url }}', '{{ doctor.display_name }}, {{ doctor.letters }}')" onmouseout="photoOff()" onclick="photoOff()"><span class="bold">{{ doctor.last_name }}</span>, {{ doctor.remainder_name }}</a>, {{ doctor.letters }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endfor %}
+
+<div id="doctor_photo_flyover" class="doctor_photo_flyover">
+	<center>
+		<img id="doctor_image" src="{{ MEDIA_URL }}/{{ MEDIA_URL }}/images/100x130Load.gif" />
+		<p id="doctor_name"></p>
+	</center>
+</div>
+
+<div class="clearfloats"></div>
+</div>
+<!-- end 765px WHITE TAB BOX  BOTTOM -->
+
+{% endblock content_well %}

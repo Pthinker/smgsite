@@ -1,0 +1,27 @@
+{% if doctor.participating %}
+{% comment %}
+<p class="accepting"><i class="glyphicon glyphicon-ok"></i> To reach me online, you can:</p>
+
+
+<ul class="reach_ways">
+    {% if doctor.has_email_doctor %}
+    <li><a TARGET="_blank" href="{{ doctor.email_doctor_link }}" class="msmg_email_me">E-mail Me</a></li>
+    {% endif %}
+    {% if doctor.has_email_staff %}
+    <li><a TARGET="_blank" href="{{ doctor.email_doctor_staff }}" class="msmg_email_office">E-mail Office Staff</a></li>
+    {% endif %}
+    {% if doctor.has_appointments %}
+    <li><a TARGET="_blank" href="{{ doctor.appointments_link }}" class="msmg_request_appoint">Request an Appointment</a></li>
+    {% endif %}
+    {% if doctor.has_lab_results %}
+    <li><a TARGET="_blank" href="{{ doctor.lab_results_link }}" class="msmg_request_lab_res">Request Lab/Test Results</a></li>
+    {% endif %}
+    {% if doctor.has_health_records %}
+    <li><a TARGET="_blank" href="{{ doctor.health_records_link }}" class="msmg_request_health_rec">Personal Health Records</a></li>
+    {% endif %}
+</ul>
+{% endcomment %}
+
+{% else %}
+<p class="not-acccepting"><i class="glyphicon glyphicon-remove"></i> I am not accepting e-mail or online appointment requests.</p>
+{% endif %}

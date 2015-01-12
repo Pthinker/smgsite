@@ -1,0 +1,4 @@
+{% load helpers %}
+
+{{ object.headline }}
+{{ object.content | striptags | unescape }}

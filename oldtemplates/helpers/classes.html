@@ -1,0 +1,27 @@
+{% for class in classes %}
+<div class="box">
+	
+	<div class="blockbox">
+		<div class="title">
+		{% for day in class.days_held %} 
+		{{ day }}{% if forloop.last %} - {% else %}, {% endif%}
+		{% endfor %} {{ class.starttime_display }}</div><br />
+		<div class="subtitle"><a href="{{ class.get_absolute_url }}">{{ class.title }}</a></div>
+		{% if class.cancellations %}<br /><div class="note">Note: {{ class.cancellations }}</div>{%endif %}
+	</div>
+	<div class="clear"></div>
+</div>
+{% endfor %}
+{% comment %}
+<div class="wrap_last">
+	{% for event in events %}
+	<div class="event">
+		<div class="event_image">{% if event.icon %}<img src="{{ event.icon.url }}" alt="{{ event.title }}" width="51" height="51" />{% endif %}</div>
+		<div class="event_brief">
+			<p class="when_event_brief">{{ event.timeshort }}</p>
+			<a href="{{ event.get_absolute_url }}"><strong>{{ event.title }}</strong></a>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endcomment %}

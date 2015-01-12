@@ -1,0 +1,68 @@
+{% extends "admin/base_site.html" %}
+{% load adminmedia admin_list i18n %}
+{% block bodyclass %}change-list{% endblock %}
+{% if not is_popup %}{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/">{% trans "Home" %}</a> &rsaquo; <a href="/admin/events/registration/">Event Registrations</a> &rsaquo; Registered Users</div>{% endblock %}{% endif %}
+{% block coltype %}flex{% endblock %}
+{% block pretitle %}
+{% endblock %}
+{% block content %}
+<div id="content-main">
+{% if event %}
+<h1>Registered Users for {{ event.title }}</h1>
+<p><a href="/admin/events/registration/export/event/event_registrations.csv?event={{ event.pk }}">Export registrations</a> for {{ event.title }} to a CSV file.</p>
+{% else %}
+<h1>Complete List of Registered Users</h1>
+<p><a href="/admin/events/registration/export/all/event_registrations.csv">Export all registrations</a> for to a CSV file.</p>
+{% endif %}
+{% block object-tools %}
+<ul class="object-tools"><li><a href="/admin/events/registration/add/" class="addlink">Add Event Registrations</a></li></ul>
+{% endblock %}
+<div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
+{% block search %}{% endblock %}
+{% block date_hierarchy %}{% endblock %}
+{% block filters %}{% endblock %}
+{% block result_list %}
+<table cellspacing="0">
+<thead>
+<tr>
+<th>
+First Name
+</th><th>
+Last Name
+</th><th>
+Age
+</th><th>
+City
+</th><th>
+State
+</th><th>
+Zip
+</th><th>
+E-Mail
+</th><th>
+Daytime Phone
+</th><th>
+Alt. Phone
+</th><th>
+Send emails?
+</th><th>
+Date Registered
+</th><th>
+Referral
+</th><th>
+Entered by
+</th>
+</tr>
+</thead>
+<tbody>
+{% for registration in registrations %}
+<tr class="{% cycle 'row1' 'row2' %}"><td><a href="../{{ registration.pk }}/">{{ registration.first_name }}</a></td><td>{{ registration.last_name }}</td><td>{{ registration.age }}</td><td>{{ registration.city }}</td><td>{{ registration.state }}</td><td>{{ registration.zipcode }}</td><td>{{ registration.email }}</td><td>{{ registration.main_phone }}</td><td>{{ registration.alt_phone }}</td><td>{{ registration.get_sendmail_display }}</td><td>{{ registration.signup_date|date:"D d M Y" }}</td><td>{{ registration.referrer.name }}</td><td>{{ registration.get_entered_by_display }}</td></tr>
+{% endfor %}
+{% endblock %}
+{% block pagination %}{% endblock %}
+</tbody>
+</table>
+
+</div>
+</div>
+{% endblock %}

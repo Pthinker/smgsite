@@ -1,0 +1,12 @@
+<div class="navbar">
+	<div class="navbarinner">
+		<ul>
+			<li {% if active == 'home' %}class="active"{% endif %} id="li1"><a href="/" title="Home">Home</a></li>
+			<li {% if active == 'services' %}class="active"{% endif %} id="li2"><a href="/services/" title="Find a Service">Find a Service</a></li>
+			<li {% if active == 'doctors' %}class="active"{% endif %} id="li3"><a href="/doctors/" title="Find a Practitioner">Find a Practitioner</a></li>
+			<li {% if active == 'library' %}class="active"{% endif %} id="li4"><a href="/library/" title="Live Well Library">Live Well<br />Library</a></li>
+			<li {% if active == 'mysmg' %}class="active"{% endif %} id="li5"><a href="/mysummitmedicalgroup/" title=" My Summit Medical Group">My Summit<br />Medical Group</a></li>
+			<li {% if active == 'location' %}class="active"{% endif %} id="li6"><a href="/locations/" title="Locations and Directions">Locations<br />and Hours</a></li>
+		</ul>
+	</div>
+</div><!--navbar-->

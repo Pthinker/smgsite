@@ -1,0 +1,66 @@
+{% extends "page_base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Search Results{% endblock head_title %}
+
+
+
+
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-doctor">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="fa fa-search"></span> Search</h2>  
+        </div>
+    </div>
+</div>
+
+
+<div class="container search">
+    <div class="row">
+        <div class="col-md-3 search-sidebar"> 
+            <ul class="list-unstyled">
+            {% if models %}
+            {% for model in models %}
+                <li><a href="/search/{{ model|first }}/1/?search-input={{ query }}">{{ model|last }}</a></li>
+            {% endfor %}
+            {% else %}
+                <li><a href="/search/?search-input={{ query }}">Search All</a></li>
+            {% endif %}
+            </ul>
+        </div>
+
+        <div class="col-md-9"> 
+            <h2>Search Results for "{{ query }}"</h2>
+
+            {% if result_groups %}
+                {% for group in result_groups %}
+                    <div class="search_results_group"> 
+                        <h3>{{ group.display_name }}</h3>
+                        {% for result in group.results %}
+                            <p><a href="{{ result.url }}">{{ result.name|safe }}</a></p>
+                        {% endfor %}
+                        {% if group.more %}
+                        <a class="pull-right" href="/search/{{ group.name }}/1/?search-input={{ query }}">
+                            More {{ group.display_name }} results...</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            {% else %}
+            <p>No results...</p>
+            {% endif %}
+
+            {% include 'includes/pagination.html' %}
+
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

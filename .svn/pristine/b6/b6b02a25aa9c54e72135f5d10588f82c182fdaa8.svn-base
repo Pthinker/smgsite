@@ -1,0 +1,217 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'GothamHTFLight';
+    src: url('fonts/gothamhtf-light-webfont.eot');
+    src: url('fonts/gothamhtf-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/gothamhtf-light-webfont.woff') format('woff'),
+         url('fonts/gothamhtf-light-webfont.ttf') format('truetype'),
+         url('fonts/gothamhtf-light-webfont.svg#GothamHTFLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'HelveticaBold';
+    src: url('fonts/helvetica-bold-webfont.eot');
+    src: url('fonts/helvetica-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/helvetica-bold-webfont.woff') format('woff'),
+         url('fonts/helvetica-bold-webfont.ttf') format('truetype'),
+         url('fonts/helvetica-bold-webfont.svg#HelveticaBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GothamHTFBook';
+    src: url('fonts/gothamhtf-book-webfont.eot');
+    src: url('fonts/gothamhtf-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/gothamhtf-book-webfont.woff') format('woff'),
+         url('fonts/gothamhtf-book-webfont.ttf') format('truetype'),
+         url('fonts/gothamhtf-book-webfont.svg#GothamHTFBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'GothamHTFMedium';
+    src: url('fonts/gothamhtf-medium-webfont.eot');
+    src: url('fonts/gothamhtf-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/gothamhtf-medium-webfont.woff') format('woff'),
+         url('fonts/gothamhtf-medium-webfont.ttf') format('truetype'),
+         url('fonts/gothamhtf-medium-webfont.svg#GothamHTFMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body,html{ margin:0; padding:0; height:100%; width:100%;}
+body{ font-family:Arial; background-color:#E8E8E8 ;}
+a,img,input{ border:0; outline:0;}
+input{ background:none; font-family:Arial;}
+a{ cursor:pointer; text-decoration:none;}
+
+#head{ width:100%; height:131px; background:#F6F6F6 url(images/backgrounds/header.png) top center no-repeat;}
+.headinner{ width:966px; margin:0 auto;}
+a.logo{ background:url(images/logo.png) 0 0 no-repeat; width:176px; height:87px; float:left; margin-top:10px;}
+a.urgentcare{ background:url(images/urgentcare.png) 0 0 no-repeat; width:62px; height:27px; float:right; margin-top:16px;}
+.spacer{ width:1px; height:61px; background-color:#c0c0c0; float:right; margin:0 20px;}
+.phone{ float:right;}
+.phone p{ text-align:right; margin:0; padding:0;}
+.phone p.phoneone{ text-transform:uppercase; font-size:13px; color:#6c6c6c; font-family: 'GothamHTFLight'; margin-top:12px;}
+.phone p.phonetwo{ font-size:33px; color:#4f7ba7; background:url(images/icons/phone.png) left 14px no-repeat; padding-left:23px;}
+.phone p.phonetwo span{ color:#aaaaaa;}
+form.search{ float:right; width:323px; margin-top:30px;}
+form.search div{ width:277px; height:27px; border:1px solid #a2c0de; float:left; background:url(images/backgrounds/search.png) 0 0 no-repeat;}
+form.search input[type="text"]{ color:#000000; font-size:14px; width:267px; margin-left:5px; padding: 5px 0;}
+.ie6 form.search input{  color:#000000; font-size:14px; width:267px; margin-left:5px; padding: 5px 0;}
+form.search a{ background:url(images/icons/ok.png) 0 0 no-repeat; width:37px; height:22px; float:right; margin-top:4px;}
+.social{ float:right; width:120px; text-align:right; margin-right:30px; margin-top:22px;}
+.social p{ color:#a5a5a5; font-size:11px; margin:0 6px 0 0; padding:0;}
+.social a{ background:url(images/icons/social.png) 0 0 no-repeat; width:27px; height:28px; float:left; margin-right:3px;}
+.social a.yt{ background-position:0 0;}
+.social a.fb{ background-position:-30px 0;}
+.social a.tw{ background-position:-63px 0;}
+.social a.lk{ background-position:-95px 0;}
+
+.navbar{ background:url(images/backgrounds/navbar.png) 0 0 repeat-x; width:100%; height:58px; font-family: 'HelveticaBold'; font-size:16px; color:#555555;}
+.navbarinner{ margin:0 auto; width:966px;}
+.navbar ul{ margin:0 auto; padding:0; list-style:none; text-align:center;}
+.navbar li{ margin:0; padding:0; list-style:none; border-left:1px solid #FFF; border-right:1px solid #d2d2d2; float:left; height:58px; width:159px; cursor:pointer;}
+.navbar li:hover{ background:url(images/backgrounds/navbarover.png) 0 0 repeat-x;}
+.navbar li#li1{ border-left:1px solid #d2d2d2;}
+.navbar li#li1,.navbar li#li2,.navbar li#li3,.navbar li#li6{ padding-top:20px; height:38px;}
+.navbar li#li4,.navbar li#li5{ padding-top:10px; height:48px;}
+
+#main{ width:100%; background:#E8E8E8 url(images/backgrounds/main.png) 0 0 repeat-x;}
+.maininner{margin:0 auto; width:966px;}
+.spacermain{ width:100%; border-top:1px solid #d2d2d2; border-bottom:1px solid #FFF; clear:both;}
+
+.ie6 .sp2{ margin-top:-36px;}
+.ie7 .sp2{ margin-top:-36px;}
+
+.ie6 .healthday{ padding-top:10px;}
+.ie6 .events{ padding-top:10px;}
+.ie7 .healthday{ padding-top:10px;}
+.ie7 .events{ padding-top:10px;}
+
+.ie8 .events{ width:624px;}
+.ie9 .events{ width:624px;}
+.ie9 .eventsinner{padding-right:10px; min-width:280px;}
+.ie8 .box{ min-width:410px;}
+
+.summit,.healthday,.connected,.mainother{ border-right:1px solid #d2d2d2; width:287px; padding:0 15px 10px 16px; float:left;}
+.summit h1,.healthday h1,.events h1,.connected h1,.mainother h1{ font-family: 'GothamHTFBook'; color:#5d5d5d; font-size:15px; padding-left:12px; margin-left:-16px;}
+.summit h1 span,.healthday h1 span,.events h1 span,.connected h1 span,.mainother h1 span{ font-size:25px; text-transform:uppercase; display:block;}
+
+.summit h1{ background:url(images/backgrounds/summit.png) 0 4px no-repeat;}
+.healthday h1{background:url(images/backgrounds/healthday.png) 0 4px no-repeat}
+.events h1{ background:url(images/backgrounds/summit.png) 0 4px no-repeat;}
+.connected h1{ background:url(images/backgrounds/connected.png) 0 4px no-repeat;}
+.nutrition h1{ background:url(images/backgrounds/nutrition.png) 0 4px no-repeat;}
+.recipes h1{ background:url(images/backgrounds/recipes.png) 0 4px no-repeat;}
+.fitness h1{ background:url(images/backgrounds/fitness.png) 0 4px no-repeat;}
+
+.block{ color:#000; margin:15px 0; float:left;}
+.block .date{ font-size:11px; margin-right:15px;}
+.block .title{ font-weight:bold; font-size:14px; margin:7px 15px 13px 0;}
+.block .text{ font-size:12px; margin-right:15px;}
+.block a.arrow{ background:url(images/icons/arrow.png) 0 0 no-repeat; width:15px; height:14px; float:right;}
+a.arrowlink{color:#7b7b7b; font-weight:bold; font-size:12px; background:#f2f2f2 url(images/icons/arrow.png) right top no-repeat; float:right; padding:0 12px 0 5px;}
+
+.practitioner{ border-right:1px solid #d2d2d2; width:287px; padding:0 15px 43px 16px; float:left; border-left:1px solid #FFF; border-bottom:1px solid #d2d2d2;}
+.practitioner h1{ font-family: 'GothamHTFBook'; color:#5d5d5d; font-size:15px; background:url(images/backgrounds/pratictioner.png) 0 0 no-repeat; padding: 16px 0 11px 12px; margin:0 0 10px -16px;}
+.practitioner h1 span{ font-size:25px; text-transform:uppercase; display:block;}
+.practitioner .inner{ float:left;}
+.practitioner .title{ color:#000; font-size:14px; font-weight:bold;}
+.practitioner .subtitle{ color:#676767; font-size:12px; margin:6px 0 15px 0;}
+.practitioner .text{ color:#000; font-size:12px;}
+.practitioner a.arrow{ color:#7b7b7b; font-weight:bold; font-size:12px; background:#f2f2f2 url(images/icons/arrow.png) right top no-repeat; float:right; padding:0 12px 0 5px;}
+.practitioner .img{ float:left; margin:0 5px 120px 0;}
+
+.events{ padding:0 0px 10px 16px; float:left;}
+a.promo{ background:url(images/promo.png) 0 0 no-repeat; width:623px; height:141px; float:left;}
+.navevents{ border-left:1px solid #d2d2d2; border-right:1px solid #FFF;}
+.navevents ul{ margin:0; padding:0; list-style:none; font-family: 'GothamHTFLight'; color:#8d8d8d; font-size:15px; text-transform:lowercase;}
+.navevents li{ float:left; background:url(images/backgrounds/navevents.png) 0 0 repeat-x; cursor:pointer; padding:6px 0; width:153px; text-align:center; border-right:1px solid #d2d2d2; border-left:1px solid #FFF;}
+.navevents li:hover{ background-position:0 -29px; color:#FFF;}
+.navevents li.active{ background-position:0 -29px; color:#FFF;}
+.events h2{ font-family: 'GothamHTFBook'; font-size:18px; color:#5d5d5d; padding:0; margin:0; text-transform:uppercase; margin-bottom:40px;}
+.eventsinner{ float:left; border-right:2px solid #e5e5e5; padding-right:20px; margin-top:30px; min-width:290px;}
+.ie .eventsinner{ max-width:270px;}
+.ie6 .eventsinner { width:270px;}
+
+.box{ clear:left; padding:13px 0;}
+.box .date{ color:#f9f9f9; font-size:12px; font-weight:bold; float:left; background-color:#0079d8; border:1px solid #f9f9f9; text-align:right; padding:6px; margin-right:14px;}
+.box .title{ background-color:#f9f9f9; color:#363636; font-size:11px; float:left;}
+.box .subtitle{ color:#404040; font-size:12px; font-weight:bold; float:left;}
+.blockbox{ float:left;}
+
+.connected{ border-left:1px solid #FFF; border-top:1px solid #FFF;}
+.connected p{ margin:25px 10px 0 0; padding:0; float:right; font-size:12px; color:#000;}
+.connectedin{ padding:30px 0;}
+.connectedin .img{ float:left;}
+.connectedin .text{ float:left; font-size:11px; color:#000; width:150px; margin-left:5px;}
+
+.mainlinks{ float:left; padding-left:10px; width:290px; border-left:1px solid #FFF;}
+.mainlinks ul{ margin:0; padding:0; list-style:none; color:#404040; font-size:14px; font-weight:bold;}
+.mainlinks li{ border-bottom:1px solid #d9d9d9; padding:7px 0;}
+.mainlinks a{ color:#404040; font-size:14px; font-weight:bold;}
+
+.patients,.about,.contact{ float:left; margin-top:23px; margin-left:17px; color:#000; font-size:12px; height:390px;}
+.patients,.about{ border-right:1px solid #c3c3c3;}
+.about{ padding-right:30px;}
+.patients h1,.about h1,.contact h1{ font-family: 'GothamHTFLight'; font-size:12px; color:#595959;}
+.patients h1 span,.about h1 span,.contact h1 span{ display:block; font-size:21px; text-transform:uppercase;}
+.patients ul,.about ul,.contact ul{ margin:0; padding:0; list-style:none;}
+.patients ul,.about ul{ margin-right:33px;}
+.patients a,.about a,.contact a{ color:#000; font-size:12px;}
+.patients li,.about li,.contact li{ padding:10px 0;}
+.patients li,.about li{ border-bottom:1px solid #e8e8e8;}
+.questions{ margin:13px 0;}
+
+.infocall{ float:right; font-size:11px; color:#404040; text-align:right;}
+
+.mainother{ border-right:0; /*border-left:1px solid #FFF;*/}
+.mainother .img{ float:left;}
+.mainother .block{ width:200px; margin:0 0 0 5px;}
+.mainother a.arrowlink{ margin:8px 0 0 22px;}
+
+.slides{ background:url(images/backgrounds/slide.png) 0 0 repeat-x; height:288px; width:100%;}
+.slidestop{ background:url(images/backgrounds/slidestop.png) center top repeat-x; height:4px;}
+.ie6 .slidestop{ margin-bottom:-14px;}
+.slidesbottom{ background:url(images/backgrounds/slidesbottom.png) center top repeat-x; height:4px;}
+.slidesinner{ margin:0 auto; width:1274px;}
+.slideshow{ float:left; width:956px; margin-left:-155px;}
+.video{ background:url(images/backgrounds/video.png) 0 0 no-repeat; width:318px; height:288px; float:left;}
+.videoinner{ background:url(images/backgrounds/example.png) 0 0 no-repeat; width:314px; height:178px; margin:63px auto 0 auto;}
+ 
+a.pager-link{ background:url(images/slides/onoff.png) -34px 0 no-repeat; width:34px; height:35px; font-family: 'GothamHTFMedium'; font-size:18px; color:#787878; float:left; line-height:180%; text-indent:10px;}
+a.pager-active{ background-position:0 0; color:#FFF;}
+a.pager-1{ text-indent:12px;}
+
+.bx-pager{ margin-top:-55px; margin-left:329px; z-index:999999999999999; position:absolute;}
+
+ul#slider1{ width:956px; height:288px;}
+ul#slider1 li{ width:956px; height:288px;}
+ul#slider1 li img{ float:left;}
+
+.ie6 .table{ margin-top:-14px;}
+.ie6 .summit{ margin-top:10px;}
+
+#footer{ width:100%; background:#F6F6F6 url(images/backgrounds/footer.png) 0 0 repeat-x;}
+.footerholder{ background:url(images/backgrounds/footerinner.png) right top no-repeat; width:1290px; margin:0 auto;}
+.footerinner{ width:966px; margin:0 auto;}
+
+.info{ width:100%; height:53px; background:#8f8f8f url(images/backgrounds/info.png) center top no-repeat;; border-top:1px solid #b7b7b7; border-bottom:21px solid #e8e8e8;}
+.infoinner{ width:966px; margin:0 auto; color:#dfdfdf; font-size:11px;}
+.links{ float:left; margin-top:10px;}
+.links a{ color:#dfdfdf; font-size:11px;}
+.copyright{ float:right; margin-top:10px;}
+.copyright span{ color:#FFF;}
+
+.clear{ clear:both;}

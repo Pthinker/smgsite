@@ -1,0 +1,47 @@
+{% extends 'one_column_layout.html' %}
+{% load humanize %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Blogs{% endblock head_title %}
+{% block page_title %}{{ blog.name }}{% endblock %}
+
+{% block content %}
+
+<div class="blog_hero_unit">
+    <div class="title">{{ blog.blurb|safe }}</div>
+    {% if blog.image %}
+    <div class="text-center">
+    <img class="img-responsive" src="{{ blog.image.url }}"/>
+    </div>
+    {% endif %}
+</div>
+
+
+<div class="media">
+    <div class="media-body">
+        <div class="media-list">
+            {% for post in posts %}
+            <p class="title">
+                <a href="/blog/{{ blog.urlname }}/{{ post.urlname }}/">
+                    <span class="bold">{{ post.title }}</span>
+                </a><br/>
+                <span class="byline">
+                    <em>{{ post.postdate|naturalday }}</em>{% if post.author.first_name %}, <em>by</em>
+                        {{ post.author.first_name }}
+                        {{ post.author.last_name }}
+                    {% endif %}
+                </span>
+                <span class="sections">
+                {% for section in post.blogentrysection_set.all %}
+                    {% if forloop.first %}in {% endif %}
+                    <a href="/blog/{{ blog.urlname }}/#{{ section.section.pk }}">{{ section.section.name }}</a>
+                    {% if forloop.last %}{% else %},{% endif %}
+                {% endfor %}
+                </span>
+            </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

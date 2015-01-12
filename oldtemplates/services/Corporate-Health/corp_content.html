@@ -1,0 +1,76 @@
+{% extends "page_content.html" %}
+
+{% block body_tag %}<body id="sb_corp">{% endblock body_tag %}
+
+{% block head_extra %}
+    {% if printable %}
+	<link href="/dynamic-css/sb_corp.css?printable=true" rel="stylesheet" type="text/css" />
+    {% else %}
+        <link href="/dynamic-css/sb_corp.css" rel="stylesheet" type="text/css" />
+    {% endif %}
+{% endblock head_extra %}
+
+{% block header %}
+<!--start of SUB-BRAND HEADER div-->
+{% if printable %}
+<div id="header">
+<img src="{{ MEDIA_URL }}/images/504x72_print_hdr_sb_corp.jpg" alt="Summit Medical Group" width="504" height="72" />
+</div>
+{% else %}
+<div id="header"><img src="{{ MEDIA_URL }}/images/corp_344x90_header_logo.gif" alt="Corporate Health" width="344" height="90" border="0" usemap="#corp_header_map"><map name="corp_header_map" id="corp_header_map"><area shape="rect" coords="15,1,218,89" href="/service/Corporate-Health/" alt="Corporate Health at Summit Medical Group" /></map></div>
+{% endif %}
+<!--end of SUB-BRAND HEADER div-->
+{% endblock header %}
+
+{% block nav_search %}
+<div id="nav_container_search_header"><img src="{{ MEDIA_URL }}/images/corp_51x10_nav_search.gif" alt="Search" width="51" height="10"></div>
+<div id="nav_container_search">{% include 'site/search.html' %}</div>
+{% endblock nav_search %}
+
+{% block nav_links %}
+<ul>
+<li class="left_nav_links"><a href="/service/Corporate-Health/"><img src="{{ MEDIA_URL }}/images/corp_180x38_nav_home.gif" alt="Home" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="/service/Corporate-Health/Our_Doctors/"><img src="{{ MEDIA_URL }}/images/corp_180x38_nav_doctors.gif" alt="Doctors" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="/service/Executive-Health/"><img src="{{ MEDIA_URL }}/images/corp_180x38_nav_exec_services.gif" alt="Executive Services" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="/service/Occupational-Health/"><img src="{{ MEDIA_URL }}/images/corp_180x56_nav_occu_services.gif" alt="Occupational Services" width="180" height="56"></a></li>
+</ul>
+{% endblock nav_links %}
+
+{% block nav_extra %}
+<!--start of BACK TO SMG promo badge-->
+<div id="promo_badge"><a href="/"><img src="{{ MEDIA_URL }}/images/149x70_left_col_smg.jpg" alt="Back to Summit Medical Group" width="149" height="70"></a></div>
+<!--end of BACK TO SMG promo badge-->
+{% endblock nav_extra %}
+
+{% block nav_bottom %}
+
+{% if service.related_services.select_related or service.get_nav_links %}
+	<!--start of RELATED RESOURCES div-->
+	<div id="nav_container" class="left_col_related_resources">
+
+	{% if service.related_services.select_related %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/corp_122x10_nav_rel_servs.gif" alt="Related Services" width="128" height="10"></div>
+		<ul class="left_col_ul_resources">
+			{% for related in service.related_services.select_related %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if service.get_nav_links %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/corp_92x10_useful_links.gif" alt="Useful Links" width="94" height="10" border="0"></div>
+		<ul class="left_col_ul_resources">
+			{% for resource in service.get_nav_links %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ resource.url }}" target="_blank">{{ resource.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	</div>
+	<!--end of RELATED RESOURCES div-->
+{% endif %}
+
+{% endblock nav_bottom %}
+
+{% block content_well %}
+{% endblock content_well %}

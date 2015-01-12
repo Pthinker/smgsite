@@ -1,0 +1,24 @@
+{% extends 'articles/newsroom/base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}Coverage | Summit Medical Group{% endblock head_title %}
+{% block meta_info %}View a list of news coverage choosen by Summit Medical Group.{% endblock meta_info %}
+
+{% block content %}
+
+<h1 class="top">Summit Medical Group Coverage</h1>
+                    
+<p><b>Coverage last updated on {{ page.object_list.0.display_time|date:"M d, Y" }}.</b>
+
+{% include 'includes/pagination.html' %}
+
+<div class="list-group">
+{% for article in page.object_list %}
+    <a class="list-group-item" href="{{ article.get_absolute_url }}">{{ article.headline|safe }}</a>
+{% endfor %}
+</div>
+
+{% include 'includes/pagination.html' %}
+
+{% endblock content %}

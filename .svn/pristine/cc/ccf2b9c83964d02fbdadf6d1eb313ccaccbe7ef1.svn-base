@@ -1,0 +1,9 @@
+#from django.conf.urls.defaults import *
+from django.conf.urls import patterns, url, include
+
+urlpatterns = patterns('smgsite.search.views',
+	(r'^ajax/(?P<kind>.*)/(?P<model>.*)/(?P<order>.*)/$', 'ajax_search'),
+	(r'^(?P<kind>.*)/(?P<model>.*)/(?P<order>.*)/$', 'search_narrow'),
+	(r'^(?P<model>.*)/(?P<page>.*)/$', 'search_full'),
+	(r'^$', 'search_all'),
+)

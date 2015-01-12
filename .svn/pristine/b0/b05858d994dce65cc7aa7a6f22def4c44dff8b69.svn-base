@@ -1,0 +1,51 @@
+{% extends 'articles/healthday_base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}Health in the News | {{ block.super }}{% endblock head_title %}
+
+{% block main_content %}
+
+    <h1>Health in the News</h1>         
+    <h2>Today’s Health Highlights: <span>{{ ws_last_updated }}</span></h2> 
+    <div class="section">
+        <a href="{{ webscout.get_absolute_url }}">{{ webscout.blurb|safe }}</a>                                               
+                                        
+    <a class="btn btn-smg pull-right" href="/healthday/Webscout/1/">More Headlines</a>
+    </div>   
+
+    <h2>Today’s Top Stories&nbsp;<span>Last Updated: {{ st_last_updated }}</span></h2> 
+
+    <div>
+        {% for article in stories %}
+
+        <div class="media">
+          <a class="pull-left thumbnail" href="{{ article.get_absolute_url }}">
+            {% thumbnail article.feature_image "110x69" crop="center" as im %}
+                <img class="media-object" alt="{{ article.headline }}" src="{{ im.url }}">
+            {% endthumbnail %}
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading">{{ article.headline }}</h4>
+            {{ article.blurb|safe }}
+            <div><a class="pull-right" href="{{ article.get_absolute_url }}">Read More</a></div>
+          </div>
+        </div>
+
+        {% endfor %}
+
+        <h2>Latest FDA Approvals</h2>
+        <ul>
+            {% for article in fda %}
+                <li><a href="{{ article.get_absolute_url }}">{{ article.headline }}</a></li>
+            {% endfor %}
+        </ul>
+        <a class="btn btn-smg pull-right" href="/healthday/FDA Approvals/1/">More Headlines</a>
+    </div>
+
+{% endblock main_content %}
+
+
+
+
+

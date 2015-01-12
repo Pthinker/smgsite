@@ -1,0 +1,54 @@
+{% extends 'articles/healthday_base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}Health In The News | {{ block.super }}{% endblock head_title %}
+{% block meta_info %}{% meta_info article %}{% endblock meta_info %}
+
+{% block breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="/healthday/">Health in the News</a></li>
+    <li class="active">Search Results</li>
+
+    {% include 'site/includes/share.html' %}
+</ol>
+{% endblock breadcrumbs %}
+
+
+{% block main_content %}
+
+<p>Page {{ page.number }} of {{ page.paginator.num_pages }}, {{ page.paginator.count }} articles total</p> 
+<div class="subscribe">
+    {% with 'You can subscribe to this topic to view regular updates when new articles are added' as url_title %}
+    {% if topic or category %}
+        {% if topic %}
+            <a href="/healthday/rss-topic/{{ topic.pk }}/"><b>{{ url_title }}</b></a>
+        {% endif %}
+        
+        {% if category %}
+            <a href="/healthday/rss-category/{{ category.pk }}/"><b>{{ url_title }}</b></a>
+        {% endif %}
+
+        {% else %}
+        {% ifequal news_type 'all' %}
+            <a href="/healthday/rss/"><b> {{ url_title }}</a></b>
+        {% else %}
+            <a href="/healthday/rss-type/{{ news_type }}/"><b> {{ url_title }}</b></a>
+        {% endifequal %}
+    {% endif %}
+    {% endwith %}
+</div>
+{% include 'includes/pagination.html' %}
+
+<div class="list-group">
+{% for article in page.object_list %}
+  <a href="{{ article.get_absolute_url }}" class="list-group-item">
+    <h4 class="list-group-item-heading">{{ article.headline }}<small> {{ article.display_time }}</small></h4>
+    <p class="list-group-item-text">{{ article.blurb|safe }}</p>
+  </a>
+{% endfor %}
+</div>
+
+{% include 'includes/pagination.html' %}
+
+{% endblock main_content %}

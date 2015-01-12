@@ -1,0 +1,234 @@
+{% extends "doctors/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Doctors - {{ doctor.name }}{% endblock head_title %}
+
+{% block meta_info %}{% meta_info doctor %}{% endblock meta_info %}
+{% block seo_keywords %}{% seo_keywords doctor %}{% endblock seo_keywords %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/doctors.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}/js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	var mysmg_model = "doctor";
+	var mysmg_title = "{{ doctor.name }}";
+	var mysmg_pk = {{ doctor.pk }};
+	</script>
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+
+					<!-- start of pages navigation -->
+					<div class="navigation">
+					
+						{% include 'site/share.html' %}
+						
+						<div class="clear" style="min-height:23px; height:23px;"></div>
+						
+						<div class="pages">
+							<a href="/doctors/">Practitioners</a> / {{ doctor.name }}
+						</div>
+						
+						<div class="clear"></div>
+						
+					</div>
+					<div class="clear"></div>
+					<!-- end of pages navigation -->
+					
+					<!-- Start Custom HTML - Daniel Rothier -->
+<div class="r_image_thumbnail">
+	<div class="doctors_photo">
+	<div class="shadowed_img"><p><em><em><em><em><em>
+	{% if doctor.image %}
+			<img src="{{ doctor.image.url }}" alt="{{ doctor.name }}" />
+	{% else %}
+			<img src="{{ MEDIA_URL }}/images/141x141_not_avail.jpg" alt="{{ doctor.name }}" />
+	{% endif %}
+	</em></em></em></em></em></p>
+                            </p></div></div>
+</div> <!-- .image_thumbnail -->
+
+<div class="r_doctor_infos">
+	<h2 class="r_doctor_name">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}</h2>
+	<table class="r_doctor_details">
+		<tr>
+			<td class="large_td">
+				<h3 class="r_blue_title">Specialty:</h3>
+				<p class="r_description">{{ doctor.services_links|safe }}</p>
+			</td>
+			<td class="small_td">
+					{% accepting doctor %}
+			</td>
+		</tr>
+		<tr>
+			<td class="large_td">
+				<div class="r_left_col">
+					<h3 class="r_blue_title">Primary Location:</h3>
+					<p class="r_description">{% location doctor.primary_location %}</p>
+				</div>
+				<div class="r_right_col">
+					<h3 class="r_blue_title">Phone number:</h3>
+					<p class="r_description">{{ doctor.phone }}</p>
+				</div>
+			</td>
+			<td class="small_td">
+				<h3 class="r_blue_title">Online Access:</h3>
+				{% if doctor.participating %}
+                <p class="u_can_reach">To reach me online, you can:</p>
+                <div class="rain_box msmg">
+                    <div class="reach_ways">
+                        {% if doctor.has_email_doctor %}
+                        <a TARGET="_blank" href="{{ doctor.email_doctor_link }}" class="msmg_email_me">E-mail Me</a>
+                        {% endif %}
+                        {% if doctor.has_email_staff %}
+                        <a TARGET="_blank" href="{{ doctor.email_doctor_staff }}" class="msmg_email_office">E-mail Office Staff</a>
+                        {% endif %}
+                        {% if doctor.has_appointments %}
+                        <a TARGET="_blank" href="{{ doctor.appointments_link }}" class="msmg_request_appoint">Request an Appointment</a>
+                        {% endif %}
+                        {% if doctor.has_lab_results %}
+                        <a TARGET="_blank" href="{{ doctor.lab_results_link }}" class="msmg_request_lab_res">Request Lab/Test Results</a>
+                        {% endif %}
+                        {% if doctor.has_health_records %}
+                        <a TARGET="_blank" href="{{ doctor.health_records_link }}" class="msmg_request_health_rec">Personal Health Records</a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% else %}
+                <p class="not_accepting"><span class="r_icon_error">●</span>I am not accepting e-mail or online appointment requests.</p>
+                {% endif %}
+				
+				
+			</td>
+		</tr>
+	</table>
+	{% if doctor.has_extra_locations %}
+<div class="extralocation">
+<b class="r_blue_title">Also sees patients at:</b>
+{% for location in doctor.extra_locations %}
+<a href="{{ location.location.get_absolute_url }}">
+{% if location.location.display_name %}{{ location.location.display_name }}, {% endif %}
+{% if location.extra1 %}{{ location.extra1 }}, {% endif %}
+{% if location.extra2 %}{{ location.extra2 }}, {% endif %}{{ location.location.address }},
+{% if location.location.address2 %}{{ location.location.address2 }}, {% endif %}
+{% if location.location.city %}{{ location.location.city }}, {% endif %}
+{% if location.location.state %}{{ location.location.state }}{% endif %}
+{% if location.extra3 %}{{ location.extra3 }}{% endif %}
+</a>{% if not forloop.last %};{% endif %}
+{% endfor %}
+</div>
+{% endif %}
+</div> <!-- .doctor_infos -->
+<div class="r_clearfix"></div>
+
+<table class="r_doctor_extra">
+	{% for degree in doctor.get_degrees %}
+	<tr>
+		<td><h3 class="r_blue_title">{{ degree.letters }}:</h3></td>
+		<td><p class="description">{{ degree.description }}</p></td>
+	</tr>
+	{% endfor %}
+	{% regroup doctor.get_accreditations by name as accreditation_groups %}
+	{% for group in accreditation_groups %}
+		<tr>
+			<td><h3 class="r_blue_title">{% if group.list|length_is:"1" %}{{ group.grouper.name }}{% else %}{{ group.grouper.name_plural }}{% endif %}:</h3></td>
+			<td><p class="description">
+			{% for accreditation in group.list %}{% if forloop.first %}{% else %}; {% endif %}{{ accreditation.description }}{% endfor %}
+			</p></td>
+		</tr>
+	{% endfor %}
+    {% if doctor.get_hospitals|length_is:"0" %}
+    {% else %}
+        <tr>
+            <td>
+                <h3 class="r_blue_title">Affiliations, Associations, and Partnerships:</h3>
+            <td>
+            <td>
+                <p class="description">
+                    {% for hospital in doctor.get_hospitals %}
+                        {% spaceless %}
+                            <a href="{{ hospital.hospital_url }}">{{ hospital.hospital }}</a>{% if forloop.last %}{% else %}; {% endif %}
+                        {% endspaceless %}
+                    {% endfor %}
+                </p>
+            </td>
+        </tr>
+    {% endif %}
+
+</table>
+<div>
+<div class="r_clearfix"></div>
+{% if doctor.marketing_banner %}
+<div class="divider"></div>
+<a href="{{ doctor.marketing_banner.link.url }}"><img src="{{ doctor.marketing_banner.image.url }}" /></a>
+{% endif %}
+{{ touch|safe }}
+</div>
+<div class="divider"></div>
+<!--<div class="r_specialize">
+	{% for specialty in doctor.specialties.all %}{% if forloop.first %}<h2 class="r_blue_title">I specialize in:</h2><p>{% else %}, {% endif %}{{ specialty }}{% endfor %}</p>
+</div>-->
+						
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+
+				<div class="box_207 box_207_blue">
+					<div class="box_207_bottom">
+						<div class="box_207_top">
+
+							
+							
+						</div>
+					</div>
+				</div>
+
+				{% if doctor.title_service.get_nav_links or doctor.get_nav_links %}
+				<div class="box_207 box_207_blue mt10">
+					<div class="box_207_bottom">
+						<div class="box_207_top">
+
+							<h2 class="quick_links">Recommended Links</h2>
+							<div class="rain_box_wrap_0_6_28">
+								<div class="rain_box">
+									<div class="quick_links">
+									<!--Links for nav display for doctor and for service, as with current site, but no local/remote link distinction -->
+										<ul class="arrows">
+												{% for resource in doctor.title_service.get_nav_links %}
+												<li><a href="{{ resource.url }}" {% if resource.remote %}target="_blank"{% endif %}>{{ resource.name }}</a></li>
+												{% endfor %}
+												{% for resource in doctor.get_nav_links %}
+												<li><a href="{{ resource.url }}" {% if resource.remote %}target="_blank"{% endif %}>{{ resource.name }}</a></li>
+												{% endfor %}
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				{% endif %}
+
+				<div class="mt10">
+					<div class="mt10">{% banner %}</div>
+				</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

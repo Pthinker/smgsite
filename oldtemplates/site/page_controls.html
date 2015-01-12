@@ -1,0 +1,20 @@
+<script type="text/javascript" charset="utf-8">
+<!--
+	var text_sml_on = "{{ MEDIA_URL }}/images/15x14_text_icon_sml_on.gif";
+	var text_sml_off = "{{ MEDIA_URL }}/images/15x14_text_icon_sml_off.gif";
+	var text_med_on = "{{ MEDIA_URL }}/images/15x14_text_icon_med_on.gif";
+	var text_med_off = "{{ MEDIA_URL }}/images/15x14_text_icon_med_off.gif";
+	var text_big_on = "{{ MEDIA_URL }}/images/17x14_text_icon_big_on.gif";
+	var text_big_off = "{{ MEDIA_URL }}/images/17x14_text_icon_big_off.gif";
+	// Preload images
+	new Image().src = text_sml_on;
+	new Image().src = text_sml_off;
+	new Image().src = text_med_on;
+	new Image().src = text_med_off;
+	new Image().src = text_big_on;
+	new Image().src = text_big_off;
+-->
+</script>
+<!-- start PAGE CONTROLS box -->
+<div id="page_controls_box"><a href="javascript:{% if printable %}print(){% else %}printablePage(){% endif %}"><img src="{{ MEDIA_URL }}/images/55x14_print_icon.gif" alt="Print This Page" width="55" height="14" /></a>{% if not printable %}<a href="javascript:emailPopup()"><img src="{{ MEDIA_URL }}/images/55x14_email_icon.gif" alt="Email This Page To A Friend" width="55" height="14" /></a>{% endif %}<img id="text_sml_img" src="{{ MEDIA_URL }}/images/15x14_text_icon_sml_off.gif" alt="Make Text Small" width="15" height="14" onmouseover="highlight(this, '15px', '16px')" onclick="sizeText('sml')" /><img id="text_med_img" src="{{ MEDIA_URL }}/images/15x14_text_icon_med_on.gif" alt="Make Text Medium" width="15" height="14" onmouseover="highlight(this, '15px', '16px')" onclick="sizeText('med')" /><img id="text_big_img" src="{{ MEDIA_URL }}/images/17x14_text_icon_big_off.gif" alt="Make Text Large" width="17" height="14" onmouseover="highlight(this, '17px', '18px')" onclick="sizeText('big')" /><img src="{{ MEDIA_URL }}/images/53x14_text_size_text.gif" alt="Adjust The Text Size" width="53" height="14" /><p>MySMG:<a href="javascript:addPage()">Add Page</a> -- <a href="/mysmg/view/">View</a></p></div>
+<!-- end PAGE CONTROLS box -->

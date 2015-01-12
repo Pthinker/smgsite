@@ -1,0 +1,58 @@
+@import url("basicstyle.css");
+
+.search_news_form div.search_button {
+	text-align: right;
+	margin-right: 12px;
+	margin-top: 12px;
+}
+
+.search_news_form div.search_button input {
+	border: 0;
+	cursor: pointer;
+	background: url({{ MEDIA_URL }}/images/89x26_search_button.gif);
+	width: 89px;
+	height: 26px;
+}
+
+div#search_results_landing_container div.search_results_group h3 {
+	margin-top: 10px;
+	border-bottom: 1px dotted #ccc;
+	line-height: 1.5em;
+}
+
+div#search_results_landing_container div.search_results_group p {
+	line-height: 1em;
+}
+
+div#search_results_landing_container div#search_results_group_doctors p a
+	{
+	font-weight: bold;
+}
+
+div#search_results_landing_container div.search_results_group p.search_more_results_p
+	{
+	color: #444;
+	text-align: right;
+	font-style: italic;
+	line-height: 1em;
+	float: right;
+	margin: 16px 15px 0 0;
+}
+
+div#search_results_landing_container div.search_results_group p.search_more_results_p a	{
+	color: #444;
+}
+
+div#search_results_container {
+	padding-right: 27px;
+}
+
+div#search_results_container div.page_nav {
+	text-align: center;
+	padding: 10px;
+}
+
+div#search_results_container div.search_result {
+	margin-bottom: 18px;
+	line-height: 1em;
+}

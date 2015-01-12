@@ -1,0 +1,120 @@
+﻿{% extends "cont_base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Upcoming Events{% endblock head_title %}
+{% block meta_info %}Summit Medical Group regularly hosts events on a variety of health-related issues that we believe will interest and help you.{% endblock meta_info %}
+
+{% block content %}
+	  <table width="970" border="0" align="center" cellpadding="0" cellspacing="0">
+	    <tr>
+	      <td width="310" align="center" valign="top"><table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
+	        <tr>
+	          <td align="center" valign="middle"><img src="{{ MEDIA_URL }}images/backgrounds/summit.png" width="6" height="54" /></td>
+	          <td valign="bottom" class="classes">&nbsp;&nbsp;&nbsp;Regular classes</td>
+            </tr>
+          </table>
+	        <br />
+	        <table width="250" border="0" align="center" cellpadding="0" cellspacing="0">
+	          <tr>
+	            <td align="center" valign="middle"><img src="{{ MEDIA_URL }}images/pics/fitness2.png" width="284" height="127" /></td>
+              </tr>
+          </table>
+          <br />
+		  
+			{% for class in classes %}			
+			<div class="box-event">
+				<table width="300" border="0" align="center" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="547" height="50" align="left" valign="middle">
+					<span class="event-date-list">{% for day in class.days_held %} 
+							{{ day }}{% if forloop.last %} - {% else %}, {% endif%}
+							{% endfor %} {{ class.starttime_display }}</span><br />
+					<span class="title-event"><a href="{{ class.get_absolute_url }}">{{ class.title }}</a></span><br />
+					{% if class.cancellations %}<span class="event-date-list">Note: {{ class.cancellations }}</span>{%endif %}
+					</td>
+				  </tr>
+				  <tr>
+					
+				  </tr>
+				</table>
+			</div>
+			{% endfor %}
+		  
+          <div class="box-event" style="border-bottom:none;"></div>
+          <table width="310" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td align="center" valign="middle">{% banner %}</td>
+            </tr>
+          </table></td>
+	      <td width="5" align="center" valign="top" class="pb">&nbsp;</td>
+	      <td width="646" align="center" valign="top">{% event_banner %} <br />
+	        <br />
+	        <table width="616" border="0" cellpadding="0" cellspacing="0">
+	          <tr>
+	            <td height="40" align="left" valign="top"><span class="upcoming">Upcoming Events</span><br /></td>
+              </tr>
+	          <tr>
+	            <td><p class="description-up">We believe your knowledge and access to information is crucial to your well-being. For this reason, Summit Medical Group regularly hosts events on a variety of health-related issues that we believe will interest and help you.</p>
+	              <p class="description-up">Unless otherwise indicated, all lectures are FREE and held in the Summit Medical Group Lawrence Pavilion, Conference Center, which is located on our main campus in the Cafe building at 1 Diamond Hill Road in Berkeley Heights, New Jersey. For your convenience please park in lot 1 or 2 and enter through the Lawrence Pavilion.</p>
+	              <p class="description-up">Reservations are required. You may register for our events online or call our events hotline at 908-277-8889.<br />
+	              </p>
+	               <p class="description-up"><b>We also now offer presentations and materials from selected past events. <a href="http://www.slideshare.net/smgnj" onClick="recordOutboundLink(this, 'Outbound Links', 'SlideShare');return false;">Click here to view!</a></b><br />
+	              </p>
+	             				  
+				{% for eventtime in eventtimes %}															
+					<div class="box-event">
+	                <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+	                  <tr>
+	                    <td width="53" align="left" valign="top"><div class="date-event">{{ eventtime.startdate|date:'M' }}<BR />
+		{{ eventtime.startdate|date:'d' }}</div></td>
+	                    <td width="547" align="left" valign="top"><div class="event-box-inside">
+	                      <p class="title-event"><a href="{{ eventtime.event.get_absolute_url }}">{{ eventtime.event.title }}</a></p>
+	                      <p class="description-event">{{ eventtime.event.short_description }}</p>
+	                      <p class="description-event">{{ eventtime.event.timelong }}</p>
+						  {% if eventtime.event.get_event_type_display %}
+						  <p class="description-event"><strong>Event Format:</strong> {{ eventtime.event.get_event_type_display }}</p>
+						  {% endif %}
+							{% if eventtime.event.presenter %}
+							<p class="description-event"><strong>Presenter(s):</strong>
+							{% for doctor in eventtime.event.local_presenters.all %}
+								<a href="{{ doctor.get_absolute_url }}">{{ doctor.display_name }}</a>, {{ doctor.letters }}{% if not forloop.last %}; {% endif %}
+							{% endfor %}							
+							{% if eventtime.event.other_presenter %}
+								{% if eventtime.event.presenter_url %}<a href="{{ eventtime.event.presenter_url}}" target="_blank">{% endif %}
+								{{ eventtime.event.other_presenter }}{% if eventtime.event.presenter_url %}</a>{% endif %}{% if eventtime.event.local_presenters.all %}
+								{% endif %}
+							{% endif %}
+							</p>
+							{% endif %}
+							<p class="description-event"><strong>Location:</strong>
+								{% if eventtime.event.other_location %}
+								<b>{{ eventtime.event.other_location|safe }}</b>
+								{% else %}
+								{% if eventtime.event.location.display_name %}
+								{{ eventtime.event.location.display_name }}, 
+								{% endif %}
+								{{ eventtime.event.location.address }}
+								{% if eventtime.event.location.address2 %}
+								{{ eventtime.event.location.address2 }},
+								{% endif %}
+								{% if eventtime.event.room %}
+								{{ eventtime.event.room }},
+								{% endif %}
+								{{ eventtime.event.location.city }}, {{ eventtime.event.location.state }} {{ eventtime.event.location.zipcode }}<br />
+								{% endif %}									
+							</p>
+	                      </div></td>
+                      </tr>
+	                  <tr>
+	                    <td align="left" valign="top">&nbsp;</td>
+	                    <td align="right" valign="top"><a href="{{ eventtime.event.get_absolute_url }}" title="{{ eventtime.event.title }}"><img src="{{ MEDIA_URL }}images/buttons/see-event.png" width="77" height="14" alt="See event" /></a></td>
+                      </tr>
+                    </table>
+                  </div>
+				{% endfor %}
+				</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+{% endblock content %}

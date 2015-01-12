@@ -1,0 +1,16 @@
+<ul class="newsroom-nav">
+    <li><a href="/recentnews/">SMG News</a></li>
+    <li><a href="/newsroom/">Recent Coverage</a></li>
+    <li><a href="">Multimedia</a>
+        <ul>
+            <li><a href="/about/Press_Room/SMG-Video/">SMG Video</a></li>
+            <li><a href="/about/Press_Room/Radio-SMG/">SMG Radio</a></li>
+            <li><a href="/healthyconnections/">Healthy Connections</a></li>
+            <li><a href="/about/Press_Room/THRIVE/">THRIVE</a></li>
+        </ul>
+    </li>
+    <li><a href="/trendingtopics/">Trending Topics</a></li>
+    {#<li><a href="/newsroom/Press-Kit/">Press Kit</a></li>#}
+    <li><a href="/about/Press_Room/Media-Policy/">Media Policy</a></li>
+    <li><a href="/about/Press_Room/Media-Contacts/">Media Contacts</a></li>
+</ul>

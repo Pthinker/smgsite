@@ -1,0 +1,167 @@
+{% extends "site/location_base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ location.name }}{% endblock head_title %}
+
+{% block head_extra_primary %}
+	<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2uYnRHvvu9srh25WagLmHDbt7Q8GDm-Q&sensor=false"></script>
+	<script type="text/javascript" src="{{ MEDIA_URL }}js/maps.js"></script>
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var glatitude = "{{ location.glatitude }}";
+		var glongitude = "{{ location.glongitude }}";
+	-->
+	</script>
+	<script type="text/javascript" charset="utf-8">
+	<!--
+			var blank_url = "{{ MEDIA_URL }}images/95x95_loading.jpg";
+			var error_url = "{{ MEDIA_URL }}images/95x95_not_avail.jpg";
+	-->
+	</script>
+	<script src="{{ MEDIA_URL }}js/location.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://raw.github.com/twbs/bootstrap/v2.3.2/js/bootstrap-modal.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	$('a[data-toggle=modal]').modal();
+	$(document).ready(function() {
+		
+		$("a[data-toggle=modal]").click(function (e) {
+			  lv_url = $(this).attr('href');
+			  $("#modal-content").load(lv_url);
+		});
+	});
+	</script>
+
+{% endblock head_extra_primary %}
+
+{% block content %}
+<div class="modal fade" id="locationModal">
+	<div class="modal-header">
+		<button data-dismiss="modal" class="close" type="button">×</button>
+		<h2>Office hours</h2>
+	</div>
+	<div class="modal-body" id="modal-content"></div>
+</div>
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+					
+					<!-- start of pages navigation -->
+					<div class="navigation">
+					
+						{% include 'site/share.html' %}
+						
+						<div class="clear" style="min-height:23px; height:23px;"></div>
+					
+						<div class="pages">
+							<a href="/locations/">Locations</a>&nbsp;&gt;&nbsp;{% if location.display_name %}
+									{{ location.display_name }}, 
+									{% endif %}
+									{{ location.address }}
+						</div>
+						
+						<div class="clear"></div>								
+						
+					</div>
+					<div class="clear"></div>
+					<!-- end of pages navigation -->															
+					<div id="location_photo_address_box">
+
+						<p>
+							<h3>{% if location.display_name %}
+									{{ location.display_name }}, 
+									{% endif %}
+									{{ location.address }}</h3>
+							{% if location.address2 %}
+								{{ location.address2 }}<br />
+							{% endif %}
+							{{ location.city }}, {{ location.state }} {{ location.zipcode }}<br />
+							{% if location.phone %}<strong>Phone:</strong> {{ location.phone }}{% endif %}
+						</p>
+
+						<div id="location_photo_address_box">
+						{% if location.get_image_url %}
+							<img src="{{ location.get_image_url }}" alt="{{ location.name }}" />
+						{% endif %}
+						
+						</div>
+
+						{% if location.info %}
+							{{ location.info|safe }}
+						{% endif %}
+						
+					</div>
+					{% if services %}	
+					<h3><a href="javascript:void(0);" onclick="$('#services').toggle(); exit();">Click here for available services</a></h3>
+					<div id="services" {% ifnotequal open "services" %}style="display:none"{% endifnotequal %}>
+						{% for service in services %}
+						<ul><li><b><a href="{{ service.get_absolute_url }}">{{ service.name }}</a></b></li></ul>
+						{% endfor %}
+					</div>
+					{% endif %}
+
+					{% if doctors %}
+					<h3><a href="javascript:void(0);" onclick="$('#doctors').toggle(); exit();">Click here for available doctors</a></h3>
+					<div id="doctors" {% ifnotequal open "doctors" %}style="display:none"{% endifnotequal %}>
+						{% for doctor in doctors %}
+						<ul><li><p><b><a href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, {% if doctor.thumbnail %}'{{ doctor.thumbnail.url }}'{% else %}''{% endif %}, '{{ doctor.display_name }}, {{ doctor.letters }}', '{{ doctor.list_services }}', '{{ doctor.phone }}')" onmouseout="photoOff()" onclick="photoOff()">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}</a>,</b>
+						{{ doctor.title_service.name }}</li></ul>
+						{% endfor %}
+					</div>
+					{% endif %}
+
+									<div class="doctor_photo_flyover" id="doctor_photo_flyover">
+											<div><img id="doctor_image" src="{{ MEDIA_URL }}/images/100x130Load.gif" /></div>
+											<p class="name" id="doctor_name"></p>
+
+											<dl>
+													<dt>Specialty:</dt>
+													<dd id="doctor_service"></dd>
+											</dl>
+											<dl>
+													<dt>Phone Number:</dt>
+													<dd id="doctor_phone"></dd>
+
+											</dl>
+									</div>
+									
+					<h3><a class="modallink" data-toggle="modal" data-target="#locationModal" href="/location/hours_popup/{{ location.id }}/">Click here for hours of operation</a></h3>
+
+					<div id="location_map_directions_box">
+					<!--Same as current site-->
+						
+						<p><b>Directions</b><br/>
+						
+						To see directions to this location, please enter a starting street address and town or ZIP code and click to get directions.
+						<form name="directions_form" action="javascript:smg_directions()"><input id="address_input" size="30" onclick="reset_input()" value="Type starting address..." /><input type="submit" value="Get Directions" /></form>
+						<a id="view_directions" name="view_directions"></a></p>
+						
+						<div id="map" style="float:left; width:500px; height:300px"></div>
+						<div id="directions"></div>
+						<div style="clear:both;"></div>
+					</div>	
+					
+				</div>
+					
+			</div>
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

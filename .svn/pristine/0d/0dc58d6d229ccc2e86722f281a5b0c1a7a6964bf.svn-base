@@ -1,0 +1,75 @@
+{% load helpers %}
+<html>
+	<head>
+		<title>Office Hours</title>
+	</head>
+<body>
+<p>
+<b>{% if location.display_name %}{{ location.display_name }}, {% endif %}{{ location }}</b></p>
+<p>&nbsp;</p>
+<p><i>Although these hours indicate when our staff members are available to answer phones and schedule your appointments, they are not necessarily the hours practitioners are in the office. Always check with your doctor first to confirm that he or she is in the office.</i></p>
+<p>&nbsp;</p>
+{% if location.starttime %}
+<p><b>Standard operating hours for this location
+are {{ location.starttime|time:"f A" }} - {{ location.endtime|time:"f A" }} {% days location %}.</b></p>
+<p>&nbsp;</p>
+{% endif %}
+
+{% if location.options %}
+<p>
+Some departments at {% if location.display_name %}{{ location.display_name }}, {% endif %}{{ location }} also have the following additional hours:
+</p></br>
+
+{% if weekday %}
+
+
+<table class="hours" width="100%">
+	<tr><td colspan="3"><p><b>Weekdays</b></p></td></tr>
+	{% for hours in weekday %}
+	<tr>
+		<td>&bull;</td>
+		<td><a href="{{ hours.service.get_absolute_url }}">{{ hours.service }}</a></td>
+		<td align="right">{{ hours.hours }}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}
+
+{% if saturday %}
+
+<table class="hours" width="100%">
+	<tr><td colspan="3"><p><b>Saturdays</b></p></td></tr>
+	{% for hours in saturday %}
+	<tr>
+		<td>&bull;</td>
+		<td><a href="{{ hours.service.get_absolute_url }}">{{ hours.service }}</a></td>
+		<td align="right">{{ hours.hours }}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}
+
+{% if sunday %}
+
+
+<table class="hours" width="100%">
+	<tr><td colspan="3"><p><b>Sundays</b></p></td></tr>
+	{% for hours in sunday %}
+	<tr>
+		<td>&bull;</td>
+		<td><a href="{{ hours.service.get_absolute_url }}">{{ hours.service }}</a></td>
+		<td align="right">{{ hours.hours }}</td>
+	</tr>
+	{% endfor %}
+</table>
+{% endif %}
+{% endif %}
+
+{% if location.hours_comments %}</br><p>{{ location.hours_comments|safe }}</p><p>&nbsp;</p>{% endif %}
+
+<p><b>Weekend hours vary by service and practitioners' schedules. If you would like to schedule a weekend appointment, please call your doctor's office.
+ </b></p>
+
+<p>&nbsp;</p> 
+</body>
+</html>

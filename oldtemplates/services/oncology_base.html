@@ -1,0 +1,50 @@
+{% extends "page_base.html" %}
+
+{% block body_tag %}<body class="s_oncology">{% endblock body_tag %}
+
+{% block head_title %}Cancer Services | Summit Medical Group New Jersey{% endblock head_title %}
+
+{% block main_phone %}
+<p class="phonetwo">908<span>.</span>277<span>.</span>8890</p>
+{% endblock %}
+
+{% block body %}
+{% include 'helpers/_menu_services.html' %}
+<div id="main">
+    <div class="main-container">
+        {% block page_head %}{% endblock %}
+        
+        <div id="main_block" class="main_block">
+            <div class="right_main_block">
+                <div class="right_sub_main_block">
+                    <div class="service_title">
+                    <h1>
+                    {% block page_title %}Welcome to Cancer Services at Summit Medical Group{% endblock %}
+                    </h1></div>
+                    
+                    {% block content %}
+                    {% endblock content %}
+
+                </div>
+            </div>
+
+            <div class="left_main_block">
+                <div class="box_arrowed_list oncology-sidebar">
+                    <h2>
+                    <ul class="arrows">
+                        <li><a href="/service/Oncology-Center/">  Home</a></li>
+                        <li><a href="/service/Oncology-Center/Our-Cancer-Services/">  Our Cancer Services</a></li>
+                        <li><a href="/service/Oncology-Center/Our-Cancer-Screening-Diagnosis-and-Treatments/">  Our Cancer Screening, Diagnosis, and Treatments</p>
+                        <li><a href="/service/Oncology-Center/Doctors/Our-Cancer-Doctors/">  Our Cancer Doctors</a></li>
+                        <li><a href="/service/Oncology-Center/Our-Related-Treatments/">  Our Related Treatments</a></li>
+                        <li><a href="/service/Oncology-Center/News/News-Items/1/">  Oncology News</a></li>
+                        {#<li><a href="/service/Oncology-Center/For-Professionals/">  For Professionals</a></li>#}
+                    </ul>
+                    </h2>
+                </div>
+
+            </div>
+
+        </div>
+        
+{% endblock %}

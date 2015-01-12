@@ -1,0 +1,79 @@
+{% extends "mysmg/home.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - About Us{% endblock head_title %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/about.css" type="text/css" media="screen" />
+{% endblock head_extra %}
+
+
+{% block content %}		
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+					
+					
+					<div class="create_account">								
+						<h1 class="login_page">Site Login</h1>
+						{% ifequal error 'nouser' %}
+						<p>Your e-mail address and password do not match any profiles in our system. Please try again.</p>
+						{% endifequal %}
+						
+						{% ifequal error 'inactive' %}
+						<p>The account for the e-mail address you have entered is not active. The most likely reason is that the account has not been confirmed. Please check your e-mail inbox for a confirmation message that has instructions for activating this account. If you do not receive your confimration message by e-mail, your e-mail service may have flagged it as spam. Please check your spam folder, and add register@summitmedicalgroup.com to your list of allowed senders.</p>
+						{% endifequal %}
+						
+						<p>Please enter your e-mail address and password.</p>
+						
+						{% if form.errors %}
+							<h2><span class="red_bold">Please correct the errors below highlighted in red.</span></p></h2>
+							{% if form.username.errors %}
+								<p>Your e-mail address does not match any profiles in our system. Please verify that you have typed it correctly.</p>
+							{% else %}
+								{% if form.password.errors %}
+									<p>Your email-address and password do not match any profiles in our system. Please try again.</p>
+									<p>If you have forgotten your password, you can <a href="/mysummitmedicalgroup/forgot/">request us to send it to you by e-mail</a>.</p>
+								{% endif %}
+							{% endif %}
+							</ul>
+						{% endif %}
+						
+						<form method="POST" action="" class="login_form">
+						
+						<table>
+							<tr class="inp-st"><td {% if form.username.errors %}style="color:#C03;"{% endif %} align="right" class="inp-label">E-Mail Address:</td><td>{{ form.username }}</td></tr>
+							<tr class="inp-st"><td {% if form.password.errors %}style="color:#C03;"{% endif %} align="right" class="inp-label">Password:</td><td>{{ form.password }}</td></tr>
+							<tr><td colspan="2" align="right"><input type="submit" name="submit" value="Log In" /></td></tr>
+						</table>
+						
+						</form>
+						
+						<p>If you do not have a profile, you can <a href="/mysummitmedicalgroup/register/">create a profile</a> or <a href="/">continue as a guest</a>.</p>
+
+						
+					</div>
+					
+				</div>
+				
+			
+			</div>
+			<!-- end of main blocks column right -->
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+
+{% endblock content %}

@@ -1,0 +1,193 @@
+{% extends "page_content.html" %}
+
+{% block head_title %}Summit Medical Group - Services > Cardiology{% endblock head_title %}
+
+{% block body_tag %}<body id="sb_cardio">{% endblock body_tag %}
+
+{% block head_extra %}
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}/images/100x130Load.gif";
+		var error_url = "{{ MEDIA_URL }}/images/100x130NoPhoto.gif";
+	-->
+	</script>
+	<script src="{{ MEDIA_URL }}/js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+	    {% if printable %}
+	<link href="/dynamic-css/sb_cardio.css?printable=true" rel="stylesheet" type="text/css" />
+    {% else %}
+        <link href="/dynamic-css/sb_cardio.css" rel="stylesheet" type="text/css" />
+    {%endif %}
+{% endblock head_extra %}
+
+
+{% block nav_search %}
+<div id="nav_container_search_header"><img src="{{ MEDIA_URL }}/images/nav_search_green_54x10.gif" alt="Search" width="54" height="10" /></div>
+<div id="nav_container_search">{% include 'site/search.html' %}</div>
+{% endblock nav_search %}
+
+{% block nav_links %}
+<ul>
+<li class="left_nav_links"><a href="/"><img src="{{ MEDIA_URL }}/images/nav_home_green_180x38.gif" alt="Home" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="/doctors/"><img src="{{ MEDIA_URL }}/images/nav_doctors_green_180x38.gif" alt="Doctors" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="/service/Cardiology/Our_Services/"><img src="{{ MEDIA_URL }}/images/nav_services_green_180x38.gif" alt="Services" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="/library/heart_health/"><img src="{{ MEDIA_URL }}/images/nav_library_green_180x38.gif" alt="Live Well Library" width="180" height="38"></a></li>
+<li class="left_nav_links"><a href="/locations/"><img src="{{ MEDIA_URL }}/images/nav_locations_green_180x52.gif" alt="Locations" width="180" height="52"></a></li>
+</ul>
+{% endblock nav_links %}
+
+{% block nav_bottom %}
+
+{% if service.related_services.select_related or service.get_nav_links %}
+	<!--start of RELATED RESOURCES div-->
+	<div id="nav_container" class="left_col_related_resources">
+
+	{% if service.related_services.select_related %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/related_services_128x10.gif" alt="Related Services" width="128" height="10"></div>
+		<ul class="left_col_ul_resources">
+			{% for related in service.related_services.select_related %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if service.get_nav_links %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/useful_links_94x10.jpg" alt="Useful Links" width="94" height="10" border="0"></div>
+		<ul class="left_col_ul_resources">
+			{% for resource in service.get_nav_links %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ resource.url }}" target="_blank">{{ resource.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	</div>
+	<!--end of RELATED RESOURCES div-->
+{% endif %}
+
+{% endblock nav_bottom %}
+
+{% block content_well %}
+
+<!--start of center column-->
+<div id="cent_col_573">
+
+<!--start SERVICE INFO box-->
+<div id="tab_box_573_top"><img src="{{ MEDIA_URL }}/images/cardio_573x40_tab_head.gif" alt="Cardiology" width="573" height="40"></div>
+
+<div id="tab_box_573">
+
+{% include 'site/page_controls.html' %}
+
+<p class="breadcrumb_573"><a href="/services/">Services</a> > <span class="navy_blue_bold">{{ service.name|upper }}</span></p>
+
+{% if events %}
+	<!--start conditional UPCOMING EVENTS box-->
+	<div id="upcoming_events_170">
+	<img class="header_text" src="{{ MEDIA_URL }}/images/upcoming_events_white_heade.jpg" width="113" height="9" border="0">
+	<p class="font_minus_1">
+	<ul class="services_ul_upcoming_events">
+		{% for event in events %}
+			<li class="services_li_upcoming_events">{{ event.datetime|date:"D M d Y, h:i A" }}<br>
+			<a href="{{ event.get_absolute_url }}">{{ event.title }}</a></li>
+		{% endfor %}
+	</ul>
+	</p>
+	</div>
+	<!--end conditional UPCOMING EVENTS box-->
+{% endif %}
+
+<div id="service_illustration"><img src="{{ MEDIA_URL }}/images/cardio_150x150_mri.jpg" width="150" height="150" alt="MRI at Summit Medical Group"></div>
+
+<p>Cardiology at Summit Medical Group deals with disorders of the heart and blood vessels, including congenital heart defects, coronary artery disease, heart failure, valvular heart disease and electrophysiology.</p>
+
+<p><span class="bold">To make an appointment or call:</span> (908) 273-4300<br>
+<span class="bold">Location:</span> <a href="/location/bensley_pavilion/">1 Diamond Hill Road,  Bensley Pavilion - Second Floor</a></p>
+
+
+<div class="clearfloats"></div>
+</div>
+<!--end SERVICE INFO box-->
+
+
+<!-- start CARDIO NEWS AND CLINICS -->
+<div id="square_box_279_left"><div id="square_box_279_top"><img src="{{ MEDIA_URL }}/images/cardio_279x20_box_top.gif" width="279" height="20" alt="Box top"></div>
+<div id="square_box_279_content">
+<p><span class="navy_blue_bold">Cardiology In The News</span></p>
+
+<ul class="cardio_240_ul">
+<li><a href="/service/Cardiology/News/Dr_Daniel_Schwartz_Certification/">Dr. Schwartz has attained Level III Certification in CT Angiography</a></li>
+<li><a href="/service/Cardiology/News/Cardiac_MRI_Center/">Avinash Kothavale, MD is developing the SMG Cardiac MRI Center</a></li>
+</ul>
+
+<p><span class="navy_blue_bold">Specialized Services</span></p>
+
+<ul class="cardio_240_ul">
+<li><span class="regitalics">A <a href="/service/Cardiology/Heart_Failure_Clinic/">Heart Failure Clinic</a> to help you stay active, and avoid emergency visits to see your doctor</span></li>
+<li><span class="regitalics"><a href="/service/Cardiology/Advanced_Heart_Failure/">Advanced Heart Failure</a> Treatment options for severe cardiac cases</span></li>
+<li><span class="regitalics">A <a href="/service/Cardiology/Coumadin_Care_Center/">Coumadin Care Center</a> that helps you manage oral anticoagulation therapy</span></li>
+<li><span class="regitalics">A <a href="/service/Cardiology/Pacemaker_Center/">Pacemaker Center</a> that keeps pacemakers functioning at their best</span></li>
+<li><span class="regitalics">A <a href="/service/Cardiology/Lipid_Clinic/">Lipid Clinic</a> focused on managing blood cholesterol levels</span></li>
+</ul>
+
+</div>
+</div>
+
+<!-- end CARDIO NEWS AND CLINICS -->
+
+<!-- start HEART HEALTH / PATIENT INFO -->
+
+
+<div id="square_box_279_right"><div id="square_box_279_top"><img src="{{ MEDIA_URL }}/images/cardio_279x20_box_top.gif" width="279" height="20" alt="Box top"></div> <div id="square_box_279_content">
+
+<p><span class="navy_blue_bold">Stay On Top Of Your Heart Health</span></p>
+
+<ul class="cardio_240_ul">
+<li><a href="/service/Cardiology/CT_Angiography/">CT Angiography</a>: <span class="regitalics">Medical imaging process for diagnosing blockages in the arteries</span></li>
+<li><a href="/service/Cardiology/Calcium_Scoring/">Calcium Scoring</a>: <span class="regitalics">A fast and simple measurement of plaque buildup inside your coronary arteries</span></li>
+<li><a href="/service/Cardiology/Echocardiography/">Echocardiography</a>: <span class="regitalics">An ultrasound-based diagnostic technique for many heart health concerns</span></li>
+<li>Stress Testing (<a href="/service/Cardiology/Stress_Echo/">Echo</a> and <a href="/service/Cardiology/Nuclear_Stress_Test/">Nuclear</a>)</a>: <span class="regitalics">Tests that measure your heart's response to physical exertion</span></li>
+</ul>
+
+<div id="image_right"><img src="{{ MEDIA_URL }}/images/cardio_150x89_location.jpg" width="150" height="89" alt="Bensley Pavilion"></div>
+
+<p><span class="navy_blue_bold">For Patients</span></p>
+
+<p><a href="/service/Cardiology/Pre-Visit_Forms/">Pre-Visit Forms</a></p>
+<p><a href="/service/Cardiology/Procedure_Instructions/">Procedure Instructions</a></p>
+<p><a href="/library/heart_health/">Cardiology Library</a></p>
+
+<div class="clearfloats"></div>
+</div>
+</div>
+<!-- end HEART HEALTH / PATIENT INFO -->
+
+
+<div class="clearfloats"></div>
+</div>
+<!--end of center column-->
+
+<!-- start right column -->
+<div id="right_col_177">
+
+{% if doctors %}
+	<!-- start DOCTOR LIST box -->
+
+{% include 'services/Cardiology/cardio_docs_staff_nav.html' %}
+
+	<!-- end DOCTOR LIST box -->
+{% endif %}
+
+<div class="clearfloats"></div>
+</div>
+<!-- end right column -->
+
+{% if printable %}
+	{% if service.related_services.select_related or service.get_nav_links %}
+		<!--start of RELATED RESOURCES div-->
+		<div id="page_content_area">
+		{% include 'services/resources.html' %}
+		</div>
+		<!--end of RELATED RESOURCES div-->
+	{% endif %}
+{% endif %}
+
+{% endblock content_well %}

@@ -1,0 +1,60 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Recipes{% endblock head_title %}
+{% block meta_info %}View a list of Recipes.{% endblock meta_info %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">	
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+					<div class="create_account">									
+						<!-- start of pages navigation -->
+						<div class="navigation">
+							{% include 'site/share.html' %}
+							{% if showpages %}
+								<div class="pages">
+									<p>Pages: {% for newpage in pagelist %}
+									{% ifequal page newpage %}
+										<b>{{ newpage }}</b>
+									{% else %}
+									<a href="/recipes/{{ newpage }}">{{ newpage }}</a>
+									{% endifequal %}
+								{% endfor %}</p></div>
+							{% endif %}						
+							<div class="clear"></div>
+						</div>
+						<!-- end of pages navigation -->					
+						<h1>Recipes</h1>		
+						<p>To help you live well and stay well, Summit Medical Group has begun a new recipes section with healthy options to cook and serve. Our registered dietitian, <a href="/doctor/scanonico/">Susan Canonico, RD</a>, reviews each recipe and provides important nutrition information to help you get the nutrients, vitamins, and minerals you need.</p>
+						
+						<p>Be sure to check our <a href="/features/Nutrition/">Nutrition column</a> for helpful advice about all aspects of nutrition, including food safety, articles about foods that can help protect your health, and recommendations for maintaining a healthy weight.</p>
+						
+						<p>We are eager to expand our recipes section! If you have healthy suggestions you would like to share with us, please email <a href="mailto:jmathews@smgnj.com">jmathews@smgnj.com</a> with your healthy recipe. If your recipe meets our registered dietitian's criteria, we will feature it on our site!</p>																						
+						<ul>
+						{% for recipe in recipes %}
+							{% ifchanged recipe.relative_age %}
+								<!--p><b>{{ recipe.relative_age }}</b></p-->
+							{% endifchanged %}
+							<li><a href="{{ recipe.get_absolute_url }}">{{ recipe.title|safe }}</a> <span>({{ recipe.display_time_for_display }})</span></li>
+						{% endfor %}
+						</ul>									
+					</div>
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

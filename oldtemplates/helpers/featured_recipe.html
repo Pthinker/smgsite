@@ -1,0 +1,12 @@
+{% load helpers %}
+<div class="block">
+	<div class="date">{{ recipe.display_time|date }}</div>
+	<div class="title"><a href="{{ recipe.get_absolute_url }}">{{ recipe.title }}</a></div>
+	<div class="text">{{ recipe.description|safe|strip_tags|truncatewords:15 }}</div>
+</div>
+<a class="arrowlink" href="/recipes/">All recipes</a>
+{% comment %}
+<ul class="arrows">
+	<li class="first">{{ recipe.display_time_for_display }}<a href="{{ recipe.get_absolute_url }}">{{ recipe.title }}</a> {{ recipe.description|striptags|truncatewords:20 }}</li>
+</ul>
+{% endcomment %}

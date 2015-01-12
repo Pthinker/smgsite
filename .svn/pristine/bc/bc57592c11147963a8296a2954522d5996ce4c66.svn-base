@@ -1,0 +1,19 @@
+<!--leader frame starts-->
+<div>
+<!--leader starts-->
+<div class="smg_leader_content">
+    <div class="smg_leader_headline">
+        <h2>{{ leader.headline }}</h2>
+    </div>
+    <div class="smg_leader_text">
+{{ leader.content|safe }}
+    </div>
+</div>
+<!--leader end-->
+</div>
+<ul class="smg-slider-thumbs">
+    {% for thumb in thumbnails %}
+            <li><img src="{{ MEDIA_URL }}/images/slide-{{ thumb }}-thumb.jpg"></li>
+    {% endfor %}
+</ul>
+<!--leader frame end-->

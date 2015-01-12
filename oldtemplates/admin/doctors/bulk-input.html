@@ -1,0 +1,46 @@
+{% extends "admin/base_site.html" %}
+
+{% block nav-global %}
+<div style="text-align:right; margin-right:45px;"><h3><a href="/admin/">Administration Main Page</a></h3></div>
+{% endblock %}
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/">Home</a> &rsaquo; CMS</div>{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+
+{{ formset.management_form }}
+
+<div class="submit-row" >
+<input type="submit" value="Save and continue editing" name="_continue" />
+<br />Please save your updates often.
+<br />
+</div>
+
+<table>
+	<tr>
+                <th></th>
+		<th>Name</th>
+		<th>Gender</th>
+		<th>Hospitals</th>
+		<th>Accepting</th>
+		<th>Languages</th>
+	</tr>
+{% for form in formset.forms %}
+	<tr>
+	{% for boundfield in form %}
+		<td>{{ boundfield }}</td>
+	{% endfor %}
+	</tr>
+{% endfor %}
+</table>
+
+<div class="submit-row" >
+<input type="submit" value="Save and continue editing" name="_continue" />
+</div>
+
+
+</form>
+
+{% endblock content %}

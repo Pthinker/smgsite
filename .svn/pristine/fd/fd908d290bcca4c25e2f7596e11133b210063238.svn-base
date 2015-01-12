@@ -1,0 +1,17 @@
+
+
+<div class="doctor-number">
+    <i class="glyphicon glyphicon-phone-alt"></i>
+    <div class="cont">
+        <b>Phone number:</b><br>
+        {% if location.location.urlname == 'berkeley_heights_campus' and doctor.phone %}
+        {{ doctor.phone }}
+        {% else %}
+            {% if location.extra3 %}
+                {{ location.extra3 }}
+            {% else %}
+                {{ location.location.phone }}
+            {% endif %}
+        {% endif %}
+    </div>
+</div>

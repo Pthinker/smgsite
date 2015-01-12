@@ -1,0 +1,30 @@
+{% if page.paginator.num_pages > 1 %}
+<div class="page_nav">
+    {% if page.has_previous %}
+      <a href="{{ url }}{{ page.previous_page_number }}/{{ request.GET.urlencode }}">Prev</a>
+    {% else %}
+      <span class="disabled" href="#">Prev</span>
+    {% endif %}
+
+    {% for num in page.page_range %}
+      {% if num %}
+       
+          {% ifequal num page.number %}
+              <span class="page_nav_active">{{ num }}</span>
+          
+          {% else %}
+            <a href="{{ url }}{{ num }}/{{ request.GET.urlencode }}">{{ num }}</a>
+          {% endifequal %}
+      
+      {% else %}
+     <span class="page_nav_active">...</span>
+      {% endif %}
+    {% endfor %}
+
+    {% if page.has_next %}
+      <a href="{{ url }}{{ page.next_page_number }}/{{ request.GET.urlencode }}">Next</a>
+    {% else %}
+      <span class="disabled" href="#">Next</span>
+    {% endif %}
+</div>
+{% endif %}

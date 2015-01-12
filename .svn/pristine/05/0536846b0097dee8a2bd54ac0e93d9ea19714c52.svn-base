@@ -1,0 +1,88 @@
+from haystack.views import SearchView
+from haystack.query import SearchQuerySet
+
+from smgsite.doctors.models import Doctor, Specialty
+from smgsite.services.models import Service
+from smgsite.events.models import Event, Class
+from smgsite.articles.models import Article, MediaResult, Feature
+from smgsite.relayhealth.models import Article as HealthArticle
+from smgsite.pages.models import Page
+from smgsite.blogs.models import BlogEntry
+from smgsite.pages.models import Page
+
+
+class FullSearchView(SearchView):
+	"""
+	Search view for whole site searches
+	"""
+	template = 'search/search.html'
+
+	def extra_context(self):
+		extra = super(FullSearchView, self).extra_context()
+
+		result_groups = {}
+		doctor_results = []
+		service_results = []
+		specialty_results = []
+	
+		for result in self.results:
+			if isinstance(result.object, Doctor):
+				doctor_results.append(result)
+			elif isinstance(result.object, Service):
+				service_results.append(result)
+			elif isinstance(result.object, Specialty):
+				specialty_results.append(result)
+		
+		#for result in self.results:
+		for result in self.results.order_by('last_name', 'specialty', 'name'):
+			if isinstance(result.object, Event) or isinstance(result.object, Class):
+				group_data = result_groups.get("event_and_class", {})
+			else:
+				group_data = result_groups.get(result.model_name, {})
+
+			doc = {'url': result.object.get_absolute_url()}
+			if isinstance(result.object, Doctor):
+				group_data['display_name'] = 'Doctors'
+				doc['name'] = result.object.display_name()
+			elif isinstance(result.object, Service):
+				group_data['display_name'] = 'Services'
+				doc['name'] = result.object.name
+			elif isinstance(result.object, Specialty):
+				group_data['display_name'] = 'Specialties'
+				doc['name'] = result.object.specialty
+			elif isinstance(result.object, Article):
+				group_data['display_name'] = 'Summit Medical Group News'
+				doc['name'] = result.object.headline
+			elif isinstance(result.object, MediaResult):
+				group_data['display_name'] = 'SMG Media Results'
+				doc['name'] = result.object.headline
+			elif isinstance(result.object, HealthArticle):
+				group_data['display_name'] = 'Health In The News Articles'
+				doc['name'] = result.object.title
+			elif isinstance(result.object, Page):
+				group_data['display_name'] = 'Additional Site Content'
+				doc['name'] = result.object.title
+			elif isinstance(result.object, BlogEntry):
+				group_data['display_name'] = 'Live Well News'
+				doc['name'] = result.object.title
+			elif isinstance(result.object, Feature):
+				group_data['display_name'] = 'Fitness, Nutrition, and Recipes'
+				doc['name'] = result.object.headline
+			elif isinstance(result.object, Event) or isinstance(result.object, Class):
+				group_data['display_name'] = 'Events and Classes'
+				doc['name'] = result.object.title
+
+			group_docs = group_data.get('docs', [])
+			group_docs.append(doc)
+			group_data['docs'] = group_docs
+
+			if isinstance(result.object, Event) or isinstance(result.object, Class):
+				result_groups["event_and_class"] = group_data
+			else:
+				result_groups[result.model_name] = group_data
+        
+		if len(self.results) > 0:
+			extra['result_groups'] = result_groups
+
+		return extra
+

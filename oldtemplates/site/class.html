@@ -1,0 +1,178 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ class.title }}{% endblock head_title %}
+{% block meta_info %}{% meta_info class %}{% endblock meta_info %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/newseventsblog.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+				
+					<!-- start of pages navigation -->
+					<div class="navigation">
+					
+						{% include 'site/share.html' %}	
+						
+						<div class="clear" style="min-height:23px; height:23px;"></div>
+					
+						<div class="pages">
+							<a href="/classes/">Upcoming Classes</a>&nbsp;&gt;&nbsp;<span id="breadcrumb_thispage">{{ class.title }}</span>
+						</div>
+						
+						<div class="clear"></div>
+														
+					</div>
+					<div class="clear"></div>
+					<!-- end of pages navigation -->
+					
+					<!-- start of main content -->
+					<div class="cols_2_fix_right_160">
+
+						<!-- start of left column of main content -->
+						<div class="cols_2_left">
+						  <div class="cols_2_left_sub">
+							
+							<div class="event_content_container">
+								
+								<div class="event_details">
+
+									<h2 class="event_title"><!--[Title]-->{{ class.title }}</h2> 
+										{% if class.get_event_type_display %}
+										<p class="event_presenter"><strong>class Format:</strong> {{ class.get_event_type_display }}</p>
+										{% endif %}
+										{% if class.presenter %}
+										<p class="event_presenter"><strong>Presenter(s):</strong>
+										{% for doctor in class.local_presenters.all %}
+											<a href="{{ doctor.get_absolute_url }}">{{ doctor.display_name }}</a>, {{ doctor.letters }}{% if not forloop.last %}; {% endif %}
+										{% endfor %}
+										{% endif %}
+										{% if class.other_presenter %}
+											{% if class.presenter_url %}<a href="{{ class.presenter_url}}" target="_blank">{% endif %}
+											{{ class.other_presenter }}{% if class.presenter_url %}</a>{% endif %}{% if class.local_presenters.all %}
+											{% endif %}
+										{% endif %}
+										{% if class.sponsored_by %}
+										<p class="event_sponsor"><strong>Sponsored by:</strong> <em><!-- sponsor shown only if specified. Sponsor URL only a specified period otherwise text is not clickable. -->{% if class.sponsor_url %}<a href="{{ class.sponsor_url }}">{% endif %}{{ class.sponsored_by }}{% if class.sponsor_url %}</a>{% endif %}</em></p>
+										{% endif %}
+
+										
+									<p><b>Day(s) & Time:</b> {% for day in class.days_held %} 
+							{{ day }}{% if forloop.last %} - {% else %}, {% endif%}
+							{% endfor %}{{ class.starttime_display }}</p>
+							{% if class.cancellations %}<p class="description-event">Note: {{ class.cancellations }}</p>{%endif %}
+	                     
+									
+									<p class="event_descrip"><strong>Description:</strong>
+										{{ class.description|safe }}
+									</p> 
+									<p class="event_descrip">
+									<div style="text-align:center;"><img src="{{ class.image }}" /></div>
+									</p> 
+
+								</div>
+								
+								
+								{% ifequal class.exclude_from_registration "0" %}
+								<div class="event_general_info">
+									
+									<p>Reservations are required. To register for this or any other class, use our <a href="/events/registration/?class={{ class.id }}">online registration form</a>. </p>
+									<p>For cancellations, please e-mail us at <a class="maillink" href="mailto:events@smgnj.com">events@smgnj.com</a> or call our <strong>events hotline at 908-277-8889</strong>. </p>
+									
+									<p><b>Inviting a guest?</b> Guests must register separately. Simply <a class="share-email" href="javascript:void(0);" onClick="emailPopup();"><span>E-mail this class</span></a> to let your guests know.
+								</div>
+								{% endifequal %}
+								
+								<div class="event_location">
+
+									<h3>Location</h3>	
+									<!-- same location functionality as on current site.-->
+									<ul class="plain_list">
+									{% if class.other_location %}									
+									<li><b>{{ class.other_location|safe }}</b></li>
+									{% else %}
+									{% if class.location.get_absolute_url %}<a href="{{ class.location.get_absolute_url }}">{% endif %}
+									{% if class.location.display_name %}{{ class.location.display_name }},<br />{% endif %}
+									{{ class.location.address }}<br />
+									{% if class.location.address2 %}{{ class.location.address2 }}<br />{% endif %}
+									{% if class.room %}{{ class.room }}<br />{% endif %}
+									{{ class.location.city }}, {{ class.location.state }} {{ class.location.zipcode }}<br />
+									</a>
+									{% if class.location.get_absolute_url %}</a>{% endif %}
+									{% endif %}
+									</ul>
+								</div>
+							</div>
+						  </div>
+						</div>
+						<!-- end of left column of main content -->
+						
+						<!-- start of right column of main content -->
+						<div class="cols_2_right">
+
+							<div class="box_160 box_160_sand">
+								<div class="box_160_top">
+									<div class="box_160_bottom">
+										<div class="box_160_wrap">
+											<p><strong>Unless otherwise indicated, all lectures are free and will be held at Summit Medical Group,  1 Diamond Hill Road, Lawrence Pavilion, Conference Center (near Café), Berkeley Heights, NJ 07922.</strong></p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+						<!-- end of right column of main content -->
+					</div>
+					<!-- end of main content -->
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+
+
+				<div class="box_207 box_207_blue mt10">
+											<div class="box_207_bottom">
+												<div class="box_207_top">
+
+													<!-- Shows the list of all valid upcoming   events as of the current date, in the format indicated. --><h2 class="quick_links">Additional Classes</h2>
+													<div class="rain_box_wrap_0_6_28">
+														<div class="rain_box">
+															<div class="quick_links">
+																<ul class="arrows">
+																	{% for e in classes %}																	    
+																	<li><a href="{{ e.get_absolute_url }}">{{ e.title }}</a></li>
+																	{% endfor %}
+																</ul>
+															</div>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+				<div class="mt10">
+					{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+			
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

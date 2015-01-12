@@ -1,0 +1,18 @@
+{% extends "page_base.html" %}
+{% block body %}
+{% include 'helpers/_menu_home.html' %}
+<div id="mainind">	
+	<div class="slidestop"></div>
+	<div class="main-page"><br />
+		{% block content %}
+		{% endblock content %}
+	  <br />
+	</div>
+		<div class="slidesbottom"></div>
+		<div class="clear"></div>	
+		<div class="maininner table"></div><!--maininner-->   
+		<div class="spacermain sp1" style="border-bottom:0"></div>
+		<div class="spacermain sp2" style="border-top:0"></div><!--maininner-->   
+	  <div class="clear"></div>
+</div><!--main-->
+{% endblock body %}

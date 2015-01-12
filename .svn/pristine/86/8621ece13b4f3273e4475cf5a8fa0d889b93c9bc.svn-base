@@ -1,0 +1,3778 @@
+<!-- File: ca_index.xml -->
+<catalog type="crs" language="english">
+ <title>Cardiology Advisor Index</title>
+ <id>crs-ca-index</id>
+ <keywordlist>
+ </keywordlist>
+ <content>
+  <index version="2008.10" dateGenerated="2008-01-27 16:50:49">
+   <advisor>Cardiology Advisor 2008.1</advisor>
+   <copyright>&#169; 2008 RelayHealth and/or one of its affiliates. All Rights Reserved.</copyright>
+   <!-- file name: index.xxx -->
+   <body>
+   <section name="A">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_heart.block" type="topic">A-V block</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Abdominal aortic aneurysm (AAA)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_abdominal.aortic.aneurysmectomy.and.bypass" type="topic">aneurysmectomy and grafting *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_abdominal.aortic.aneurysm" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.aortic.aneurysm" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_abdominal.aortic.aneurysmectomy.and.bypass" type="topic">Abdominal aortic aneurysmectomy and grafting *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ablation.treatment" type="topic">Ablation treatment</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ace.inhibitors" type="topic">ACE inhibitors *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_aids.and.heart.disease" type="topic">Acquired immunodeficiency syndrome (AIDS) and heart disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    AED (automated external defibrillator)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.aed.symbol" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_automated.external.defibrillator" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    AEM (ambulatory electrocardiographic monitoring)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_event.monitoring" type="topic">event monitor</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aem" type="topic">Holter monitor *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_aids.and.heart.disease" type="topic">AIDS (acquired immunodeficiency syndrome) and heart disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_alcoholic.heart.disease" type="topic">Alcohol and heart disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_the.healthy.diet" type="topic">Alcohol in diet</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_the.healthy.diet_sv" type="topic">Alcohol in diet, brief version *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Ambulatory electrocardiographic monitoring (AEM)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_event.monitoring" type="topic">event monitor</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aem" type="topic">Holter monitor *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Aneurysm
+    </label>
+        <entry>
+        <label>
+        abdominal aortic
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-aha_abdominal.aortic.aneurysmectomy.and.bypass" type="topic">aneurysmectomy and grafting *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_abdominal.aortic.aneurysm" type="topic">diagnosis and treatment</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.aortic.aneurysm" type="topic">illustration</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_stroke" type="topic">cerebral (stroke)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_stroke_sv" type="topic">cerebral (stroke), brief version *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        dissecting
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.aortic.dissection" type="topic">illustration *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_aortic.dissection" type="topic">text *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_left.ventricular.aneurysm" type="topic">left ventricular</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aneurysms.overview" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Angina
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_coronary.spasm" type="topic">atypical or variant</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_enhanced.external.counterpulsation" type="topic">enhanced external counterpulsation</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_wha_angina" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_transmyocardial.laser.revascularization" type="topic">transmyocardial laser revascularization</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_unstable.angina" type="topic">unstable angina</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_angiography" type="topic">Angiogram *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Angiography
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_coronary.angiogram" type="topic">coronary</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_angiography" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Angioplasty
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_carotid.artery.disease" type="topic">carotid *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.dilation" type="topic">illustration of blood vessel dilation with balloon catheter *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtcath" type="topic">illustration of catheter in heart *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_angioplasty" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ace.inhibitors" type="topic">Angiotensin converting enzyme (ACE) inhibitors *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_angiotensin.receptor.blocker" type="topic">Angiotensin receptor blockers</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_antiarrhythmics" type="topic">Anti-arrhythmic medicines</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_anticoagulants" type="topic">Anticoagulants</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_anticoagulants" type="topic">Antiplatelets</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Aorta, coarctation of
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.coarctation.of.the.aorta" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_coarctation.of.the.aorta" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Aortic aneurysm, abdominal
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_abdominal.aortic.aneurysmectomy.and.bypass" type="topic">aneurysmectomy and grafting *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_abdominal.aortic.aneurysm" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.aortic.aneurysm" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Aortic dissection
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.aortic.dissection" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aortic.dissection" type="topic">text *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Aortic valve
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtvalve" type="topic">illustration of normal and diseased heart valves *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aortic.valve.regurgitation" type="topic">regurgitation</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aortic.valve.stenosis" type="topic">stenosis</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_angiotensin.receptor.blocker" type="topic">ARBs</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Arrhythmia
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ablation.treatment" type="topic">ablation treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_atrial.fibrillation" type="topic">atrial fibrillation *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_bradycardia" type="topic">bradycardia</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        electrophysiologic study (EPS)
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.elp" type="topic">illustration of catheter positions</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_electrophysiologic.study" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.nodes" type="topic">illustration of nodes responsible for cardiac rhythm</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_long.q-t.syndrome" type="topic">long Q-T syndrome (LQTS)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_arrhythmia.overview" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_heart.palpitations" type="topic">palpitations *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_sudden.cardiac.death" type="topic">sudden cardiac death</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_tachycardia" type="topic">tachycardia</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.fibrillation" type="topic">ventricular fibrillation</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.premature.beats" type="topic">ventricular premature beats</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_arterial.doppler.studies" type="topic">Arterial Doppler studies</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Arteries
+    </label>
+        <entry>
+        <label>
+        hardening of
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.plaque" type="topic">illustration of plaque buildup in arteries *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_atherosclerosis.and.atherogenesis" type="topic">text *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.circulation.veins.and.arteries" type="topic">illustration of circulatory system *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        transposition of
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.transposition.of.the.great.vessels" type="topic">illustration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_transposition.of.the.great.vessels" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-sha_temporal.arteritis" type="topic">Arteritis, temporal (giant cell)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_rheumatoid.arthritis.and.the.heart" type="topic">Arthritis (rheumatoid) and the heart</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Artificial heart valves
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.mecvalve" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_artificial.heart.valves" type="topic">text *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_aspirin.and.the.heart" type="topic">Aspirin and heart disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_hypertrophic.cardiomyopathy" type="topic">Asymmetric septal hypertrophy (ASH)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_atherectomy" type="topic">Atherectomy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_atherectomy" type="topic">Atheroma, removal</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Atherosclerosis
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_carotid.artery.disease" type="topic">carotid artery disease *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.plaque" type="topic">illustration of plaque buildup in arteries *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-tst_lipid.panel" type="topic">lipid panel test</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_atherosclerosis.and.atherogenesis" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_unstable.angina" type="topic">unstable angina</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_atrial.fibrillation" type="topic">Atrial fibrillation *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_atrial.septal.defect" type="topic">Atrial septal defect</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_heart.block" type="topic">Atrial ventricular block</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-art.nodes" type="topic">Atrioventricular node, illustration</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Atrioventricular septal defect
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.endocardial.cushion.defect" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_endocardial.cushion.defect" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_coronary.spasm" type="topic">Atypical angina</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Automated external defibrillator (AED)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.aed.symbol" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_automated.external.defibrillator" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+   </section>
+   <section name="B">
+    <entry>
+    <label>
+    Balloon
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_angioplasty" type="topic">angioplasty *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.dilation" type="topic">illustration of blood vessel dilation with balloon catheter *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_intraaortic.balloon.pump" type="topic">intraaortic pump</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_cardiological.valvuloplasty" type="topic">valvuloplasty</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_beta-adrenergic.receptor" type="topic">Beta blockers *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Birth defects
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_atrial.septal.defect" type="topic">atrial septal defect</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        coarctation of the aorta
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.coarctation.of.the.aorta" type="topic">illustration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_coarctation.of.the.aorta" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_congenital.heart.disease" type="topic">congenital heart disease</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        endocardial cushion defect
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.endocardial.cushion.defect" type="topic">illustration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_endocardial.cushion.defect" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_hypoplastic.left.heart.syndrome" type="topic">hypoplastic left heart syndrome</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_patent.ductus.arteriosus" type="topic">patent ductus arteriosus (PDA)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_patent.foramen.ovale" type="topic">patent foramen ovale</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        tetralogy of Fallot
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.tetralogy.of.fallot" type="topic">illustration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_tetralogy.of.fallot" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        transposition of the great vessels
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.transposition.of.the.great.vessels" type="topic">illustration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_transposition.of.the.great.vessels" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.septal.defect" type="topic">ventricular septal defect</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_biventricular.pacing" type="topic">Biventricular pacing</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Blocked carotid artery
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_carotid.artery.disease" type="topic">diagnosis and treatment *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_carotid.endarterectomy" type="topic">surgery to remove blockage (carotid endarterectomy)</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Blood clots
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_anticoagulants" type="topic">blood thinners</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-sha_deep.vein.thrombosis" type="topic">deep vein thrombosis *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_pulmonary.embolism" type="topic">in the lung *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_blood.clots.overview" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_thrombolytics" type="topic">thrombolytics *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_thrombophlebitis" type="topic">thrombophlebitis *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_blood.lipids" type="topic">Blood lipids</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Blood tests
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-tst_hdl.test" type="topic">high-density lipoprotein (HDL) cholesterol</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-tst_lipid.panel" type="topic">lipid panel</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_prothrombin.time.test" type="topic">prothrombin time (PT) and INR</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-tst_total.cholesterol.test" type="topic">total cholesterol</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-art.body.mass.index" type="topic">BMI chart *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-art.body.mass.index" type="topic">Body mass index (BMI), chart for calculating *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Bradycardia
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_bradycardia" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_pacemaker.implantation" type="topic">pacemaker implantation *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_coronary.bypass.surgery" type="topic">Bypass surgery *</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="C">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_calcium.channel.blockers" type="topic">Calcium channel blockers</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Cancer
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_cardiac.tumors" type="topic">cardiac tumors</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_pheochromocytoma" type="topic">pheochromocytoma</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_sudden.cardiac.death" type="topic">Cardiac arrest</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Cardiac arrhythmia
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_atrial.fibrillation" type="topic">atrial fibrillation *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_bradycardia" type="topic">bradycardia</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_electrical.cardioversion" type="topic">electrical cardioversion *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_long.q-t.syndrome" type="topic">long Q-T syndrome (LQTS)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_arrhythmia.overview" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_pacemaker.implantation" type="topic">pacemaker implantation *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_heart.palpitations" type="topic">palpitations *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_sudden.cardiac.death" type="topic">sudden cardiac death</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_tachycardia" type="topic">tachycardia</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.fibrillation" type="topic">ventricular fibrillation</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.premature.beats" type="topic">ventricular premature beats</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Cardiac catheterization
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtcath" type="topic">illustration of catheter in heart *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_cardiac.catheterization" type="topic">text *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardia.computed.tomography" type="topic">Cardiac electron beam (ultra-fast) computed tomography</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_event.monitoring" type="topic">Cardiac event monitoring</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Cardiac pacing
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_biventricular.pacing" type="topic">biventricular pacing</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.pacemake" type="topic">illustration of pacemaker in chest *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.nodes" type="topic">illustration of sinus and AV nodes</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_pacemaker.syndrome" type="topic">pacemaker syndrome</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_pacemakers" type="topic">pacemakers</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_temporary.cardiac.pacing" type="topic">temporary</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiac.rehabilitation" type="topic">Cardiac rehabilitation</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiac.tamponade" type="topic">Cardiac tamponade</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiac.transplantation" type="topic">Cardiac transplantation</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiac.tumors" type="topic">Cardiac tumors</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiogenic.shock" type="topic">Cardiogenic shock</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_when.to.see.specialist" type="topic">Cardiologists, when to see</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Cardiomyopathy
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_hypertrophic.cardiomyopathy" type="topic">hypertrophic</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_idiopathic.dilated.cardiomyopathy" type="topic">idiopathic dilated</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_cardiomyopathy.overview" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Cardiopulmonary resuscitation (CPR)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.cpr" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_cpr" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_electrical.cardioversion" type="topic">Cardioversion, electrical *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_automatic.implantable.cardioverter" type="topic">Cardioverter defibrillators, implantable (ICD)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_carotid.artery.disease" type="topic">Carotid artery disease *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_carotid.endarterectomy" type="topic">Carotid endarterectomy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ablation.treatment" type="topic">Catheter ablation</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Catheterization
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_cardiac.catheterization" type="topic">cardiac catheterization *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ablation.treatment" type="topic">catheter ablation</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.dilation" type="topic">illustration of blood vessel dilation with balloon catheter *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtcath" type="topic">illustration of catheter in heart *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_transcatheter.closure" type="topic">transcatheter closure of patent foramen ovale</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_stroke" type="topic">Cerebrovascular accident (see also Stroke)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_stroke_sv" type="topic">Cerebrovascular accident, brief version (see also Stroke) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_carotid.artery.disease" type="topic">Cerebrovascular disease *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_noncardiac.chest.pain" type="topic">Chest pain, noncardiac</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Cholesterol
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_blood.lipids" type="topic">blood lipids</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_health.maintenance.controlling.cholesterol" type="topic">controlling</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_health.maintenance.controlling.cholesterol_sv" type="topic">controlling, brief version *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_hypercholesterolemia" type="topic">high (hypercholesterolemia) *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-tst_hdl.test" type="topic">high-density lipoprotein (HDL), test for</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-tst_lipid.panel" type="topic">lipid panel test</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_statins" type="topic">medicines to lower *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-tst_total.cholesterol.test" type="topic">test for total cholesterol</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cor.pulmonale" type="topic">Chronic lung disease and cor pulmonale</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-art.circulation.veins.and.arteries" type="topic">Circulatory system, illustration *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_intermittent.claudication" type="topic">Claudication, intermittent</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_thrombolytics" type="topic">Clot busters (thrombolytics) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_blood.clots.overview" type="topic">Clots, blood</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Coarctation of the aorta
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.coarctation.of.the.aorta" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_coarctation.of.the.aorta" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cocaine.and.the.heart" type="topic">Cocaine and the heart</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardia.computed.tomography" type="topic">Computed tomography, cardiac electron beam (ultra-fast)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_congenital.heart.disease" type="topic">Congenital heart disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_congestive.heart.failure" type="topic">Congestive heart failure *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Connective tissue disease
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_marfan.syndrome" type="topic">Marfan syndrome</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_progressive.systemic.sclerosis.and.the.heart" type="topic">progressive systemic sclerosis</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_rheumatoid.arthritis.and.the.heart" type="topic">rheumatoid arthritis</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_lupus.and.the.heart" type="topic">systemic lupus erythematosus (SLE)</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cor.pulmonale" type="topic">COPD and cor pulmonale</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cor.pulmonale" type="topic">Cor pulmonale</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_coronary.angiogram" type="topic">Coronary angiogram</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Coronary angioplasty (PTCA)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.dilation" type="topic">illustration of blood vessel dilation with balloon catheter *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtcath" type="topic">illustration of catheter in heart *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_angioplasty" type="topic">text *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Coronary artery bypass surgery
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.coronary.bypass.surgery" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_coronary.bypass.surgery" type="topic">text *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_coronary.artery.disease" type="topic">Coronary artery disease *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Coronary artery stents
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.coronary.stent" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_coronary.artery.stents" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_coronary.icu" type="topic">Coronary intensive care unit</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_coronary.spasm" type="topic">Coronary spasm</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_warfarin.guide" type="topic">Coumadin (warfarin)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    CPR
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.cpr" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_cpr" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardia.computed.tomography" type="topic">CT (computed tomography), ultra-fast</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="D">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_dash.diet" type="topic">DASH diet</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-sha_deep.vein.thrombosis" type="topic">Deep vein thrombosis *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Defibrillation
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_automated.external.defibrillator" type="topic">automated external (AED)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_automatic.implantable.cardioverter" type="topic">implantable cardioverter defibrillator (ICD)</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-sha_polymyositis" type="topic">Dermatomyositis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_diabetes.and.heart.disease" type="topic">Diabetes and heart disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_diastolic.dysfunction" type="topic">Diastolic dysfunction</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_diastolic.dysfunction" type="topic">Diastolic heart failure</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Diet
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_dash.diet" type="topic">DASH</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.food.pyramid" type="topic">food pyramid illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obesity.and.diet" type="topic">for weight loss *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_the.healthy.diet" type="topic">healthy diet</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_the.healthy.diet_sv" type="topic">healthy diet, brief version *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_losing.weight" type="topic">losing weight *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_hypertension.low.sodium.diet" type="topic">low sodium for hypertension</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_hypertension.low.sodium.diet_sv" type="topic">low sodium for hypertension, brief version *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.nutrition.labels" type="topic">Nutrition Facts label, illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_nutrition.labels" type="topic">nutrition labels, how to read</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_salt" type="topic">salt/sodium in diet *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_health.maintenance.controlling.cholesterol" type="topic">to control cholesterol</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_health.maintenance.controlling.cholesterol_sv" type="topic">to control cholesterol, brief version *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_dash.diet" type="topic">Dietary approaches to stop hypertension (DASH diet)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_digitalis" type="topic">Digitalis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_digitalis" type="topic">Digoxin</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_idiopathic.dilated.cardiomyopathy" type="topic">Dilated cardiomyopathy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_atherectomy" type="topic">Directional atherectomy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Dissection, aortic
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.aortic.dissection" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aortic.dissection" type="topic">text *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_diuretics" type="topic">Diuretics *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_stress.echocardiography" type="topic">Dobutamine stress echocardiogram</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="E">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_electrocardiogram" type="topic">ECG (electrocardiogram) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Echocardiogram
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_intracardiac.echocardiogram" type="topic">intracardiac (ICE)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_transthoracic.echocardiography" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_stress.echocardiography" type="topic">stress</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_tee" type="topic">transesophageal (TEE)</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_pulmonary.edema" type="topic">Edema, pulmonary</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_electrocardiogram" type="topic">EKG (electrocardiogram) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_electrical.cardioversion" type="topic">Electrical cardioversion *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Electrocardiogram
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_exercise.testing" type="topic">exercise treadmill test (ETT) *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_electrocardiogram" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardia.computed.tomography" type="topic">Electron beam (ultra-fast) computed tomography, cardiac</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Electrophysiologic study (EPS)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.elp" type="topic">illustration of catheter positions</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_electrophysiologic.study" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_pulmonary.embolism" type="topic">Embolus, pulmonary *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_carotid.endarterectomy" type="topic">Endarterectomy, carotid</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Endocardial cushion defect
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.endocardial.cushion.defect" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_endocardial.cushion.defect" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_infectious.endocarditis" type="topic">Endocarditis, infective *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_abdominal.aortic.aneurysm" type="topic">Endovascular grafting of abdominal aortic aneurysm</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_enhanced.external.counterpulsation" type="topic">Enhanced external counterpulsation</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    EPS (electrophysiologic study)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.elp" type="topic">illustration of catheter positions</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_electrophysiologic.study" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_essential.hypertension" type="topic">Essential hypertension *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_exercise.testing" type="topic">ETT (exercise treadmill test) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_event.monitoring" type="topic">Event monitoring</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Exercise
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_safe.exercise.for.people.with.heart.disease" type="topic">for people with heart disease *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_cardiac.rehabilitation" type="topic">rehabilitation after heart attack or cardiac procedures</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_exercise.testing" type="topic">Exercise test *</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="F">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_fainting" type="topic">Fainting *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_the.healthy.diet" type="topic">Fat in healthy diet</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_the.healthy.diet_sv" type="topic">Fat in healthy diet, brief version *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_the.healthy.diet" type="topic">Fiber in healthy diet</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_the.healthy.diet_sv" type="topic">Fiber in healthy diet, brief version *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Fibrillation
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_atrial.fibrillation" type="topic">atrial *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.fibrillation" type="topic">ventricular</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Food groups
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.food.pyramid" type="topic">food pyramid *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_the.healthy.diet" type="topic">in healthy diet</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_the.healthy.diet_sv" type="topic">in healthy diet, brief version *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-art.food.pyramid" type="topic">Food pyramid illustration *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_innocent.heart.murmur" type="topic">Functional heart murmur *</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="G">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-sha_temporal.arteritis" type="topic">Giant cell arteritis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Great vessels, transposition of
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.transposition.of.the.great.vessels" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_transposition.of.the.great.vessels" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+   </section>
+   <section name="H">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-tst_hdl.test" type="topic">HDL (high-density lipoprotein) cholesterol test</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_the.healthy.diet" type="topic">Healthy diet</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_the.healthy.diet_sv" type="topic">Healthy diet, brief version *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_the.human.heart" type="topic">Heart anatomy overview *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Heart attack
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_myocardial.infarction" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_myocardial.infarction_sv" type="topic">diagnosis and treatment, brief version *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-sha_preventing.heart.disease" type="topic">prevention *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_heart.attack.warning.signs" type="topic">warning signs</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_heart.block" type="topic">Heart block</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_women.and.heart.disease" type="topic">Heart disease in women</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_congestive.heart.failure" type="topic">Heart failure *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Heart murmur
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_innocent.heart.murmur" type="topic">innocent *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_heart.murmur" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_heart.palpitations" type="topic">Heart palpitations *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_when.to.see.specialist" type="topic">Heart specialists, when to see</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiac.transplantation" type="topic">Heart transplant</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Heart valve
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_infectious.endocarditis" type="topic">infection *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_heart.valve.replacement" type="topic">replacement</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_hemodynamic.monitoring" type="topic">Hemodynamic monitoring</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_essential.hypertension" type="topic">High blood pressure (see also Hypertension) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-tst_hdl.test" type="topic">High-density lipoprotein (HDL) test</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_aids.and.heart.disease" type="topic">HIV (human immunodeficiency virus) and heart disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_aem" type="topic">Holter monitors *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_homocysteine" type="topic">Homocysteine</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_hypercholesterolemia" type="topic">Hypercholesterolemia *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Hypertension
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_dash.diet" type="topic">DASH diet</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_essential.hypertension" type="topic">essential (unknown cause) *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_hypertension.low.sodium.diet" type="topic">low-sodium diet</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_hypertension.low.sodium.diet_sv" type="topic">low-sodium diet, brief version *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_pheochromocytoma" type="topic">pheochromocytoma</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_primary.pulmonary.hypertension" type="topic">primary pulmonary hypertension</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_renovascular.hypertension" type="topic">renovascular</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_secondary.hypertension" type="topic">secondary (associated with disease) *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_hypertension.weight.control" type="topic">weight control</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_hypertension.weight.control_sv" type="topic">weight control, brief version *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_hypertrophic.cardiomyopathy" type="topic">Hypertrophic cardiomyopathy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_hypoplastic.left.heart.syndrome" type="topic">Hypoplastic left heart syndrome</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_orthostatic.hypotension" type="topic">Hypotension, orthostatic</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="I">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_automatic.implantable.cardioverter" type="topic">ICD (implantable cardioverter defibrillator)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_implantable.cardioverter.defibrillator.surgery" type="topic">ICD surgery</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_intracardiac.echocardiogram" type="topic">ICE (intracardiac echocardiogram)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_coronary.icu" type="topic">ICU (intensive care unit)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_idiopathic.dilated.cardiomyopathy" type="topic">Idiopathic dilated cardiomyopathy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_hypertrophic.cardiomyopathy" type="topic">Idiopathic hypertrophic subaortic stenosis (IHSS)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Illustrations
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.aed.symbol" type="topic">AED universal symbol</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.aortic.aneurysm" type="topic">aneurysm, abdominal aortic</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.aortic.dissection" type="topic">aortic dissection *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.mecvalve" type="topic">artificial heart valves *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.heart.flow" type="topic">blood flow in heart (cross section)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.dilation" type="topic">blood vessel dilation with balloon catheter *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.body.mass.index" type="topic">body mass index *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtcath" type="topic">catheter in heart *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.elp" type="topic">catheter positions (EPS)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.circulation.veins.and.arteries" type="topic">circulatory system *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.coarctation.of.the.aorta" type="topic">coarctation of the aorta</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.coronary.bypass.surgery" type="topic">coronary artery bypass surgery *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.coronary.stent" type="topic">coronary artery stent</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.cpr" type="topic">CPR</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.endocardial.cushion.defect" type="topic">endocardial cushion defect</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.food.pyramid" type="topic">food pyramid *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        heart
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.heart.external.view" type="topic">external view *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.normal.heart" type="topic">interior view *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.prolapse" type="topic">mitral valve prolapse *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtvalve" type="topic">normal and diseased heart valves *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.nutrition.labels" type="topic">Nutrition Facts label</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.pacemake" type="topic">pacemaker in chest *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.plaque" type="topic">plaque buildup in arteries *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.nodes" type="topic">sinus and atrioventricular nodes</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.types.of.stroke" type="topic">stroke, types of *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.tetralogy.of.fallot" type="topic">tetralogy of Fallot</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.transposition.of.the.great.vessels" type="topic">transposition of the great vessels</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Imaging
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_angiography" type="topic">angiogram *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_cardia.computed.tomography" type="topic">EBT (electron beam tomography)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        echocardiogram
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_transthoracic.echocardiography" type="topic">overview *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_stress.echocardiography" type="topic">stress</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_tee" type="topic">transesophageal (TEE)</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        heart catheterization
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.hrtcath" type="topic">illustration of catheter in heart *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_cardiac.catheterization" type="topic">text *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-sma_mri" type="topic">magnetic resonance (MRI) *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_muga.scan" type="topic">MUGA scan</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_pet.scan" type="topic">PET scan</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Implantable cardioverter defibrillator (ICD)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_automatic.implantable.cardioverter" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_implantable.cardioverter.defibrillator.surgery" type="topic">surgery</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_myocardial.infarction" type="topic">Infarction, myocardial</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Infections
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aids.and.heart.disease" type="topic">AIDS and heart disease</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_infectious.endocarditis" type="topic">endocarditis *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_myocarditis" type="topic">myocarditis</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_rheumatic.fever" type="topic">rheumatic fever</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_infectious.endocarditis" type="topic">Infective endocarditis *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_myocarditis" type="topic">Inflammation of heart muscle</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_innocent.heart.murmur" type="topic">Innocent heart murmur *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_prothrombin.time.test" type="topic">INR test</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_coronary.icu" type="topic">Intensive care unit, coronary</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_heart.disease.high.blood.pressure.and.sexuality" type="topic">Intercourse (sexual) after heart attack</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_intermittent.claudication" type="topic">Intermittent claudication</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_intraaortic.balloon.pump" type="topic">Intraaortic balloon pump</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_intracardiac.echocardiogram" type="topic">Intracardiac echocardiogram (ICE)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_intravascular.ultrasound" type="topic">Intravascular ultrasound (IVUS)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Ischemia
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_atherosclerosis.and.atherogenesis" type="topic">atherosclerosis *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_stroke" type="topic">stroke</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_stroke_sv" type="topic">stroke, brief version *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_transient.ischemic.attack" type="topic">transient ischemic attack (TIA) *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_unstable.angina" type="topic">unstable angina</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_intravascular.ultrasound" type="topic">IVUS (intravascular ultrasound)</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="K">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-hhg_kawasaki" type="topic">Kawasaki disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_renovascular.hypertension" type="topic">Kidney, renovascular hypertension</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="L">
+    <entry>
+    <label>
+    Lab tests
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-tst_hdl.test" type="topic">high-density lipoprotein (HDL) cholesterol</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-tst_lipid.panel" type="topic">lipid panel</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_prothrombin.time.test" type="topic">prothrombin time (PT) and INR</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-tst_total.cholesterol.test" type="topic">total cholesterol</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_left.ventricular.aneurysm" type="topic">Left ventricular aneurysm</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Leg problems
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-sha_deep.vein.thrombosis" type="topic">deep vein thrombosis *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_intermittent.claudication" type="topic">intermittent claudication</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_thrombophlebitis" type="topic">thrombophlebitis *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-tst_lipid.panel" type="topic">Lipid panel test (lipid profile)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_blood.lipids" type="topic">Lipids, blood</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_long.q-t.syndrome" type="topic">Long Q-T syndrome (LQTS)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_losing.weight" type="topic">Losing weight *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Lung problems
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_cor.pulmonale" type="topic">chronic lung disease (and cor pulmonale)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_congestive.heart.failure" type="topic">heart failure *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_primary.pulmonary.hypertension" type="topic">primary pulmonary hypertension</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_pulmonary.edema" type="topic">pulmonary edema</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_pulmonary.embolism" type="topic">pulmonary embolism *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_lupus.and.the.heart" type="topic">Lupus (SLE) and the heart</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="M">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-sma_mri" type="topic">Magnetic resonance imaging (MRI) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_marfan.syndrome" type="topic">Marfan syndrome</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Medicines
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ace.inhibitors" type="topic">ACE inhibitors *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_angiotensin.receptor.blocker" type="topic">angiotensin receptor blockers</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_antiarrhythmics" type="topic">anti-arrhythmics</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_anticoagulants" type="topic">anticoagulants and antiplatelets</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_beta-adrenergic.receptor" type="topic">beta blockers *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_calcium.channel.blockers" type="topic">calcium channel blockers</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_digitalis" type="topic">digoxin</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_diuretics" type="topic">diuretics *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_nitroglycerin.and.nitrates" type="topic">nitroglycerin and nitrates</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_statins" type="topic">statins *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_thrombolytics" type="topic">thrombolytics (clot busters) *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_vasodilators" type="topic">vasodilators *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_warfarin.guide" type="topic">warfarin (Coumadin)</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Mitral valve
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtvalve" type="topic">illustration of normal and diseased heart valves *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        prolapse
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.prolapse" type="topic">illustration *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_mitral.valve.prolapse" type="topic">text *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_mitral.valve.regurgitation" type="topic">regurgitation</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_mitral.valve.stenosis" type="topic">stenosis *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Monitoring
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_event.monitoring" type="topic">event</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_hemodynamic.monitoring" type="topic">hemodynamic</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aem" type="topic">Holter *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-sma_mri" type="topic">MRI (magnetic resonance imaging) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-hhg_kawasaki" type="topic">Mucocutaneous lymph node syndrome</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_muga.scan" type="topic">MUGA scan</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_muga.scan" type="topic">Multi-gated acquisition scan</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Murmur
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_innocent.heart.murmur" type="topic">innocent *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_heart.murmur" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_myocardial.infarction" type="topic">Myocardial infarction</linkCRS>
+    </label>
+        <entry>
+        <label>
+        see also Heart attack
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_myocardial.infarction_sv" type="topic">Myocardial infarction, brief version *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Myocarditis
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aids.and.heart.disease" type="topic">and AIDS (acquired immunodeficiency syndrome)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_myocarditis" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiac.tumors" type="topic">Myxoma</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="N">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_nitroglycerin.and.nitrates" type="topic">Nitroglycerin and nitrates</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_noncardiac.chest.pain" type="topic">Noncardiac chest pain</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ventricular.tachycardia" type="topic">Nonsustained ventricular tachycardia</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="O">
+    <entry>
+    <label>
+    Obesity
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_obesity.and.the.heart" type="topic">effects on the heart</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_losing.weight" type="topic">losing weight *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_orthostatic.hypotension" type="topic">Orthostatic hypotension</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="P">
+    <entry>
+    <label>
+    Pacemaker
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_biventricular.pacing" type="topic">biventricular pacing</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.pacemake" type="topic">illustration of pacemaker in chest *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_pacemaker.implantation" type="topic">implantation *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_pacemakers" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_pacemaker.syndrome" type="topic">pacemaker syndrome</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_temporary.cardiac.pacing" type="topic">temporary cardiac pacing</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_heart.palpitations" type="topic">Palpitations *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_avnrt" type="topic">Paroxysmal supraventricular tachycardia (PSVT)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_patent.ductus.arteriosus" type="topic">Patent ductus arteriosus (PDA)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Patent foramen ovale
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_patent.foramen.ovale" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_transcatheter.closure" type="topic">transcatheter closure</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Percutaneous transluminal coronary angioplasty (PTCA)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.dilation" type="topic">illustration of blood vessel dilation with balloon catheter *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtcath" type="topic">illustration of catheter in heart *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_angioplasty" type="topic">text *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_pericardiocentesis" type="topic">Pericardial tap</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_pericardiocentesis" type="topic">Pericardiocentesis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_pericarditis" type="topic">Pericarditis *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_intermittent.claudication" type="topic">Peripheral artery disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_pet.scan" type="topic">PET scan</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_pheochromocytoma" type="topic">Pheochromocytoma</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_thrombophlebitis" type="topic">Phlebitis *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_innocent.heart.murmur" type="topic">Physiologic heart murmur *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Plaque
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_atherectomy" type="topic">atherectomy (removal of plaque from an artery)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_atherosclerosis.and.atherogenesis" type="topic">atherosclerosis (hardening of the arteries) *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_carotid.artery.disease" type="topic">carotid artery disease *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.plaque" type="topic">illustration of plaque buildup in arteries *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_unstable.angina" type="topic">unstable angina</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-sha_polymyositis" type="topic">PM/DM (polymyositis/dermatomyositis)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-sha_polymyositis" type="topic">Polymyositis/dermatomyositis (PM/DM)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_pet.scan" type="topic">Positron emission tomography (PET scan)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_wolff.parkinson.white" type="topic">Pre-excitation syndrome</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ventricular.premature.beats" type="topic">Premature beats, ventricular</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Prevention
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_health.maintenance.controlling.cholesterol_sv" type="topic">controlling cholesterol, brief version *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-sha_preventing.heart.disease" type="topic">heart disease *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_triglycerides" type="topic">triglyceride levels</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obesity.and.diet" type="topic">weight-loss diet *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_essential.hypertension" type="topic">Primary hypertension *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_primary.pulmonary.hypertension" type="topic">Primary pulmonary hypertension (PPH)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_coronary.spasm" type="topic">Prinzmetal&apos;s angina</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_progressive.systemic.sclerosis.and.the.heart" type="topic">Progressive systemic sclerosis and the heart</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_mitral.valve.prolapse" type="topic">Prolapse, mitral valve *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_the.healthy.diet" type="topic">Protein in healthy diet</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_the.healthy.diet_sv" type="topic">Protein in healthy diet, brief version *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_prothrombin.time.test" type="topic">Prothrombin time test (PT)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_avnrt" type="topic">PSVT (paroxysmal supraventricular tachycardia)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    PTCA (percutaneous transluminal coronary angioplasty)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.dilation" type="topic">illustration of blood vessel dilation with balloon catheter *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtcath" type="topic">illustration of catheter in heart *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_angioplasty" type="topic">text *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_pulmonary.embolism" type="topic">Pulmonary embolism *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_primary.pulmonary.hypertension" type="topic">Pulmonary hypertension, primary (PPH)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_intraaortic.balloon.pump" type="topic">Pump, intraaortic balloon</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="R">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ablation.treatment" type="topic">Radiofrequency ablation</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_exercise.testing" type="topic">Radioisotope exercise test *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_muga.scan" type="topic">Radionuclide ventriculogram</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Regurgitation
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aortic.valve.regurgitation" type="topic">aortic valve</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_mitral.valve.regurgitation" type="topic">mitral valve</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiac.rehabilitation" type="topic">Rehabilitation, cardiac</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_renovascular.hypertension" type="topic">Renovascular hypertension</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_bibliography" type="topic">Resources</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_rheumatic.fever" type="topic">Rheumatic fever</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_rheumatoid.arthritis.and.the.heart" type="topic">Rheumatoid arthritis and the heart</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_aneurysms.overview" type="topic">Ruptured aneurysm</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="S">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_safe.exercise.for.people.with.heart.disease" type="topic">Safe exercise for people with heart disease *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Salt/sodium
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_salt" type="topic">in diet *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_hypertension.low.sodium.diet" type="topic">low-sodium diet for hypertension</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_hypertension.low.sodium.diet_sv" type="topic">low-sodium diet for hypertension, brief version *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_progressive.systemic.sclerosis.and.the.heart" type="topic">Scleroderma</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_progressive.systemic.sclerosis.and.the.heart" type="topic">Sclerosis, progressive systemic, and the heart</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_secondary.hypertension" type="topic">Secondary hypertension *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Septal defect
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_atrial.septal.defect" type="topic">atrial</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.septal.defect" type="topic">ventricular</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_obg_heart.disease.high.blood.pressure.and.sexuality" type="topic">Sex after a heart attack</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiogenic.shock" type="topic">Shock, cardiogenic</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Sinus node
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.nodes" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_the.human.heart" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Sodium/salt
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_hypertension.low.sodium.diet" type="topic">low-sodium diet for hypertension</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obg_hypertension.low.sodium.diet_sv" type="topic">low-sodium diet for hypertension, brief version *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_coronary.spasm" type="topic">Spasms, coronary</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_statins" type="topic">Statins *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Stenosis
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aortic.valve.stenosis" type="topic">aortic valve</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_hypertrophic.cardiomyopathy" type="topic">idiopathic hypertrophic subaortic (IHSS)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtvalve" type="topic">illustration of normal and diseased heart valves *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_mitral.valve.stenosis" type="topic">mitral valve *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Stents, coronary artery
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.coronary.stent" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_coronary.artery.stents" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_stress.echocardiography" type="topic">Stress echocardiogram</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Stroke
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.types.of.stroke" type="topic">illustration of types *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_stroke" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_stroke_sv" type="topic">overview, brief version *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_transient.ischemic.attack" type="topic">transient ischemic attack (TIA) *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_sudden.cardiac.death" type="topic">Sudden cardiac death</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_thrombophlebitis" type="topic">Superficial thrombophlebitis *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_avnrt" type="topic">Supraventricular tachycardia, paroxysmal (PSVT)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_surgical.valvuloplasty" type="topic">Surgical valvuloplasty</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ventricular.tachycardia" type="topic">Sustained ventricular tachycardia</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_fainting" type="topic">Syncope (fainting) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_lupus.and.the.heart" type="topic">Systemic lupus erythematosus (SLE) and the heart</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="T">
+    <entry>
+    <label>
+    Tachycardia
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_tachycardia" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.nodes" type="topic">illustration of nodes responsible for cardiac rhythm</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_avnrt" type="topic">paroxysmal supraventricular tachycardia (PSVT)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.tachycardia" type="topic">ventricular tachycardia (VT)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_wolff.parkinson.white" type="topic">Wolff-Parkinson-White syndrome</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiac.tamponade" type="topic">Tamponade, cardiac</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_tee" type="topic">TEE (transesophageal echocardiography)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-sha_temporal.arteritis" type="topic">Temporal arteritis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Temporary cardiac pacing
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.pacemake" type="topic">illustration of pacemaker in chest *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_temporary.cardiac.pacing" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_heart.tests" type="topic">Tests to diagnose heart disease *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Tetralogy of Fallot
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.tetralogy.of.fallot" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_tetralogy.of.fallot" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_thrombolytics" type="topic">Thrombolytics (clot busters) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_thrombophlebitis" type="topic">Thrombophlebitis *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Thrombosis
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-sha_deep.vein.thrombosis" type="topic">deep vein *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_blood.clots.overview" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_transient.ischemic.attack" type="topic">TIA (transient ischemic attack) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_transcatheter.closure" type="topic">Transcatheter closure of patent foramen ovale</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_tee" type="topic">Transesophageal echocardiogram (TEE)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_transient.ischemic.attack" type="topic">Transient ischemic attack (TIA) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_transmyocardial.laser.revascularization" type="topic">Transmyocardial laser revascularization</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardiac.transplantation" type="topic">Transplant, heart</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Transposition of the great vessels
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.transposition.of.the.great.vessels" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_transposition.of.the.great.vessels" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_exercise.testing" type="topic">Treadmill test *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_triglycerides" type="topic">Triglycerides</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Tumors
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_cardiac.tumors" type="topic">cardiac</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_pheochromocytoma" type="topic">pheochromocytoma</linkCRS>
+        </label>
+        </entry>
+    </entry>
+   </section>
+   <section name="U">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_cardia.computed.tomography" type="topic">Ultra-fast CT (computed tomography)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Ultrasound
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_arterial.doppler.studies" type="topic">arterial Doppler studies</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_intracardiac.echocardiogram" type="topic">intracardiac echocardiogram (ICE)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_intravascular.ultrasound" type="topic">intravascular (IVUS)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_tee" type="topic">transesophageal (TEE)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_transthoracic.echocardiography" type="topic">transthoracic *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_unstable.angina" type="topic">Unstable angina</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="V">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ventricular.tachycardia" type="topic">V tach</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_heart.valve.replacement" type="topic">Valve replacement</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Valves
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aortic.valve.regurgitation" type="topic">aortic valve regurgitation</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_aortic.valve.stenosis" type="topic">aortic valve stenosis</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        artificial
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.mecvalve" type="topic">illustration *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_artificial.heart.valves" type="topic">text *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_cardiological.valvuloplasty" type="topic">balloon valvotomy</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_heart.valve.replacement" type="topic">heart valve replacement</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-art.hrtvalve" type="topic">illustration of normal and diseased heart valves *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_infectious.endocarditis" type="topic">infective endocarditis *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        mitral valve prolapse
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-art.prolapse" type="topic">illustration *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ca-car_mitral.valve.prolapse" type="topic">text *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_mitral.valve.stenosis" type="topic">mitral valve stenosis *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_surgical.valvuloplasty" type="topic">surgical valvuloplasty</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_cardiological.valvuloplasty" type="topic">Valvotomy, balloon</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Valvuloplasty
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_cardiological.valvuloplasty" type="topic">balloon valvotomy</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_surgical.valvuloplasty" type="topic">surgical</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_cardiological.valvuloplasty" type="topic">Valvuloplasty, balloon</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_coronary.spasm" type="topic">Variant angina</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_vasodilators" type="topic">Vasodilators *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-aha_thrombophlebitis" type="topic">Vein inflammation (thrombophlebitis) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-art.circulation.veins.and.arteries" type="topic">Veins, illustration of circulatory system *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-sha_deep.vein.thrombosis" type="topic">Venous (deep) thrombosis *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Ventricular problems
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.fibrillation" type="topic">fibrillation overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.premature.beats" type="topic">premature beats</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.septal.defect" type="topic">septal defect (VSD)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_sudden.cardiac.death" type="topic">sudden cardiac death</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_ventricular.tachycardia" type="topic">tachycardia</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ventricular.fibrillation" type="topic">VF (ventricular fibrillation)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_innocent.heart.murmur" type="topic">Vibratory heart murmur *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ventricular.premature.beats" type="topic">VPB (ventricular premature beats)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_ventricular.septal.defect" type="topic">VSD (ventricular septal defect)</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="W">
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_warfarin.guide" type="topic">Warfarin</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Weight
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-car_obesity.and.the.heart" type="topic">effects on the heart</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_obesity.and.diet" type="topic">loss, diet for *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_hypertension.weight.control" type="topic">loss, to control hypertension</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ca-aha_hypertension.weight.control_sv" type="topic">loss, to control hypertension, brief version *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_when.to.see.specialist" type="topic">When to see a specialist</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_wolff.parkinson.white" type="topic">Wolff-Parkinson-White syndrome</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_women.and.heart.disease" type="topic">Women and heart disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ca-car_wolff.parkinson.white" type="topic">WPW syndrome</linkCRS>
+    </label>
+    </entry>
+   </section>
+   </body>
+  </index>
+ </content>
+</catalog>

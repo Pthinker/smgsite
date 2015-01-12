@@ -1,0 +1,76 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - All Locations{% endblock head_title %}
+
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-find-practitioner">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-map-marker"></span> All Locations</h2>  
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    
+    <div class="row">
+        <div class="sidebar col-md-4">
+            {% regroup locations by city as location_list %}
+            <ul class="list-unstyled">
+                {# there is a requirement to display 1 group first - out of sequence #}
+                {% for city in location_list %}
+                    {% if city.grouper == 'Berkeley Heights' %}
+                    <li><h3>{{ city.grouper }}</h3>
+                    <ul class="list-unstlyed">
+                        {% for item in city.list %}
+                            <li>
+                                <a href="{{ item.get_absolute_url }}">
+                                {% include 'site/includes/location_address.html' %}    
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+
+                {# display the rest of them in order not including Berkley Heights #}
+                {% for city in location_list %}
+                    {% if city.grouper != 'Berkeley Heights' %}
+                    <li><h3>{{ city.grouper }}</h3>
+                    <ul class="list-unstlyed">
+                        {% for item in city.list %}
+                            <li>
+                                <a href="{{ item.get_absolute_url }}">
+                                {% include 'site/includes/location_address.html' %}    
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="sidebar col-md-8">
+            <div id="map" style="width:100%; height:400px;"></div>
+            <div id="map-info"></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/maps.js"></script>
+<script type="text/javascript">
+    var smg_locations = {{ smg_locations|safe }};
+</script>
+
+{% endblock %}

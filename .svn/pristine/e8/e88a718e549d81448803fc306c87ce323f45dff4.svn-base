@@ -1,0 +1,16 @@
+{% extends 'one_column_layout.html' %}
+{% load humanize %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Blogs{% endblock head_title %}
+{% block page_title %}Blogs{% endblock %}
+
+{% block content %}
+                    
+<ul>
+{% for blog in blogs %}
+<li><a href="/blog/{{ blog.urlname }}/">{{ blog.name }}</a>{% if blog.latest %} <span>{{ blog.count }} posts, last post on {{ blog.latest.postdate|date:"D d M Y" }}</span>{% endif %}</li>
+{% endfor %}
+</ul>
+
+{% endblock content %}

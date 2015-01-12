@@ -1,0 +1,65 @@
+{% extends "blogs/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - About Us{% endblock head_title %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/about.css" type="text/css" media="screen" />
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+					
+					
+					<div class="smg_general_container">
+						<div>
+							<a href="/blog/admin/">Live Well News Admin</a> &gt; {{ blog.name }} Admin Page
+						</div>
+
+						<h1>Welcome to the admin page for the {{ blog.name }}.</h1>
+						<p>You are currently authenticated as {{ user }}.</p>
+						
+						{% if editor %}
+						<p>You are an editor of this blog.</p>
+						{% else %}
+						<p>You are an author of this blog.</p>
+						{% endif %}
+						
+						<p>You can <a href="/blog/admin/post/{{ blog.urlname }}/">post a new entry</a>.</p>
+						
+						<p>{{ blog.name }} currently has {{ blog.count }} entries.</p>
+						<p>The most recent entry is {{ blog.latest.postdate }}.</p>
+						
+						<ul class="articles_index_list_ul">
+						{% for post in posts %}
+							<li class="margin_bottom_10_li"><a href="/blog/admin/post/{{ blog.urlname }}?entry={{ post.urlname }}"><span class="bold">{{ post.title }} ({{ post.postdate|date:"D d M Y" }})</span></a></li>
+						{% endfor %}
+						</ul>
+					</div>
+					
+				</div>
+				
+			
+			</div>
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

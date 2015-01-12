@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Connector command="" resourceType="">
+<CurrentFolder path="{{ curpath }}" url="{{ curpath }}" />
+<Files>
+{% for file in files %}	
+<File name="{{ file.name }}" size="{{ file.size }}" url="{{ file.path }}" />
+{% endfor %}
+</Files>
+<Folders>
+{% for folder in folders %}
+<Folder name="{{ folder.name }}" />
+{% endfor %}
+</Folders>
+</Connector>

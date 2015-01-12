@@ -1,0 +1,13 @@
+{% extends 'one_column_layout.html' %}
+
+{% block head_title %}Summit Medical Group - Page Not Found{% endblock head_title %}
+{% block page_title %}Article Not Found{% endblock %}
+
+{% block content %}
+<p><b>Dear Summit Medical Group visitor</b>:</p>
+
+<p>We cannot find the article you are seeking.  We recently removed a large number of older articles about Summit Medical Group as part of our latest site launch. You can view our most current news here: <a href="/articles/">SMG News</a>.</p>
+
+<p>If you would like additional help, please email our Internet Marketing Specialist Joy Pierce Mathews at at <a href="mailto:jmathews@smgnj.com">jmathews@smgnj.com</a></p>
+
+{% endblock content %}

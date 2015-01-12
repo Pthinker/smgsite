@@ -1,0 +1,16 @@
+<script src="{{ MEDIA_URL }}/js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+
+<form method="get" action="/search/"><input id="doctors-input" name="search-input" size="15" autocomplete="off" onkeyup="searchDoctors('doctors-input')" /><button name="submit" type="submit"><img id = "doctors-image" src="{{ MEDIA_URL }}/images/22x22_green_arrow_button.gif" alt="Search" /></button></form>
+
+<div id="doctors-results">
+	<div id="doctors-block-Empty" class="item_search_block">
+		<div class="item_search_element">
+			<ul><li>Searching...</li></ul>
+		</div>
+	</div>
+	<div id="doctors-block-doctors.Doctor" class="item_search_block">
+		<div id="search_flyover_header"><img src="{{ MEDIA_URL }}/images/search_fly_doctors_59x9.gif" alt="Doctors" /></div>
+		<div id="doctors-results-doctors.Doctor" class="item_search_element"></div>
+	</div>
+	<div id="more-results"><a class="dark_gray" id="doctors-more-results-href" href=""><span class="bold">View all doctors</span></a> <a id="doctors-more-results-href-img" href=""><img src="{{ MEDIA_URL }}/images/search_fly_see_all_icon_8x9.gif" alt="See more search results" width="8" height="9" /></a></div>
+</div>

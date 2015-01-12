@@ -1,0 +1,124 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ event.title }}{% endblock head_title %}
+{% block meta_info %}{% meta_info event %}{% endblock meta_info %}
+
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-doctor">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="fa fa-file-text-o"></span> Event Details</h2>     
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="/events/">Events</a></li>
+        <li class="active">{{ event.title }}</li>
+
+        {% include 'site/includes/share.html' %}
+    </ol>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 sidebar"> 
+            <h3 class="top">Additional Events</h3>
+
+            {% for event in eventtimes %}
+            <div class="side-event">           
+                <span class="date">{{ event.timeshort }}</span>
+                <span class="title"><a href="{{ event.event.get_absolute_url }}">{{ event.event.title }}</a></span>
+            </div>
+            {% endfor %}
+            {% comment %}
+            <div class="well"><strong>Unless otherwise indicated, all lectures are free and will be held at Summit Medical Group,  1 Diamond Hill Road, Lawrence Pavilion, Conference Center (near Café), Berkeley Heights, NJ 07922.</strong></div>
+            {% endcomment %}
+
+        </div>
+
+        <div class="col-md-9"> 
+                                
+            <div class="event_details">
+
+                <h2 class="top">{{ event.title }}</h2> 
+                    {% if event.get_event_type_display %}
+                    <p class="event_presenter"><strong>Event Format:</strong> {{ event.get_event_type_display }}</p>
+                    {% endif %}
+                    {% if event.presenter %}
+                    <p class="event_presenter"><strong>Presenter(s):</strong>
+                    {% for doctor in event.local_presenters.all %}
+                        <a href="{{ doctor.get_absolute_url }}">{{ doctor.display_name }}</a>, {{ doctor.letters }}{% if not forloop.last %}; {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    {% if event.other_presenter %}
+                        {% if event.presenter_url %}<a href="{{ event.presenter_url}}" target="_blank">{% endif %}
+                        {{ event.other_presenter }}{% if event.presenter_url %}</a>{% endif %}{% if event.local_presenters.all %}
+                        {% endif %}
+                    {% endif %}
+                    {% if event.sponsored_by %}
+                    <p class="event_sponsor"><strong>Sponsored by:</strong> <em><!-- sponsor shown only if specified. Sponsor URL only a specified period otherwise text is not clickable. -->{% if event.sponsor_url %}<a href="{{ event.sponsor_url }}">{% endif %}{{ event.sponsored_by }}{% if event.sponsor_url %}</a>{% endif %}</em></p>
+                    {% endif %}
+
+                    {% for eventtime in event.eventtimes %} 
+                    <p class="event_datetime">
+                        <strong>Date &amp; Time:</strong> {{ eventtime.timelong }}
+                        {% if event.exclude_from_registration == '0' %}
+                        {% if eventtime.cancelled == 'C' %}
+                        <strong>Cancelled</strong>
+                                            {% else %}
+                        <strong><a href="/events/registration?eventtimes={{ eventtime.id }}">Register</a></strong>
+                        {% endif%}
+                        {% endif %}
+                    </p>
+                    {% endfor %}
+                
+                <p class="event_descrip"><strong>Description:</strong>
+                    {{ event.description|safe }}
+                </p> 
+                <p class="event_descrip">
+                {% if event.original_image %}<div style="text-align:center;"><img src="{{ MEDIA_URL }}{{ event.original_image }}" /></div>{% endif %}
+                </p> 
+            </div>
+                                
+                                
+            {% ifequal event.exclude_from_registration "0" %}
+            <div class="well sucesss">
+                
+                <p>Reservations are required.</p>
+                <p>For cancellations, please e-mail us at <a class="maillink" href="mailto:events@smgnj.com">events@smgnj.com</a> or call our <strong>events hotline at 908-277-8889</strong>. </p>
+                
+                <p><b>Inviting a guest?</b> Guests must register separately. Simply <a class="share-email" href="javascript:void(0);" onClick="emailPopup();"><span>E-mail this event</span></a> to let your guests know.
+            </div>
+            {% endifequal %}
+                                
+            <div class="location">
+                {# is there an easier more standard way to display locations, maybe a helper function? #}
+                <h3>Location</h3>   
+                {% if event.other_location %}                                   
+                <b>{{ event.other_location|safe }}</b>
+                {% else %}
+                {% if event.location.get_absolute_url %}<a href="{{ event.location.get_absolute_url }}">{% endif %}
+                {% if event.location.display_name %}{{ event.location.display_name }},<br />{% endif %}
+                {{ event.location.address }}<br />
+                {% if event.location.address2 %}{{ event.location.address2 }}<br />{% endif %}
+                {% if event.room %}{{ event.room }}<br />{% endif %}
+                {{ event.location.city }}, {{ event.location.state }} {{ event.location.zipcode }}<br />
+                </a>
+                {% if event.location.get_absolute_url %}</a>{% endif %}
+                {% endif %}
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "services/oncology_base.html" %}
+{% load helpers %}
+
+{% block meta_info %}{% meta_info service %}{% endblock meta_info %}
+{% block seo_keywords %}{% seo_keywords service %}{% endblock seo_keywords %}
+
+{% block page_title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+
+{{ page.content|safe }}
+
+{% include 'doctors/includes/alpha_list.html' %}
+<div id="doctor-list">
+{% for doctor in doctors %}
+    {% include 'doctors/includes/result_object.html' %}
+{% endfor %}
+</div>
+
+<p style="text-align: center;">
+	<strong>To contact us, please call 908-277-8890.</strong>
+</p>
+
+{% endblock content %}

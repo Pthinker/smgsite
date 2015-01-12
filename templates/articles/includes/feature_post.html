@@ -1,0 +1,21 @@
+{% load helpers %}
+<div class="title">
+    <h2 class="top">{{ article.headline|safe }}</h2>
+    <span class="date">Last updated: {{ article.display_time|date:"M d, Y" }}</span> 
+</div>
+
+{% if article.byline %}
+    <span class="byline">By 
+    {% if article.byline_link %}
+        <a href="{{ article.byline_link }}">{{ article.byline }}</a>
+    {% else %}
+        {{ article.byline }}
+    {% endif %} 
+    for Summit Medical Group</span>
+{% endif %}
+    
+{% if article.reviewed_by %}
+    <br><span class="byline">Reviewed by <a href="{{ article.reviewed_by_link }}">{{ article.reviewed_by }}</a></span>
+{% endif %}
+
+{{ article.content|strip_font_style }}

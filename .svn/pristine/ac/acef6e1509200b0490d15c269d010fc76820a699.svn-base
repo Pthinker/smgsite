@@ -1,0 +1,5 @@
+{% load helpers %}
+
+{{ object.headline }}
+{{ object.content | striptags | unescape }}
+{{ object.blurb | striptags | unescape }}

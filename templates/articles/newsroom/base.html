@@ -1,0 +1,46 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+
+{% block head_title %}Newsroom | Summit Medical Group{% endblock head_title %}
+
+{% block body %}
+
+    <div class="container">
+    {% block breadcrumbs %}{% endblock breadcrumbs %}
+    </div>
+    
+    <div class="container">
+        <div class="row visible-xs">
+            <div class="col-md-12">
+            {% include 'articles/newsroom/includes/navigation.html' %}
+            </div>
+        </div>
+
+        <div class="row">
+
+           
+
+            <div class="col-md-8 col-md-push-4">
+            {% block content %}
+
+            {% endblock content %}
+
+                {% block trending %}
+                {% render_trending_topics %}
+                {% endblock trending %}
+            </div>
+
+            <div class="col-md-4 col-md-pull-8">
+            <div class="hidden-xs">
+            {% include 'articles/newsroom/includes/navigation.html' %}
+            </div>
+
+            {% include 'articles/newsroom/includes/twitter_feed.html' %}
+
+            {% include 'articles/newsroom/includes/facebook_feed.html' %}
+
+            </div>
+
+        </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,135 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}Summit Medical Group - {{ location.name }}{% endblock head_title %}
+
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-find-practitioner">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-map-marker"></span> {{ location.get_display_name }}</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="/locations/">Locations</a></li>
+        <li><a href="/locations/?city={{ location.city }}">{{ location.city }}</a></li>
+        <li class="active">{{ location.name }}</li>
+
+        {% include 'site/includes/share.html' %}
+    </ol>
+</div>
+
+<div class="container location-content" id="content">
+
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#directions" data-toggle="tab">Directions</a></li>
+        {% if services %}
+        <li><a href="#services" data-toggle="tab">Services</a></li>
+        {% endif %}
+        {% if doctors %}
+        <li><a href="#doctors" data-toggle="tab">Practitioners</a></li>
+        {% endif %}
+        <li><a href="#hours" data-toggle="tab">Hours of Operation</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+        <div class="tab-pane active" id="directions">
+            <p>&nbsp;</p>
+            <div class="row section">    
+                <div class="col-md-4">
+                    <div class="address section">
+                    {% if location.display_image %}
+                    {% thumbnail location.display_image "260" crop="center" as im %}
+                        <img class="thumbnail" src="{{ im.url }}" />
+                    {% endthumbnail %}
+                    {% endif %}
+
+                    {% if location.display_name %}{{ location.display_name }}<br>{% endif %}
+                    {{ location.address }}<br>
+                    {% if location.address2 %}{{ location.address2 }}<br>{% endif %}
+                    {{ location.city }}, {{ location.state }} {{ location.zipcode }}<br />
+                    {% if location.phone %}<strong>Phone:</strong> {{ location.phone }}{% endif %}
+                    </div>
+                    <div id="route"></div>
+                </div>
+                <div class="col-md-8">
+                    <p>To see directions to this location, please enter a starting street address and town or ZIP code and click to get directions.</p>
+                    <form name="directions_form" class="form-inline section" role="form" action="javascript:smg_directions()">
+                        <input class="form-control" id="address_input" onclick="reset_input()" placement="Enter an address" />
+                        <button class="btn btn-finder" type="submit">SEARCH</button>
+                    </form>
+                    <div id="map" class="section" style="width:100%; height:300px"></div>
+                </div>
+            </div> 
+            
+        </div>
+
+        {% if services %}
+        <div class="tab-pane" id="services">
+            <p>&nbsp;</p>
+            <div class="row">
+            {% for sublist in services|partition:"3" %}
+                <div class="col-md-4">
+                    <ul class="list-unstyled">
+                    {% for item in sublist %}
+                        <li><a href="{{ item.get_absolute_url }}">{{ item }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if doctors %}
+        <div class="tab-pane" id="doctors">
+            <h3>Our {{ location.city }} Practitioners</h3>
+            {% include 'doctors/includes/alpha_list.html' %}
+            <div id="doctor-list">
+            {% for doctor in doctors %}
+                {% include 'doctors/includes/result_object.html' %}
+            {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="tab-pane" id="hours">
+            {% include 'site/includes/location_hours.html' %}
+        </div>
+
+    </div>
+
+</div>
+
+<div id="location_photo_address_box" style="display:none;">
+    <p>
+        <h3>{% if location.display_name %}
+                {{ location.display_name }}, 
+                {% endif %}
+                {{ location.address }}</h3>
+        {% if location.address2 %}
+            {{ location.address2 }}<br />
+        {% endif %}
+        {{ location.city }}, {{ location.state }} {{ location.zipcode }}<br />
+        {% if location.phone %}<strong>Phone:</strong> {{ location.phone }}{% endif %}
+    </p>
+</div>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?{% if GOOGLE_MAP_KEY %}key={{ GOOGLE_MAP_KEY }}&{% endif %}sensor=false"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/maps.js"></script>
+<script type="text/javascript">
+<!--
+    var glatitude = "{{ location.glatitude }}";
+    var glongitude = "{{ location.glongitude }}";
+-->
+</script>
+{% endblock %}

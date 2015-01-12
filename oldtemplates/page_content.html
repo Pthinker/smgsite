@@ -1,0 +1,76 @@
+{% extends "page_primary.html" %}
+
+{% block head_extra_primary %}
+	<link rel="stylesheet" href="/dynamic-css/dynamic.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}/js/jquery-1.4.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{ MEDIA_URL }}/js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{ MEDIA_URL }}/js/item_search.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="{{ MEDIA_URL }}js/mysmg.js"></script>
+{% endblock head_extra_primary %}
+
+{% block content %}
+
+<!--start of content area between header/footer-->
+<div id="full_content_area">
+
+<!--start of left column div-->
+<div id="left_col">
+
+{% if not blackberry %}
+<!--start of left nav div-->
+<div id="nav_container">
+
+{% block nav_search %}
+<div id="nav_container_search_header"><img src="{{ MEDIA_URL }}/images/nav_search_green_54x10.gif" alt="Search" width="54" height="10" /></div>
+<div id="nav_container_search">{% include 'site/search.html' %}</div>
+{% endblock nav_search %}
+
+{% block nav_links %}
+<ul>
+<li class="left_nav_links"><a href="/"><img src="{{ MEDIA_URL }}/images/nav_home_green_180x38.gif" alt="Home" width="180" height="38" /></a></li>
+<li class="left_nav_links"><a href="/doctors/"><img src="{{ MEDIA_URL }}/images/nav_doctors_green_180x38.gif" alt="Doctors" width="180" height="38" /></a></li>
+<li class="left_nav_links"><a href="/services/"><img src="{{ MEDIA_URL }}/images/nav_services_green_180x38.gif" alt="Services" width="180" height="38" /></a></li>
+<li class="left_nav_links"><a href="/library/"><img src="{{ MEDIA_URL }}/images/nav_library_green_180x38.gif" alt="Live Well Library" width="180" height="38" /></a></li>
+<li class="left_nav_links"><a href="/locations/"><img src="{{ MEDIA_URL }}/images/nav_locations_green_180x52.gif" alt="Locations" width="180" height="52" /></a></li>
+</ul>
+{% endblock nav_links %}
+
+</div>
+<!--end of left nav div-->
+{% endif %}
+
+{% block nav_extra %}
+{% endblock nav_extra %}
+
+{% block nav_bottom %}
+{% endblock nav_bottom %}
+
+</div>
+<!--end of left column div-->
+
+<!--start of page specific content area right of left nav-->
+<div id="page_content_area">
+
+{% block content_well %}
+{% endblock content_well %}
+
+<div class="clearfloats"></div>
+</div>
+<!--end of page specific content area right of left nav-->
+
+<div class="clearfloats"></div>
+</div>
+<!--end of full content area between header/footer-->
+
+{% if blackberry %}
+<form method="get" action="/search/"><input id="search-input" name="search-input" size="15" autocomplete="off" /><button name="submit" value="Search" type="submit"><img id = "search-image" src="{{ MEDIA_URL }}/images/22x22_green_arrow_button.gif" alt="Search" /></button></form>
+<ul>
+<li class="left_nav_links"><a href="/"><img src="{{ MEDIA_URL }}/images/nav_home_green_42x10.gif" alt="Home" width="42" height="10"></a></li>
+<li class="left_nav_links"><a href="/doctors/"><img src="{{ MEDIA_URL }}/images/nav_doctors_green_67x10.gif" alt="Doctors" width="67" height="10"></a></li>
+<li class="left_nav_links"><a href="/services/"><img src="{{ MEDIA_URL }}/images/nav_services_green_64x10.gif" alt="Services" width="64" height="10"></a></li>
+<li class="left_nav_links"><a href="/library/"><img src="{{ MEDIA_URL }}/images/nav_library_green_130x10.gif" alt="Live Well Library" width="130" height="10"></a></li>
+<li class="left_nav_links"><a href="/locations/"><img src="{{ MEDIA_URL }}/images/nav_locations_green_96x24.gif" alt="Locations" width="96" height="24"></a></li>
+</ul>
+{% endif %}
+
+{% endblock content %}

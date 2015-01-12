@@ -1,0 +1,16 @@
+{% comment %}
+Possible values for `doctor.accepting` are: (('A', 'Accepting'), ('P', 'No PCP'), ('N', 'Not Accepting'))
+{% endcomment %}
+{% if doctor.accepting_flag == 'N' %}
+    <p class="not_accepting">
+        <i class="glyphicon glyphicon-remove"></i> I am not accepting new patients.
+    </p>
+{% else %}{% if doctor.accepting|length > 0 %}
+    <p class="accepting">
+        <i class="glyphicon glyphicon-ok"></i> {{ doctor.accepting }}{% if doctor.unterminated %}.{% endif %}
+    </p>
+{% else %}
+    <p class="accepting">
+        <i class="glyphicon glyphicon-ok"></i> I am accepting new patients.
+    </p>
+{% endif %}{% endif %}

@@ -1,0 +1,153 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Our News{% endblock head_title %}
+{% block meta_info %}{% endblock meta_info %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/about.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+														
+						<!-- start of pages navigation -->
+						<div class="navigation">
+							{% if showpages %}
+								<div class="pages">
+									<p>Pages: {% for newpage in pagelist %}
+									{% ifequal page newpage %}
+										<b>{{ newpage }}</b>
+									{% else %}
+										<a href="/press-releases/year/{{ year }}/{{ newpage }}">{{ newpage }}</a>
+									{% endifequal %}
+								{% endfor %}</p></div>
+							{% endif %}
+						
+							{% include 'site/share.html' %}
+							<div class="clear"></div>
+						</div>
+						<!-- end of pages navigation -->
+
+						<!-- start of main columns -->
+						<div class="cols_2_fix_right_160">
+
+						<!-- start of left column of main columns -->
+						<div class="cols_2_left">
+						  <div class="cols_2_left_sub">
+								<h1>Summit Medical Group Media Room</h1>
+								<p>Whether you are looking for experts to discuss the latest health and medical advances, 
+								or photos/video b-roll to accompany your story, we can help. For timely, relevant response to 
+								your needs, please contact one of our media relations professionals.</p>
+								
+								<br /><a href="http://summitmedicalgroup.magnify.net">Click here for our latest videos.</a><br />
+								
+								<p>
+									See below for current media releases or our archive for prior years' releases:
+									{% for newyear in years %}
+									{% ifequal year newyear %}
+										{{ newyear }} | 
+									{% else %}
+										<a href="/press-releases/year/{{ newyear }}">{{ newyear }}</a>  
+									{% endifequal %}
+									{% endfor %} 
+								</p>
+						
+									<p>
+										<b>Recent Media Releases</b>
+									</p>
+
+								<ul>
+								{% for article in articles %}
+									{% ifchanged article.relative_age %}
+										<p><b>{{ article.relative_age }}</b></p>
+									{% endifchanged %}
+									<li><a href="{{ article.get_absolute_url }}">{{ article.headline|safe }}</a> <span>({{ article.display_time_for_display }})</span></li>
+								{% endfor %}
+								</ul>
+						  </div>
+						</div>
+						
+						<!-- end of left column of main columns -->
+						
+						<!-- start of right column of main columns -->
+						<div class="cols_2_right">
+							<div>
+								<div class="sky-blue-top"></div>
+								<div class="sky-blue-body">
+									<b>Media Contacts:</b><br /><br />
+
+									<div>Maureen Bennett<br />
+									Media Relations<br />
+									<a href="mailto:mbennett@smgnj.com">mbennett@smgnj.com</a></div><br />
+									
+									Eileen O'Shaughnessy<br /> 
+									Marketing Director<br />
+									908-277-8867 <a href="mailto:eoshaughnessy@smgnj.com">eoshaughnessy@smg nj.com</a>	
+								</div>
+								<div class="sky-blue-tail"></div>
+							</div>
+							
+							<div class="msmg">
+								<div class="sky-green-top"></div>
+								<div class="sky-green-body">
+									<b>Other Resources:</b><br />											
+									<ul>
+										<li><a href="/about/press_Room/">About Summit Medical Group</a></li>
+										<!--<li><a href="#">Our Chief Executives</a></li>-->
+										<li><a href="/media/db/media-library/SMG_ANNUAL2011_PC_web.pdf">Annual Report</a></li>
+									</ul>
+									<br />
+								</div>		
+								<div class="sky-green-tail"></div>
+							</div>
+						</div>
+						<!-- end of right column of main columns -->
+					</div>
+					<!-- end of main columns -->
+					
+				</div>
+			</div>
+			<!-- end of main blocks column right -->
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				<div>{% banner %}</div>
+				
+				<div class="areas-sep">&nbsp;</div>
+				
+				<h1>SMG Publications:</h1>
+				<br />
+				
+				<div align="center">
+					<a href="http://www.regardinghealth.com/signup/SMGsignup.asp?76517F14-BA8B-4298-BC88-4C33B79AFA57" onClick="recordOutboundLink(this, 'Outbound Links', 'Thrive');return false;"><img src="{{ MEDIA_URL }}/images/icon-thrive.png" alt="" /></a><br /><br />
+					<a href="/healthyconnections"><img src="{{ MEDIA_URL }}/images/icon-healthyconnections.png" alt="" /></a><br /><br />
+				</div>
+				
+				<div class="areas-sep">&nbsp;</div>
+				
+				<h1>You can also find us on:</h1>
+				<br />
+				
+				<div align="center">
+					<a href="http://twitter.com/#!/SummitMedicalNJ" target="_blank" onClick="recordOutboundLink(this, 'Outbound Links', 'Twitter');return false;"><img src="{{ MEDIA_URL }}/images/icon-twitter.jpg" alt="" /></a><br /><br />
+					<a href="http://www.youtube.com/user/SMGNJ" target="_blank" onClick="recordOutboundLink(this, 'Outbound Links', 'YouTube');return false;"><img src="{{ MEDIA_URL }}/images/icon-youtube.jpg" alt="" /></a><br /><br />
+					<a href="http://www.facebook.com/summitmedicalnj" target="_blank onClick="recordOutboundLink(this, 'Outbound Links', 'Facebook');return false;""><img src="{{ MEDIA_URL }}/images/icon-facebook.jpg" alt="" /></a><br />
+				</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

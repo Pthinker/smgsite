@@ -1,0 +1,65 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Search Results{% endblock head_title %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="/dynamic-css/search.css" type="text/css" media="screen"/>
+{% endblock head_extra %}
+
+{% block content %}
+    <!-- start of main blocks -->
+    <div id="main_block" class="main_block">
+        <div class="main_block_sub_1">
+            <div class="main_block_sub_2">
+                <!-- start of main blocks column right -->
+                <div class="right_main_block">
+                    <div class="right_sub_main_block">
+                        <div id="search_results_landing_container">
+                            <h2>Search Results for "{{ query }}"</h2>
+                            {% for group in result_groups %}
+                                <div class="search_results_group">
+                                    {% if group.more %}
+                                        <p class="search_more_results_p"><a
+                                                href="/search/{{ group.name }}/1/?search-input={{ query }}">More {{ group.display_name }}
+                                            results...</a></p>
+                                    {% endif %}
+                                    <h3>{{ group.display_name }}</h3>
+                                    {% for result in group.results %}
+                                        <p><a href="{{ result.url }}">{{ result.name|safe }}</a></p>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- end of main blocks column right -->
+
+                <!-- start of main blocks column left -->
+                <div class="left_main_block">
+                    <div class="mt10">{% banner %}</div>
+                </div>
+                <!-- end of main blocks column left -->
+
+
+						<!-- start of main blocks column left -->
+						<div class="left_main_block">
+							<div class="mt10">{% banner %}</div>
+						</div>
+						<div class="left_main_block">
+							<ul>
+							{% for model in models %}
+							<li><a href="/search/{{ model|first }}/1/?search-input={{ query }}">{{ model|last }}</a></li>
+							{% endfor %}
+							</ul>
+						</div>
+						<!-- end of main blocks column left -->
+
+					</div>
+				</div>
+			<div class="clear"></div>
+			</div>
+			<!-- end of main blocks -->
+{% endblock content %}

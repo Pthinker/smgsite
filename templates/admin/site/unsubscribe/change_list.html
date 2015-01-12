@@ -1,0 +1,14 @@
+{% extends "admin/base_site.html" %}
+{% load admin_list i18n %}
+{% block bodyclass %}change-list{% endblock %}
+{% if not is_popup %}{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/">{% trans "Home" %}</a> &rsaquo; <a href="/admin/site">Site</a> &rsaquo; Unsubscribe Requests</div>{% endblock %}{% endif %}
+{% block coltype %}flex{% endblock %}
+{% block pretitle %}
+{% endblock %}
+{% block content_title %}
+{% endblock %}
+{% block content %}
+<div id="content-main">
+<h1>Export List of Unsubscribe Requests</h1>
+<p><a href="/admin/site/unsubscribe/export/unsubscribe.csv">Export unsubscribe requests</a> for to a CSV file.</p>
+{% endblock %}

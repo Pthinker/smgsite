@@ -1,0 +1,22 @@
+{% load thumbnail %}
+
+<div class="media service-location">
+    <div class="pull-left">
+        {% thumbnail location.location.original_image "150x90" crop="center" as im %}
+        <img src="{{ im.url }}" alt="{{ location.location.display_name }}" />
+        {% endthumbnail %}
+    </div>
+
+    <div class="media-body">
+        <a class="pull-right" href="{{ location.location.get_absolute_url }}">See Hours and Directions</a>
+        {% if location.location.display_name %}<strong>{{ location.location.display_name }}</strong><br />{% endif %}
+        {% if location.extra1 %}{{ location.extra1 }}<br />{% endif %}
+        {% if location.extra2 %}{{ location.extra2 }}<br />{% endif %}
+        {{ location.location.address }}<br/>
+        {% if location.location.address2 %}{{ location.location.address2 }}<br />{% endif %}
+        {{ location.location.city }}, {{ location.location.state }}<br />
+        {% if location.extra3 %}{{ location.extra3 }}<br />{% endif %}
+    </div>
+</div>
+
+

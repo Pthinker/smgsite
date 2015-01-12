@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Summit Medical Group - Health in the News{% if category or topic or news_type %} - {% if category %}{{ category }}{% endif %}{% if topic %}{{ topic }}{% endif %}{% if news_type %}{{ news_type }}{% endif %} Updates{% endif %}</title>
+    <link>http://www.summitmedicalgroup.com/healthday/</link>
+    <description>Summit Medical Group brings you the latest news and updates on{% if category or topic %} {% if category %}{{ category }}{% endif %}{% if topic %}{{ topic }}{% endif %}{% else %} healthcare and wellness{% endif %} from HealthDay to help you and your family 'Live Well, Stay Well.'</description>
+    <language>en-us</language>
+    <pubDate>{{ pubdate }}</pubDate>
+    <managingEditor>wecare@smgnj.com</managingEditor>
+    <webMaster>wecare@smgnj.com</webMaster>
+    <ttl>60</ttl>
+
+ 	{% for article in articles %}
+    <item>
+      <title>{{ article.headline }}</title>
+      <link>http://{{ request.META.SERVER_NAME }}{{ article.get_absolute_url }}</link>
+      <description>{{ article.blurb }}</description>
+      <pubDate>{{ article.posting_time|date:"r" }}</pubDate>
+    </item>
+	{% endfor %}
+  </channel>
+</rss>

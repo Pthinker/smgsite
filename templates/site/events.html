@@ -1,0 +1,90 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Upcoming Events{% endblock head_title %}
+{% block meta_info %}Summit Medical Group regularly hosts events on a variety of health-related issues that we believe will interest and help you.{% endblock meta_info %}
+
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+{% include 'includes/section_header.html' with title='Upcoming Events' %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 sidebar"> 
+            <h3 class="top">Additional Classes</h3>
+            {% for class in classes %}
+            <div class="side-event">           
+                <span class="date">
+                    {% for day in class.days_held %} 
+                    {{ day }}{% if forloop.last %} - {% else %}, {% endif%}
+                    {% endfor %} {{ class.starttime_display }}
+                </span>
+                <span class="title"><a href="{{ class.get_absolute_url }}">{{ class.title }}</a></span>
+                {% if class.cancellations %}<span class="note">Note: {{ class.cancellations }}</span>{%endif %}
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="col-md-9"> 
+            <img class="img-responsive section" src="{{ STATIC_URL }}images/general_event_leader.jpg" />
+            <p>We believe knowledge and access to information are important for your well-being. For this reason, Summit Medical Group regularly hosts events on health-related topics that we believe will interest and help you.</p>
+            <p>Unless otherwise indicated, all lectures are FREE and held in the Summit Medical Group Lawrence Pavilion, Conference Center, which is located on our main campus in the Cafe building at 1 Diamond Hill Road in Berkeley Heights, New Jersey. For your convenience, please park in lot 1 or 2 and enter through the Lawrence Pavilion.</p>
+            <p>Reservations are required. You may register for our events online or call our events hotline at 908-277-8889.
+            </p>
+           <p><b>We also now offer presentations and materials from selected past events. <a href="http://www.slideshare.net/smgnj" onClick="recordOutboundLink(this, 'Outbound Links', 'SlideShare');return false;">Click here to view!</a></b></p><br><br>
+            <div class="events">
+            {% for eventtime in eventtimes %}                                                         
+            <div class="event">
+                <div class="date">{{ eventtime.startdate|date:'M' }}<br>
+                 {{ eventtime.startdate|date:'d' }}
+                </div>
+
+                <div class="event-box">
+                  <h3 class="top"><a href="{{ eventtime.event.get_absolute_url }}">{{ eventtime.event.title }}</a></h3>
+                  <p>{{ eventtime.event.short_description }}</p>
+                  <p>{{ eventtime.event.timelong }}</p>
+                  {% if eventtime.event.get_event_type_display %}
+                  <p><strong>Event Format:</strong> {{ eventtime.event.get_event_type_display }}</p>
+                  {% endif %}
+                    {% if eventtime.event.presenter %}
+                    <p><strong>Presenter(s):</strong>
+                    {% for doctor in eventtime.event.local_presenters.all %}
+                        <a href="{{ doctor.get_absolute_url }}">{{ doctor.display_name }}</a>, {{ doctor.letters }}{% if not forloop.last %}; {% endif %}
+                    {% endfor %}                            
+                    {% if eventtime.event.other_presenter %}
+                        {% if eventtime.event.presenter_url %}<a href="{{ eventtime.event.presenter_url}}" target="_blank">{% endif %}
+                        {{ eventtime.event.other_presenter }}{% if eventtime.event.presenter_url %}</a>{% endif %}{% if eventtime.event.local_presenters.all %}
+                        {% endif %}
+                    {% endif %}
+                    </p>
+                    {% endif %}
+                    <p class="description-event"><strong>Location:</strong>
+                        {% if eventtime.event.other_location %}
+                        <b>{{ eventtime.event.other_location|safe }}</b>
+                        {% else %}
+                        {% if eventtime.event.location.display_name %}
+                        {{ eventtime.event.location.display_name }}, 
+                        {% endif %}
+                        {{ eventtime.event.location.address }}
+                        {% if eventtime.event.location.address2 %}
+                        {{ eventtime.event.location.address2 }},
+                        {% endif %}
+                        {% if eventtime.event.room %}
+                        {{ eventtime.event.room }},
+                        {% endif %}
+                        {{ eventtime.event.location.city }}, {{ eventtime.event.location.state }} {{ eventtime.event.location.zipcode }}<br />
+                        {% endif %}                                 
+                    </p>
+                  </div>
+              <a class="more" href="{{ eventtime.event.get_absolute_url }}" title="{{ eventtime.event.title }}">See Event</a>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

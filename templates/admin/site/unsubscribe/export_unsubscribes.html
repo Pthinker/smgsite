@@ -1,0 +1,3 @@
+"Date Added","First Name","Last Name","Street_1","Street_2","City","State","Zip","E-Mail","Reason 1","Reason 2","Reason 3","Reason 4"
+{% for unsubscribe in unsubscribes %}"{{ unsubscribe.date_added }}","{{ unsubscribe.first_name }}","{{ unsubscribe.last_name }}","{{ unsubscribe.street_1 }}","{{ unsubscribe.street_2 }}","{{ unsubscribe.city }}","{{ unsubscribe.state }}",="{{ unsubscribe.zipcode }}","{{ unsubscribe.email }}",{% for reason in unsubscribe.reasons.all %}"{{ reason }}",{% endfor %}
+{% endfor %}

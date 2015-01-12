@@ -1,0 +1,114 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Upcoming Events{% endblock head_title %}
+
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-doctor">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="fa fa-file-text-o"></span> Event Registration</h2>     
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+
+
+    <p>Reservations are required. You can register for as many events as you would like. Please register early as seating is limited.</p>
+
+    <p>For cancellations, please e-mail us at 
+    <a href="mailto:events@smgnj.com">events@smgnj.com</a> or call our Events Hotline at 908-277-8889.</p>
+
+    {% if form.errors %}
+    <h2 style="color:#C03;">Please correct the errors below highlighted in red.</h2>
+    {% endif %}
+
+    <form name="eventform" method="post" action="">
+    <h3 {% if form.event.errors %}style="color:#C03;"{% endif %}>1. Select the event(s) you would like to attend.</h3>
+    <div class="datepicker"></div>
+    <ul class="eventdate_choices" data-month="unsorted">
+        <li class="eventsinner">
+    {% for eventdate in form.eventdates.field.choices %}
+            <label class="box{% if eventdate.3 %} eventdate_selected{% endif %}" for="id_eventdates_{{ eventdate.0 }}"
+                   data-eventid="{{ eventdate.0 }}">
+                <div class="date">
+                    <input type="hidden" name="eventdate_timelong" value="{{ eventdate.1 }}"/>
+                    <input type="hidden" name="eventdate_absolute_url" value="{{ eventdate.2 }}"/>
+                    <input type="checkbox" name="eventdates"
+                           value="{{ eventdate.0 }}" id="id_eventdates_{{ eventdate.0 }}"
+                            {% if eventdate.3 %} checked="checked" {% endif %} />
+                </div>
+                <div class="blockbox">
+                    <div class="title"></div>
+                    <span class="event-type"></span>
+                    <div class="subtitle"></div>
+                </div>
+            </label>
+    {% endfor %}
+        </li>
+    </ul>
+    <ul class="eventdate_choices hidden-xs">
+        <li class="eventsinner first_month"></li>
+        <li class="eventsinner middle_month"></li>
+        <li class="eventsinner last_month"></li>
+    </ul>
+    {#{{ form.eventdates }}#}
+
+    <h3>2. Registration information (all fields required unless otherwise indicated)</h3>
+    <table class="table">
+    <tr><td {% if form.first_name.errors %}style="color:#C03;"{% endif %}>First name:</td><td>{{ form.first_name }}</td><td>(Max. 50 chars)</td></tr>
+    <tr><td {% if form.last_name.errors %}style="color:#C03;"{% endif %}>Last name:</td><td>{{ form.last_name }}</td><td>(Max. 50 chars)</td></tr>
+    <tr><td {% if form.age.errors %}style="color:#C03;"{% endif %}>Age:</td><td>{{ form.age }}</td><td>(Optional)</td></tr>
+    <tr><td {% if form.city.errors %}style="color:#C03;"{% endif %}>City:</td><td>{{ form.city }}</td><td>(Max. 50 chars)</td></tr>
+    <tr><td {% if form.state.errors %}style="color:#C03;"{% endif %}>State:</td><td>{{ form.state }}</td><td></td></tr>
+    <tr><td {% if form.zipcode.errors %}style="color:#C03;"{% endif %}>Zip Code:</td><td>{{ form.zipcode }}</td><td>(Please provide either 5 digit or 9 digit format)</td></tr>
+    </table>
+
+
+    <h3>3. Contact information (all fields required)</h3>
+    <p>Note: We will only use contact information to notify you in case of event changes or cancellations</p>
+    <table class="table">
+    <tr><td {% if form.email.errors %}style="color:#C03;"{% endif %}>E-mail:</td><td>{{ form.email }}</td></tr>
+    <tr><td {% if form.main_phone.errors %}style="color:#C03;"{% endif %}>Daytime Phone:</td><td>({{ form.main_phone_area }}) {{ form.main_phone_exchange }} {{ form.main_phone_number }} 
+        (<input type="text" size="4" name="main_phone_extn" maxlength="4" placeholder="ext" id="id_main_phone_extn">)
+
+        {{ form.main_phone }}</td></tr>
+    <tr><td {% if form.alt_phone.errors %}style="color:#C03;"{% endif %}>Alt Phone:</td><td>({{ form.alt_phone_area }}) {{ form.alt_phone_exchange }} {{ form.alt_phone_number }} 
+
+        (<input type="text" size="4" name="alt_phone_extn" maxlength="4" placeholder="ext" id="id_alt_phone_extn">)
+
+        {{ form.alt_phone }}</td></tr>
+    </table>
+
+    <p>{{ form.sendmail }}  I would like to subscribe to Summit Medical Group's monthly e-mail newsletter <em>Thrive</em></p>
+
+    <h3 {% if form.referrer.errors %}style="color:#C03;"{% endif %}>4. How did you hear about this event?</h3>
+    {{ form.referrer }}
+    <br />
+    <br />
+    <input class="btn btn-smg" type="button" name="Cancel" value="Cancel" onclick="javascript:history.go(-1)"/>
+    <input class="btn btn-smg" type="submit" name="Register" value="Register"/>
+    </form>
+
+</div>
+
+{% endblock %}
+
+{% block extracss %}
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" media="screen"/>
+{% endblock %}
+
+{% block extrajs %}
+<script src="http://code.jquery.com/jquery-migrate-1.0.0.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+<script src="{{ STATIC_URL }}js/lodash.min.js"></script>
+<script src="{{ STATIC_URL }}js/sugar-1.3.9.min.js"></script>
+<script src="{{ STATIC_URL }}js/registration.js"></script>
+{% endblock %}
+

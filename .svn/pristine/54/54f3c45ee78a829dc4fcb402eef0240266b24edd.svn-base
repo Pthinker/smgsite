@@ -1,0 +1,15 @@
+{% if eventtimes %}
+    {% for eventtime in eventtimes %}
+    <div class="event">
+    	<div class="date">
+    		{{ eventtime.timeshort }}
+    		<span class="pull-right">{{ eventtime.event.get_event_type_display }}</span>
+    	</div>
+
+    	<div class="title"><a href="{{ eventtime.event.get_absolute_url }}">{{ eventtime.event.title }}</a></div>	
+
+    </div>
+    {% endfor %}
+{% else %}
+    <p>There are no more events for this month.</p>
+{% endif %}

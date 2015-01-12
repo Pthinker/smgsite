@@ -1,0 +1,89 @@
+{% extends "admin/base_site.html" %}
+
+{% block nav-global %}
+<div style="text-align:right; margin-right:45px;"><h3><a href="/admin/">Administration Main Page</a></h3></div>
+{% endblock %}
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/">Home</a> &rsaquo; CMS</div>{% endblock %}
+
+{% block content %}
+
+<h3>Changes to existing site content requiring approval:</h3>
+
+{% for change in changes %}
+<div>
+{% if change.urlupdate %}
+<div style="float:left;"><a href="unchange/{{ change.pk }}">Reject</a> this urlname change for {{ change.model }} <a href="{{ change.url }}" target="_blank">{{change.name}}</a> where <em>{{ change.field }}</em>
+		was changed: </div>
+		<div style="clear:both;"></div>
+		<div style="float:left; width:40px;">from:</div>
+		<div style="float:left; width:350px; background-color:#FEE;"> {{ change.display_old|safe }}</div>
+		<div style="float:left; width:40px;">to:</div>
+		<div style="float:left; width:350px; background-color:#FEE;"> {{ change.display_new|safe }}</div>
+		<br/>
+		<span style="font-weight:bold; color:#C03;">WARNING!</span> It is a best practice that URLs should never be changed. This improves search engine optimization. If you are certain that this URL should be changed, you can <a href="change/{{ change.pk }}">approve</a> the change.
+	<div style="clear:both;"></div>
+{% else %}
+{% if change.postingupdate %}
+<div style="float:left;"><a href="unchange/{{ change.pk }}">Reject</a> this posting time change for {{ change.model }} <a href="{{ change.url }}" target="_blank">{{change.name}}</a> where <em>{{ change.field }}</em>
+		was changed: </div>
+		<div style="clear:both;"></div>
+		<div style="float:left; width:40px;">from:</div>
+		<div style="float:left; width:350px; background-color:#FEE;"> {{ change.display_old|safe }}</div>
+		<div style="float:left; width:40px;">to:</div>
+		<div style="float:left; width:350px; background-color:#FEE;"> {{ change.display_new|safe }}</div>
+		<br/>
+		<span style="font-weight:bold; color:#C03;">WARNING!</span> It is dangerous to change this object's original posting time. This may cause problems with search results. This time is not used for display; change the display time instead. If you are certain that this time should be changed, you can <a href="change/{{ change.pk }}">approve</a> the change.
+	<div style="clear:both;"></div>
+{% else %}
+{% if change.eventupdate %}
+<div style="float:left;">Are you sure you want to send a notification to registered users for the event "{{ change.name }}"? The following text will be sent to users. Do not send this unless you want users to receive an e-mail containing the exact text in quotes below.
+		<div style="clear:both;"></div>
+		<ul><li> "{{ change.display_new|safe }}"</li></ul>
+		<br/>
+		You can <a href="unchange/{{ change.pk }}">REJECT</a> this change and send no emails. If you're sure, you can <a href="change/{{ change.pk }}">approve</a> the change and this notification will be sent to registered users.</div>
+	<div style="clear:both;"></div>
+{% else %}
+<div style="float:left;"><a href="change/{{ change.pk }}">Approve</a>/<a href="unchange/{{ change.pk }}">Reject</a> change for {{ change.model }} <a href="{{ change.url }}" target="_blank">{{change.name}}</a> where <em>{{ change.field }}</em>
+	{% if change.old_data %}
+		was changed: </div>
+		<div style="clear:both;"></div>
+		<div style="float:left; width:40px;">from:</div>
+		<div style="float:left; width:350px; background-color:#FEE;"> {{ change.display_old|safe }}</div>
+		<div style="float:left; width:40px;">to:</div>
+		<div style="float:left; width:350px; background-color:#FEE;"> {{ change.display_new|safe }}</div>
+	{% else %}
+		was created as: </div> <div style="float:left; background-color:#FEE;"> {{ change.display_new|safe }} </div>
+	{% endif %}
+	<div style="clear:both;"></div>
+{% endif %}
+{% endif %}
+{% endif %}
+</div>
+<br/>
+{% endfor %}
+
+</hr>
+
+<h3>Additions to site content requiring approval:</h3>
+
+{% for item in additions %}
+
+<p>
+	<a href="add/{{ item.app_name }}/{{ item.model }}/{{ item.pk }}">Approve</a>/<a href="delete/{{ item.app_name }}/{{ item.model }}/{{ item.pk }}">Reject</a> new {{ item.model }} : <a href="{{ item.url }}" target="_blank">{{ item.name }}</a></p>
+
+{% endfor %}
+
+</hr>
+
+<h3>Deletions of site content requiring approval:</h3>
+
+{% for item in deletions %}
+
+<p>
+	<a href="delete/{{ item.app_name }}/{{ item.model }}/{{ item.pk }}">Delete</a>/<a href="add/{{ item.app_name }}/{{ item.model }}/{{ item.pk }}">Retain</a> {{ item.model }} : <a href="{{ item.url }}" target="_blank">{{ item.name }}</a></p>
+
+{% endfor %}
+
+
+{% endblock %}

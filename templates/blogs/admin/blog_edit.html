@@ -1,0 +1,93 @@
+{% extends 'one_column_layout.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Admin{% endblock head_title %}
+{% block page_title %}Admin{% endblock %}
+
+{% block extrajs %}
+    <script src="{{ STATIC_URL }}ckeditor/ckeditor.js"></script>
+    <script src="{{ STATIC_URL }}ckeditor/adapters/jquery.js"></script>
+    <script src="{{ STATIC_URL }}js/admin/editor.js"></script>
+    <script src="{{ STATIC_URL }}js/admin/blog_entry.js"></script>
+{% endblock extrajs %}
+
+{% block content %}
+
+<div>
+    <a href="/blog/admin/">Admin</a> &gt; <a href="/blog/admin/{{ blog.urlname }}/">{{ blog.name }}</a> &gt; Edit Page
+</div>
+<br/>
+
+<form enctype="multipart/form-data" action="" method="post" role="form" id="blogentry_form">
+    {{ form.urlname }}
+
+    <div class="section">
+        <label for="id_posting_time" class="required" {% if form.posting_time.errors %}style="color:#C03;"{% endif %}>Posting date:</label>{{ form.posting_time }}
+        <div class="help">Enter a posting date and time for this article. You must enter the date in YYYY-MM-DD format. Example: 2014-12-25. You must enter the time in HH:MM:SS 24-hour format. Examples: 08:30:00, 17:45:00.</div>
+    </div>
+
+    <div class="section">
+        <label for="id_display_time" class="required" {% if form.display_time.errors %}style="color:#C03;"{% endif %}>Display date:</label>{{ form.display_time }}
+        <div class="help">Enter a display date and time for this article. You must enter the date in YYYY-MM-DD format. Example: 2014-12-25. You must enter the time in HH:MM:SS 24-hour format. Examples: 08:30:00, 17:45:00.</div>
+    </div>
+
+    <div class="section">
+        <label for="id_title" class="required" {% if form.title.errors %}style="color:#C03;"{% endif %}>Title:</label>{{ form.title }}
+        <div class="help">Enter a title for this article.</div>
+    </div>
+
+    <div class="section">
+        <label for="id_sections" class="required"
+               {% if form.sections.errors %}style="color:#C03;"{% endif %}>Sections:</label>
+
+        <div class="section" style="clear:both;">
+            <div>{{ form.sections }}</div>
+            <div style="clear:both;">
+                <div class="help">Select one or more sections for this article.</div>
+            </div>
+
+            <div class="section">
+                <label for="id_byline" class="required"
+                       {% if form.byline.errors %}style="color:#C03;"{% endif %}>Byline:</label>{{ form.byline }}
+                <div class="help">Enter a byline for this article.</div>
+            </div>
+
+            <div class="section">
+                <label for="id_byline_link" class="required"
+                       {% if form.byline_link.errors %}style="color:#C03;"{% endif %}>Byline
+                    Link:</label>{{ form.byline_link }}
+                <div class="help">Enter a title for this article.</div>
+            </div>
+
+            <div class="section">
+                <label for="id_reviewed_by" class="required"
+                       {% if form.reviewed_by.errors %}style="color:#C03;"{% endif %}>Reviewed
+                    By:</label>{{ form.reviewed_by }}
+                <div class="help">Enter a reviewed by line for this article.</div>
+            </div>
+
+            <div class="section">
+                <label for="id_reviewed_by_link" class="required"
+                       {% if form.reviewed_by_link.errors %}style="color:#C03;"{% endif %}>Reviewed By
+                    Link:</label>{{ form.reviewed_by_link }}
+                <div class="help">Enter a reviewed by link for this article.</div>
+            </div>
+
+            <div class="section">
+                <div>
+                    <label for="id_keywords" {% if form.keywords.errors %}style="color:#C03;"{% endif %}>Keywords:</label>{{ form.keywords }}
+                    <p class="help">Enter optional Top Match keywords separated by spaces.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section editor">
+        <div class="form-body" style="width: 100%;">
+            <div>
+                {{ form.body }}
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-smg" type="submit" name="submit">POST</button>
+</form>
+{% endblock content %}

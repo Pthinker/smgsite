@@ -1,0 +1,38 @@
+{% load helpers %}
+
+{% alphabet_list doctors 'space' %}
+{% for letter_list in letters %}
+{% if foorloop.last %}
+<div id="div-letter-{{ letter_list.letter }}" class="our_doctors last_our_doctors">
+{% else %}
+    <div id="div-letter-{{ letter_list.letter }}" class="our_doctors first_our_doctors">
+{% endif %}
+<a id="letter-{{ letter_list.letter }}" name="letter-{{ letter_list.letter }}"></a><div class="our_doctors_letter"><div class="back_top"><a href="#top">back to top</a></div>{{ letter_list.letter }}</div>
+<div class="our_doctors_wrap">
+    {% for row in letter_list.rows %}
+    <div id="div-row-{{ letter_list.letter }}-{{ forloop.counter }}" class="our_doctors_row">
+        {% for doctor in row %}
+        <div id="div-doctor-{{ doctor.pk }}" class="our_doctor">
+            <div class="our_doctor_frame">
+                <div class="shadowed_img"><em><em><em><em><em><img src={% if doctor.cropped_image %}"{{ doctor.cropped_image.url }}"{% else %}"{{ MEDIA_URL }}/images/37x37_not_avail.jpg"{% endif %} alt="our_doctor" width="37" height="37" /></em></em></em></em></em></div>
+            </div>
+            <div class="doctor_info">
+                <p><b><a href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, {% if doctor.thumbnail %}'{{ doctor.thumbnail.url }}'{% else %}''{% endif %}, '{{ doctor.display_name|escapejs }}, {{ doctor.letters }}', '{{ doctor.list_services }}', '{{ doctor.phone }}')" onmouseout="photoOff()" onclick="photoOff()">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}</a><br />
+                {{ doctor.title_service.name }}</b><br />
+                {% if doctor.accepting %}
+                {{ doctor.accepting }}{% if doctor.unterminated %}{% endif %}
+                {% else %}
+                {% ifequal doctor.accepting_flag 'A' %}
+                Accepting new patients
+                {% else %}
+                Not accepting new patients
+                {% endifequal %}
+                {% endif %}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endfor %}

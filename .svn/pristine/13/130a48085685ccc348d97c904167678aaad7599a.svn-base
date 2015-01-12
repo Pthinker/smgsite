@@ -1,0 +1,50 @@
+@import url("basicstyle.css");
+
+ul {
+	margin: 0;
+	padding: 3px 0 0 15px;
+}
+
+.right_main_block ul li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 8px;
+	background: url({{ MEDIA_URL }}/images/4x4_bullet_page_description.gif)	left 8px no-repeat;
+	color: #333;
+	line-height: 1.25em;
+	margin: .25em 0 .25em 0;
+}
+
+.right_main_block ul.share-container li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background: none;
+}
+
+ul li a {
+	text-decoration: none;
+}
+
+.blue_theme div.right_sub_main_block h1 {
+	margin: .5em 0 0 0;
+	color: #0047A8;
+	padding: 0;
+	font: normal 2em/ 1em Arial, Helvetica, sans-serif;
+}
+
+.smg_general_container h2 {
+	font: bold 1.75em/ 1em Arial, Helvetica, sans-serif;
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+}
+#press-releases ul {
+	padding: 1em 0 0 0;
+	_border: 1px solid #fff;
+}
+#press-releases li {
+	background: none;
+	padding: 0 0 0 20px;
+	_border: 1px solid #fff;
+}

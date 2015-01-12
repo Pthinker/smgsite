@@ -1,0 +1,168 @@
+{% extends "mysmg/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - My Summit Medical Group Library{% endblock head_title %}
+
+{% block content %}
+<input type="hidden" id="refreshed" value="no">
+<script type="text/javascript">
+onload=function(){
+var e=document.getElementById("refreshed");
+if(e.value=="no")e.value="yes";
+else{e.value="no";location.reload();}
+}
+</script>		
+<!-- start of main box -->
+<div id="main_box" class="msmgp_home">
+	<!-- start of left main column -->
+	<div id="left_207_main_box">		
+		<div class="box_207 box_207_blue">
+			<div class="box_207_top">
+				<div class="box_207_bottom">
+					<div class="user_briefly">
+						{% if user.display_name %}<p class="name">{{ user.display_name }}</p>{% endif %}
+						{% if user.username %}<p class="email"><a href="mailto:{{ user.username }}">{{ user.username }}</a></p>{% endif %}
+						<p class="edit_profile"><a href="/mysummitmedicalgroup/edit/">&raquo; Edit profile</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="banner_left">{% banner %}</div>
+		
+	</div>
+	<!-- end of left main column -->
+	
+	<!-- start of right main column -->
+	<div id="right_doubled_main_box">
+		
+		<div class="subheader_msmgp">
+			<div class="right_subheader_msmgp">
+				<a href="/mysummitmedicalgroup/login/" class="help_button_msmgp"></a>
+			</div>
+			<h1>My Summit Medical Group Library</h1>
+		</div>
+		
+		<div class="cols_2_fix_right_187">
+			<!-- start of left sub column -->
+			<div class="left_cols_2_fix_right_187">
+			  <div class="left_sub_cols_2_fix_right_187">
+					
+					<!-- start of My Tools -->
+					<div class="my_tools_msmgp">
+						<p class="welcoming_my_tools">Your <font face="Georgia"><b><i><a href="/mysummitmedicalgroup/">My Summit Medical Group</a></i></b></font> links are available below. Be sure to log in using the button at the upper right of the page to save your links for a future visit. If you have not yet created a profile, <a href="/mysummitmedicalgroup/register/">click here to get started</a>.</p>
+						<p>&nbsp;</p>
+						<p><b><a href="/mysummitmedicalgroup/">Back to Main Tools Menu</a></b></p>
+						
+					</div>
+													
+					{% ifequal added "duplicate" %}
+					<h3 align="center" style="color:#C03;">Note: You added this page in a previous visit to the site.</h3>
+					{% endifequal %} 
+					{% if doctors %}			
+					<!-- start of My Doctors -->					
+					<div class="my_box">
+						<a name="doctor"><p class="title">My Doctors</p>{% ifequal added "doctor" %}<p><b>You added a new doctor.</b></p>{% endifequal %} 
+						<div class="my_doctors">
+							{% for doctor in doctors %}
+							<div class="my_doctor">
+								<div class="doctor_photo">
+									<div class="shadowed_img"><em><em><em><em><em><img src={% if doctor.cropped_image %}"{{ doctor.cropped_image.url }}"{% else %}"{{ MEDIA_URL }}/images/37x37_not_avail.jpg"{% endif %} alt="our_doctor" width="37" height="37" /></em></em></em></em></em></div>
+								</div>
+								<div class="doctor_info">
+									<p class="list_item">{% ifequal added "doctor" %}{% ifequal item doctor.pkstr %}<font style="color:#C03;">Just added</font>
+{% endifequal %}{% endifequal %} <a href="/doctor/{{ doctor.urlname }}/">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}</a></p>
+									<em><a href="/mysummitmedicalgroup/my_library/?action=remove&amp;type=doctor&amp;pk={{ doctor.pk }}">x remove</a></em>
+									<span>{{ doctor.title_service.name }}, {{ doctor.phone }}</span>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						<div class="add_more_my_box"><a href="/doctors/">Add More Doctors</a></div>
+					</div>
+					<!-- end of My Doctors -->
+					{% endif %}
+
+					<div class="h10"></div>
+					
+					{% if services %}
+					<!-- start of My Services -->
+					<div class="my_box">
+						<a name="service"><p class="title">My Services</p>{% ifequal added "service" %}<p><b>You added a new service.</b></p>{% endifequal %}
+						<div class="my_box_sub">
+							{% for service in services %}
+							<div class="list_item_my_box">
+								{% ifequal added "service" %}{% ifequal item service.pkstr %}<font style="color:#C03;">Just added</font>
+{% endifequal %}{% endifequal %} <em><a href="/mysummitmedicalgroup/my_library/?action=remove&amp;type=service&amp;pk={{ service.pk }}">x remove</a></em>
+								<p class="list_item"><a href="/service/{{ service.urlname }}">{{ service.name }}</a></p>
+							</div>
+							{% endfor %}
+						</div>
+						<div class="add_more_my_box"><a href="/services/">Add More Services</a></div>
+					</div>
+					<!-- end of My Services -->
+					{% endif %}
+
+					<div class="h14"></div>
+					
+
+
+					{% if library %}
+					<!-- start of My Library -->
+					<div class="my_box">
+						<a name="library"><p class="title">My Library</p>{% ifequal added "library" %}<p><b>You added new content.</b></p>{% endifequal %}
+						<div class="my_box_sub">
+							{% for link in library %}
+							<div class="list_item_my_box">
+								{%ifequal added "library" %}{% ifequal item link|first %}<font style="color:#C03;">Just added</font>{% endifequal %}{%endifequal %} <em><a href="/mysummitmedicalgroup/my_library/?action=remove&amp;type=library&amp;url={{ link|first }}">x remove</a></em>
+								<p class="list_item"><a href="{{ link|first }}">{{ link|last }}</a></p>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<!-- end of My Library -->
+					{% endif %}
+
+					<div class="h14"></div>
+					
+				</div>
+			</div>
+			<!-- end of left sub column -->
+			
+			<!-- start of right sub column -->
+			<div class="right_cols_2_fix_right_187">
+
+				<div class="tool_tips">
+					<h3>Tool Tips <em>&nbsp;</em></h3>
+					<div class="rain_box">
+						<div class="rain_box_sub">
+							<div class="tool_tip">
+								<p>To make the most of <font face="Georgia"><i>My Summit Medical Group</i></font>, you should <font style="color:#C03;">first</font> <b>create a profile</b> and <font style="color:#C03;">then</font> <b>register</b></font> for additional secure features.</p>
+								<a href="/mysummitmedicalgroup/register/"><b>Create profile &raquo;</b></a><br>
+								<a href="https://app.relayhealth.com/Patients/Registration.aspx?BID=SMG"><b>Register &raquo;</b></a>
+								
+							</div>
+							
+							<div class="tool_tip">
+								<p>You can save any page on this site to <font face="Georgia"><b><i><a href="/mysummitmedicalgroup/">My Summit Medical Group</a></i></b></font>. It’s a great way to keep the content that meets your health needs.</p>
+								<a href="/about/Site_Help/">More &raquo;</a>
+							</div>
+							
+							<div class="privacy_remind">
+								<p>These tools are private and secure.</p>
+								<a href="/media/db/media-library/NoticeOfPrivacyPractices.pdf">View our privacy and security policy for more details &raquo;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- end of right sub column -->
+		</div>
+		
+	</div>
+	<!-- end of right main column -->
+	<div class="clear"></div>
+</div>
+<!-- end of main box -->
+{% endblock content %}

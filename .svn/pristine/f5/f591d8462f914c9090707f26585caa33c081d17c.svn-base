@@ -1,0 +1,12 @@
+{% extends 'one_column_layout.html' %}
+
+{% block head_title %}Summit Medical Group - Page Not Found{% endblock head_title %}
+{% block page_title %}Library Item Not Found{% endblock %}
+
+{% block content %}
+<p><b>Dear Summit Medical Group visitor</b>:</p>
+<p>We cannot find the article you are seeking. We recently updated our Live Well Library as part of our latest site launch. Some content has been moved or deleted. You can try searching for the topic using the search box above, or <a href="/library/">click here to browse the full library.</a></p>
+
+<p>If you do not find what you were seeking, please email our Internet Marketing Specialist Joy Pierce Mathews at at <a href="mailto:jmathews@smgnj.com">jmathews@smgnj.com</a></p>
+
+{% endblock content %}

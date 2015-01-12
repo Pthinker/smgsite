@@ -1,0 +1,36 @@
+
+<div id="search-results">
+    <div class="more-results">
+        <span>Select frequently used pages below.</span><br>
+        <a class="dark_gray" id="search-more-results-href" href="">Or, you can click here for all search results</a>
+    </div>
+    <hr>
+    <div id="search-block-Empty" class="item_search_block">
+        <div id="search-searching" class="item_search_element">
+            <ul>
+                <li>Searching . . .</li>
+            </ul>
+        </div>
+    </div>
+    <div id="search-block-doctor" class="item_search_block">
+        <div class="search_flyover_header">Doctors and Practitioners</div>
+        <div id="search-results-doctor" class="item_search_element">
+
+        </div>
+    </div>
+    <div id="search-block-service" class="item_search_block">
+        <div class="search_flyover_header">Services</div>
+        <div id="search-results-service" class="item_search_element">
+
+        </div>
+    </div>
+    <div id="search-block-specialty" class="item_search_block">
+        <div class="search_flyover_header">Specialties</div>
+        <div id="search-results-specialty" class="item_search_element">
+
+        </div>
+    </div>
+    <div class="more-results see-all-results">
+        <a class="dark_gray" id="search-more-results-href2" href="">See all search results</a>
+    </div>
+</div>

@@ -1,0 +1,101 @@
+@import url("basicstyle.css");
+
+div.career_contact {
+	border: 1px solid #e0e9f4;
+	margin: 0;
+	padding: 0;
+	padding: 18px 0;
+	background: #ddd url({{ MEDIA_URL }}/images/career_contact_bkg.gif) top left repeat-x;
+	text-align: center;
+	margin: 20px 0px 24px 0px
+}
+
+div.career_intro_container div.career_contact h3 {
+	display: inline;
+	margin: 0;
+	padding: 3px 0px;
+	line-height: 1.25em;
+	font-weight: bold;
+	font-size: 1em;
+	padding-right: 20px;
+}
+
+.blue_theme div.right_sub_main_block div.career_intro_container  p {
+	margin-top: 0;
+}
+
+div#careers_search_form_container {
+	padding-left: 9px;
+}
+
+div#careers_search_form_container p {
+	color: rgb(110, 119, 124);
+	margin: 0 0 9px 0;
+	padding: 9px 3px;
+	font: normal 1em/1.2em Arial, Helvetica, sans-serif;
+}
+
+div#careers_search_form_container form#careers_search_form {
+	width: auto;
+	margin: 0;
+	padding: 0;
+}
+
+div#careers_search_form_container form#careers_search_form label {
+	font-weight: bold;
+	color: #004c75;
+	display: block;
+}
+
+div.search_button {
+	text-align: left;
+	margin-top: 0;
+	margin-left: 80px;
+	padding-top: 18px;
+}
+
+div.search_button input {
+	border: 0;
+	cursor: pointer;
+	background: url({{ MEDIA_URL }}/images/89x26_search_button.gif);
+	width: 89px;
+	height: 26px;
+}
+
+div#careers_search_form_container div.search_button {
+	text-align: left;
+	margin-top: 0;
+	margin-left: 90px;
+}
+
+div.career_posting {
+	margin: 9px 0;
+	padding: 9px 12px;
+}
+
+div#careers_search_results_container div.career_posting h3 {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 3px;
+	font: bold 1.125em/1em Arial, sans-serif;
+}
+
+div#careers_search_results_container div.career_posting p {
+	margin: 0;
+	padding: 0;
+	line-height: 1.25em;
+}
+
+div#careers_search_results_container table.career_details_table {
+	margin: 9px 0;
+}
+
+div#careers_search_results_container table.career_details_table tr td {
+	padding: 2px 10px 2px 0;
+	width: 48%;
+}
+
+div#careers_search_results_container div.career_posting p.career_date_posted {
+	text-align: right;
+	font-size: 0.825em;
+}

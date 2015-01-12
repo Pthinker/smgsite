@@ -1,0 +1,2545 @@
+<!-- File: ea_index.xml -->
+<catalog type="crs" language="english">
+ <title>Eye Advisor Index</title>
+ <id>crs-ea-index</id>
+ <keywordlist>
+ </keywordlist>
+ <content>
+  <index version="2008.10" dateGenerated="2008-01-27 16:51:45">
+   <advisor>Eye Advisor 2008.1</advisor>
+   <copyright>&#169; 2008 RelayHealth and/or one of its affiliates. All Rights Reserved.</copyright>
+   <!-- file name: index.xxx -->
+   <body>
+   <section name="A">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_esotropia" type="topic">Accommodative esotropia (crossed eyes)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_hiv.and.the.eyes" type="topic">Acquired immunodeficiency syndrome (AIDS) and the eyes</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_nystagmus" type="topic">Acquired nystagmus</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_ptosis.in.adults" type="topic">Acquired ptosis (drooping eyelid)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Age-related macular degeneration
+    </label>
+        <entry>
+        <label>
+        Amsler grid
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.amsler.grid.fullsize" type="topic">full-size illustration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.amsler.grid" type="topic">illustration of appearance with and without AMD</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_amsler.grid" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_macular.degeneration.and.nutrition" type="topic">and nutrition</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.macular.degeneration" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_laser.surgery.for.macular.degeneration" type="topic">laser surgery for</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-sha_macular.degeneration" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_photodynamic.therapy" type="topic">photodynamic therapy</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_hiv.and.the.eyes" type="topic">AIDS and the eyes</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_allergic.conjunctivitis" type="topic">Allergic conjunctivitis *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_preservative.allergies" type="topic">Allergy to preservatives in contact lens solutions</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-sha_amaurosis.fugax" type="topic">Amaurosis fugax (episodic blindness)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_amblyopia" type="topic">Amblyopia (lazy eye) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-sha_macular.degeneration" type="topic">AMD (age-related macular degeneration) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Amsler grid
+    </label>
+        <entry>
+        <label>
+        illustration
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.amsler.grid" type="topic">appearance with and without age-related macular degeneration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.amsler.grid.fullsize" type="topic">full-size grid</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_amsler.grid" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_fluorescein.angiography" type="topic">Angiography, fluorescein</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Angle-closure glaucoma
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_closed.angle.glaucoma" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.glaucoma" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_argon.laser.trabeculoplasty" type="topic">Argon laser trabeculoplasty (ALT)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Astigmatic keratotomy
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.astigmatic.keratotomy" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_astigmatic.keratotomy" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Astigmatism
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_contact.lenses.for.astigmatism" type="topic">contact lenses for</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        keratotomy for
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.astigmatic.keratotomy" type="topic">illustration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_astigmatic.keratotomy" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_astigmatism" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+   </section>
+   <section name="B">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_conjunctivitis" type="topic">Bacterial conjunctivitis *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_bifocal.contact.lenses" type="topic">Bifocal contact lenses</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_lenses" type="topic">Bifocals</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eye.injury" type="topic">Black eye</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_blepharitis" type="topic">Blepharitis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_blepharoplasty" type="topic">Blepharoplasty</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_blepharospasm" type="topic">Blepharospasm</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_carotid.endarterectomy" type="topic">Blocked carotid artery, surgery to remove blockage (carotid endarterectomy)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eye.injury" type="topic">Bruise, around eye</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="C">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_yag.laser.capsulotomy" type="topic">Capsulotomy, YAG laser</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Carotid artery, surgery for blocked artery
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.circulation.veins.and.arteries" type="topic">illustration of circulatory system *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_carotid.endarterectomy" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Cataract
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_cataract" type="topic">diagnosis and treatment *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        extraction with lens implant
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.phacoemulsification.lens.implant" type="topic">phacoemulsification illustration *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-aha_cataract.extraction.with.lens.implant" type="topic">text *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_eye.care.after.cataract.surgery" type="topic">eye care after surgery</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.cataract" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Cellulitis
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_orbital.cellulitis" type="topic">orbital</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_chalazion" type="topic">Chalazion</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_chemical.disinfection.of.soft.contact.lenses" type="topic">Chemical disinfection, of soft lenses *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_something.in.eye" type="topic">Chemical in eye *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_chlamydial.conjunctivitis" type="topic">Chlamydial conjunctivitis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_ocular.melanoma" type="topic">Choroidal melanoma (cancer of the eye)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_ocular.melanoma" type="topic">Ciliary body melanoma</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Closed-angle glaucoma
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_closed.angle.glaucoma" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.glaucoma" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_colorblindness" type="topic">Color blindness</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eyestrain" type="topic">Computer, eyestrain</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_nystagmus" type="topic">Congenital nystagmus</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_ptosis.in.children.and.adults" type="topic">Congenital ptosis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Conjunctivitis
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_allergic.conjunctivitis" type="topic">allergic *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_conjunctivitis" type="topic">bacterial *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_chlamydial.conjunctivitis" type="topic">chlamydial</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_giant.papillary.conjunctivitis" type="topic">giant papillary</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.conjunctivitis" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_conjunctivitis" type="topic">viral *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Contact lens solutions
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_preservative.allergies" type="topic">allergy to preservatives in</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_chemical.disinfection.of.soft.contact.lenses" type="topic">for chemical disinfection *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_soft.contact.lenses" type="topic">for soft contacts</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_solution.incompatibilities" type="topic">incompatibilities</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_one.step.peroxide.disinfection.of.soft.contact.lenses" type="topic">peroxide disinfection, one-step</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_two.step.peroxide.disinfection.of.soft.contact.lenses" type="topic">peroxide disinfection, two-step</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_protein.remover.solution" type="topic">protein remover</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Contact lenses
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_contact.lenses.and.cosmetics" type="topic">and cosmetics</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_bifocal.contact.lenses" type="topic">bifocal</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_disposable.contact.lenses" type="topic">disposable</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_contact.lenses.for.astigmatism" type="topic">for astigmatism</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_contact.lenses.for.presbyopia" type="topic">for presbyopia</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_fungal.keratitis" type="topic">fungal infection</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        gas permeable
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_gas.permeable.contact.lens.care" type="topic">care</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_gas.permeable.lens.insertion.and.removal" type="topic">insertion and removal</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-aha_gas.permeable.contact.lenses" type="topic">overview</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_giant.papillary.conjunctivitis" type="topic">giant papillary conjunctivitis caused by</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_contact.lenses" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_contact.lens.problems" type="topic">problems</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_protein.remover.solution" type="topic">protein remover solution for</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        soft
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_chemical.disinfection.of.soft.contact.lenses" type="topic">chemical disinfection *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_enzyme.cleaning.of.soft.contact.lenses" type="topic">enzyme cleaning</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_soft.contact.lens.insertion.and.removal" type="topic">insertion and removal</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-aha_soft.contact.lenses" type="topic">overview</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_one.step.peroxide.disinfection.of.soft.contact.lenses" type="topic">peroxide disinfection, one-step</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_two.step.peroxide.disinfection.of.soft.contact.lenses" type="topic">peroxide disinfection, two-step</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_thermal.disinfection.of.soft.lenses" type="topic">thermal disinfection</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_solution.incompatibilities" type="topic">solution incompatibilities</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_types.of.contact.lenses" type="topic">types</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Cornea problems and procedures
+    </label>
+        <entry>
+        <label>
+        corneal abrasion
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_corneal.abrasions" type="topic">diagnosis and treatment *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.corneal.abrasion" type="topic">illustration *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_intrastromal.corneal.ring" type="topic">corneal ring</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_corneal.transplant" type="topic">corneal transplant</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_corneal.ulcer" type="topic">corneal ulcer</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_fungal.keratitis" type="topic">fungal infection</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Corneal abrasion
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_corneal.abrasions" type="topic">diagnosis and treatment *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_fungal.keratitis" type="topic">fungal infection</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.corneal.abrasion" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_intrastromal.corneal.ring" type="topic">Corneal ring</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_corneal.transplant" type="topic">Corneal transplant</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_corneal.ulcer" type="topic">Corneal ulcer</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_blepharoplasty" type="topic">Cosmetic surgery of eyelids</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_contact.lenses.and.cosmetics" type="topic">Cosmetics and contact lenses</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_esotropia" type="topic">Crossed eyes</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eye.injury" type="topic">Cut, around eye</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_cyclodestructive.procedures" type="topic">Cyclodestructive procedures for glaucoma</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_cyclodestructive.procedures" type="topic">Cyclophotocoagulation for glaucoma</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_chalazion" type="topic">Cyst, eyelid</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="D">
+    <entry>
+    <label>
+    Detached retina
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_retinal.detachment" type="topic">diagnosis and treatment *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.retinal.detachment" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Diabetes mellitus
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_diabetic.eye.problems" type="topic">eye problems, overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_diabetes.mellitus.retinopathy" type="topic">retinopathy caused by *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_obg_insulin.dependent.diabetes.mellitus" type="topic">type 1 *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_obg_diabetes.mellitus.type.ii" type="topic">type 2 *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Diabetic retinopathy
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.diabetic.retinopathy" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_diabetes.mellitus.retinopathy" type="topic">text *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_something.in.eye" type="topic">Dirt in eye *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Disinfection, soft lenses
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_chemical.disinfection.of.soft.contact.lenses" type="topic">chemical *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        peroxide
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_one.step.peroxide.disinfection.of.soft.contact.lenses" type="topic">one-step</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_two.step.peroxide.disinfection.of.soft.contact.lenses" type="topic">two-step</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_thermal.disinfection.of.soft.lenses" type="topic">thermal</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_disposable.contact.lenses" type="topic">Disposable contact lenses</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_dry.eye.syndrome" type="topic">Dry eye syndrome *</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="E">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_ectropion" type="topic">Ectropion (eyelid turns out)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eye.symptoms" type="topic">Emergency eye symptoms</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_entropion" type="topic">Entropion</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_enzyme.cleaning.of.soft.contact.lenses" type="topic">Enzyme cleaning, of soft lenses</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_excessive.tearing" type="topic">Epiphora (excessive tearing)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-sha_amaurosis.fugax" type="topic">Episodic blindness (amaurosis fugax)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Esotropia (crossed eye)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_esotropia" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_blepharospasm" type="topic">Essential blepharospasm</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eye.exam" type="topic">Exam, eye</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_excessive.tearing" type="topic">Excessive tears</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_exophthalmos" type="topic">Exophthalmos</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Exotropia (crossed eye)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_exotropia" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_retinal.detachment" type="topic">Exudative retinal detachment *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Eye care
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_eye.care.after.cataract.surgery" type="topic">after cataract surgery</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_eye.care" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_eye.care.professionals" type="topic">professionals</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eye.exam" type="topic">Eye exam</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eye.injury" type="topic">Eye injury</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_nystagmus" type="topic">Eye movement problem (nystagmus)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_common.vision.problems" type="topic">Eye problems, common</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Eye socket
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_orbital.fracture" type="topic">fracture</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_orbital.cellulitis" type="topic">infection (cellulitis)</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-art.eye.fracture" type="topic">Eye socket fracture</linkCRS>
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.eye.fracture" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eye.symptoms" type="topic">Eye symptoms needing immediate attention</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_something.in.eye" type="topic">Eye, something in *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Eyedrops
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_drops.and.ointments" type="topic">general guidelines *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.eyedrop" type="topic">illustration (how to put in) *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Eyeglasses
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_eyeglass.care" type="topic">care for</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_lenses" type="topic">types of lenses</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Eyelid
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_blepharoplasty" type="topic">cosmetic surgery of</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        drooping (ptosis)
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_ptosis.in.adults" type="topic">adult</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_ptosis.in.children.and.adults" type="topic">children</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_ectropion" type="topic">ectropion (eyelid turns out)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_entropion" type="topic">entropion (eyelid turns in)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_chalazion" type="topic">lump on (chalazion)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_eyelid.spasms" type="topic">twitch *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eyestrain" type="topic">Eyestrain</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="F">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_safety.eyewear" type="topic">Face shield</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-art.nearfar" type="topic">Farsightedness, illustration</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Filtering surgery for glaucoma (trabeculectomy)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.trabeculectomy" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_trabeculectomy" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    First aid
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_eye.injury" type="topic">injury to eye</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_something.in.eye" type="topic">something in the eye *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Flashes and floaters
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.flashes.and.floaters" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_flashes.and.floaters" type="topic">text *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_fluorescein.angiography" type="topic">Fluorescein angiography</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_something.in.eye" type="topic">Flushing eye with water *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_something.in.eye" type="topic">Foreign object in eye *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_orbital.fracture" type="topic">Fracture, eye socket</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_fungal.keratitis" type="topic">Fungal keratitis</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="G">
+    <entry>
+    <label>
+    Gas permeable contact lenses
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_gas.permeable.contact.lens.care" type="topic">care</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_gas.permeable.lens.insertion.and.removal" type="topic">insertion and removal</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_gas.permeable.contact.lenses" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_giant.papillary.conjunctivitis" type="topic">Giant papillary conjunctivitis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Glasses
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_eyeglass.care" type="topic">care for</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_safety.eyewear" type="topic">safety</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_lenses" type="topic">types of lenses</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Glaucoma
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_closed.angle.glaucoma" type="topic">angle-closure</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_argon.laser.trabeculoplasty" type="topic">argon laser trabeculoplasty for</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_cyclodestructive.procedures" type="topic">cyclodestructive procedures</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.glaucoma" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_laser.iridotomy" type="topic">laser iridotomy</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_open.angle.glaucoma" type="topic">open-angle</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_glaucoma" type="topic">overview *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_surgery.for.glaucoma" type="topic">surgery for (overview)</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        trabeculectomy
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.trabeculectomy" type="topic">illustration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_trabeculectomy" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_safety.eyewear" type="topic">Goggles</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_blepharitis" type="topic">Granulated eyelids</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="H">
+    <entry>
+    <label>
+    Headache
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_headaches.and.eye.problems" type="topic">and eye problems</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_obg_migraine.headache" type="topic">migraine</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_obg_migraine.headache_sv" type="topic">migraine, brief version *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_thermal.disinfection.of.soft.lenses" type="topic">Heat disinfection of soft lenses</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_hemifacial.spasm" type="topic">Hemifacial spasm</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_herpes.simplex.eye.infections" type="topic">Herpes simplex eye infection</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_herpes.zoster.shingles.eye.infections" type="topic">Herpes zoster eye infection</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_hiv.and.the.eyes" type="topic">HIV and the eyes</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Holes and tears, retinal
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.retinal.holes.and.tears" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_retinal.holes.and.tears" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_ptosis.in.adults" type="topic">Horner&apos;s syndrome</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eye.care" type="topic">Hygiene, eye</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_hypertensive.retinopathy" type="topic">Hypertensive retinopathy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_hyperthyroidism" type="topic">Hyperthyroidism</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_hyperthyroidism_sv" type="topic">Hyperthyroidism, brief version *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-art.hyphema" type="topic">Hyphema</linkCRS>
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.hyphema" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_hyphema" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+   </section>
+   <section name="I">
+    <entry>
+    <label>
+    Illustrations
+    </label>
+        <entry>
+        <label>
+        Amsler grid
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.amsler.grid" type="topic">appearance with and without age-related macular degeneration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.amsler.grid.fullsize" type="topic">full-size grid</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.astigmatic.keratotomy" type="topic">astigmatic keratotomy</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.cataract" type="topic">cataract *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        cataract extraction
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.phacoemulsification.lens.implant" type="topic">phacoemulsification *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.circulation.veins.and.arteries" type="topic">circulatory system *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.conjunctivitis" type="topic">conjunctivitis *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.corneal.abrasion" type="topic">corneal abrasion *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.diabetic.retinopathy" type="topic">diabetic retinopathy *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.eye.normal" type="topic">eye *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.eye.fracture" type="topic">eye socket fracture</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.eyedrop" type="topic">eyedrops, how to put in *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.flashes.and.floaters" type="topic">flashes and floaters *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.glaucoma" type="topic">glaucoma *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.hyphema" type="topic">hyphema</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.ocular.melanoma" type="topic">intraocular melanoma</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.lasik" type="topic">LASIK *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.macular.degeneration" type="topic">macular degeneration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.nearfar" type="topic">nearsightedness and farsightedness</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.outer.eye" type="topic">outer eye *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.retinal.detachment" type="topic">retinal detachment *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.retinal.holes.and.tears" type="topic">retinal holes and tears</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.strabismus" type="topic">strabismus</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.stye" type="topic">stye</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.trabeculectomy" type="topic">trabeculectomy</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.vitreous.hemorrhage" type="topic">vitreous hemorrhage</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_esotropia" type="topic">Infantile esotropia</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_nystagmus" type="topic">Infantile nystagmus</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Infection
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_conjunctivitis" type="topic">bacterial *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_orbital.cellulitis" type="topic">eye socket</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_fungal.keratitis" type="topic">fungal</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_optic.neuritis" type="topic">optic nerve</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_traumatic.iritis" type="topic">Inflammation of iris</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_optic.neuritis" type="topic">Inflammation of optic nerve</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Injury
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_hyphema" type="topic">hyphema</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_traumatic.iritis" type="topic">iris</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_optic.neuropathy" type="topic">optic nerve</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_orbital.fracture" type="topic">orbit fracture</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_eye.injury" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_vitreous.hemorrhage" type="topic">vitreous hemorrhage</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_intrastromal.corneal.ring" type="topic">Intracorneal ring</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_secondary.intraocular.lens.implant" type="topic">Intraocular lens implant, secondary</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Intraocular melanoma (cancer of the eye)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.ocular.melanoma" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_ocular.melanoma" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_intrastromal.corneal.ring" type="topic">Intrastromal corneal ring</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_laser.iridotomy" type="topic">Iridotomy, laser</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Iris
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_traumatic.iritis" type="topic">injury</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_laser.iridotomy" type="topic">laser treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_ocular.melanoma" type="topic">melanoma</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_traumatic.iritis" type="topic">Iritis, traumatic</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="K">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_photorefractive.keratectomy" type="topic">Keratectomy, photorefractive</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_fungal.keratitis" type="topic">Keratitis, fungal</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_dry.eye.syndrome" type="topic">Keratoconjunctivitis sicca (dry eye) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_corneal.transplant" type="topic">Keratoplasty</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Keratotomy, astigmatic
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.astigmatic.keratotomy" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_astigmatic.keratotomy" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+   </section>
+   <section name="L">
+    <entry>
+    <label>
+    Laser surgery
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_laser.iridotomy" type="topic">iridotomy</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        LASIK (laser in situ keratomileusis)
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.lasik" type="topic">illustration *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_lasik" type="topic">text *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_laser.surgery.for.macular.degeneration" type="topic">macular degeneration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_surgery.for.glaucoma" type="topic">trabeculoplasty (surgery for glaucoma)</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_amblyopia" type="topic">Lazy eye *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Lens implant
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_cataract.extraction.with.lens.implant" type="topic">cataract extraction with lens implant *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_secondary.intraocular.lens.implant" type="topic">secondary implant</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Lenses
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_eyeglass.care" type="topic">care for</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_lenses" type="topic">types for glasses</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_low.vision" type="topic">Low vision</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="M">
+    <entry>
+    <label>
+    Macular degeneration
+    </label>
+        <entry>
+        <label>
+        Amsler grid
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.amsler.grid.fullsize" type="topic">illustration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.amsler.grid" type="topic">illustration of appearance with and without AMD</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_amsler.grid" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_macular.degeneration.and.nutrition" type="topic">and nutrition</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-sha_macular.degeneration" type="topic">diagnosis and treatment *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.macular.degeneration" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_laser.surgery.for.macular.degeneration" type="topic">laser surgery for</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_photodynamic.therapy" type="topic">photodynamic therapy</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-sma_mri" type="topic">Magnetic resonance imaging (MRI) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_contact.lenses.and.cosmetics" type="topic">Makeup and contact lenses</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_ocular.melanoma" type="topic">Melanoma in the eye</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_obg_migraine.headache" type="topic">Migraine headache</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_obg_migraine.headache_sv" type="topic">Migraine headache, brief version *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_ocular.migraine" type="topic">Migraine, ocular</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-sma_mri" type="topic">MRI (magnetic resonance imaging) *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Myopia (nearsightedness)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_nearsightedness" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.nearfar" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+    </entry>
+   </section>
+   <section name="N">
+    <entry>
+    <label>
+    Nearsightedness
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_nearsightedness" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.nearfar" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_optic.neuritis" type="topic">Neuritis, optic</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_optic.neuropathy" type="topic">Neuropathy, traumatic optic</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_nystagmus" type="topic">Nystagmus</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="O">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_something.in.eye" type="topic">Object in eye *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_ocular.melanoma" type="topic">Ocular melanoma</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_ocular.migraine" type="topic">Ocular migraine</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_drops.and.ointments" type="topic">Ointments, eye *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Open-angle glaucoma
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_open.angle.glaucoma" type="topic">diagnosis and treatment</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.glaucoma" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_eye.care.professionals" type="topic">Ophthalmologist</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Optic nerve
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_optic.neuritis" type="topic">inflammation</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_optic.neuropathy" type="topic">injury</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_optic.neuritis" type="topic">Optic neuritis (inflammation)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_eye.care.professionals" type="topic">Optician</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_eye.care.professionals" type="topic">Optometrist</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Orbit
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_orbital.cellulitis" type="topic">cellulitis</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_orbital.fracture" type="topic">fracture</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_orbital.cellulitis" type="topic">Orbital cellulitis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Orbital fracture
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.eye.fracture" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+    </entry>
+   </section>
+   <section name="P">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_something.in.eye" type="topic">Particle in eye *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_corneal.transplant" type="topic">Penetrating keratoplasty</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Peroxide disinfection, soft lenses
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_one.step.peroxide.disinfection.of.soft.contact.lenses" type="topic">one-step</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_two.step.peroxide.disinfection.of.soft.contact.lenses" type="topic">two-step</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_photodynamic.therapy" type="topic">Photodynamic therapy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_photorefractive.keratectomy" type="topic">Photorefractive keratectomy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_pterygium.and.pinguecula" type="topic">Pinguecula *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_conjunctivitis" type="topic">Pink eye *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Presbyopia
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_contact.lenses.for.presbyopia" type="topic">contact lenses for</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_presbyopia" type="topic">diagnosis and treatment *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_photorefractive.keratectomy" type="topic">PRK (photorefractive keratectomy)</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_lenses" type="topic">Progressive lenses</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_protein.remover.solution" type="topic">Protein remover solution for contact lenses</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_pseudostrabismus.and.strabismus" type="topic">Pseudostrabismus</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_pterygium.and.pinguecula" type="topic">Pterygia *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Ptosis (drooping eyelid)
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_ptosis.in.adults" type="topic">in adults</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_ptosis.in.children.and.adults" type="topic">in children</linkCRS>
+        </label>
+        </entry>
+    </entry>
+   </section>
+   <section name="R">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_subconjunctival.hemorrhage" type="topic">Red eye *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Refractive surgery
+    </label>
+        <entry>
+        <label>
+        astigmatic keratotomy
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.astigmatic.keratotomy" type="topic">illustration</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_astigmatic.keratotomy" type="topic">text</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_intrastromal.corneal.ring" type="topic">intrastromal corneal ring</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        LASIK
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-art.lasik" type="topic">illustration *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_lasik" type="topic">text *</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_photorefractive.keratectomy" type="topic">photorefractive keratectomy</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Retinal detachment
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_retinal.detachment" type="topic">diagnosis and treatment *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.retinal.detachment" type="topic">illustration *</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Retinal holes and tears
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.retinal.holes.and.tears" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_retinal.holes.and.tears" type="topic">text</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_vitreous.hemorrhage" type="topic">vitreous hemorrhage</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Retinopathy
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_diabetes.mellitus.retinopathy" type="topic">diabetic *</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_hypertensive.retinopathy" type="topic">hypertensive</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_retinal.detachment" type="topic">Rhegmatogenous retinal detachment *</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="S">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_safety.eyewear" type="topic">Safety eyewear</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_secondary.intraocular.lens.implant" type="topic">Secondary intraocular lens implant</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_herpes.zoster.shingles.eye.infections" type="topic">Shingles of the eyes</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Soft contact lenses
+    </label>
+        <entry>
+        <label>
+        disinfection
+        </label>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_chemical.disinfection.of.soft.contact.lenses" type="topic">chemical *</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_one.step.peroxide.disinfection.of.soft.contact.lenses" type="topic">peroxide, one-step</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_two.step.peroxide.disinfection.of.soft.contact.lenses" type="topic">peroxide, two-step</linkCRS>
+            </label>
+            </entry>
+            <entry>
+            <label>
+            <linkCRS id="crs-ea-oph_thermal.disinfection.of.soft.lenses" type="topic">thermal</linkCRS>
+            </label>
+            </entry>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_enzyme.cleaning.of.soft.contact.lenses" type="topic">enzyme cleaning</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_soft.contact.lens.insertion.and.removal" type="topic">insertion and removal</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_soft.contact.lenses" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Spasms
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_blepharospasm" type="topic">of the eyelids</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_hemifacial.spasm" type="topic">of the face</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    Strabismus
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_esotropia" type="topic">esotropia</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_exotropia" type="topic">exotropia</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.strabismus" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_strabismus" type="topic">overview</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_eyestrain" type="topic">Strain, eye</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Stye
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.stye" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-aha_stye" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_subconjunctival.hemorrhage" type="topic">Subconjunctival hemorrhage *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_sunglasses" type="topic">Sunglasses</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="T">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_excessive.tearing" type="topic">Tearing, excessive</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_thermal.disinfection.of.soft.lenses" type="topic">Thermal disinfection, soft lenses</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_thyroid.eye.disorders" type="topic">Thyroid eye disease</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_tight.lens.syndrome" type="topic">Tight lens syndrome</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Trabeculectomy
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.trabeculectomy" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_trabeculectomy" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_argon.laser.trabeculoplasty" type="topic">Trabeculoplasty, argon laser</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_retinal.detachment" type="topic">Traction retinal detachment *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_corneal.transplant" type="topic">Transplant, corneal</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Trauma
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-ea_eye.injury" type="topic">eye injury overview</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_hyphema" type="topic">hyphema</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_traumatic.iritis" type="topic">iris</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_optic.neuropathy" type="topic">optic nerve</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_orbital.fracture" type="topic">orbital fracture</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_vitreous.hemorrhage" type="topic">vitreous hemorrhage</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_traumatic.iritis" type="topic">Traumatic iritis</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_optic.neuropathy" type="topic">Traumatic optic neuropathy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_lenses" type="topic">Trifocals</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_eyelid.spasms" type="topic">Twitch, eyelid *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_obg_insulin.dependent.diabetes.mellitus" type="topic">Type 1 diabetes mellitus *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-aha_obg_diabetes.mellitus.type.ii" type="topic">Type 2 diabetes mellitus *</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="U">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_corneal.ulcer" type="topic">Ulcer, cornea</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_uveitis" type="topic">Uveitis</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="V">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_conjunctivitis" type="topic">Viral conjunctivitis *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Vision loss
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_orbital.cellulitis" type="topic">cellulitis</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_ectropion" type="topic">ectropion</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_entropion" type="topic">entropion</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_hyphema" type="topic">hyphema</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_traumatic.iritis" type="topic">injury to iris</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_optic.neuropathy" type="topic">injury to optic nerve</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_optic.neuritis" type="topic">neuritis</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_vitreous.hemorrhage" type="topic">vitreous hemorrhage</linkCRS>
+        </label>
+        </entry>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-ea_common.vision.problems" type="topic">Vision problems, common</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_flashes.and.floaters" type="topic">Vitreous detachment *</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    Vitreous hemorrhage
+    </label>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-art.vitreous.hemorrhage" type="topic">illustration</linkCRS>
+        </label>
+        </entry>
+        <entry>
+        <label>
+        <linkCRS id="crs-ea-oph_vitreous.hemorrhage" type="topic">text</linkCRS>
+        </label>
+        </entry>
+    </entry>
+   </section>
+   <section name="W">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_exotropia" type="topic">Wall-eye</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_excessive.tearing" type="topic">Watering eye</linkCRS>
+    </label>
+    </entry>
+   </section>
+   <section name="Y">
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_yag.laser.capsulotomy" type="topic">YAG laser capsulotomy</linkCRS>
+    </label>
+    </entry>
+    <entry>
+    <label>
+    <linkCRS id="crs-ea-oph_fungal.keratitis" type="topic">Yeast infection in the eye</linkCRS>
+    </label>
+    </entry>
+   </section>
+   </body>
+  </index>
+ </content>
+</catalog>

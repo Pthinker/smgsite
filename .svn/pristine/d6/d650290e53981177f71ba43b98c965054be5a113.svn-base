@@ -1,0 +1,12 @@
+{% extends "page_base.html" %}
+
+{% block body %}
+{% include 'helpers/_menu_doctors.html' %}
+<div id="main">
+    <div class="main-container">
+		{% block content %}
+		{% endblock content %}
+	<div class="clear"></div>
+	</div>	
+</div><!--main-->
+{% endblock body %}

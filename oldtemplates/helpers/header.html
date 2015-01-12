@@ -1,0 +1,49 @@
+{% if printable %}
+<div id="header">
+<img src="{{ MEDIA_URL }}images/504x72_print_hdr_smg.jpg" alt="Summit Medical Group" width="504" height="72" />
+</div>
+{% else %}
+<!--header starts-->
+<div id="top_row"><div id="top_row_left">
+	<form method="get" name="searchform" action="/search/">
+		<input type="text" id="search-input" name="search-input" autocomplete="off" onclick="document.forms['searchform'].elements[0].value =''" onkeyup="searchSite('search-input')" value="Type search keywords here"/>
+
+		<input type="submit" value="" class="button_search_top" />
+	</form>
+	{% include 'site/search.html' %}
+	<div class="link">
+		{% ifequal ucc 'UCC' %}
+		<a href="/service/Urgent-Care-Center/" class="logo" title="Urgent Care Center">
+			<img src="{{ MEDIA_URL }}/images/62x27_urgent_care_center_to.gif" alt="Urgent Care Center" width="62" height="27" /></a>		
+		{% endifequal %}
+	</div>
+</div></div>
+<a href="/" id="logo" class="{% block section %}{% endblock %}"></a>
+<div id="print-logo">
+	<img src="{{ MEDIA_URL }}/images/167x79_logo_smg.gif" alt="" />
+</div>
+{% if user %}
+<div id="top_info">
+	<div class="left_top_info">We are here to help: <strong>{{ phone }}</strong></div>
+	<div class="right_top_info">
+	        <p class="links"><a href="/mysummitmedicalgroup/logout/">Log out</a></p>
+	        <p class="hello">Hello, {{ user.display_name }}. Welcome back.</p>
+	</div>
+</div>
+{% else %}
+<div id="top_info">
+	<div class="left_top_info" style="width: 700px;">
+		<p class="hello" style="float: right;">
+			<span>Follow us on:</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="http://twitter.com/#!/SummitMedicalNJ" target="_blank"><img height="28" src="{{ MEDIA_URL }}images/icon-twitter.png" alt="Follow us on Twitter" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="http://www.facebook.com/summitmedicalnj" target="_blank"><img height="28" src="{{ MEDIA_URL }}images/icon-facebook.png" alt="Follow us on Facebook" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="http://www.youtube.com/user/SMGNJ" target="_blank"><img height="28" src="{{ MEDIA_URL }}images/icon-youtube-small.gif" alt="Follow us on YouTube" /></a>
+			<a rel="author" href="https://plus.google.com/u/0/106587659066325037884/posts">
+			<img src="http://ssl.gstatic.com/images/icons/gplus-16.png" width="16" height="16"></a>
+		</p>
+		We are here to help: <strong>{{ phone }}</strong>
+		<div style="height:0;font-size:0;clear:both;"></div>
+	</div>
+</div>
+{% endif %}
+{% endif %}

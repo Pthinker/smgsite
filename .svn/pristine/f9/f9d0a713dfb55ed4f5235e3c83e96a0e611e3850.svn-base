@@ -1,0 +1,22 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Redirect Page{% endblock head_title %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/newseventsblog.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+	<meta http-equiv="refresh" content="5; {{ path }}">
+{% endblock head_extra %}
+
+{% block content %}
+Welcome! You are being redirected, please click <a href="{{ path }}">here</a> if your browser does not redirect you.
+
+<script type="text/javascript" charset="utf-8">
+$(document).ready( function () {
+	setTimeout( function () {
+		window.location = "{{ path }}"; 
+	}, 3000);
+});
+</script>
+{% endblock content %}

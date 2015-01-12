@@ -1,0 +1,26 @@
+{% load thumbnail %}
+
+<div class="section-header-featured-practitioner">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2>Featured Practitioner</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="media featured-practitioner">
+      <a class="thumb" href="#">
+        {% thumbnail doctor.display_image "175x236" crop="center" as im %}
+            <img class="media-object" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        {% endthumbnail %}
+      </a>
+      <div class="media-body">
+        <h3 class="media-heading">{{ doctor.display_name }}, {{ doctor.letters }}</h3>
+        <p class="services">{{ doctor.list_services_by_line|safe }}</p>
+        <p class="blurb">{{ featured.blurb }}</p>
+        <a class="more pull-right" href="{{ doctor.get_absolute_url }}">SEE FULL PROFILE</a>
+      </div>
+    </div>
+</div>

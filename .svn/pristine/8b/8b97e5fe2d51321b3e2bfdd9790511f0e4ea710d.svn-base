@@ -1,0 +1,175 @@
+/*-------------------------------------START DEFAULT STYLING-----------------------------------------------------------------*/
+div.clearthis {
+	margin: 0;
+	padding: 0;
+	height: 1px !important;
+	clear: both;
+}
+
+div.shaded_row {
+	background: #eee;
+}
+
+/*default content styling and colors*/
+.blue_theme div.right_sub_main_block h1 {
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+	font: normal 2em/ 2em Arial, Helvetica, sans-serif;
+}
+
+/*.blue_theme div.right_sub_main_block h2 { font-size:0.9em; line-height:1.25em; color:#0270de; font-weight:bold; margin:0; padding:0; }*/
+.blue_theme div.right_sub_main_block h2 {
+	font: bold 1.75em/ 1.25em Arial, Helvetica, sans-serif;
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+}
+
+.blue_theme div.right_sub_main_block h3 {
+	font: bold 1.25em/ 2em Arial, Helvetica, sans-serif;
+	color: #0047A8;
+	margin: 0 0 0 0;
+	padding: .35em 0;
+	margin-bottom: 0;
+}
+
+.blue_theme div.right_sub_main_block h4 {
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+	font: normal 1em/ 1em Arial, Helvetica, sans-serif;
+}
+
+.blue_theme div.right_sub_main_block p {
+	color: #333;
+	margin: 0.6em 0em;
+	padding: 0;
+	font: normal 1em/ 1.5em Arial, Helvetica, sans-serif;
+}
+
+.blue_theme div.right_sub_main_block ul.smgbase_list {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+
+.blue_theme div.right_sub_main_block ul.smgbase_list li {
+	font: normal 1em/ 1.25em Arial, Helvetica, sans-serif;
+	margin: 2px 0;
+	padding: 2px 0;
+	color: #333;
+}
+
+.blue_theme div.right_sub_main_block ul.plain_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	color: #333;
+}
+
+.blue_theme div.right_sub_main_block ul.plain_list li {
+	margin: 3px 0px;
+	color: #333;
+}
+
+.blue_theme div.cols_2_right ul.biglist {
+	
+}
+
+.blue_theme div.right_sub_main_block  p.general_copyright {
+	margin: 9px 0;
+	font: normal .90em/ 1.25em Arial, sans-serif;
+	color: #777;
+}
+
+.blue_theme ul.arrows li.nobkg {
+	background-image: none;
+}
+
+/*default left sidebar styling and colors*/
+.blue_theme div.left_main_block h3 {
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+	font: bold 1em/1em Arial, Helvetica, sans-serif;
+}
+
+.blue_theme div.left_main_block h4 {
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+	font: bold 1em/1em Arial, Helvetica, sans-serif;
+}
+
+.blue_theme div.left_main_block p {
+	color: #333;
+	margin: 0;
+	padding: 0;
+	font: normal 1em/1.2em Arial, Helvetica, sans-serif;
+}
+
+.blue_theme div.left_main_block div.searchbox_sidebar h4 {
+	margin-top: 18px;
+	margin-bottom: 9px;
+}
+
+.blue_theme div.cols_2_right h3 {
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+	font: bold .90em/1em Arial, Helvetica, sans-serif;
+}
+
+.blue_theme div.cols_2_right h4 {
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+	font: normal .90em/1em Arial, Helvetica, sans-serif;
+}
+
+.blue_theme div.cols_2_right p {
+	color: rgb(101, 103, 105);
+	margin: 0;
+	padding: 0;
+	font: normal 1em/1.2em Arial, Helvetica, sans-serif;
+}
+
+.blue_theme div.cols_2_right div.categorysearch_sidebar h4 {
+	color: #0047A8;
+	margin: 18px 0 9px 0;
+	padding: 0;
+	font: bold .90em/1em Arial, Helvetica, sans-serif;
+}
+
+.blue_theme div.subdiv h2 {
+	font-size: 0.9em;
+	line-height: 1.25em;
+	color: #0270de;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+/*-------------------------------------END DEFAULT STYLING-----------------------------------------------------------------*/
+#site_map_table tr td {
+	vertical-align: top;
+}
+
+#site_map_table tr td ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#site_map_table tr td  ul  li {
+	padding: 3px 0;
+}
+
+#site_map_table tr td ul li ul {
+	margin-left: 27px;
+	margin-top: 5px;
+}
+
+#site_map_table tr td > ul > li > a {
+	font-weight: bold;
+}

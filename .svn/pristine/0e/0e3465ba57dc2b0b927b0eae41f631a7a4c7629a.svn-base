@@ -1,0 +1,13 @@
+{% extends "services/oncology_base.html" %}
+{% load helpers %}
+
+{% block meta_info %}{% meta_info service %}{% endblock meta_info %}
+{% block seo_keywords %}{% seo_keywords service %}{% endblock seo_keywords %}
+
+{% block page_head %}<div class="oncology_header"></div>{% endblock %}
+
+{% block content %}
+<div>
+<p>{{ service.content|safe }}</p>
+</div>
+{% endblock content %}

@@ -1,0 +1,54 @@
+body {
+	background: #fff;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#global {
+	margin: 0 0 0 20px;
+	width: 650px;
+}
+
+#top_row,#top_info,#top_menu_tabs,.left_main_block,.navigation,.services_top_stripe,#bottom_blue,#bottom_white,#footer span,.bottomlinks,div.personal_notes_container .subdiv
+.recommend, .buttons, .navigation, .navbar, #searchcont, #search-results, .social, .footerholder, #footer .links
+	{
+	display: none;
+}
+
+#shadow_left,#shadow_right,#container,.main_block,.main_block_sub_1,.main_block_sub_2,.right_main_block,.right_sub_main_block,.cols_2_fix_right_160,.cols_2_left,.cols_2_left_sub,.cols_2_right
+	{
+	background: none !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: none !important;
+	float: none !important;
+}
+
+.notes_box,.notes_box_top,.notes_box_bottom {
+	background: none !important;
+}
+
+#footer {
+	padding: 18px 0 0 0;
+}
+
+* #logo {
+	position: relative !important;
+	top: 0 !important;
+	margin: 0 0 10px 0 !important;
+}
+
+h2.doctor {
+	padding-left: 0;
+}
+
+.doctors_personal_info {
+	border: 0;
+}
+
+div#right_col_177 div#right_col_177_box.right_col_doctors_box {
+		border: 1px solid #330;
+		background-color: #FFF;
+		font-size: -1;
+}

@@ -1,0 +1,38 @@
+{% extends 'two_column_layout.html' %}
+
+{% block head_title %}Summit Medical Group - {{ post.title }}{% endblock head_title %}
+{% block page_title %}{{ blog.name }}{% endblock %}
+
+
+{% block sidebar %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Recent Postings From {{ blog.name }}</h4>
+    </div>
+    <div class="list-group">
+        {% for post in posts %}
+            <a class="list-group-item" href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+        {% endfor %}
+        <a class="list-group-item" href="{{ blog.get_absolute_url }}">More Headlines</a>
+        <a class="list-group-item subscribe-link" href="/blog/rss/{{ blog.urlname }}"><i class="fa fa-rss"></i> Subscribe</a>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4>Useful Live Well Tips</h4>
+    </div>
+    <div class="list-group">
+        {% for article in fyi %}
+            <a class="list-group-item" href="{{ article.get_absolute_url }}">{{ article.headline }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock sidebar %}
+
+{% block content %}
+<div class="article_content">
+    {% include 'blogs/includes/_post.html' with article=post %}
+</div>
+{% endblock content %}

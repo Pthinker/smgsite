@@ -1,0 +1,20 @@
+{% load thumbnail %}
+
+<h2 class="trending-header"><i class="glyphicon glyphicon-paperclip"></i> Trending Topics</h2>
+<div class="trending-preview">
+    <div class="cont">
+        {% for trend in trendingtopics %}
+        <div class="trend">
+            <a href="/trendingtopics/">
+            {% thumbnail trend.image "185x120" as im %}
+            <img class="img-responsive" src="{{ im.url }}" alt="{{ item.headline }}">
+            {% empty %}
+            <img class="img-responsive" src="holder.js/185x120" />
+            {% endthumbnail %}
+            </a>
+            <h4 class="title">{{ trend.headline }}</h4>
+        </div>
+        {% endfor %}
+    </div>
+    <h3 class="pull-right"><a href="/trendingtopics/">View all trending topics</a></h3>
+</div>

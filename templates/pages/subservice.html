@@ -1,0 +1,112 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}{{ page.title }} | {{ service.name }} | Summit Medical Group New Jersey{% endblock head_title %}
+{% block meta_info %}{% meta_info service %}{% endblock meta_info %}
+{% block seo_keywords %}{% seo_keywords service %}{% endblock seo_keywords %}
+
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-services">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2>Services // {{ service.name }}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="/services/">Services</a></li>
+        <li><a href="{{ service.get_absolute_url }}">{{ service.name }}</a></li>
+        <li class="active">{{ page.title }}</li>
+        {% include 'site/includes/share.html' %}
+    </ol>
+
+</div>
+
+<div class="container" id="content">
+
+    <div class="row">
+        <div class="col-md-9 col-md-push-3 service-content">
+            {{ content|strip_font_style }}
+
+        </div>
+
+        <div class="col-md-3 sidebar col-md-pull-9">
+            {# TODO: replace this sidebox content with include? #}
+            {% if events %}
+            <div class="sidebox">
+                <h3>Upcoming Events</h3>
+                <ul class="nav service-list">
+                    {% for event in events %}
+                    <li>
+                        <a href="{{ event.get_absolute_url }}">{{ event.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            {% if service.related_services.all %}
+            <div class="sidebox">
+                <h3>You Might Also Like</h3>
+                <ul class="nav service-list">
+                    {% for related in service.related_services.all %}
+                    <li><a href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if service.get_nav_links %}
+            <div class="sidebox">
+                <h3>Recommended Links</h3>              
+                <ul class="nav service-list">
+                {% for resource in service.get_nav_links %}
+                    <li><a href="{{ resource.url }}" target="_blank">{{ resource.name }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            
+            <div class="sidebox">
+                <h3>Find a Service</h3>
+                <div class="panel-group" id="accordion">
+                {% for g in service_groups %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#{{ g.urlname }}"><small><i class="fa fa-plus"></i></small> {{ g.name }}</a></h4>
+                        </div>
+                        <div id="{{ g.urlname }}" class="panel-collapse collapse {% if forloop.first %}in{% endif %}">
+                          <div class="panel-body">
+                            <ul class="nav service-list">
+                            {% for s in g.servicegroupdetail_set.all %}
+                                <li {% ifequal s.service.pk service.pk %}class="active"{% endifequal %}>
+                                <a href="{{ s.service.get_absolute_url }}">{{ s.service.name }}</a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+
+            <div class="sidebox quicklook">
+                <h3>QUICK LOOK:</h3>
+                {{ quicklook_form.service_list }}
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+

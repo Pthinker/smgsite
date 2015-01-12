@@ -1,0 +1,7 @@
+{% load helpers %}
+
+{{ object.headline }}
+{% for topic in object.topics.all %}
+    {{ topic.topic }} {{ topic.topic_name }}
+{% endfor %}
+{{ object.blurb | striptags | unescape }}

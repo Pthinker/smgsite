@@ -1,0 +1,26 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+
+
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-services">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-search"></span> Services</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container">
+{% for service in services %}
+<ul class="list-unstyled">
+    <li><a href="{{ service.get_absolute_url }}">{{ service.name }}</a><li>
+</ul>
+{% endfor %}
+</div>
+
+{% endblock body %}

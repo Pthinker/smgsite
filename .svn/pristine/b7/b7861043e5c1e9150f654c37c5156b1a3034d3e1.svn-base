@@ -1,0 +1,27 @@
+{% if service.related_services.select_related %}
+
+	{% if printable %}
+	<h2>Related Services</h2>
+	{% else %}
+	<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/related_services_128x10.gif" alt="Related Services" width="128" height="10"></div>
+	{% endif %}
+	<ul class="left_col_ul_resources">
+		{% for related in service.related_services.select_related %}
+			<li class="left_col_li_resources"><a class="dark_brown" href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+		{% endfor %}
+	</ul>
+{% endif %}
+
+{% if service.get_nav_links %}
+
+	{% if printable %}
+	<h2>Useful Links</h2>
+	{% else %}
+	<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/useful_links_94x10.jpg" alt="Useful Links" width="94" height="10" border="0"></div>
+	{% endif %}
+	<ul class="left_col_ul_resources">
+		{% for resource in service.get_nav_links %}
+			<li class="left_col_li_resources"><a class="dark_brown" href="{{ resource.url }}" target="_blank">{{ resource.name }}</a></li>
+		{% endfor %}
+	</ul>
+{% endif %}

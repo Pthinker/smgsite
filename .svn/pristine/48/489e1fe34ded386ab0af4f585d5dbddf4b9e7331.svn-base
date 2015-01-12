@@ -1,0 +1,56 @@
+from haystack.views import SearchView
+from haystack.query import SearchQuerySet
+
+from smgsite.doctors.models import Doctor, Specialty
+from smgsite.services.models import Service
+
+
+class FullSearchView(SearchView):
+	"""
+	Search view for whole site searches
+	"""
+	template = 'search/search.html'
+
+	def extra_context(self):
+		extra = super(FullSearchView, self).extra_context()
+
+		result_groups = {}
+		doctor_results = []
+		service_results = []
+		specialty_results = []
+	
+		for result in self.results:
+			if isinstance(result.object, Doctor):
+				doctor_results.append(result)
+			elif isinstance(result.object, Service):
+				service_results.append(result)
+			elif isinstance(result.object, Specialty):
+				specialty_results.append(result)
+		
+		#doc_results = self.results.models(Doctor)
+		
+		for result in self.results.order_by('last_name'):
+		#for result in doc_results.order_by('last_name'):
+			group_data = result_groups.get(result.model_name, {})
+
+			doc = {'url': result.object.get_absolute_url()}
+			if isinstance(result.object, Doctor):
+				group_data['display_name'] = 'Doctors'
+				doc['name'] = result.object.display_name()
+			elif isinstance(result.object, Service):
+				group_data['display_name'] = 'Services'
+				doc['name'] = result.object.name
+			elif isinstance(result.object, Specialty):
+				group_data['display_name'] = 'Specialties'
+				doc['name'] = result.object.specialty
+
+			group_docs = group_data.get('docs', [])
+			group_docs.append(doc)
+			group_data['docs'] = group_docs
+			result_groups[result.model_name] = group_data
+        
+		if len(self.results) > 0:
+			extra['result_groups'] = result_groups
+
+		return extra
+

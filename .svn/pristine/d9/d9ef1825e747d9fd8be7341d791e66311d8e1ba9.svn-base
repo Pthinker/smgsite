@@ -1,0 +1,77 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Unsubscribe{% endblock head_title %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/newseventsblog.css" type="text/css" media="screen" />
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+				
+<h2>Unsubscribe From Healthy Connections</h2>
+
+<p>Unsubscribing from our print newsletter, Healthy Connections? Please know that it may take one to two mailing cycles after your unsubscribe information is received before you are completely removed from our newsletter mailing list. </p>
+
+{% if form.errors %}
+<h2 style="color:#C03;">Please correct the errors below highlighted in red.</h2>
+{% endif %}
+
+<form name="unsubscribeform" method="post" action="">
+
+<h3 {% if form.reasons.errors %}style="color:#C03;"{% endif %}>We're sorry to see you go! Please take a moment to tell us why you no longer wish to receive our newsletter:</h3>
+{{ form.reasons }}
+
+<h3>2. Unsubscribe information (all fields required unless otherwise indicated)</h3>
+<table>
+<tr><td {% if form.first_name.errors %}style="color:#C03;"{% endif %}>First name:</td><td>{{ form.first_name }}</td><td>(Max. 100 chars)</td></tr>
+<tr><td {% if form.last_name.errors %}style="color:#C03;"{% endif %}>Last name:</td><td>{{ form.last_name }}</td><td>(Max. 100 chars)</td></tr>
+<tr><td {% if form.street_1.errors %}style="color:#C03;"{% endif %}>Street address 1:</td><td>{{ form.street_1 }}</td><td>(Max. 200 chars)</td></tr>
+<tr><td {% if form.street_2.errors %}style="color:#C03;"{% endif %}>Street address 2:</td><td>{{ form.street_2 }}</td><td>(Max. 200 chars)</td></tr>
+<tr><td {% if form.city.errors %}style="color:#C03;"{% endif %}>City:</td><td>{{ form.city }}</td><td>(Max. 100 chars)</td></tr>
+<tr><td {% if form.state.errors %}style="color:#C03;"{% endif %}>State:</td><td>{{ form.state }}</td></tr>
+<tr><td {% if form.zipcode.errors %}style="color:#C03;"{% endif %}>Zip Code:</td><td>{{ form.zipcode }}</td><td>(Please provide either 5 digit or 9 digit format)</td></tr>
+<tr><td {% if form.email.errors %}style="color:#C03;"{% endif %}>E-mail:</td><td>{{ form.email }}</td></tr>
+</table>
+
+<br />
+<br />
+<center>
+<input type="submit" name="Unsubscribe" value="Unsubscribe"/>
+<input type="button" name="Cancel" value="Cancel" onclick="javascript:history.go(-1)"/>
+</center>
+</form>
+
+					
+				
+				</div>
+				
+			
+			</div>
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block">
+				
+				
+			<div class="mt10">
+				{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

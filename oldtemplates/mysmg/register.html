@@ -1,0 +1,119 @@
+{% extends "mysmg/base.html" %}
+{% load helpers %}
+
+{% block content %}
+<script type="text/javascript">
+	function moveto(obj1, chars, obj2){
+	        if(obj1.value.length == chars) {
+	                obj2.focus();
+	                obj2.select();
+	        }
+	}
+</script>
+<!-- start of main box -->
+<div id="main_box">
+	<!-- start of left main column -->
+	<div id="left_207_main_box">
+		<div class="infobox blue_infobox">
+			<div class="bottom_infobox">
+				<div class="top_infobox">
+					<form class="form_login" method="POST" action="/mysummitmedicalgroup/login/">
+						<p>Already have an account?<br /> Log-in here.</p>
+						<label>Email Address:</label>
+						<input type="text" class="inp" name="login_email" id="login_email" />
+						<label>Password:</label>
+						<input type="password" class="inp" name="login_pass" id="login_pass" /><br /><br />
+						<input type="submit" name="submit" value="Log In" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of left main column -->
+	
+	<!-- start of right main column -->
+	<div id="right_710_main_box">
+		<div class="create_account">
+			<h1>Personalize your experience.</h1>
+			<p>Creating a proﬁle allows you to save links to your favorite pages. These links are available to you any  time you log back into the site. The information you provide below is used ONLY to personalize your experience on this site.</p>
+			<p>Your saved page selections are not shared with anyone, and are not linked to your medical records in any way. If you have other questions, please read our full <a href="/about/HIPAA_and_Your_Privacy/">Privacy Policy</a>.</p>
+			
+			{% if form.username.errors %}{% ifnotequal form.username.data "" %}<b><img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" alt="Error" /> Error: There is already an account for this e-mail address. If you have forgotten your password, <a href="/mysummitmedicalgroup/forgot/">click here to reset it</a>.</b>{% endifnotequal %}{% endif %}
+			
+			<form method="POST" action="" class="form_create_account go_form_my">
+				<fieldset>
+					<p>Create an Account Now!</p>
+					<div>
+						<label>* Email Address: </label>									
+						{{ form.username }}
+						{% if form.username.errors %}<b><img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" alt="Error" /> Error: This is not a valid e-mail address</b>{% endif %}
+						
+					</div>
+					<div>
+						<label>* Password:</label>
+						{{ form.password }}
+						<span class="floated"><b>{% if form.password.errors %}<img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" align="left" alt="Error" />{% endif %} Choose a password between 6 and 20 characters.<br /> 
+							Spaces are not allowed.</b></span>
+					</div>
+					<div>
+						<label>* Confirm Password:</label>
+						{{ form.password2 }}
+						{% if form.password2.errors %}<b><img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" align="left" alt="Error" /> Error: Your passwords do not match</b>{% endif %}
+					</div>
+				</fieldset>
+				
+				<fieldset>
+					<p>Personal Information</p>
+					<span class="box">Personal information is optional. It will only be used to improve your experience on the site and to conﬁrm your identity if you forget the e-mail address you are using to register.</span>
+					<div>
+						<label>First Name:</label>
+						{{ form.first_name }}									
+					</div>
+					<div>
+						<label>Middle Name:</label>
+						{{ form.middle_name }}
+					</div>
+					<div>
+						<label>Last Name:</label>
+						{{ form.last_name }}
+					</div>								
+					<div>
+						<label>Zip Code:</label>
+						{{ form.zipcode }}
+						<span class="floated"><b>{% if form.zipcode.errors %}<img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" align="left" alt="Error" />{% endif %} Please enter your five digit zip code<br /></b></span>
+					</div>
+				</fieldset>
+				
+				<fieldset>
+					<p>Security Question</p>
+					<div>
+						<label>Choose a question:</label>
+						<div class="relative-40" style="padding: 0">
+							<div class="absolute-8" style="padding: 0; top: 0;">&nbsp;
+								{{ form.security_question }}
+							</div>
+						</div>
+					</div>
+						<label>Answer:</label>
+						{{ form.security_answer }}
+				</fieldset>
+				
+				<fieldset class="last">
+					<p>Subscribe to Our Newsletter</p>
+					<span class="box">You can also sign up for our Thrive e-mail newsletter with the e-mail address you provided. Choose below to subscribe automatically.<b></span>
+					{{ form.contact }}
+					<div class="buttons" style="clear: both;">
+						<input type="submit" value="" class="button_create_account" />
+						<input type="reset" value="" class="button_reset" />
+					</div>
+					<span><b>{% if form.contact.errors %}<img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" align="left" alt="Error" /> Please choose yes or no {% endif %} <br /></b></span>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<!-- end of right main column -->
+	<div class="clear"></div>
+</div>
+<!-- end of main box -->
+
+{% endblock content %}

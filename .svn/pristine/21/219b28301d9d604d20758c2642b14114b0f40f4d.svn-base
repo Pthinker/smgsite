@@ -1,0 +1,87 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-find-practitioner">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="fa fa-plus-square"></span> Our Doctors and Practitioners</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="condition-search-bg" id="condition-form">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form method="get" action="."class="form-inline" role="form">
+                    <div class="form-group" >
+                        <label for="id_q">Search by condition or treatment: </label>
+                        {{ form.q }}
+                        <button type="submit" class="btn btn-success search-btn"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {#{% if suggestion %}Did you mean {{ suggestion }}{% endif %}#}
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+    
+        <div class="col-md-3">
+            <h4>Filter By</h4>
+
+            <div class="panel-group" id="facets">
+                {% for field, data in facet_data %}
+                    {% if data.results %}
+                        {% include 'search/partials/facet.html' with name=data.name items=data.results %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <div class="col-md-9">
+            {% if page.object_list %}
+            <div>
+                <h4>Showing {{ page.paginator.count }} practitioners{% if query %} matching "{{ query }}"{% endif %}
+                <a href="/doctors/?{{ request.GET.urlencode }}">(Click here to see with photos.)</a>
+                {% ifnotequal page.paginator.count doctor_count %}
+                    <a href="/doctor-directory/" class="btn btn-doctor pull-right">See All ({{doctor_count}})</a>
+                {% endifnotequal %}
+                </h4>
+                
+                {% include 'doctors/includes/alpha_list.html' %}
+
+                
+                <div id="doctor-list">
+                {% for result in page.object_list %}
+                {% include 'doctors/includes/result_object_text.html' with doctor=result.object %}  
+                    
+                {% endfor %}
+                </div>
+                
+            </div>
+            {% else %}
+            <h4><a href="/doctors/" class="btn btn-doctor pull-right">See All ({{doctor_count}})</a> No practitioners found matching your search.<br> Please return to our <a href="/doctor-directory/">Practitioners Finder</a> to try other options.
+            </h4>
+            
+            {% endif %}
+
+        </div>
+
+    </div>  
+</div>
+{% ifnotequal page.paginator.count doctor_count %}
+<script>
+$(function() {
+    scroll_to_id('condition-form');
+});
+</script>
+{% endifnotequal %}
+{% endblock %}

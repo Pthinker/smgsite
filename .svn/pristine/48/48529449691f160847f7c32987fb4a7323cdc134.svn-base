@@ -1,0 +1,287 @@
+# Django settings for smgsite project.
+import os 
+import sys
+
+#Get the absolute path of the settings.py file's directory
+ROOT_DIR = os.path.dirname(os.path.realpath(__file__ )) 
+sys.path.append(os.path.dirname(ROOT_DIR))
+
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
+ADMINS = (
+    ('Syncresis Admin', 'technicalissues@syncresis.com'),
+)
+
+MANAGERS = ADMINS
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'qasmgdb',                      # Or path to database file if using sqlite3.
+        'USER': 'apache',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
+
+# Caching
+#CACHE_BACKEND = 'memcached://127.0.0.1:10112'
+CACHE_BACKEND = 'dummy://'
+CACHE_MIDDLEWARE_ANONYMOUS_ONLY=False
+CACHE_TIME=60 * 60
+
+# Search engine interface
+SEARCH_HOST = 'localhost'
+SEARCH_PORT = 8086
+
+# Email control
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 25
+
+# Number of items to include in each RSS request
+RSS_COUNT = 15
+
+# Local time zone for this installation. Choices can be found here:
+# http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
+# although not all choices may be avilable on all operating systems.
+# If running in a Windows environment this must be set to the same as your
+# system time zone.
+TIME_ZONE = 'America/New_York'
+
+# Language code for this installation. All choices can be found here:
+# http://www.i18nguy.com/unicode/language-identifiers.html
+LANGUAGE_CODE = 'en-us'
+
+SITE_ID = 1
+
+# If you set this to False, Django will make some optimizations so as not
+# to load the internationalization machinery.
+USE_I18N = False
+
+#DEFAULT_CONTENT_TYPE = "application/xhtml+xml"
+
+# Absolute path to the directory that holds templates.
+TEMPLATE_ROOT = '/var/www/qa-smg/smgsite/templates'
+# TEMPLATE_ROOT = '/var/www/qa-smg/smgsite/templates'
+
+# Absolute path to the directory that holds media.
+# Example: "/home/media/media.lawrence.com/"
+MEDIA_ROOT = '/var/www/qa-smg/media'
+
+# URL that handles the media served from MEDIA_ROOT. Make sure to use a
+# trailing slash if there is a path component (optional in other cases).
+# Examples: "http://media.lawrence.com", "http://example.com/media/"
+# MEDIA_URL = 'http://qa-smg.syncresis.com/media/'
+MEDIA_URL = 'http://qa-smg.syncresis.com/media/'
+
+# URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
+# trailing slash.
+# Examples: "http://foo.com/media/", "/media/".
+ADMIN_MEDIA_PREFIX = '/admin-media/'
+
+# URL when authentication is required
+LOGIN_URL = '/admin'
+
+# Make this unique, and don't share it with anybody.
+SECRET_KEY = '%-$4p-tog246&698(xrt*)_*-xc-gj1h9j!fz-(u-hy-56%k#d'
+
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+    'django.core.context_processors.request',
+    'smgsite.site.views.dynamic',
+    'smgsite.site.context_processors.alpha_list_processor',
+    'smgsite.site.context_processors.extra_template_data',
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+MIDDLEWARE_CLASSES = (
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.doc.XViewMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'smgsite.pages.middleware.PageFallbackMiddleware',
+    'smgsite.site.middleware.Custom404Middleware',
+
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'smgsite.site.profile.ProfileMiddleware',
+)
+
+APPEND_SLASH = True
+
+ROOT_URLCONF = 'smgsite.urls'
+
+AUTH_PROFILE_MODULE = 'mysmg.userprofile'
+
+# Allow system to use old templates while they are being reworked
+TEMPLATE_DIRS = (
+    os.path.join(ROOT_DIR, "templates"), 
+    os.path.join(ROOT_DIR, "oldtemplates"),
+)
+
+INSTALLED_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.admin',
+    'django.contrib.humanize',
+    'django.contrib.staticfiles',
+    'django.contrib.messages',
+
+    'smgsite.cms',
+    'smgsite.site',
+    'smgsite.pages',
+    'smgsite.marketing_banners',
+    'smgsite.services',
+    'smgsite.doctors',
+    'smgsite.events',
+    'smgsite.articles',
+    'smgsite.healthday',
+    'smgsite.relayhealth',
+    'smgsite.careers',
+    'smgsite.mysmg',
+    'smgsite.blogs',
+    'compressor',
+    'sorl.thumbnail',
+    'south',
+    'haystack',
+    #'debug_toolbar',
+)
+
+
+STATICFILES_DIRS = (
+    os.path.join(ROOT_DIR, 'static'),
+)
+
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(ROOT_DIR, "serve_static") 
+
+# ?
+#MEDIA_ROOT = os.path.join(ROOT_DIR, "media") 
+
+
+INTERNAL_IPS = ('68.3.20.155', '70.190.28.199', '86.19.223.90')
+
+NAVIGATION_SETTINGS = [
+    {
+        'title': 'Home page',
+        'name': 'Home',
+        'url': '/',
+    },
+    {
+        'title': 'Find a Service',
+        'name': 'Find a <br>Service',
+        'url': '/services/',
+    },
+    {
+        'title': 'Find a Practitioner',
+        'name': 'Find a <br>Practitioner',
+        'url': '/doctors/',
+    },
+    {
+        'title': 'Patient Portal',
+        'name': 'Patient <br>Portal',
+        'url': '/about/MySMG/',
+    },
+    {
+        'title': 'Insurance',
+        'name': 'Insurance',
+        'url': '/about/insurance/',
+    },
+    {
+        'title': 'Articles',
+        'name': 'Articles',
+        'url': '/articles/',
+        'children': [
+            {
+                'title': 'Newsroom',
+                'name': 'Newsroom',
+                'url': '/newsroom/',
+            },
+            {
+                'title': 'SMG News',
+                'name': 'SMG News',
+                'url': '/recentnews/',
+            },
+            {
+                'title': 'Living Well',
+                'name': 'Living Well',
+                'url': '/blog/living-well/',
+            },
+            {
+                'title': 'Fitness',
+                'name': 'Fitness',
+                'url': '/features/Fitness/',
+            },
+            {
+                'title': 'Nutrition',
+                'name': 'Nutrition',
+                'url': '/features/Nutrition/',
+            },
+            {
+                'title': 'Recipes',
+                'name': 'Recipes',
+                'url': '/recipes/',
+            },
+        ]
+    },
+
+    {
+        'title': 'Locations and Directions',
+        'name': 'Locations <br>and Hours',
+        'url': '/locations/',
+    },
+]
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr/collection1/',
+	'INCLUDE_SPELLING': True,
+    },
+    'flyover': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr/flyover/',
+	'INCLUDE_SPELLING': True,
+    },
+}
+
+# not needed anymore?
+GOOGLE_MAP_KEY = 'AIzaSyA2uYnRHvvu9srh25WagLmHDbt7Q8GDm-Q'
+
+GOOGLE_ANALYTICS_CODE = 'UA-3924031-2'
+
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'lessc {infile} {outfile}'),
+)
+
+COMPRESS_CSS_FILTERS = ['compressor.filters.cssmin.CSSMinFilter']
+
+# Allow overide in local.py for development and specfic platform settings
+try:
+    from local import *
+except ImportError:
+    pass
+

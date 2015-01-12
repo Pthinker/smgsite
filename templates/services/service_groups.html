@@ -1,0 +1,43 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-services">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="glyphicon glyphicon-search"></span> Services</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row section">
+        <div class="col-md-9">
+            <p>Click on any service to learn about it or find a specialist.</p>
+            </div>
+
+        <div class="col-md-3">
+            <h3 class="quick-title">QUICK LOOK:</h3>
+            {{ service_form.service_list }}
+        </div>
+    </div>
+
+    <div class="row">
+        {% for group in groups %}
+        <div class="col-md-4 service-group">
+            <a href="{{ group.get_absolute_url }}" class="cont" data-container="body" data-html="true" data-toggle="popover" data-content="<p>{{ group.description}}</p> <b>Services:</b><br>{{ group.list_services }}" title="{{ group.name }}">
+                {% thumbnail group.small_image "220x220" crop="center" as im %}
+                <img src="{{ im.url }}" alt="{{ group.name }}" />
+                {% endthumbnail %}
+                <div class="title">{{ group.name }}</div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

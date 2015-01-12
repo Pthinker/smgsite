@@ -1,0 +1,159 @@
+@CHARSET "UTF-8";
+
+ul.unique-list-plain li,ul.unique-list-plain {
+	line-height: 1.25em;
+	background: none !important;
+	background: none;
+	list-style: none !important;
+	list-style: none;
+}
+
+ul.unique-list-bullet li,ul.unique-list-bullet {
+	line-height: 1.25em;
+	list-style-type: disc !important;
+	list-style-type: disc;
+	background: none !important;
+	background: none;
+}
+
+ul.unique-list-rqauo li,ul.unique-list-rqauo {
+	line-height: 1.25em;
+	list-style: none !important;
+	list-style: none;
+	background: transparent	url({{ MEDIA_URL }}images/6x6_bullet_add_services.gif) no-repeat scroll left 10px !important;
+	background: transparent	url({{ MEDIA_URL }}images/6x6_bullet_add_services.gif) no-repeat scroll left 10px;
+	color: #333;
+	margin: 0;
+	padding: 5px 0 0 10px;
+}
+
+.unique-h2 {
+	color: #0047A8;
+	font: bold 1.75em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h3 {
+	color: #0047A8;
+	font: bold 1.5em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h4 {
+	color: #0047A8;
+	font: bold 1.25em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Theme sky */
+.unique-h2-sky {
+	color: #205c8c;
+	font: bold 1.75em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h3-sky {
+	color: #205c8c;
+	font: bold 1.5em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h4-sky {
+	color: #205c8c;
+	font: bold 1.25em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Theme peach */
+.unique-h2-peach {
+	color: #b26b01;
+	font: bold 1.75em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h3-peach {
+	color: #b26b01;
+	font: bold 1.5em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h4-peach {
+	color: #b26b01;
+	font: bold 1.25em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Theme green */
+.unique-h2-green {
+	color: #40946d;
+	font: bold 1.75em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h3-green {
+	color: #40946d;
+	font: bold 1.5em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h4-green {
+	color: #40946d;
+	font: bold 1.25em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Violet theme */
+.unique-h2-violet {
+	color: #6d1f7e;
+	font: bold 1.75em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h3-violet {
+	color: #6d1f7e;
+	font: bold 1.5em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h4-violet {
+	color: #6d1f7e;
+	font: bold 1.25em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Theme red */
+.unique-h2-red {
+	color: #c41230;
+	font: bold 1.75em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h3-red {
+	color: #c41230;
+	font: bold 1.5em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.unique-h4-red {
+	color: #c41230;
+	font: bold 1.25em/1em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<response>
+	<request_id>{{ request_id }}</request_id>
+	<query>{{ query }}</query>
+	<count>{{ count }}</count>
+	<result_groups>
+		{% for group in result_groups %}
+			<result_group name="{{ group.name }}">
+				{% for result in group.results %}
+				<result>
+					<model>{{ result.model }}</model>
+					<key>{{ result.key }}</key>
+					<url>{{ result.url }}</url>
+					<name>{{ result.name }}</name>
+				</result>
+				{% endfor %}
+			</result_group>
+		{% endfor %}
+	</result_groups>
+</response>

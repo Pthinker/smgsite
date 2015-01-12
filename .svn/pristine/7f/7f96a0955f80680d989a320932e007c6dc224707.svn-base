@@ -1,0 +1,23 @@
+{% extends 'articles/newsroom/base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}Summit Medical Group - {{ article.headline }}{% endblock head_title %}
+{% block meta_info %}{% meta_info article %}{% endblock meta_info %}
+
+{% block breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="/articles/">Summit Medical Group News</a></li>
+    <li class="active">{{ article.headline|safe}}</li>
+
+    {% include 'site/includes/share.html' %}
+</ol>
+{% endblock breadcrumbs %}
+
+{% block content %}
+
+<div class="article_content">
+    {% include 'articles/includes/feature_post.html' %}
+</div>
+
+{% endblock content %}

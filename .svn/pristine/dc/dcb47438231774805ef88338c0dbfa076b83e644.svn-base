@@ -1,0 +1,307 @@
+@import url("basicstyle.css");
+
+h2 {
+	font: bold 1.75em/ 1em Arial, Helvetica, sans-serif;
+	color: #0047A8;
+	margin: 0;
+	padding: 0, 0, 16px, 0;
+	line-height: 1.5em
+}
+
+div.event_general_info {
+	padding: 8px 8px;
+	border: 1px dotted #cccccc;
+	background-color: rgb(220, 240, 255);
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+div.event_payjoin {
+	padding: 18px 54px;
+	border: 1px dotted #cccccc;
+	margin-top: 27px;
+}
+
+div.event_payjoin a {
+	margin-right: 27px;
+}
+
+div.event_payjoin span {
+	margin-right: 27px;
+}
+
+div.article_byline p {
+	line-height: 1.125em;
+	margin: 0;
+	padding: 0;
+}
+
+div.healthnews_article div.article_title  h3 {
+	margin-top: 0;
+}
+
+.search_news_form div.search_button {
+	text-align: right;
+	margin-right: 12px;
+	margin-top: 12px;
+}
+
+.search_news_form div.search_button input {
+	border: 0;
+	cursor: pointer;
+	background: url({{ MEDIA_URL }}/images/89x26_search_button.gif);
+	width: 89px;
+	height: 26px;
+}
+
+.search_blog_form div.search_button {
+	text-align: right;
+	margin-right: 12px;
+	margin-top: 12px;
+}
+
+.search_blog_form div.search_button input {
+	border: 0;
+	cursor: pointer;
+	background: url({{ MEDIA_URL }}/images/89x26_search_button.gif);
+	width: 89px;
+	height: 26px;
+}
+
+div#healthnews_landing_container h2 {
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
+ul.healthnews_highlights_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.healthnews_highlights_list li {
+	padding-left: 0;
+	margin: 4px 0;
+	line-height: 1em;
+}
+
+ul.healthnews_highlights_list li a {
+	font-size: 1em;
+}
+
+div.healthnews_topstories {
+	margin: 27px 0;
+}
+
+ul.healthnews_topstories_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul.healthnews_topstories_list li {
+	clear: both;
+	padding: 2px 5px 5px 120px;
+	height: 75px;
+}
+
+ul.healthnews_topstories_list li.with_image {
+	position: relative;
+}
+
+ul.healthnews_topstories_list li.with_image div.blurb_image_border {
+	border: 1px solid #ccc;
+	padding: 3px;
+	position: absolute;
+	top: 5px;
+	left: 0;
+	width: 100px;
+	height: 69px;
+}
+
+ul.healthnews_topstories_list li.with_image div.blurb_image_left {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 100px;
+	height: 69px;
+	overflow: hidden;
+}
+
+ul.healthnews_topstories_list li.with_image img.blurb_image_right {
+	float: right;
+	padding: 3px;
+	margin-left: 9px;
+	border: 1px solid #ccc;
+}
+
+ul.healthnews_topstories_list li.no_image {
+	padding-top: 9px;
+	padding-left: 5px;
+}
+
+div#global div#healthnews_subdiv_container {
+	width: 450px;
+}
+
+div#global div#healthnews_subdiv_container  div.subdiv ul.list_quotes a
+	{
+	color: rgb(0, 71, 168);
+}
+
+div#global div#healthnews_landing_container div.healthnews_highlights div.bottomlinks
+	{
+	padding-top: 9px;
+	padding-left: 300px;
+}
+
+div#global div#healthnews_landing_container div.healthnews_topstories div.bottomlinks
+	{
+	padding-top: 9px;
+	padding-left: 300px;
+}
+
+div#global div#healthnews_subdiv_container  div.bottomlinks {
+	padding-top: 9px;
+	padding-left: 300px;
+}
+
+div.quick_links_categories {
+	padding-top: 12px;
+}
+
+div.quick_links_categories  p {
+	color: rgb(110, 119, 124) !important;
+	padding-left: 12px !important;
+}
+
+form#form_categories_healthnews {
+	padding-top: 18px;
+	padding-left: 9px;
+	margin-right: 0;
+}
+
+form#form_categories_healthnews select {
+	padding-left: 0;
+	margin-left: 0;
+}
+
+div#healthnews_subdiv_container h2 {
+	color: rgb(0, 76, 117) !important;
+}
+
+div.blog_post_image {
+	float: left;
+	padding: 0 3px 3px 0;
+	width: 110px;
+	height: 140px;
+}
+
+div.blog_post_image img {
+	border: 1px solid #ccc;
+	padding: 3px
+}
+
+div.blog_post_content div.blog_post_title {
+	margin: 0;
+	padding: 0;
+}
+
+div.blog_post_content div.blog_post_title h2 {
+	font: bold 1.75em/ 1.25em Arial, Helvetica, sans-serif;
+	color: #0047A8;
+	margin: 0;
+	padding: 0;
+}
+
+div.blog_post_content div.blog_post_title h3 {
+	font: bold 1.25em/ 1.25em Arial, Helvetica, sans-serif;
+	color: #0047A8;
+	margin: 0 0 0 0;
+	padding: .35em 0;
+	margin-bottom: 0;
+}
+
+div.blog_post_content div.blog_post_title p {
+	margin: 0;
+	padding: 0;
+	font-size: .90em;
+}
+
+img.blog_post_content_image_fr {
+	float: right;
+	border: 1px solid #ccc;
+	padding: 3px;
+	margin: 5px;
+}
+
+img.blog_post_content_image_fl {
+	float: left;
+	border: 1px solid #ccc;
+	padding: 3px;
+	margin: 5px;
+}
+
+div.blog_recent_postings {
+	clear: both; 
+	padding-top: 18px;
+	margin-left: 117px;
+	margin-bottom: 27px;
+}
+
+div.blog_recent_postings .subdiv {
+	padding: 0 0 0 2px;
+}
+
+div.blog_recent_postings .subdiv h2 {
+	font-size: 0.9em;
+	line-height: 1.25em;
+	color: #0047a8;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+.bottomlinks2 {
+	height: 14px;
+	overflow: hidden;
+	padding-top: 8px;
+}
+
+.bottomlinks2 a {
+	float: left;
+	background: url({{ MEDIA_URL }}/images/6x6_arrow_double_blue.gif) right 5px no-repeat;
+	padding-right: 10px;
+}
+
+.bottomlinks2 a.subscribe {
+	width: 14px;
+	height: 14px;
+	background: url({{ MEDIA_URL }}/images/14x14_rss.gif);
+	padding: 0;
+	margin-right: 6px;
+	text-indent: -999px;
+}
+
+div#event_results_container div.event_detail {
+	margin: 9px 128px 9px 0;
+	padding: 9px 12px;
+}
+
+div#event_results_container div.event_detail h3 {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 7px;
+	font: bold 1em/1em Arial, sans-serif;
+}
+
+div#event_results_container div.event_detail ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+div#event_results_container div.event_detail ul li {
+	padding: 3px 0;
+	margin: 2px 0;
+}

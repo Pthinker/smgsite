@@ -1,0 +1,32 @@
+{% extends 'one_column_layout.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Live Well Library{% endblock head_title %}
+{% block meta_info %}Summit Medical Group offers extensive health and wellness information for you and your family.{% endblock meta_info %}
+{% block page_title %}Live Well Library{% endblock %}
+
+{% block content %}
+<p>Looking for reliable NJ/ NY health information? Our extensive libraries have what you need!</p>
+ 
+<p>Our libraries are now organized in 4 sections:</p>
+
+<ol>
+    <li>Acute Care Advisor</li>
+    <li>Adult Health Advisor</li>
+    <li>Medications Advisor</li>
+    <li>Pediatric Health Advisor</li>
+</ol>
+ 
+<p>Our Women's Health Advisor, Behavioral Health Advisor, Cardiology Advisor, Eye Advisor, and Sports Medicine Advisor are now included in the Adult Health Advisor.</p>
+ 
+<p>Our Medications and Pediatric Health Advisors remain the same.<p>
+ 
+<p>Use the search box above to explore a topic, or click on any link below to see a list of our topics and articles.</p>                
+<div class="row">
+{% for advisor in advisors %}
+    <div class="col-md-3 col-xs-6 section text-center"><a href="{{ advisor.get_absolute_url }}">{{ advisor.name }}</a></div>
+{% endfor %}
+</div>
+
+
+{% endblock content %}

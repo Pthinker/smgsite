@@ -1,0 +1,18 @@
+{% load thumbnail %}
+
+<div class="media coverage-preview">
+    <a class="pull-left thumbnail" href="{{ item.get_absolute_url }}">
+        {% thumbnail item.image "160x100" crop="center" as im %}
+        <img class="media-object img-responsive" src="{{ im.url }}" width="160" alt="{{ item.headline }}">
+        {% empty %}
+        <img class="media-object img-responsive" width="160" src="holder.js/160x100/text:No Image" />
+        {% endthumbnail %}
+    </a>
+    <div class="media-body">
+        <h3 class="media-heading">{{ item.headline }}</h3>
+        <span class="date">{{ item.display_time|date:"M d, Y" }}</span> 
+        <a class="byline" href="{{ item.byline_link }}">{{ item.byline }}</a>
+        <p class="content">{{ item.blurb }}</p>
+        <a class="more" href="{{ item.get_absolute_url }}">Read More</a>
+    </div>
+</div>

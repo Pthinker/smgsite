@@ -1,0 +1,153 @@
+from haystack.views import SearchView
+from haystack.query import SearchQuerySet
+
+from smgsite.doctors.models import Doctor, Specialty
+from smgsite.services.models import Service
+from smgsite.events.models import Event, Class
+from smgsite.articles.models import Article, MediaResult, Feature
+from smgsite.relayhealth.models import Article as HealthArticle
+from smgsite.pages.models import Page
+from smgsite.blogs.models import BlogEntry
+from smgsite.pages.models import Page
+
+group_keys = ['doctors_doctor', 'services_service', 'doctors_specialty', 'event_and_class', 
+		'blogs_blogentry', 'articles_feature', 'articles_article', 'pages_page', 
+		'articles_mediaresult', 'relayhealth_article']
+
+key_model = {'doctors_doctor': Doctor, 'services_service': Service, 'doctors_specialty': Specialty, 
+		'blogs_blogentry': BlogEntry, 'articles_feature': Feature, 'articles_article': Article, 
+		'pages_page': Page, 'articles_mediaresult': MediaResult, 'relayhealth_article': HealthArticle}
+
+key_display = {'doctors_doctor': "Doctors", 'services_service': "Services", 'doctors_specialty': "Specialties", 
+		'blogs_blogentry': "Live Well News", 'articles_feature': "Fitness, Nutrition, and Recipes", 
+		'articles_article': "Summit Medical Group News", 'pages_page': "Additional Site Content", 
+		'articles_mediaresult': "SMG Media Results", 'relayhealth_article': "Health In The News Articles"}
+
+
+class ModelSearchView(SearchView):
+	template = 'search/model_search.html'
+	
+	def extra_context(self):
+		extra = super(ModelSearchView, self).extra_context()
+	
+		results = None
+		model_key = self.request.GET['model']
+		
+		if model_key == 'event_and_class':
+			results = self.results.models(Event, Class)
+		elif model_key in key_model:
+			results = self.results.models(key_model[model_key])
+		
+		if results and len(results)>0:
+			result_list = []
+			
+			docs = []
+			for result in results.order_by('last_name', 'specialty', 'name'):
+				doc = {'url': result.object.get_absolute_url()}
+				if isinstance(result.object, Doctor):
+					display_name = 'Doctors'
+					doc['name'] = result.object.display_name()
+				elif isinstance(result.object, Service):
+					display_name = 'Services'
+					doc['name'] = result.object.name
+				elif isinstance(result.object, Specialty):
+					display_name = 'Specialties'
+					doc['name'] = result.object.specialty
+				elif isinstance(result.object, Article):
+					display_name = 'Summit Medical Group News'
+					doc['name'] = result.object.headline
+				elif isinstance(result.object, MediaResult):
+					display_name = 'SMG Media Results'
+					doc['name'] = result.object.headline
+				elif isinstance(result.object, HealthArticle):
+					display_name = 'Health In The News Articles'
+					doc['name'] = result.object.title
+				elif isinstance(result.object, Page):
+					display_name = 'Additional Site Content'
+					doc['name'] = result.object.title
+				elif isinstance(result.object, BlogEntry):
+					display_name = 'Live Well News'
+					doc['name'] = result.object.title
+				elif isinstance(result.object, Feature):
+					display_name = 'Fitness, Nutrition, and Recipes'
+					doc['name'] = result.object.headline
+				elif isinstance(result.object, Event) or isinstance(result.object, Class):
+					display_name = 'Events and Classes'
+					doc['name'] = result.object.title
+				docs.append(doc)
+
+			result_list.append((display_name, docs))
+			extra['result_list'] = result_list
+		
+		return extra
+
+
+class FullSearchView(SearchView):
+	"""
+	Search view for whole site searches
+	"""
+	template = 'search/search.html'
+
+	def extra_context(self):
+		extra = super(FullSearchView, self).extra_context()
+
+		result_groups = {}
+		for result in self.results.order_by('last_name', 'specialty', 'name'):
+			if isinstance(result.object, Event) or isinstance(result.object, Class):
+				key = "event_and_class"
+			else:
+				key = result.app_label + "_" + result.model_name
+			group_data = result_groups.get(key, {})
+
+			doc = {'url': result.object.get_absolute_url()}
+			if isinstance(result.object, Doctor):
+				group_data['display_name'] = 'Doctors'
+				doc['name'] = result.object.display_name()
+			elif isinstance(result.object, Service):
+				group_data['display_name'] = 'Services'
+				doc['name'] = result.object.name
+			elif isinstance(result.object, Specialty):
+				group_data['display_name'] = 'Specialties'
+				doc['name'] = result.object.specialty
+			elif isinstance(result.object, Article):
+				group_data['display_name'] = 'Summit Medical Group News'
+				doc['name'] = result.object.headline
+			elif isinstance(result.object, MediaResult):
+				group_data['display_name'] = 'SMG Media Results'
+				doc['name'] = result.object.headline
+			elif isinstance(result.object, HealthArticle):
+				group_data['display_name'] = 'Health In The News Articles'
+				doc['name'] = result.object.title
+			elif isinstance(result.object, Page):
+				group_data['display_name'] = 'Additional Site Content'
+				doc['name'] = result.object.title
+			elif isinstance(result.object, BlogEntry):
+				group_data['display_name'] = 'Live Well News'
+				doc['name'] = result.object.title
+			elif isinstance(result.object, Feature):
+				group_data['display_name'] = 'Fitness, Nutrition, and Recipes'
+				doc['name'] = result.object.headline
+			elif isinstance(result.object, Event) or isinstance(result.object, Class):
+				group_data['display_name'] = 'Events and Classes'
+				doc['name'] = result.object.title
+
+			group_docs = group_data.get('docs', [])
+			group_docs.append(doc)
+			group_data['docs'] = group_docs
+			
+			result_groups[key] = group_data
+        
+		result_list = []
+		models = []
+		for key in group_keys:
+			if (key in result_groups) and len(result_groups[key]['docs'])>0:
+				more = ( result_groups[key]['docs'] > 10 ) 
+				result_list.append((result_groups[key]['display_name'], result_groups[key]['docs'][0:10], more, key))
+				models.append((result_groups[key]['display_name'], key))
+		
+		if len(self.results) > 0:
+			extra['result_list'] = result_list
+			extra['models'] = models
+
+		return extra
+

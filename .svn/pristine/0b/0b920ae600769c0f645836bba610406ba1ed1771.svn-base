@@ -1,0 +1,11 @@
+<div class="search_results_page_nav">
+    {% if showpages %}
+    <div class="page_nav">{% if previous %}<a class="page_nav_prev" href="/healthday/{{ news_type }}/{{ ppage }}/?category={{ category.pk }}">Prev</a>{% else %}Prev{% endif %}{% for newpage in pagelist %}
+        {% ifequal page newpage %}
+            <span class="page_nav_active">{{ newpage }}</span>                                                    {% else %}
+            <a href="/healthday/{{ news_type }}/{{ newpage }}/?category={{ category.pk }}">{{ newpage }}</a>
+        {% endifequal %}
+    {% endfor %}{% if next %}<a class="page_nav_next" href="/healthday/{{ news_type }}/{{ npage }}/?{{ request.GET.urlencode }}">Next</a>{% else %}Next{% endif %}
+    </div>
+    {% endif %}
+</div>

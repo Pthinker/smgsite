@@ -1,0 +1,7 @@
+<div id="alpha-list">
+    <ul class="pagination">
+    {% for char in alpha_list %}
+        <li data-char="{{char|upper}}" class="disabled"><a href="" data-id="surname-{{ char|upper }}">{{ char|upper }}</a></li>
+    {% endfor %}
+    </ul>
+</div>

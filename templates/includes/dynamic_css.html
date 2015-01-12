@@ -1,0 +1,30 @@
+{% load staticfiles %}
+
+{# Any dynamic CSS usally with paths goes in here #}
+<style>
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('{% static "bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix" %}') format('embedded-opentype'),
+       url('{% static "bootstrap/fonts/glyphicons-halflings-regular.woff" %}') format('woff'),
+       url('{% static "bootstrap/fonts/glyphicons-halflings-regular.ttf" %}') format('truetype'),
+       url('{% static "bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular" %}') format('svg');
+}
+
+.urgentcare {
+    background: url({% static "images/urgent_care_logo.png" %}) 0 0 no-repeat;
+}
+
+.mainlogo {
+    background: url({% static "images/main_logo.png" %}) 0 0 no-repeat;
+}
+
+.mainlogo-mobile {
+    background: url({% static "images/mobile/main_logo.png" %}) 0 0 no-repeat;
+}
+
+#share-widget li a.share-google {
+    background: url( {% static "images/google_plus.gif" %} ) left center no-repeat;
+}
+
+</style>

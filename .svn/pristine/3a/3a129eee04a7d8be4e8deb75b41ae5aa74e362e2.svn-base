@@ -1,0 +1,14 @@
+{# TITLE: Testimonials #}
+<p><img src="{{ MEDIA_URL }}/images/plast_testim_120x177_card1.jpg" alt="Card" width="120" height="177" align="left">"I was extremely impressed with your skill and your technique -- Very Smooth!"</p>
+
+<p><img src="{{ MEDIA_URL }}/images/plast_testim_200x139_card2.jpg" alt="Card" width="200" height="139" align="right">"Thank you for the exceptional care."</p>
+
+<p>"Your skills as a surgeon and practitioner were tremendous; the recovery has been rapid and complete!"</p>
+
+<p>"I've recommended your name to several folks. Thank you for the great care."</p>
+
+<p>"From the first moment I was in your office, I felt completely at ease and confident in your care."</p>
+
+<p>"You're the best, thank you so much!"</p>
+
+<img src="{{ MEDIA_URL }}/images/plast_testim_120x223_card3.jpg" alt="Card" width="120" height="223" align="center">

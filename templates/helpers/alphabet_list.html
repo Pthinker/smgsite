@@ -1,0 +1,9 @@
+<ul class="pagination">
+    {% for letter in letters %}
+            {% if letter|last %}
+                <li><a href="#letter-{{ letter|first }}">{{ letter|first }}</a><li>
+            {% else %}
+                <li><a>{{ letter|first }}</a></li>
+            {% endif %}
+    {% endfor %}
+</ul>

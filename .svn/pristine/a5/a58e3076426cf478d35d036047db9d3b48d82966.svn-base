@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Summit Medical Group - {{ blog.name }}</title>
+    <link>http://www.summitmedicalgroup.com/blog/{{ blog.urlname }}/</link>
+    <description>Summit Medical Group brings you the latest news and updates on healthcare and wellness from HealthDay to help you and your family 'Live Well, Stay Well.'</description>
+    <language>en-us</language>
+    <pubDate>{{ pubdate }}</pubDate>
+    <managingEditor>wecare@smgnj.com</managingEditor>
+    <webMaster>wecare@smgnj.com</webMaster>
+    <ttl>60</ttl>
+
+ 	{% for article in articles %}
+    <item>
+      <title>{{ article.title }}</title>
+      <link>http://{{ request.META.SERVER_NAME }}{{ article.get_absolute_url }}</link>
+      <pubDate>{{ article.postdate|date:"r" }}</pubDate>
+    </item>
+	{% endfor %}
+  </channel>
+</rss>

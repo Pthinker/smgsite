@@ -1,0 +1,19 @@
+{% ifchanged doctor.last_name.0 %}
+
+
+<div class="doctor-result" data-char="{{doctor.last_name.0}}" id="surname-{{doctor.last_name.0}}">
+<h3>{{doctor.last_name.0 }}</h3>
+</div>
+
+{% endifchanged%}
+
+<div class="row">
+    <div class="col-md-6">
+        <a href="{{ doctor.get_absolute_url }}">
+            {{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}
+        </a>
+    </div>
+    <div class="col-md-6">
+        <div class="service-name">{{ doctor.title_service.name }}</div>
+    </div>
+</div>

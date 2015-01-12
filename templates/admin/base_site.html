@@ -1,0 +1,24 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block extrahead %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="{{ STATIC_URL }}css/select2.css" rel="stylesheet"/>
+    <script src="{{ STATIC_URL }}js/select2.min.js"></script>
+    <script src="{{ STATIC_URL }}js/admin_general.js"></script>
+    <style>
+        .vTextField { width: 400px;}
+    </style>
+{% endblock extrahead %}
+
+{% block title %}{{ title }} | {% trans 'Summit Medical Group Website Administration' %}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'Summit Medical Group Website Administration' %}</h1>
+<em>Live Site: All data created and edited here is for the live site</em>
+{% endblock %}
+
+{% block nav-global %}
+<div style="text-align:center"><h3><a href="https://admin.summitmedicalgroup.com/blog/admin/">Site blogs</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.plasticsurgerysmg.com/wp-login.php">Plastic Surgery Site</a></h3></div>
+<div style="text-align:right; margin-right:45px; float:right;"><h3><a href="/admin/cms/">Content Management Approval Page</a></h3></div>
+{% endblock %}

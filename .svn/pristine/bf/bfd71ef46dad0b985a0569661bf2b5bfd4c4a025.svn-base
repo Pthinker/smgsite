@@ -1,0 +1,182 @@
+{% extends "page_base.html" %}
+{% load helpers %}
+
+{% block head_extra %}
+<meta property="twitter:account_id" content="29256961" />
+<script src="{{ MEDIA_URL }}js/jquery.bxSlider.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#slider1').bxSlider({
+		auto: true,
+		pager: true,
+		controls: false,
+		mode:'fade',
+		speed: 2000,
+		pause: 7000
+	}); 
+	$('#event-tabs').tabs();
+  });
+</script>
+{% endblock head_extra %}
+
+{% block body %}
+{% include 'helpers/_menu_home.html' %}
+
+<div id="mainind">
+    <div class="slidestop"></div>
+		<div class="slides">
+			{% display_front_slider %}	     
+            <div class="video">
+            	<div class="videoinner">{% video_template 'Homepage' %}</div>
+            </div>
+  
+        <div class="clear"></div>
+        </div>
+        
+    </div>
+    <div class="slidesbottom"></div>
+
+	<div class="clear"></div>
+
+	<div class="maininner table">
+    
+    	<table border="0" cellpadding="0" cellspacing="0" width="966">
+        <tr valign="top">
+        <td>
+
+		<div class="summit">  	
+    		<h1>Summit Medical <span>GROUP NEWS</span></h1>
+			{% headlines 'smg' 5 %}
+            <a class="arrowlink" href="/articles/">All articles</a>
+	    </div>
+        
+        </td>
+        
+        <td style="border-right: 1px solid #D2D2D2;">		
+        {% featured %}       
+        <div class="connected" style="border-right:0;">       	
+            <h1>Stay<span>connected</span></h1>
+			<div class="follow">Follow us:</div>
+            <div class="large_social">
+	            <a class="yt" href="http://www.youtube.com/user/SMGNJ" onClick="recordOutboundLink(this, 'Outbound Links', 'YouTube');return false;"></a>
+				<a class="fb" href="http://www.facebook.com/summitmedicalnj" onClick="recordOutboundLink(this, 'Outbound Links', 'Facebook);return false;"></a>
+				<a class="tw" href="http://twitter.com/#!/SummitMedicalNJ" onClick="recordOutboundLink(this, 'Outbound Links', 'Twitter');return false;"></a>
+				<a class="g" href="https://plus.google.com/106587659066325037884" rel="publisher" onClick="recordOutboundLink(this, 'Outbound Links', 'Google Plus');return false;"></a>
+				<a class="p" href="http://pinterest.com/source/summitmedicalgroup.com/" onClick="recordOutboundLink(this, 'Outbound Links', 'LinkedIn');return false;"></a>
+            
+			</div>       
+            <div class="clear"></div>          
+            <div class="connectedin">
+            	<div class="img"><a href="http://www.regardinghealth.com/signup/SMGsignup.asp?76517F14-BA8B-4298-BC88-4C33B79AFA57" onClick="recordOutboundLink(this, 'Outbound Links', 'Thrive');return false;"><img src="{{ MEDIA_URL }}images/logos/thrive.png" width="132" height="48" /></a></div>
+                <div class="text">Sign up now for our latest health information and other updates.</div>
+                <a class="arrowlink" href="http://www.regardinghealth.com/signup/SMGsignup.asp?76517F14-BA8B-4298-BC88-4C33B79AFA57" onClick="recordOutboundLink(this, 'Outbound Links', 'Thrive');return false;">Sign up</a>
+                <div class="clear"></div>
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="connectedin">
+            	<div class="img"><a href="/healthyconnections"><img src="{{ MEDIA_URL }}images/logos/healthy.png" width="132" height="48"/></a></div>
+                <div class="text">See recent issues of our informative newsletter.</div>
+                <a class="arrowlink" href="/healthyconnections">View</a>
+                <div class="clear"></div>
+            </div>
+			
+			<div class="connectedin">
+            	<div class="img"><a href="/blog/living-well/"><img src="{{ MEDIA_URL }}images/logos/living-well-logo.png" width="132" height="48"/></a></div>
+                <div class="text">Our blog posts can help you stay healthy!</div>
+                <a class="arrowlink" href="/blog/Living-Well/">View</a>
+                <div class="clear"></div>
+            </div>
+			
+        </div>
+        
+        </td>
+        
+        <td style="border-left:1px solid #FFF;">
+            <div class="mainlinks">
+				<ul>
+                    <li style="min-height: 30px; padding-left: 45px; background-image: url({{ MEDIA_URL }}images/player_button_30h_3.png); background-repeat: no-repeat; background-position: left center; background-size: 39px 30px;">
+                        <a style="line-height: 30px;" href="/about/Radio-SMG/">SMG Radio</a>
+                    </li>
+					<li class="double"><a href="http://www.summitmedicalgroupwelcome.com" onClick="recordOutboundLink(this, 'Outbound Links', 'Interactive Brochure');return false;">
+					Get your personalized guide to our services!</a></li>
+{#					<li><a href="http://www.paramountmedicalgroup.com/" onClick="recordOutboundLink(this, 'Outbound Links', 'paramountmedicalgroup.com');return false;">Former Paramount Patients</a></li>#}
+				</ul>
+			</div>
+        
+        <div class="mainother nutrition">
+            <h1><span>nutrition</span></h1> 
+            <div class="img"><img src="{{ MEDIA_URL }}images/pics/strawberry.png" width="82" height="115" /></div> 
+			{% latest_feature 'Nutrition' %}
+        </div>
+        
+        <div class="mainother recipes">    	
+            <h1><span>Recipes</span></h1>    
+            <div class="img"><img src="{{ MEDIA_URL }}images/pics/recipes.png" width="82" height="107" /></div>
+            {% featured_recipe 'featured' %}
+        </div>
+        
+        <div class="mainother fitness">	
+            <h1><span>fitness</span></h1>
+            <div class="img"><img src="{{ MEDIA_URL }}images/pics/fitness.png" width="82" height="107" /></div>
+			{% latest_feature 'Fitness' %}
+        </div>
+        
+        </td>
+        </tr>
+        </table>
+        
+    
+    </div><!--maininner-->
+    
+    <div class="spacermain sp1" style="border-bottom:0"></div>
+    <div class="spacermain sp2" style="border-top:0"></div>
+    
+    <div class="maininner">
+    
+    	<div class="healthday">  	
+    		<h1>News From<span>Healthday</span></h1>
+			{% headlines 'healthday' 5 %}
+            <a class="arrowlink" href="/healthday/">All articles</a>   
+	    </div>
+        
+        <div class="events">
+        	
+            <h1>Our<span>Events</span></h1>
+            {% event_banner %}
+            {% get_event_months as months %}
+			<div id="event-tabs">
+				<div class="navevents">			
+					<ul>	
+					{% for month in months %}
+					<li><a href="#events-{{ month }}">{% get_month month %}</a></li>
+					{% endfor %}
+					</ul>
+					<div class="clear"></div>
+				</div>				
+					<div class="eventsinner">           
+						<h2>REGULAR CLASSES</h2>
+						{% classes 5 %}                       
+						<a class="arrowlink" href="/classes/">See all classes</a>            
+					</div>  
+				{% for month in months %}
+					<div id="events-{{ month }}" class="eventsinner" style="border:0; padding:0; margin-left:20px;">           
+						<h2 style="margin-bottom:20px;">Events and lectures</h2>		
+						{% events_by_month 5 month %}
+						<a class="arrowlink" href="/events/">See all events</a>           
+					</div>				
+				{% endfor %}
+			</div>
+        </div>
+        
+        <!--<div class="infocall">
+        	For more information, please call<br /><b>908-277-8936</b>.
+        </div>-->
+    
+    </div><!--maininner-->
+    
+	<div class="clear"></div>
+
+</div><!--main-->
+{% endblock body %}

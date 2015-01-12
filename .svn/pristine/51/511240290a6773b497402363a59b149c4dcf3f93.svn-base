@@ -1,0 +1,636 @@
+a {
+	text-decoration: none;
+}
+
+.home_header {
+	z-index: 1;
+	height: 220px;
+	overflow: hidden;
+	background: #fff url({{ MEDIA_URL }}/images/header-bg.jpg) top repeat-x;
+	border-bottom: 1px solid #cfdef0;
+	position: relative;
+}
+
+.home_header_img {
+	background: url({{ MEDIA_URL }}/images/421x226_doctors_home.jpg) right 56px no-repeat;
+	height: 226px;
+	overflow: hidden;
+	padding: 36px 0 0 35px;
+}
+
+.home_header .text {
+	width: 465px;
+}
+
+.home_header h1 {
+	color: #004c75;
+	font: 2.4em/1.2em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.home_header p {
+	font-size: 1.1em;
+	line-height: 1.2em;
+	padding: 9px 0 0 0;
+}
+
+.home_header .links {
+	height: 39px;
+	overflow: hidden;
+	padding: 18px 0 0 2px;
+}
+
+.home_header .links a {
+	display: block;
+	height: 39px;
+	float: left;
+}
+
+.home_header .links a.find_out_more {
+	background: url({{ MEDIA_URL }}/images/135x39_find_out_more.gif) no-repeat;
+	width: 135px;
+	margin-right: 18px;
+}
+
+.home_header .links a.sign_up_now {
+	background: url({{ MEDIA_URL }}/images/127x39_sign_up_now.gif) no-repeat;
+	width: 127px;
+}
+
+.home_header .date {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	text-align: right;
+	color: #656769;
+	font-size: 0.8em;
+	padding: 3px 9px 0 0;
+}
+
+.home_header .controls {
+	z-index: 9999;
+	position: absolute;
+	left: 5px;
+	top: 200px;
+}
+
+.home_header .controls a {
+	float: left;
+	display: block;
+	width: 25px;
+	margin: 0 0 0 5px;
+}
+
+.home_header .controls a img {
+	width: 25px;
+	height: 16px;
+}
+
+#main_blocks { 
+	
+	overflow: hidden;
+	margin: 0;
+	padding: 0 7px 0 9px;
+}
+
+#main_blocks .block {
+	float: left;
+	padding: 0; 
+	border: none; 
+	width: 338px; 
+	margin: 5px 5px 0 0;
+	min-height: 260px;
+	height: 260px;
+}
+
+#main_blocks .extra-block {
+	float: left;
+	padding: 0; 
+	border: none; 
+	width: 338px; 
+	margin: 5px 5px 0 0;	
+}
+
+#main_blocks .extra-block ul.arrows li a {
+	color: #0047A8;
+}
+#main_blocks .extra-block ul.arrows li.first a {
+	color: #6E777C;
+}
+
+#main_blocks .last {
+	float: right;
+	width: 258px;
+	margin: 5px 0 0 0;
+	height: auto;
+	overflow: hidden;
+}
+
+#main_blocks .title {
+	height: 24px;
+	padding: 8px 0 0 8px;
+	color: #004c75;
+	font-size: 1.2em;
+	background: url({{ MEDIA_URL }}/images/300x32_main_title_home.gif) no-repeat;
+}
+
+#main_blocks .first .title {
+	background-image: url({{ MEDIA_URL }}/images/300x32_main_title_first_hom.gif);
+}
+
+#main_blocks .wrap { 
+	padding: 15px 0 0 9px;
+}
+
+#main_blocks .last .wrap_last {
+	padding: 0;
+}
+
+#main_blocks .col_115_left {
+	width: 115px;
+	float: left;
+}
+
+#main_blocks .col_170_right {
+	width: 170px;
+	float: right;
+}
+
+#main_blocks .col_97_left {
+	width: 97px;
+	float: left;
+}
+
+#main_blocks .col_97_left_empty {
+	width: 97px;
+	float: left;
+}
+
+#main_blocks .col_190_right {
+	width: 190px;
+	float: right;
+}
+
+#main_blocks .events-list {
+	padding: 2px 0 0 0;
+}
+
+#main_blocks .event {
+	display: block;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	width: 480px;
+}
+
+#main_blocks .event .event_image {
+	width: 70px;
+	float: left;
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+
+#main_blocks .event .event_brief {
+	width: 470px;
+	margin-bottom: 6px;
+}
+
+#main_blocks .event .event_brief p.when_event_brief {
+	color: #6E8B3D;
+	font-style: italic;
+	font-weight: bold;
+	padding: 0;
+	font-size: 12px;
+	line-height: 1.1em;
+	margin: 0 0 4px 0;
+}
+
+#main_blocks .event .event_brief a {
+	display: block;
+	color: #595959;
+	font-size: 12px;
+	text-decoration: none;
+	line-height: 1.1em;
+}
+
+#main_blocks .event .event_brief a:hover {
+	color: #0047A8;
+}
+
+#main_blocks .event .event_brief a strong {
+	
+}
+
+#main_blocks .read_all {
+	padding: 0 27px 0 0;
+	text-align: right;
+}
+
+#main_blocks .first .read_all {
+	padding: 20px 27px 0 0;
+}
+
+#main_blocks .wrap_all {
+	overflow: hidden;
+	padding: 5px 0 0 9px;
+	height: 20px;
+}
+
+#main_blocks .subscribe {
+	padding: 0 0 0 8px;
+}
+
+#main_blocks .subscribe a {
+	padding-left: 20px;
+	background: url({{ MEDIA_URL }}/images/14x14_rss.gif) left top no-repeat;
+}
+
+.achivements {
+	clear: both;
+	margin-top: 5px;
+	padding-top: 5px;
+	padding: 0 0 0 12px;
+	border-top: 1px dotted #999;
+}
+
+.achivements table {
+	width: 100%;
+}
+
+.achivements table td {
+	text-align: center;
+}
+
+.achivements h2 {
+	color: #004c75;
+	font: 1.5em/ 1.2em Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* SMG Leader */
+.smg-slider {
+	height: 220px;
+	width: 695px;
+}
+ul.smg-slider-slides {
+	height: 220px;
+	padding: 0;
+	margin: 0;
+}
+ul.smg-slider-slides li {
+	list-style: none;
+	height: 220px;	
+	width: 695px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+ul.smg-slider-thumbs {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	left: 15px;
+	bottom: 10px;
+	height: 30px;
+}
+ul.smg-slider-thumbs li {
+	list-style: none;
+	padding: 6px 0 4px 0;
+	height: 20px !important;
+	height: 30px;
+	width: 26px;
+	float: left;
+	text-align: center;
+}
+ul.smg-slider-thumbs li img {
+	border: 1px solid #003366;	
+}
+ul.smg-slider-thumbs li.active {
+	background: url({{ MEDIA_URL }}/images/active-border.png) no-repeat;
+}
+ul.smg-slider-thumbs li.active img {
+	border: 1px solid #fff;	
+}
+/*.smg_leader {
+	height: 220px;
+	overflow: hidden;	
+	width: 695px;
+}*/
+.smg_message {
+	float: right;
+	width: 265px;
+	height: 220px;
+	background: url({{ MEDIA_URL }}/images/smg-message-bg.jpg) repeat-x;
+	position: absolute;
+	left: 696px;
+}
+.smg_message iframe {
+	z-index: 10;
+}
+.smg_message span.over {
+	z-index: 9999;
+	display: block;
+	position: absolute;
+	left: 10px;
+	bottom: 5px;
+	_bottom: 15px;
+}
+.smg_message span.over a {
+	color: #fff;
+}
+.smg_message_outer {
+	padding: 10px;
+}
+.smg_message b {
+	color: #fff;
+	display: block;
+	margin: 0 0 1em 0;
+	font-size: 14px;
+}
+.smg_message .smg_message_outer a {
+	text-decoration: none;
+	display: block;
+	text-align: right;
+	margin: 1em 0 0 0;
+}
+.smg_message .smg_message_outer div a {
+	text-deoration: underline;
+	color: #003366;
+	font-size: 11px;
+	display: block;
+	margin: .5em 0 0 0;
+	text-align: left;
+}
+.smg_message div p {
+	margin: 0;
+	padding: 0;
+	color: #2f332f;
+	font-size: 13px;
+}
+
+/*
+.smg_leader_content {
+	width: 960px;
+}
+
+.smg_leader_img {
+	float: right;
+	width: 453px;
+}
+*/
+.signup_buttons {
+	height: 40px;
+}
+
+.smg_leader_text p {
+	font-family: Arial;
+	font-size: 13px;
+	padding: 0;
+	color: #212325;
+}
+
+.smg_leader_headline {
+	display: none;
+}
+
+.smg_leader_headline h2 {
+	margin-right: 200px;
+	margin-left: 30px;
+	font-family: Verdana;
+	font-size: 26px;
+	font-weight: normal;
+	color: #004c75; 
+	*padding-top: 20px;
+}
+
+.smg_leader_text a {
+	font-family: Arial;
+	font-size: 13px;
+	color: #0047a8;
+}
+
+.smg_leader_buttons {
+	height: 39px;
+	overflow: hidden;
+	padding: 18px 0 0 2px;
+}
+
+.smg_leader_buttons a {
+	display: block;
+	height: 39px;
+	float: left;
+}
+
+.smg_leader_buttons a.find_out_more {
+	background: url({{ MEDIA_URL }}/images/135x39_find_out_more.gif) no-repeat;
+	width: 135px;
+	margin-right: 18px;
+}
+
+.smg_leader_buttons a.sign_up_now {
+	background: url({{ MEDIA_URL }}/images/127x39_sign_up_now.gif) no-repeat;
+	width: 127px;
+}
+
+#container-parent {
+	margin: 10px 0 0 0 !important; 
+	*margin: 0;
+	position: relative;
+	width: 100%;
+}
+
+#container-absolute {
+	position: absolute;
+	top: -20px !important;
+	top: -30px;
+	left: 0;
+	width: 945px;
+}
+
+.clear {
+	clear: both;
+	font-size: 0;
+	height: 0;
+}
+
+.ess-1 {
+	float: left;
+	width: 32%;
+}
+
+.ess-1-1 {
+	float: left;
+	padding: 0 0 0 10px;
+}
+
+.ess-1-2 {
+	float: right;
+}
+
+.ess-2 {
+	float: left;
+	width: 34%;
+}
+
+.ess-2 div {
+	padding: 0 0 0 30px;
+}
+
+.ess-3 {
+	float: left;
+	width: 34%;
+	text-align: right;
+}
+
+ul.arrows li {
+	background: none;
+}
+ul.arrows li a {
+	color: #6e777c;
+	font-size: 13px;
+	line-height: 1.1em;
+}
+#main_blocks .col_170_right {
+	width: 200px;
+}
+#practicioner-container {
+	padding: 0; 
+	border: none; 
+	width: 258px; 
+	margin: 5px 0 0 0;
+}
+#practicioner ul {
+	background: #8192a6;
+	padding: 3px 0;
+	margin: 10px 0 0 0;
+}
+#practicioner ul li {
+	display: block;
+	list-style: none;
+	margin: 5px 0;
+	padding: 0;
+	height: 28px;
+	background: url({{ MEDIA_URL }}images/practicioner-block-bg.png) left center no-repeat;
+}
+#practicioner ul li a {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	line-height: 28px;
+}
+
+#practicioner ul li.purple {
+	display: block;
+	list-style: none;
+	margin: -5px 0;
+	padding: 7px 0 6px 0;
+	height: 28px;
+	background: url({{ MEDIA_URL }}images/practicioner-block-purple-bg.png) left center no-repeat;
+}
+
+.event-box {
+	float: right; 
+	width: 480px;
+}
+.light-blue {
+	color: #0270DE;
+}
+#footer-bar {
+height: 24px;
+position: relative;
+}
+#footer-bar div {
+	position: absolute;
+	top: 4px;
+	left: 0;
+	background: #a7d061; 
+	height: 24px; 
+width: 960px;
+	margin: 0 7px;
+}
+.our_doctor {
+	background: #d7dbe0; 
+	padding: 8px;
+	_padding: 8px 8px 0 8px;
+	height: 132px !important;
+	height: 148px;
+}
+.our_doctor_frame {
+	float: left;
+}
+.our_doctor_frame img {
+	border: 1px solid #b8b8b8;
+	padding: 3px;
+	background: #fff;
+}
+
+.doctor_info {
+	margin: 0 0 0 60px;
+}
+.doctor_info h2 {
+	font-size: 12px;
+	margin: 0;
+}
+.doctor_info h2 a {
+	font-size: 12px;
+	font-weight: bold;
+	color: #003698;
+	text-decoration: none; 
+}
+.doctor_info div {
+	color: #003698;
+	font-size: 12px;
+	font-weight: bold;
+	margin: .5em 0;
+}
+
+#wide-box {
+	float: left; 
+	width: 686px;
+}
+.sections-box .shadowed_img {
+	float: right;
+	margin: 6px 2px 0 0;
+}
+.sections-box h3 {
+	margin: 6px 0 6px 6px;
+	color: #7e527e;
+	font: bold 13px/1em Arial;
+}
+.sections-box ul li, .sections-box ul li.first {
+	padding-left: 15px;
+}
+.relative {
+	position: relative;
+}
+.fleft {
+	float: left;
+}
+.fright {
+	float: right;
+}
+.wrap_all {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.width-337 {
+	width: 320px;
+}
+.events-link {
+	color: #0047A8;
+	text-decoration: none;
+	float: right;
+	width: 480px;
+}
+#fitness-box, #nutrition-box {
+	position: relative;
+}
+.col_170_right ul.arrows li,
+.col_190_right ul.arrows li {
+	background: url({{ MEDIA_URL }}images/disc-bg.gif) 0 5px no-repeat;
+}

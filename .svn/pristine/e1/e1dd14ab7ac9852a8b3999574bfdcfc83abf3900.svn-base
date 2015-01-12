@@ -1,0 +1,22 @@
+{% extends "admin/base_site.html" %}
+{% load adminmedia admin_list i18n %}
+{% block bodyclass %}change-list{% endblock %}
+{% block coltype %}flex{% endblock %}
+{% block pretitle %}
+{% endblock %}
+{% block content %}
+<div id="content-main">
+	<form method="GET" action="/doctor-survey">
+		<p>To better inform patients and market your specialty, we would like to list your expertise and the conditions you treat on your Summit Medical Group profile under the heading, Expertise Includes.</p>
+		<p>Please select your name from the list below and add your areas of expertise. After we receive your list, we will update your profile and send you a link when the changes are live.</p>
+		<select name="doctor">
+		{% for doctor in doctors %}
+			<option value="{{ doctor.id }}">{{ doctor.list_name }}</option>
+		{% endfor %}
+		</select>
+		<br />
+		<input type="submit" value="Proceed to next step..." />
+	</form>
+</div>
+{% endblock %}
+

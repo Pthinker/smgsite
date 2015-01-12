@@ -1,0 +1,127 @@
+{% extends "mysmg/base.html" %}
+{% load helpers %}
+
+{% block body_tag %}<body class="blue_theme">{% endblock body_tag %}
+
+{% block content %}
+<script type="text/javascript">
+	function moveto(obj1, chars, obj2){
+	        if(obj1.value.length == chars) {
+	                obj2.focus();
+	                obj2.select();
+	        }
+	}
+</script>
+<!-- start of main box -->
+<div id="main_box">
+	<!-- start of left main column -->
+	<div id="left_207_main_box">
+		<div class="infobox blue_infobox">
+			<div class="bottom_infobox">
+				<div class="top_infobox">
+					{% banner %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of left main column -->
+	
+	<!-- start of right main column -->
+	<div id="right_710_main_box">
+		<div class="create_account">
+			<h1>Personalize your profile.</h1>												
+			
+			<form method="POST" action="" class="form_create_account go_form_my">
+			
+			<!--Note: All relevant fields below to be pre-populated with authenticated user's existing profile data.-->
+			
+				<fieldset>								
+					<p>Confirm your account information</p>
+					<div>
+						<label>*Current Email Address: </label>									
+						{{ form.current_username }}
+						{% if form.current_username.errors %}<b><img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" alt="Error" /> Error: This is not a valid e-mail address</b>{% endif %}
+						
+						<div class="clear"></div>
+						
+						<label>* Current Password:</label>
+						{{ form.current_password }}
+						
+						<div class="clear"></div>
+						
+						{% if form.current_password.errors %}<p><img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" align="left" alt="Error" /> Your email-address and password do not match any profiles in our system. Please try again.</p>{% endif %}
+						<div>If you have forgotten your password, you can <a href="/mysummitmedicalgroup/forgot/">request us to send it to you by e-mail</a>.</div>
+					</div>
+				</fieldset>						
+				
+				<fieldset>						
+					<p>Change passwords</p>
+					<div>
+						<label>* New Password:</label>
+						{{ form.password }}
+						<span class="floated"><b>{% if form.password.errors %}<img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" align="left" alt="Error" />{% endif %} Choose a password between 6 and 20 characters.<br /> 
+							Spaces are not allowed.</b></span>
+					</div>
+					<div>
+						<label>* Confirm Password:</label>
+						{{ form.password2 }}
+						{% if form.password2.errors %}<b><img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" align="left" alt="Error" /> Error: Your passwords do not match</b>{% endif %}
+					</div>
+					<div class="buttons">
+						<input type="submit" value="Change" />
+					</div>
+				</fieldset>
+				
+				<fieldset>								
+					<p>Personal Information</p>
+					<span class="box">Personal information is optional. It will only be used to improve your experience on the site and to conﬁrm your identity if you forget the e-mail address you are using to register.</span>
+					<div>
+						<label>First Name:</label>
+						{{ form.first_name }}									
+					</div>
+					<div>
+						<label>Middle Name:</label>
+						{{ form.middle_name }}
+					</div>
+					<div>
+						<label>Last Name:</label>
+						{{ form.last_name }}
+					</div>								
+					<div>
+						<label>Zip Code:</label>
+						{{ form.zipcode }}
+						<span class="floated"><b>{% if form.zipcode.errors %}<img img src="{{ MEDIA_URL }}/images/16x12_x_icon.gif" align="left" alt="Error" />{% endif %} Please enter your five digit zip code<br /></b></span>
+					</div>
+				
+					<br />
+
+					<p>Security Question</p>
+					<div>
+						<label>Choose a question:</label>
+						<div class="relative-40" style="padding: 0">
+							<div class="absolute-8" style="padding: 0; top: 0;">&nbsp;
+								{{ form.security_question }}
+							</div>
+						</div>
+					</div>
+					
+					<label>Answer:</label>
+					{{ form.security_answer }}
+				
+					<br />
+				
+					<p>Subscribe to Our Newsletter</p>
+					<span class="box">You can also sign up for our Thrive e-mail newsletter with the e-mail address you provided. Choose below to subscribe automatically.</span>
+					{{ form.contact }}								
+					<div class="buttons" style="clear: both;">
+						<input type="submit" value="Change" />
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<!-- end of right main column -->
+<div class="clear"></div>
+</div>
+<!-- end of main box -->
+{% endblock content %}

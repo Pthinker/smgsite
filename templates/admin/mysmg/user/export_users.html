@@ -1,0 +1,3 @@
+"First Name","Middle Name", "Last Name","Phone", "Zip","Username","Contact"
+{% for user in users %}"{{ user.first_name }}","{{ user.middle_name }}","{{ user.last_name }}","{{ user.phone }}",="{{ user.zipcode }}","{{ user.username }}",="{{ user.contact }}"
+{% endfor %}

@@ -1,0 +1,3 @@
+"First Name","Last Name","Age","City","State","Zip","Guests","E-Mail","Home Phone","Alt. Phone","Signup date","Referral","Send Group Emails","Status","Entered by"
+{% for registration in registrations %}"{{ registration.first_name }}","{{ registration.last_name }}","{{ registration.age }}","{{ registration.city }}","{{ registration.state }}",="{{ registration.zipcode }}",="{{ registration.guests }}","{{ registration.email }}",="{{ registration.main_phone }}",="{{ registration.alt_phone }}","{{ registration.signup_date }}","{{ registration.referrer.name }}","{{ registration.get_sendmail_display }}","{{ registration.get_status_display }}","{{ registration.get_entered_by_display }}"
+{% endfor %}

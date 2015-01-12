@@ -1,0 +1,7 @@
+.col-md-3, .col-md-9 {
+    width: 80% !important;
+}
+
+#mobile-nav {
+    display: none !important;
+}

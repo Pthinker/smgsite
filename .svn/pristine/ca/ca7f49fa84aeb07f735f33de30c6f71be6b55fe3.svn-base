@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Pre-visit Form</title>
+</head>
+<body>
+<form>
+<table cellspacing=0 cellpadding=0 border=1 width="700">
+	<tr>
+		<td  valign=bottom class="previsit" align="center">PRE-VISIT FORM</td>
+
+	</tr>
+	<tr>
+		<td valign=bottom class="body" align="center">Complete this form and bring it with you to your first doctor's visit.</td>
+	</tr>
+
+	<tr>
+		<td valign=bottom align="center"><hr></td>
+	</tr>
+	<tr>
+
+		<td valign=bottom width="700">
+			<table cellspacing=0 cellpadding=10 border=1 width="700">
+				<tr>
+					<td valign=bottom colspan="3" class="previsit-sub">Patient Information</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom align="right" width=20% class="body"> Patient Name: </td>
+
+					<td valign=bottom colspan="2"> <input type="text" name="patientName" size="50" maxlength="50"> </td>
+				</tr>
+				<tr>
+					<td width=20% align="right" class="body"> Today's Date: </td>
+
+					<td colspan="2"> <input type="text" name="date" size="10" maxlength="18"> </td>
+
+				</tr>
+				<tr>
+					<td valign=bottom align="right" width=20% align="right" class="body"> Referring Physician: </td>
+					<td valign=bottom colspan="2"> <input type="text" name="referPhysican" size="50" maxlength="50"> </td>
+				</tr>
+
+				<tr>
+
+					<td valign=bottom align="right" width=20% class="body"> Family Physician:</td>
+					<td valign=bottom colspan="2"> <input type="text" name="familyPhysican" size="50" maxlength="50"> </td>
+				</tr>
+				<tr>
+					<td valign=bottom align="right" width=20% class="body"> Date of Birth: </td>
+
+					<td valign=bottom> <input type="text" name="birthDate" size="10" maxlength="18"> </td>
+					<td valign=bottom class="body"> Age: <input type="text" name="age" size="4" maxlength="3"></td>
+					
+				</tr>
+				<tr>
+					<td valign=bottom align="right" width=20% class="body"> Height: </td>
+					<td valign=bottom> <input type="text" name="feet" size="2" maxlength="2"> ft   <input type="text" name="inches" size="3" maxlength="3"> in </td>
+
+					<td valign=bottom class="body"> Weight: <input type="text" name="weight" size="4" maxlength="4"></td>
+					
+				</tr>
+				<tr>
+					<td valign=bottom  width=20% align="right" class="body"> Gender: </td>
+					<td valign=bottom colspan="2"> <input type="radio" name="gender" value=""> female<input type="radio" name="gender" value=""> male</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom align="right" class="body"> Marital Status: </td>
+					<td valign=bottom colspan="2"> <input type="radio" name="mm" value=""> single  <input type="radio" name="mm" value=""> married  <input type="radio" name="mm" value=""> widowed  <input type="radio" name="mm" value=""> divorced </td>
+
+				</tr>
+				<tr>
+					<td valign=bottom align="right" class="body"> Number of Children: </td>
+					<td valign=bottom colspan="2"> <input type="text" name="childern" size="5" maxlength="2"> </td>
+				</tr>
+				<tr>
+
+					<td valign=bottom colspan="3" class="body"><img src="images/clear.gif" height="25" border="0"></td>
+
+				</tr>
+			
+				<tr>
+					<td valign=bottom colspan="3" class="previsit-sub">Personal Health History</td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="3" class="previsit-bold">What is the reason for this visit?</td>
+
+				</tr>
+				<tr>
+
+					<td valign=bottom colspan="3" class="body"><textarea cols="50" rows="5" name="visitReason"></textarea></td>
+				</tr>
+				<tr>
+					<td valign=bottom align="right" class="previsit-bold"> Have you ever had a heart problem? </td>
+					<td valign=bottom class="body"> <input type="checkbox" name="yes" value=""> Yes  <input type="checkbox" name="no" value=""> No  </td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="3" class="body">If yes, please explain:</td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="2" class="body"><textarea cols="50" rows="5" name="visitReason"></textarea></td>
+				</tr>
+
+				<tr>
+
+					<td valign=bottom colspan="2" class="previsit-bold">Do you have or have you ever had any of the following?</td>
+				</tr>
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Rheumatic fever</td>
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+				</tr>
+
+				<tr>
+
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Heart murmur</td>
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+				</tr>
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Heart attack</td>
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+
+				</tr>
+
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Chest pain/pressure</td>
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+				</tr>
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Heart failure</td>
+
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+
+				</tr>
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Rapid heart beat or irregular pulse</td>
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+				</tr>
+				<tr>
+
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Light-headedness</td>
+
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+				</tr>
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Dizziness</td>
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+
+				</tr>
+				<tr>
+
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Fainting</td>
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+				</tr>
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Swelling of the ankles</td>
+
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+				</tr>
+
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Pain in calf muscles when walking</td>
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+				</tr>
+				<tr>
+
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Congestive heart failure</td>
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+
+				</tr>
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value="">Shortness of breath</td>
+					<td valign=bottom class="body">Date: <input type="text" name="date" size="10" maxlength="18"></td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="3"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+				</tr>
+
+			</table>
+			
+			<table cellspacing=0 cellpadding=0 border=0 width="700">
+				<tr>
+					<td valign=bottom colspan="3" class="previsit-bold">Have you ever had any of the following heart studies?</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="ekg" value=""> EKG</td>
+
+					<td valign=bottom class="body"><input type="checkbox" name="echocardiogram" value=""> Echocardiogram</td>
+					<td valign=bottom class="body"><input type="checkbox" name="24hour" value=""> 24 Hour monitor</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom class="body"><input type="checkbox" name="cardiaccath" value=""> Cardiac Catheterization</td>
+					<td valign=bottom class="body"><input type="checkbox" name="treadmill" value=""> Treadmill</td>
+
+					<td valign=bottom class="body"><input type="checkbox" name="xray" value=""> Chest x-ray</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="3" class="body">Other: <input type="text" name="otherStudies" size="50" maxlength="100"></td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="3"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+
+				</tr>
+				<tr>
+
+					<td valign=bottom colspan="4" class="previsit-bold">Have you ever had a reaction to the dye used in certain cardiac x-rays?</td>
+				</tr>
+				<tr>
+					<td valign=bottom></td>
+					<td valign=bottom colspan="3" class="body"> <input type="checkbox" name="yes" value=""> Yes  <input type="checkbox" name="no" value=""> No  <input type="checkbox" name="never" value=""> I have never had this type of x-ray</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="3"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="2" class="previsit-bold">Do you have any allergies to medication?</td>
+					<td valign=bottom class="body"> <input type="checkbox" name="yes" value=""> Yes  <input type="checkbox" name="no" value=""> No</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="3" class="body">If yes, which medications:</td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="3"><textarea cols="50" rows="5" name="allergy"></textarea></td>
+				</tr>
+
+				<tr>
+
+					<td valign=bottom colspan="3"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+				</tr>
+			</table>
+			
+			<table cellspacing=0 cellpadding=0 border=0 width="700">
+				<tr>
+					<td valign=bottom class="previsit-bold">Do you currently smoke?</td>
+					<td valign=bottom><input type="checkbox" name="yes" value=""> Yes<input type="checkbox" name="no" value=""> No</td>
+
+					<td valign=bottom class="body">Pack per day:</td>
+					<td valign=bottom> <input type="text" name="packs" size="10" maxlength="18"></td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="2"></td>
+					<td valign=bottom class="body">Number of years:</td>
+					<td valign=bottom> <input type="text" name="years" size="10" maxlength="2"></td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="4"><img src="images/clear.gif" height="10" border="0" alt=""></td>
+				</tr>
+				<tr>
+					<td valign=bottom class="previsit-bold">Have you ever smoked?</td>
+					<td valign=bottom><input type="checkbox" name="yes" value=""> Yes<input type="checkbox" name="no" value=""> No</td>
+
+					<td valign=bottom class="body">Date stoppped:</td>
+					<td valign=bottom> <input type="text" name="stop" size="10" maxlength="18"></td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="4"><img src="images/clear.gif" height="10" border="0" alt=""></td>
+				</tr>
+				<tr>
+
+					<td valign=bottom class="previsit-bold">Do you have elevated cholesterol?</td>
+
+					<td valign=bottom><input type="checkbox" name="yes" value=""> Yes<input type="checkbox" name="no" value=""> No</td>
+					<td valign=bottom class="body">Last checked:</td>
+					<td valign=bottom> <input type="text" name="checked" size="10" maxlength="18"></td>
+				</tr>
+
+				<tr>
+					<td valign=bottom colspan="4"><img src="images/clear.gif" height="10" border="0" alt=""></td>
+
+				</tr>
+				<tr>
+					<td valign=bottom class="previsit-bold"> Do you have high blood pressure?</td>
+					<td valign=bottom><input type="checkbox" name="yes" value=""> Yes<input type="checkbox" name="no" value=""> No</td>
+
+					<td valign=bottom class="body">How many years:</td>
+
+					<td valign=bottom> <input type="text" name="packs" size="10" maxlength="2"></td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="4"><img src="images/clear.gif" height="10" border="0" alt=""></td>
+				</tr>
+				<tr>
+
+					<td valign=bottom class="previsit-bold">Do you drink alcoholic beverages?</td>
+					<td valign=bottom><input type="checkbox" name="yes" value=""> Yes<input type="checkbox" name="no" value=""> No</td>
+
+					<td valign=bottom class="body">How much each day:</td>
+					<td valign=bottom> <input type="text" name="packs" size="10" maxlength="30"></td>
+				</tr>
+
+				<tr>
+					<td valign=bottom colspan="4"><img src="images/clear.gif" height="10" border="0" alt=""></td>
+				</tr>
+				<tr>
+					<td valign=bottom class="previsit-bold">Are you generally stressed?</td>
+
+					<td valign=bottom><input type="checkbox" name="yes" value=""> Yes<input type="checkbox" name="no" value=""> No</td>
+
+					<td valign=bottom colspan="2"></td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="4"><img src="images/clear.gif" height="10" border="0" alt=""></td>
+				</tr>
+				<tr>
+
+					<td valign=bottom class="previsit-bold">Do you drink beverages containing caffeine?</td>
+					<td valign=bottom><input type="checkbox" name="yes" value=""> Yes<input type="checkbox" name="no" value=""> No</td>
+
+					<td valign=bottom class="body">How much:</td>
+					<td valign=bottom> <input type="text" name="cups" size="10" maxlength="30"></td>
+				</tr>
+
+				<tr>
+					<td valign=bottom colspan="4"><img src="images/clear.gif" height="10" border="0" alt=""></td>
+				</tr>
+				<tr>
+
+					<td valign=bottom class="previsit-bold">Do you excerise?</td>
+					<td valign=bottom><input type="checkbox" name="yes" value=""> Yes<input type="checkbox" name="no" value=""> No</td>
+
+					<td valign=bottom colspan="2"></td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="4" class="body">If yes, what is your excerise routine:</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="4"><textarea cols="50" rows="5" name="excerise"></textarea></td>
+				</tr>
+
+				<tr>
+					<td valign=bottom colspan="4"><img src="images/clear.gif" height="10" border="0" alt=""></td>
+				</tr>
+				<tr>
+
+					<td valign=bottom class="previsit-bold">Are you following a special diet?</td>
+					<td valign=bottom><input type="checkbox" name="yes" value=""> Yes<input type="checkbox" name="no" value=""> No</td>
+
+					<td valign=bottom colspan="2"></td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="4" class="body">If yes, please describe:</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="4"><textarea cols="50" rows="5" name="excerise"></textarea></td>
+				</tr>
+
+				<tr>
+					<td valign=bottom colspan="4"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+				</tr>
+			</table>
+
+			
+			<table cellspacing=0 cellpadding=0 border=0 width="700">
+				<tr>
+					<td valign=bottom class="previsit-bold">Occupation: </td>
+					<td valign=bottom><input type="text" name="occupation" size="50" maxlength="100"></td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="2"><img src="images/clear.gif" height="15" border="0" alt=""></td>
+				</tr>
+
+				<tr>
+					<td valign=bottom class="previsit-bold" valign="top">Describe your job tasks: </td>
+					<td valign=bottom><textarea cols="43" rows="5" name="job"></textarea></td>
+				</tr>
+
+				<tr>
+					<td valign=bottom colspan="2"><img src="images/clear.gif" height="15" border="0" alt=""></td>
+				</tr>
+
+				<tr>
+					<td valign=bottom class="previsit-bold">Are you retired? </td>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value=""> Yes  <input type="checkbox" name="no" value=""> No  Date <input type="text" name="date" size="10" maxlength="18"></td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="2"><img src="images/clear.gif" height="15" border="0" alt=""></td>
+
+				</tr>
+				<tr>
+					<td valign=bottom class="previsit-bold">Are you disabled? </td>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value=""> Yes  <input type="checkbox" name="no" value=""> No  Date <input type="text" name="date" size="10" maxlength="18"></td>
+
+				</tr>
+			</table>
+
+			
+			<table cellspacing=0 cellpadding=0 border=0 width="700">
+				<tr>
+					<td valign=bottom class="body" colspan="2">If yes, describe your disability:</td>
+				</tr>
+				<tr>	
+					<td valign=bottom colspan="2"><textarea cols="50" rows="5" name="disabled"></textarea></td>
+
+				</tr>
+				<tr>
+
+					<td valign=bottom colspan="2"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+				</tr>
+			</table>
+			
+			<table cellspacing=10 cellpadding=0 border=0 width="700">
+				<tr>
+					<td valign=bottom class="previsit-bold" colspan="2">Describe any surgeries you have had:</td>
+
+				</tr>
+				<tr>
+
+					<td valign=bottom class="body">Surgery </td>
+					<td valign=bottom class="body">Year </td>
+				</tr>
+				<tr>
+					<td valign=bottom><input type="text" name="surgery" size="50" maxlength="100"></td>
+					<td valign=bottom><input type="text" name="year" size="10" maxlength="4"></td>
+
+				</tr>
+
+				<tr>
+					<td valign=bottom><input type="text" name="surgery" size="50" maxlength="100"></td>
+					<td valign=bottom><input type="text" name="year" size="10" maxlength="4"></td>
+				</tr>
+				<tr>
+					<td valign=bottom><input type="text" name="surgery" size="50" maxlength="100"></td>
+					<td valign=bottom><input type="text" name="year" size="10" maxlength="4"></td>
+				</tr>
+
+				<tr>
+					<td valign=bottom><input type="text" name="surgery" size="50" maxlength="100"></td>
+					<td valign=bottom><input type="text" name="year" size="10" maxlength="4"></td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="2"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+				</tr>
+			</table>
+			
+			<table cellspacing=0 cellpadding=0 border=0 width="700">
+
+				<tr>
+					<td valign=bottom class="previsit-bold" colspan="4">Please check any other health condition you have or have had in the past:</td>
+				</tr>
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Scarlet fever</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+
+					<td valign=bottom class="body"> Menstrual dysfunction</td>
+				</tr>
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Anxiety</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+
+					<td valign=bottom class="body"> Kidney disease</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Emphysema</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+
+					<td valign=bottom class="body"> Breathing problems</td>
+				</tr>
+
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Ulcer</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+
+					<td valign=bottom class="body"> Venereal disease</td>
+				</tr>
+				<tr>
+
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Anemia</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+
+					<td valign=bottom class="body"> Sexual dysfunction</td>
+				</tr>
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+
+					<td valign=bottom class="body"> Arthritis</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+
+					<td valign=bottom class="body"> Asthma</td>
+				</tr>
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Stomach or bowel disorder</td>
+
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+
+					<td valign=bottom class="body"> Allergies/Hay fever</td>
+				</tr>
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Fatigue</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+
+					<td valign=bottom class="body"> Gout</td>
+				</tr>
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Urinary problem</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Thyroid disease</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Rheumatic fever</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Diabetes/high blood sugar</td>
+
+				</tr>
+
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Depression</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Migraine headache</td>
+
+				</tr>
+				<tr>
+
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Constipation</td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Liver disease</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+
+					<td valign=bottom class="body"> Cancer  <input type="text" name="type" size="30" maxlength="30"></td>
+					<td valign=bottom><input type="checkbox" name="select" value=""></td>
+					<td valign=bottom class="body"> Other  <input type="text" name="type" size="30" maxlength="30"></td>
+
+				</tr>
+				<tr>
+					<td valign=bottom colspan="4"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+				</tr>
+
+			</table>
+			
+			<table cellspacing=0 cellpadding=0 border=0 width="700">
+				<tr>
+					<td valign=bottom class="previsit-sub" colspan="5">Family History</td>
+
+				</tr>
+				<tr>
+					<td valign=bottom class="previsit-bold">Do you have a history of heart disease in your family? </td>
+					<td valign=bottom class="body"><input type="checkbox" name="yes" value=""> Yes  <input type="checkbox" name="no" value=""> No</td>
+
+				</tr>
+				<tr>
+
+					<td valign=bottom class="body" colspan="2">If yes, indicate relation and age problems started?</td>
+				</tr>
+				<tr>	
+					<td valign=bottom colspan="2"><textarea cols="50" rows="5" name="disabled"></textarea></td>
+				</tr>
+				<tr>
+
+					<td valign=bottom colspan="2"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+				</tr>
+
+			</table>
+			
+			<table cellspacing=0 cellpadding=0 border=0 width="700">
+				<tr>
+					<td valign=bottom class="previsit-bold">Family Member(s)</td>
+					<td valign=bottom class="previsit-bold" align="center">Alive</td>
+					<td valign=bottom class="previsit-bold" align="center">Deceased</td>
+
+					<td valign=bottom class="previsit-bold" align="center">Current Age or Age at death</td>
+
+					<td valign=bottom class="previsit-bold">Cause of Death</td>
+				</tr>	
+				<tr>
+					<td valign=bottom class="body">Mother </td>
+					<td valign=bottom align="center"><input type="checkbox" name="alive" value=""></td>
+					<td valign=bottom align="center"><input type="checkbox" name="deceased" value=""></td>
+					<td valign=bottom align="center"><input type="text" name="age" size="8" maxlength="3"></td>
+
+					<td valign=bottom><input type="text" name="cause" size="10" maxlength="20"></td>
+
+				</tr>	
+				<tr>
+					<td valign=bottom class="body">Father </td>
+					<td valign=bottom align="center"><input type="checkbox" name="alive" value=""></td>
+					<td valign=bottom align="center"><input type="checkbox" name="deceased" value=""></td>
+					<td valign=bottom align="center"><input type="text" name="age" size="8" maxlength="3"></td>
+					<td valign=bottom><input type="text" name="cause" size="10" maxlength="20"></td>
+				</tr>	
+				<tr>
+
+					<td valign=bottom class="body">Sister(s) </td>
+					<td valign=bottom align="center"><input type="checkbox" name="alive" value=""></td>
+					<td valign=bottom align="center"><input type="checkbox" name="deceased" value=""></td>
+					<td valign=bottom align="center"><input type="text" name="age" size="8" maxlength="3"></td>
+					<td valign=bottom><input type="text" name="cause" size="10" maxlength="20"></td>
+				</tr>	
+				<tr>
+					<td valign=bottom class="body"></td>
+
+					<td valign=bottom align="center"><input type="checkbox" name="alive" value=""></td>
+
+					<td valign=bottom align="center"><input type="checkbox" name="deceased" value=""></td>
+					<td valign=bottom align="center"><input type="text" name="age" size="8" maxlength="3"></td>
+					<td valign=bottom><input type="text" name="cause" size="10" maxlength="20"></td>
+				</tr>	
+				<tr>
+					<td valign=bottom class="body"> </td>
+					<td valign=bottom align="center"><input type="checkbox" name="alive" value=""></td>
+
+					<td valign=bottom align="center"><input type="checkbox" name="deceased" value=""></td>
+					<td valign=bottom align="center"><input type="text" name="age" size="8" maxlength="3"></td>
+
+					<td valign=bottom><input type="text" name="cause" size="10" maxlength="20"></td>
+				</tr>	
+				<tr>
+					<td valign=bottom class="body">Brother(s) </td>
+					<td valign=bottom align="center"><input type="checkbox" name="alive" value=""></td>
+					<td valign=bottom align="center"><input type="checkbox" name="deceased" value=""></td>
+
+					<td valign=bottom align="center"><input type="text" name="age" size="8" maxlength="3"></td>
+					<td valign=bottom><input type="text" name="cause" size="10" maxlength="20"></td>
+				</tr>	
+				<tr>
+
+					<td valign=bottom class="body"> </td>
+					<td valign=bottom align="center"><input type="checkbox" name="alive" value=""></td>
+					<td valign=bottom align="center"><input type="checkbox" name="deceased" value=""></td>
+					<td valign=bottom align="center"><input type="text" name="age" size="8" maxlength="3"></td>
+
+					<td valign=bottom><input type="text" name="cause" size="10" maxlength="20"></td>
+				</tr>	
+				<tr>
+					<td valign=bottom class="body"> </td>
+
+					<td valign=bottom align="center"><input type="checkbox" name="alive" value=""></td>
+					<td valign=bottom align="center"><input type="checkbox" name="deceased" value=""></td>
+					<td valign=bottom align="center"><input type="text" name="age" size="8" maxlength="3"></td>
+					<td valign=bottom><input type="text" name="cause" size="10" maxlength="20"></td>
+
+				</tr>	
+				<tr>
+					<td valign=bottom colspan="5"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+				</tr>
+				<tr>
+
+					<td valign=bottom colspan="5"><img src="images/clear.gif" height="25" border="0" alt=""></td>
+				</tr>
+				<tr>
+					<td valign=bottom colspan="5" align="right"><input onclick="window.print()" type="button" name="Print Pre-Visit Form" value="Print Pre-Visit Form"></td>
+
+				</tr>
+			</table>
+			
+			
+		</td>
+	</tr>
+</table>
+
+</form>
+</body>
+</html>

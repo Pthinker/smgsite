@@ -1,0 +1,28 @@
+<div class="panel panel-default">    
+
+    <div class="panel-heading">
+        <h4 class="panel-title"><a data-toggle="collapse" data-parent="#facets" href="#{{name}}">{{ name }}</a></h4>
+    </div>
+
+    <div id="{{name}}" class="panel-collapse collapse">
+        <div class="panel-body">
+            <ul class="list-unstyled">
+            {% for item in items %}
+                {% with item_count=item.count %}
+                    {% if item.selected %}
+                        <strong>{{ item.name }} ({{ item_count }})</strong>
+                        <small><a href="{{ item.deselect_url }}">Remove</a></small>
+                    {% else %}
+                            {% if item_count %}
+                                <li><a href="{{ item.select_url }}">{{ item.name }}</a> ({{ item_count }})</li>
+                            {% else %}
+                                <li>{{ item.name }} (0)</li>
+                            {% endif %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+            </ul>
+       </div>
+    </div>
+
+</div>

@@ -1,0 +1,28 @@
+{% extends 'one_column_layout.html' %}
+
+{% block head_title %}Summit Medical Group - {{ article.headline }}{% endblock head_title %}
+{% block page_title %}{{ content }}{% endblock %}
+
+{% block breadcrumbs %}
+<ol class="breadcrumb">
+    <li><a href="/features/Nutrition/">Nutrition</a></li>
+    <li class="active">{{ article.headline|safe}}</li>
+
+    {% include 'site/includes/share.html' %}
+</ol>
+{% endblock breadcrumbs %}
+
+{% block content %}
+<div class="article_content">
+    {% include 'articles/includes/feature_post.html' %}
+</div>
+
+{% if feature.related_recipes %}
+    <h3>Related Recipes</h3>
+    <ul>
+    {% for recipe in article.related_recipes.all %}
+        <li><a href="{{ recipe.get_absolute_url }}">{{ recipe.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endblock content %}

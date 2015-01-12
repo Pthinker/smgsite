@@ -1,0 +1,60 @@
+{% extends "admin/base_site.html" %}
+
+{% block nav-global %}
+<div style="text-align:right; margin-right:45px;"><h3><a href="/admin/">Administration Main Page</a></h3></div>
+{% endblock %}
+
+{% block breadcrumbs %}<div class="breadcrumbs"><a href="/admin/">Home</a> &rsaquo; CMS</div>{% endblock %}
+
+{% block content %}
+
+<form method="POST">
+
+{{ formset.management_form }}
+
+<h2>WARNING: This form can only be used to add new locations. It does not allow you to modifty or remove
+	existing locations. Do do this, please use the <a href="/admin/services/service/"> services admin page</a>.</h2>
+
+<div class="submit-row" >
+<input type="submit" value="Save and continue editing" name="_continue" />
+<br />Please save your updates often. To add multiple locations to a single service, simply submit to save
+the update and get a fresh form to enter new data.
+<br />
+</div>
+
+<table>
+	<tr>
+        <th></th>
+		<th>Location</th>
+		<th>Position</th>
+		<th>Extra 1</th>
+		<th>Extra 2</th>
+		<th>Extra 3 (display after location)</th>
+	</tr>
+{% for form in formset.forms %}
+	<tr>
+		<td style="border-bottom: 0px"><h2>Service {{ form.name }}</h2> Existing locations:</td>
+	</tr>
+	<tr>
+		<td colspan="6" style="border-bottom: 0px">{{ form.existing|safe }}</td>
+	</tr>
+	<tr>
+	{% for boundfield in form %}
+        {% ifnotequal boundfield.name 'name' %}
+        {% ifnotequal boundfield.name 'existing' %}
+                <td>{{ boundfield }}</td>
+        {% endifnotequal %}
+        {% endifnotequal %}
+	{% endfor %}
+	</tr>
+{% endfor %}
+</table>
+
+<div class="submit-row" >
+<input type="submit" value="Save and continue editing" name="_continue" />
+</div>
+
+
+</form>
+
+{% endblock content %}

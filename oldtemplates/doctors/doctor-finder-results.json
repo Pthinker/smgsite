@@ -1,0 +1,51 @@
+{
+	"counter": "{{ counter }}",
+	"letters": [
+		{% for letter_list in letters %}
+		{
+			"letter": "{{ letter_list.letter }}",
+			"list": [
+				{% for row in letter_list.rows %}
+					[
+						{% for doctor in row %}
+						{% if not forloop.first %}
+							,
+						{% endif %}
+							"{{ doctor.id }}"
+						{% endfor %}
+					]{% if not forloop.last %},{% endif %}
+				{% endfor %}
+				]
+		}{% if not forloop.last %},{% endif %}
+		{% endfor %}
+	],
+	"form": {
+		"location": [
+		{% for key, field, disabled in form.location.field.choices %}
+			{ "disabled": "{{ disabled }}", "key": "{{ key|escapejs }}" }{% if not forloop.last %},{% endif %}
+		{% endfor %}
+		],
+		"specialty": [
+		{% for key, field, disabled in form.specialty.field.choices %}
+			{ "disabled": "{{ disabled }}", "key": "{{ key|escapejs }}" }{% if not forloop.last %},{% endif %}
+		{% endfor %}
+		],
+		"hospitals": [
+		{% for key, field, disabled in form.hospitals.field.choices %}
+			{ "disabled": "{{ disabled }}", "key": "{{ key|escapejs }}" }{% if not forloop.last %},{% endif %}
+		{% endfor %}
+		],
+		"languages": [
+		{% for key, field, disabled in form.languages.field.choices %}
+			{ "disabled": "{{ disabled }}", "key": "{{ key|escapejs }}" }{% if not forloop.last %},{% endif %}
+		{% endfor %}
+		],
+		"gender": [
+		{% for key, field, disabled in form.gender.field.choices %}
+			{ "disabled": "{{ disabled }}", "key": "{{ key|escapejs }}" }{% if not forloop.last %},{% endif %}
+		{% endfor %}
+		]
+	}
+		
+}
+

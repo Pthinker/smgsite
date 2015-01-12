@@ -1,0 +1,198 @@
+{% load compress  %}
+{% load helpers %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {# <meta name="viewport" content="width=device-width, initial-scale=1"> #}
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="Descritption" content="{% block meta_info %}{% endblock meta_info %}" />
+    <meta name="Keywords" content="{% block seo_keywords %}{% endblock seo_keywords %}" />
+    <link rel="shortcut icon" href="{{STATIC_URL}}images/favicon.ico">
+
+    <title>{% block head_title %}Summit Medical Group{% endblock head_title %}</title>
+    
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/youmax.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}fullcalendar/fullcalendar.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}mmenu/css/jquery.mmenu.all.css">
+
+    {% if debug %}
+        {# use less.js to compile less files in dev environments (debug true and internal ip in settings) #}
+        <link rel="stylesheet/less" type="text/css" href="{{ STATIC_URL }}less/base.less">
+        <script src="{{ STATIC_URL }}js/less.js"></script>
+    {% else %}  
+        {# use django compressor to compile less in production #}
+        {% compress css %}
+        <link rel="stylesheet" type="text/less" href="{{ STATIC_URL }}less/base.less">
+        {% endcompress %}
+    {% endif %}
+    {% include 'includes/dynamic_css.html' %}
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    {% block extracss %}
+    {% endblock extracss %}
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" media="print" href="{{ STATIC_URL }}css/ieprint.css" type="text/css" />
+    <![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="{% block body_class %}{% endblock body_class %}">
+    <section>
+        {% block topbar %}
+        <!-- Topbar -->
+        <div id="topbar" class="navbar navbar-inverse" role="navigation">
+          <div class="container-fluid">
+                <div class="navbar-header">
+                    <span id="nav-toggle" class="nav-btn pull-left visible-xs">
+                        <i class="fa fa-bars"></i>
+                    </span>
+
+                    <a class="mainlogo-mobile" href="/"></a>
+
+                    <div class="tagline hidden-xs">
+                        <span>WE ARE HERE TO HELP YOU!</span>
+                        <span><i class="glyphicon glyphicon-phone-alt"></i> {% block main_phone %}908.273.4300{% endblock %}</span>
+                        <span><i class="glyphicon glyphicon-envelope"></i> 
+                            <a href="mailto:wecare@smgnj.com">wecare@smgnj.com</a></span>
+                    </div>
+                    
+                    
+                    <span class="nav-btn visible-xs pull-right" data-toggle="collapse" data-target="#search-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="glyphicon glyphicon-search"></i>
+                    </span>
+                </div>
+
+                <div class="collapse navbar-collapse in" id="search-collapse">
+                    <a class="urgentcare hidden-xs" href="/service/Urgent-Care-Center/"></a>
+                    <form action="/search/" name="searchform" class="nav-search form-inline">
+                      <input type="text" placeholder="Search" name="q"
+		      class="search-input form-control" id="q"
+		      autocomplete="off"
+		      onclick="document.forms['searchform'].elements[0].value
+		      =''" onkeyup="searchSite('q')">
+                      <button type="submit" class="btn btn-success search-btn"><span class="glyphicon glyphicon-search"></span></button>
+                    </form>
+                    {% include 'site/search.html' %}
+                </div>
+
+
+          </div>
+        </div> 
+        {% endblock topbar %}
+        <!-- End topbar -->
+        
+        {% block nav %}
+        <!-- main navigation -->
+        <div class="container header-navigation hidden-xs">
+          <div class="row section">
+                <a class="mainlogo pull-left" href="/"></a>
+                <div class="main-nav pull-right">
+                    {% show_menu %}
+                </div>
+          </div>
+        </div> 
+        <!-- end main navigation -->
+        {% endblock nav %}
+
+        
+
+        {% block body %}{% endblock %}
+        
+        {% block footer %}
+        {% include 'footer.html' %}
+        {% endblock footer %}
+
+        {% block mobilenav %}
+        {# mobile sidebar navigation content #}
+        <div id="mobile-nav">
+            <div>
+                <strong>NAVIGATION</strong>
+                {% show_mobile_menu %}
+                <strong>WE ARE HERE TO HELP YOU!</strong>
+                <ul class="List">
+                    <li><a href="tel:908.273.4300"><i class="glyphicon glyphicon-phone-alt"></i> 908.273.4300</a></li>
+                    <li><a href="mailto:wecare@smgnj.com"><i class="glyphicon glyphicon-envelope"></i> wecare@smgnj.com</a></li>
+                    <li><a href="/service/Urgent-Care-Center/"><i class="fa fa-medkit"></i> Urgent Care Center</a></li>
+                </ul>
+
+                <strong>STAY CONNECTED</strong>
+                {% include 'includes/connected.html' %}
+            </div>
+        </div>
+        {% endblock mobilenav %}
+
+        
+        {% compress js %}
+            <!-- JavaScript -->
+            <script src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
+            <script src="{{ STATIC_URL }}js/moment.min.js"></script>
+            <script src="{{ STATIC_URL }}fullcalendar/fullcalendar.min.js"></script>
+
+            <script src="{{ STATIC_URL }}mmenu/js/jquery.mmenu.min.js"></script>
+            <script src="{{ STATIC_URL }}js/jquery.rwdImageMaps.js"></script>
+            
+            <script src="{{ STATIC_URL }}js/calendar.js"></script>
+            <script src="{{ STATIC_URL }}js/general.js"></script>
+            <script src="{{ STATIC_URL }}js/holder.js"></script>
+            <script src="{{ STATIC_URL }}js/item_search.js"></script>
+
+            
+        {% endcompress %}
+            {% block extrajs %}
+            {% endblock extrajs %} 
+
+        <a href="#" title="Back to top" class="back-to-top" style="display: none;">
+            <span>Back To</span><br>
+            <i class="glyphicon glyphicon-circle-arrow-up"></i><br> 
+            <span>Top</span>
+        </a>
+    </section>
+
+
+  
+
+{% block analytics %}
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        var pageTracker = _gat._getTracker("{{ GOOGLE_ANALYTICS_CODE }}");
+        pageTracker._initData();
+        pageTracker._trackPageview();
+
+        function recordOutboundLink(link, category, action) {
+          try {
+            var pageTracker=_gat._getTracker("{{ GOOGLE_ANALYTICS_CODE }}");
+            pageTracker._trackEvent(category, action);
+            setTimeout('document.location = "' + link.href + '"', 100);
+          }catch(err){}
+        }
+
+    </script>
+{% endblock analytics %}
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=146990065318881&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
+</html>

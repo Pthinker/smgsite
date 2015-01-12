@@ -1,0 +1,86 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - About Us{% endblock head_title %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/about.css" type="text/css" media="screen" />
+{% endblock head_extra %}
+
+{% block body_tag %}<body class="blue_theme">{% endblock body_tag %}
+
+{% block content %}
+<!-- start of Main Box -->
+	<div id="shadow_left"><div id="shadow_right">
+		<div id="container">
+
+			<!-- start of Top Row -->
+			{% header '908-273-4300' '' %}
+			<!-- end of top info -->
+			
+		<!--main area starts-->
+		<!-- start of top menu tabs -->
+		<div id="top_menu_tabs">
+			<div class="wrap_top_menu_tabs">
+				<a href="/">Home</a>
+				<a href="/services/" title="Find a Specialist or Specialty in New Jersey">Services</a>
+				<a href="/doctors/" title="Find a Doctor or Practitioner in New Jersey">Practitioners</a>
+				<a href="/library/">Live Well Library</a>
+					<a class="w197 active" href="/mysummitmedicalgroup/">My Summit Medical Group</a>
+				</div>
+		</div>
+		<!-- end of top menu tabs -->
+			
+
+		<!-- end of header -->
+			
+			<div class="services_top_stripe"></div>
+			
+			<!-- start of main blocks -->
+			<div id="main_block" class="main_block">
+				<div class="main_block_sub_1">
+					<div class="main_block_sub_2">
+						
+						<!-- start of main blocks column right -->
+						<div class="right_main_block">
+							<div class="right_sub_main_block">
+								
+								
+								<div class="smg_general_container">
+							
+									<div>
+										<font face="Georgia"><b><i><a href="/mysummitmedicalgroup/">My Summit Medical Group</a></i></b></font> &gt; <span>Log In</span>
+									</div>
+
+									<p>You are already logged in under the email address {{ user.username }}.</p>
+									
+									<p>If this is not your account, please <a href="/mysummitmedicalgroup/logout/">logout</a>.</p>
+
+							
+								</div>
+								
+							</div>
+							
+						
+						</div>
+						<!-- end of main blocks column right -->
+
+
+
+						<!-- start of main blocks column left -->
+						<div class="left_main_block">
+							<div class="mt10">{% banner %}</div>
+						</div>
+						<!-- end of main blocks column left -->
+
+					</div>
+				</div>
+			</div>
+			<!-- end of main blocks -->
+
+		</div>
+
+		<div id="bottom_blue"><em><em></em></em></div>
+	</div></div>
+<!-- end of Main Box -->
+{% endblock content %}

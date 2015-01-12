@@ -1,0 +1,31 @@
+{% extends "services/oncology_base.html" %}
+{% load helpers %}
+
+{% block meta_info %}{% endblock meta_info %}
+{% block seo_keywords %}{% endblock seo_keywords %}
+
+{% block page_title %}Latest Oncology News{% endblock %}
+
+{% block content %}
+<p>{{ content|safe }}</p>
+
+<div class="subscribe">
+    <a href="/healthday/rss-category/1/"><b> You can subscribe to this topic to view regular updates when new articles are added.</a></b>
+</div>
+
+<p>Page {{ page.number }} of {{ page.paginator.num_pages }}, {{ page.paginator.count }} articles total</p> 
+
+{% include 'helpers/pagination.html' %}
+
+{% for article in page.object_list %}
+<div class="search_result">
+	<p><span class="general_date">{{ article.display_time }}:</span>
+	<a href="{{ article.get_absolute_url }}">{{ article.headline }}</a><br/>
+	{{ article.blurb|safe }}</p>
+</div>
+{% endfor %}
+
+{% include 'helpers/pagination.html' %}
+<p style="text-align: center;">
+	<strong>To contact us, please call 908-277-8890.</strong></p>
+{% endblock %}

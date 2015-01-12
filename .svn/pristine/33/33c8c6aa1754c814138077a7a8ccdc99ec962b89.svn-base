@@ -1,0 +1,27 @@
+{% for eventtime in eventtimes %}
+<div class="box">
+	<div class="date">
+		{{ eventtime.startdate|date:'M' }}<BR />
+		{{ eventtime.startdate|date:'d' }}
+	</div>
+	<div class="blockbox">
+		<div class="title">{{ eventtime.timeshort }}</div><span class="event-type">{{ eventtime.event.get_event_type_display }}</span><br />
+		<div class="subtitle"><a href="{{ eventtime.event.get_absolute_url }}">{{ eventtime.event.title }}</a></div>
+		
+	</div>
+	<div class="clear"></div>
+</div>
+{% endfor %}
+{% comment %}
+<div class="wrap_last">
+	{% for eventtime in eventtimes %}
+	<div class="event">
+		<div class="event_image">{% if eventtime.event.icon %}<img src="{{ eventtime.event.icon.url }}" alt="{{ eventtime.event.title }}" width="51" height="51" />{% endif %}</div>
+		<div class="event_brief">
+			<p class="when_event_brief">{{ event.timeshort }}</p>
+			<a href="{{ eventtime.event.get_absolute_url }}"><strong>{{ eventtime.event.title }}</strong>{{ eventtime.event.get_event_type_display }}</a>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endcomment %}

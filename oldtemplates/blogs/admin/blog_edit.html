@@ -1,0 +1,100 @@
+{% extends "blogs/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - About Us{% endblock head_title %}
+
+{% block head_extra %}
+    <script src="{{ MEDIA_URL }}ckeditor/ckeditor.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ MEDIA_URL }}ckeditor/adapters/jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ MEDIA_URL }}js/admin/editor.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{{ MEDIA_URL }}js/admin/blog_entry.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="/dynamic-css/about.css" type="text/css" media="screen"/>
+    <style>
+        select#id_sections { width: 350px; }
+		p.datetime { margin: 35px; width: 500px; }
+    </style>
+{% endblock head_extra %}
+
+{% block content %}
+    <!-- start of main blocks -->
+    <div id="main_block" class="main_block">
+        <div class="blog_admin_container">
+            <div>
+                <a href="/blogs/">Live Well News Article</a> &gt; {{ blog.name }} Edit Page
+            </div>
+            <br/>
+
+            <form enctype="multipart/form-data" action="" method="post" id="blogentry_form">
+                {{ form.urlname }}
+                <div class="form-row body">
+					<label for="id_posting_time" class="required" {% if form.posting_time.errors %}style="color:#C03;"{% endif %}>Posting date:</label>{{ form.posting_time }}<br/>
+                    <div class="help">Enter a posting date and time for this article. You must enter the date in YYYY-MM-DD format. Example: 2014-12-25. You must enter the time in HH:MM:SS 24-hour format. Examples: 08:30:00, 17:45:00.</div>
+                </div>
+                <div class="form-row body">
+					<label for="id_display_time" class="required" {% if form.display_time.errors %}style="color:#C03;"{% endif %}>Display date:</label>{{ form.display_time }}</br>
+                    <div class="help">Enter a display date and time for this article. You must enter the date in YYYY-MM-DD format. Example: 2014-12-25. You must enter the time in HH:MM:SS 24-hour format. Examples: 08:30:00, 17:45:00.</div>
+                </div>
+
+                <div class="form-row body">
+                    <label for="id_title" class="required" {% if form.title.errors %}style="color:#C03;"{% endif %}>Title:</label>{{ form.title }}
+                    <div class="help">Enter a title for this article.</div>
+                </div>
+
+                <div class="form-row body">
+                    <label for="id_sections" class="required"
+                           {% if form.sections.errors %}style="color:#C03;"{% endif %}>Sections:</label>
+
+                    <div style="clear:both;">
+                        <div>{{ form.sections }}</div>
+                        <div style="clear:both;">
+                            <div class="help">Select one or more sections for this article.</div>
+                        </div>
+
+                        <div class="form-row body">
+                            <label for="id_byline" class="required"
+                                   {% if form.byline.errors %}style="color:#C03;"{% endif %}>Byline:</label>{{ form.byline }}
+                            <div class="help">Enter a byline for this article.</div>
+                        </div>
+
+                        <div class="form-row body">
+                            <label for="id_byline_link" class="required"
+                                   {% if form.byline_link.errors %}style="color:#C03;"{% endif %}>Byline
+                                Link:</label>{{ form.byline_link }}
+                            <div class="help">Enter a title for this article.</div>
+                        </div>
+
+                        <div class="form-row body">
+                            <label for="id_reviewed_by" class="required"
+                                   {% if form.reviewed_by.errors %}style="color:#C03;"{% endif %}>Reviewed
+                                By:</label>{{ form.reviewed_by }}
+                            <div class="help">Enter a reviewed by line for this article.</div>
+                        </div>
+
+                        <div class="form-row body">
+                            <label for="id_reviewed_by_link" class="required"
+                                   {% if form.reviewed_by_link.errors %}style="color:#C03;"{% endif %}>Reviewed By
+                                Link:</label>{{ form.reviewed_by_link }}
+                            <div class="help">Enter a reviewed by link for this article.</div>
+                        </div>
+
+                        <div class="form-row keywords">
+                            <div>
+                                <label for="id_keywords" {% if form.keywords.errors %}style="color:#C03;"{% endif %}>Keywords:</label>{{ form.keywords }}
+                                <p class="help">Enter optional Top Match keywords separated by spaces.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row editor">
+                    <div class="form-body" style="width: 100%;">
+                        <div>
+                            {{ form.body }}
+                        </div>
+                    </div>
+                </div>
+                <input class="submit" type="submit" name="submit" value="Post"/>
+            </form>
+        </div>
+    </div>
+    <!-- end of main blocks -->
+{% endblock content %}

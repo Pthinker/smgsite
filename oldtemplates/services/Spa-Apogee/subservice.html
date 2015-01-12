@@ -1,0 +1,137 @@
+{% extends "page_content.html" %}
+
+{% block head_title %}Summit Medical Group - Apog&eacute;e Spa > {{ title }}{% endblock head_title %}
+
+
+{% block body_tag %}<body id="sb_spa">{% endblock body_tag %}
+
+{% block head_extra %}
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}/images/100x130Load.gif";
+		var error_url = "{{ MEDIA_URL }}/images/100x130NoPhoto.gif";
+	-->
+	</script>
+	<script src="{{ MEDIA_URL }}/js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+	{% if printable %}
+	<link href="/dynamic-css/sb_spa.css?printable=true" rel="stylesheet" type="text/css" />
+    {% else %}
+     <link href="/dynamic-css/sb_spa.css" rel="stylesheet" type="text/css" />
+    {%endif %}
+{% endblock head_extra %}
+
+{% block header %}
+<!--start of SUB-BRAND HEADER div-->
+	{% if printable %}
+	<div id="header">
+<img src="{{ MEDIA_URL }}/images/504x72_print_hdr_sb_spa.jpg" alt="Summit Medical Group" width="504" height="72" /></div>
+    {% else %}
+<div id="header"><img src="{{ MEDIA_URL }}/images/spa_344x90_header_logo.gif" alt="Apog&eacute;e Spa at Summit Medical Group" width="344" height="90" usemap="#spa_header_map"><map name="spa_header_map" id="plast_header_map" /><area shape="rect" coords="16,2,201,88" href="/service/Spa-Apogee/" alt="Apog&eacute;e Spa at Summit Medical Group" /></map></div>
+    {%endif %}
+<!--end of SUB-BRAND HEADER div-->
+{% endblock header %}
+
+{% block nav_search %}
+<div id="nav_container_search_header"><img src="{{ MEDIA_URL }}/images/spa_52x10_nav_search.gif" alt="Search" width="52" height="10" /></div>
+<div id="nav_container_search">{% include 'site/search.html' %}</div>
+{% endblock nav_search %}
+
+{% block nav_links %}
+<ul>
+<li class="left_nav_links"><a href="/service/Spa-Apogee/"><img src="{{ MEDIA_URL }}/images/spa_180x38_nav_home.gif" alt="Home" width="180" height="38" /></a></li>
+<li class="left_nav_links"><a href="{{ MEDIA_URL }}/db/media-library/Spa.pdf"><img src="{{ MEDIA_URL }}/images/spa_180x38_nav_menu.gif" alt="Our Menu" width="180" height="38" /></a></li>
+<li class="left_nav_links"><a href="/service/Spa-Apogee/Concierge_Service/"><img src="{{ MEDIA_URL }}/images/spa_180x38_nav_concierge.gif" alt="Concierge Service" width="180" height="38" /></a></li>
+</ul>
+{% endblock nav_links %}
+
+{% block nav_extra %}
+<!--start of BACK TO SMG promo badge-->
+<div id="promo_badge">
+<a href="/"><img src="{{ MEDIA_URL }}/images/149x70_left_col_smg.jpg" alt="Back to Summit Medical Group" width="149" height="70" /></a>
+</div>
+<!--end of BACK TO SMG promo badge-->
+{% endblock nav_extra %}
+
+{% block nav_bottom %}
+
+{% if service.related_services.select_related or service.get_nav_links %}
+	<!--start of RELATED RESOURCES div-->
+	<div id="nav_container" class="left_col_related_resources">
+
+	{% if service.related_services.select_related %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/ucc_122x10_related_services.gif" alt="Related Services" width="122" height="10" /></div>
+		<ul class="left_col_ul_resources">
+			{% for related in service.related_services.select_related %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if service.get_nav_links %}
+		<div id="resources_header"><img class="left_col_resources_header" src="{{ MEDIA_URL }}/images/ucc_90x10_useful_links.gif" alt="Useful Links" width="90" height="10" border="0" /></div>
+		<ul class="left_col_ul_resources">
+			{% for resource in service.get_nav_links %}
+				<li class="left_col_li_resources"><a class="dark_brown" href="{{ resource.url }}" target="_blank">{{ resource.name }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	</div>
+	<!--end of RELATED RESOURCES div-->
+{% endif %}
+
+{% endblock nav_bottom %}
+
+{% block content_well %}
+
+<!--start of center column-->
+<div id="cent_col_573">
+
+<!--start SPA CONTENT-->
+<div id="square_box_573_top"><img src="{{ MEDIA_URL }}/images/spa_573x20_box_top.gif" width="573" height="20" alt="Page Box Top" /></div>
+
+<div id="tab_box_573">
+
+{% include 'site/page_controls.html' %}
+
+<p class="breadcrumb_573"><a href="/services/">Services</a> > <a href="{{ service.get_absolute_url }}">{{ service.name }}</a> > <span class="navy_blue_bold">{{ title|upper }}</span></p>
+
+{% include template %}
+
+<div class="clearfloats"></div>
+</div>
+<!--end of center column-->
+
+<!-- start right column -->
+<div id="right_col_177">
+
+{% if doctors %}
+	<!-- start DOCTOR LIST box -->
+	<div id="right_col_177_box" class="right_col_doctors_box">
+
+	<div id="right_col_doctor_box_header"><img  class="right_col_doctor_header" src="{{ MEDIA_URL }}/images/ucc_100x10_pink_our_docs.gif" alt="Our Doctors" width="100" height="10"></div>
+	<p class="font_minus_1">
+	<ul class="right_col_ul_doctors">
+		{% for doctor in doctors %}
+			<li class="right_col_li_doctors"><a class="dark_green" href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, '{{ doctor.get_thumbnail_url }}', '{{ doctor.display_name }}, {{ doctor.letters }}')" onmouseout="photoOff()" onclick="photoOff()"><span class="bold">{{ doctor.display_name }}</span></a>&nbsp;&#8209;&nbsp;{{ doctor.letters }}</li>
+		{% endfor %}
+	</ul>
+	</p>
+
+	</div>
+	<!-- end DOCTOR LIST box -->
+	
+	<div id="doctor_photo_flyover" class="doctor_photo_flyover">
+		<center>
+			<img id="doctor_image" src="{{ MEDIA_URL }}/images/100x130Load.gif" />
+			<p id="doctor_name"></p>
+		</center>
+	</div>
+
+{% endif %}
+
+<div class="clearfloats"></div>
+</div>
+<!-- end right column -->
+
+{% endblock content_well %}

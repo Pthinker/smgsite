@@ -1,0 +1,12 @@
+{% for class in classes %}
+<div class="class">
+	<div class="date">
+		{% for day in class.days_held %} 
+		{{ day }}{% if forloop.last %} - {% else %}, {% endif%}
+		{% endfor %} {{ class.starttime_display }}
+	</div>
+	<div class="title">
+		<a href="{{ class.get_absolute_url }}">{{ class.title }}</a>
+	</div>
+</div>
+{% endfor %}

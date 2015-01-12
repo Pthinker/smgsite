@@ -1,0 +1,311 @@
+{% extends "doctors/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Doctors{% endblock head_title %}
+
+{% block meta_info %}Find the New Jersey doctor you need. View Summit Medical Group practitioners by name, by specialty, or by location.{% endblock meta_info %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/doctors.css" type="text/css" media="screen" />
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}images/95x95_loading.jpg";
+		var error_url = "{{ MEDIA_URL }}images/95x95_not_avail.jpg";
+	-->
+	</script>
+	<script src="/media/js/doctor-finder.js" type="text/javascript" charset="utf-8"></script>
+	<script src="{{ MEDIA_URL }}/js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+
+<style type="text/css">
+	
+	.right_main_block_narrow {
+		width: 625px;
+	}
+	
+	.left_main_block_wide {
+		width: 285px;
+	}
+	
+	.box_277 {
+		margin-bottom: 10px;
+	}
+	
+	#search-form {
+		padding: 5px 0 6px 5px;
+	}
+	#search-form dl.more {
+		font-size: 1em;
+		margin: 0 0 0 24px;
+		display: none;
+	}
+	#search-form dl.more dt a {
+		display: block;
+		color: #0047A8;
+	}
+	#search-form dl.main {
+		font-size: 1em;
+		margin: 0;
+		padding: 0;
+	}
+	#search-form dl.main dt {
+		background: none;
+		font-weight: bold;
+		padding: 1px 5px;
+		color: #0047A8;
+		font-size: 1em;
+	}
+	#search-form dl.main dd {
+		font-size: 1em;
+		padding: 0 3px 5px 5px;
+	}
+	#search-form dl.main dd label span {
+		font: 10px/1em Verdana, Tahoma, sans;
+	}
+	#search-form dl.main dd ul {
+		margin-left: -80px;
+		list-style-type: none;
+	}
+	#search-form dl.sel dd ul {
+		margin-left: -50px;
+	}
+	#quick-search-header {
+		font: bold 1.4em/1em Arial,Helvetica,sans-serif;
+		color: #0047A8;
+	}	
+	#search-form dl.main dd ul li {
+		padding: 0;
+		margin: 0;
+		border: 1px solid #fff;
+	}
+	#search-form dl.main dd ul li a {
+		margin-left: 3px;
+		color: #0047A8;
+		font-size: 1em;
+	}
+	#search-form dl.main dd ul ul {
+		margin-left: 0;
+		display: none;
+	}
+	#search-form dl.main dd ul li.major-indent {
+		text-indent: -25px;
+		margin-left: 25px;
+	}
+	#search-form dl.main dd ul ul li.location-indent {
+		text-indent: -16px;
+		margin-left: -5px;
+	}
+	#search-form dl.main dd label input {
+		//float: left;
+	}
+	#search-form dl.main dd.selections ul li {
+		color: #F00;
+	}
+	dd.form-list {
+		//display: none;
+	}
+</style>
+<!--[if lte IE 6]>
+<style>
+	#search-form dl.main dd ul li.major-indent {
+		text-indent: 0;
+		margin-left: 0;
+	}
+	#search-form dl.main dd ul ul li.location-indent {
+		text-indent: 0;
+		margin-left: 0;
+	}
+	#search-form dl.main dd.selections ul {
+		margin-left: 0;
+		list-style-type: none;
+	}
+</style>
+<![endif]-->
+
+{% endblock head_extra %}
+
+{% block content %}		
+<!-- start of main blocks -->
+<div class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2 main_block_sub_2_narrow">
+			
+			<!-- start of main blocks column right -->
+			<div class="right_main_block right_main_block_narrow" id="doctor-finder-wrapper">
+				<div id="loading-mask" style="background-color: rgb(170, 170, 170); opacity: 0.4; position: absolute; width: 625px; z-index: 0; display: none; "><p style="color:red; text-align:center; font-weight:bold; font-size:large; margin-top:280px;">Loading results...</p></div>
+				<div id="doctor-finder-message"></div>
+				<div id="doctor-finder-results" style="background-color:#FFF; z-index:1;">
+					<div class="right_sub_main_block">
+						<h1 class="big">Our Doctors and Practitioners</h1>
+						<a name="top"></a>
+						{% if letters %}
+						<div class="h1_sub_info">
+							<p>The practitioners below match your search criteria. If you do not see any results, uncheck some boxes to broaden your search.</p>
+							<p>Please note that many Summit Medical Group practitioners are based in multiple locations. If you are looking for locations for a practitioner, click the practitioner's name.</p>	
+							<p>You also can search by typing in your medical condition, including a diagnosis a doctor has given you or any other medical term. If you do not find a provider and specific condition using this tool, please explore specialties that are likely to have practitioners who can treat you.</p>
+							
+						</div>
+						{% alphabet_list doctors 'space' %}
+						{% for letter_list in letters %}
+						{% if foorloop.last %}
+						<div id="div-letter-{{ letter_list.letter }}" class="our_doctors last_our_doctors">
+						{% else %}
+							<div id="div-letter-{{ letter_list.letter }}" class="our_doctors first_our_doctors">
+						{% endif %}
+						<a id="letter-{{ letter_list.letter }}" name="letter-{{ letter_list.letter }}"></a><div class="our_doctors_letter"><div class="back_top"><a href="#top">back to top</a></div>{{ letter_list.letter }}</div>
+						<div class="our_doctors_wrap">
+							{% for row in letter_list.rows %}
+							<div id="div-row-{{ letter_list.letter }}-{{ forloop.counter }}" class="our_doctors_row">
+								{% for doctor in row %}
+								<div id="div-doctor-{{ doctor.pk }}" class="our_doctor">
+									<div class="our_doctor_frame">
+										<div class="shadowed_img"><em><em><em><em><em><img src={% if doctor.cropped_image %}"{{ doctor.cropped_image.url }}"{% else %}"{{ MEDIA_URL }}/images/37x37_not_avail.jpg"{% endif %} alt="our_doctor" width="37" height="37" /></em></em></em></em></em></div>
+									</div>
+									<div class="doctor_info">
+										<p><b><a href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, {% if doctor.thumbnail %}'{{ doctor.thumbnail.url }}'{% else %}''{% endif %}, '{{ doctor.display_name|escapejs }}, {{ doctor.letters }}', '{{ doctor.list_services }}', '{{ doctor.phone }}')" onmouseout="photoOff()" onclick="photoOff()">{{ doctor.last_name }}, {{ doctor.remainder_name }}, {{ doctor.letters }}</a><br />
+										{{ doctor.title_service.name }}</b><br />
+										{% if doctor.accepting %}
+										{{ doctor.accepting }}{% if doctor.unterminated %}{% endif %}
+										{% else %}
+										{% ifequal doctor.accepting_flag 'A' %}
+										Accepting new patients
+										{% else %}
+										Not accepting new patients
+										{% endifequal %}
+										{% endif %}</p>
+									</div>
+								</div>
+								{% endfor %}
+							</div>
+							{% endfor %}
+						</div>
+						</div>
+						{% endfor %}
+
+							<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+							{% else %}
+							<div class="h1_sub_info">
+								<p>No doctors could be found for your search criteria. Please try searching again.</p>
+							</div>
+							{% endif %}
+
+
+						</div>
+					</div>
+				</div>
+			
+			<div class="doctor_photo_flyover" id="doctor_photo_flyover">
+				<div><img id="doctor_image" src="{{ MEDIA_URL }}/images/100x130Load.gif" /></div>
+				<p class="name" id="doctor_name"></p>
+
+				<dl>
+					<dt>Specialty:</dt>
+					<dd id="doctor_service"></dd>
+				</dl>
+				<dl>
+					<dt>Phone Number:</dt>
+					<dd id="doctor_phone"></dd>
+
+				</dl>
+			</div>
+			
+			<!-- end of main blocks column right -->
+
+
+
+			<!-- start of main blocks column left -->
+			<div class="left_main_block left_main_block_wide">
+
+				<div class="box_277 box_277_blue">
+					<div class="box_277_bottom2">
+						<div class="box_277_top2">
+
+							<!-- <h2 class="quick_links" onClick="loadDoctorResults();" id="quick-search-header">Search options</h2> -->
+							<h2 class="quick_links_spaced" id="quick-search-header">Physician Finder</h2>
+							<p style="padding: 10px;">Check as many options as you like to narrow the list of practitioners who meet your needs.</p> 
+							<p style="padding: 10px;"><b>If you do not see any results, uncheck some boxes to broaden your search.</b></p>
+							<p style="padding: 10px;"><b>Alternatively, if you know exactly what you need, you can use the Condition Finder below instead.</b></p>
+							{{ form.errors }}
+							<form id="finder-form" method="POST" action="">
+							<div id="search-form" class="search-form">
+								<dl class="main">
+									<br />
+									<center><input type="reset" value="Start Over" class="reset-form" style="_font-size: .9em;" />&nbsp;<input type="submit" value="Find Physicians" name="Search" style="_font-size:.9em;" /></center>
+								</dl>
+								<dl class="main sel">
+									<dd id="form-specialty-selection" class="selections"></dd>
+									<dd id="form-gender-selection" class="selections"></dd>
+									<dd id="form-location-selection" class="selections"></dd>
+									<dd id="form-hospitals-selection" class="selections"></dd>
+									<dd id="form-languages-selection" class="selections"></dd>
+								</dl>
+								<dl class="main">
+									<dt><a id="more-form-specialty" href="javascript:void(0);" onclick="toggleChoices('form-specialty');"><span class="expand">+</span> Choose Specialties</a></dt>
+									<dd class="form-list" id="form-specialty">{{ form.specialty }}</dd>
+								</dl>
+								<dl class="main">
+									<dt><a id="more-form-gender" href="javascript:void(0);" onclick="toggleChoices('form-gender');"><span class="expand">+</span> Choose Gender</a></dt>
+									<dd class="form-list" id="form-gender">{{ form.gender }}</dd>
+								</dl>
+								<dl class="main">
+									<dt><a id="more-form-location" href="javascript:void(0);" onclick="toggleChoices('form-location');"><span class="expand">+</span> Choose Locations</a></dt>
+									<dd class="form-list" id="form-location">
+									<ul>
+									{% for value, text, disabled in form.location.field.choices %}
+									{% if value|first == None %}
+									{% if not forloop.first %}
+									</ul>
+									{% endif %}
+									<li class="major-indent"><label><input type="checkbox" title="main" name="location" value="{{ value }}" onclick="toggleLocations('{{ value|last }}');"> {{ text }}</input></label></li>
+									<ul id="main-location-{{ value|last }}">
+									{% else %}
+									<li class="location-indent"><label><input type="checkbox" name="location" value="{{ value }}" /> {{ text }}</input></label></li>
+									{% endif %}
+									{% endfor %}
+									</ul>
+									</ul>
+									</dd>
+								</dl>
+								
+								<dl class="main">
+									<dt><a id="more-form-hospitals" href="javascript:void(0);" onclick="toggleChoices('form-hospitals');"><span class="expand">+</span> Choose Hospitals</a></dt>
+									<dd class="form-list" id="form-hospitals">{{ form.hospitals }}</dd>
+								</dl>
+								<dl class="main">
+									<dt><a id="more-form-languages" href="javascript:void(0);" onclick="toggleChoices('form-languages');"><span class="expand">+</span> Choose Languages</a></dt>
+									<dd class="form-list" id="form-languages">{{ form.languages }}</dd>
+								</dl>
+								
+								<dl class="main">
+									<br />
+									<center><input type="reset" value="Start Over" class="reset-form" style="_font-size: .9em;" />&nbsp;<input type="submit" value="Find Physicians" name="Search" style="_font-size:.9em;" /></center>
+								</dl>
+							</form>	
+							</div>
+																
+						</div>
+						<hr />
+						
+						<h2 class="quick_links_spaced" id="quick-search-header">Condition and Treatment Finder</h2>
+						<p style="padding: 10px;">Enter a diagnosis, medical term, disease, condition, or treatment. If you do not find what you need, please use the search box at the top right of our website to find information and services that might be helpful.</p>
+						<div class="boxcont">
+						<form method="POST" name="specialty" action="/doctor-specialty/">							
+						<p><b>Enter your search here:</b></p><br /> 
+						<input name="search-input" title="main" size="25" />
+						<input type="submit" value="Search" />
+						</form>
+						<p>&nbsp;</p>
+						</div>
+					</div>
+				</div>
+
+				
+
+				<div class="mt10">{% banner %}</div>
+			</div>
+			<!-- end of main blocks column left -->
+
+		</div>
+	</div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

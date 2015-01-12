@@ -1,0 +1,8 @@
+<div style="position:relative; width:960px; height:50px; background-color:#AAAAFF;">
+	<div style="position:absolute; top:0; left:0; width:180px; height:50px; background-color:#FFFFFF;">
+		<p>Urgent Care</p>
+	</div>
+	<div style="position:absolute; top:0; right:0; width:765px; height:50px; background-color:#5555FF;">
+		<p>Quality Banner</p>
+	</div>
+</div>

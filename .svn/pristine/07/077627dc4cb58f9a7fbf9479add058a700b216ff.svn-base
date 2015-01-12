@@ -1,0 +1,42 @@
+{% extends "articles/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ advisor.name }}{% endblock head_title %}
+{% block meta_info %}Summit Medical Group offers extensive health and wellness information for you and your family.{% endblock meta_info %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<!-- start of main blocks column right -->
+	<div class="right_main_block">
+		<div class="right_sub_main_block">	
+			<h1 class="big">Live Well Library</h1>
+			<h2>{{ advisor.name }}</h2>			
+			{% alphabet_list articles '' %}
+			{% for letter_list in letters %}
+				<div class="library_letter"><a id="letter-{{ letter_list.section }}" name="letter-{{ letter_list.section }}"></a><h3>{{ letter_list.section }}</h3></div>
+				<div class="library_topic_block">
+				<ul class="library_alpha_index_left_ul">	
+				{% for article in letter_list.first_column %}
+						<li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+				{% endfor %}
+				</ul>
+				<ul class="library_alpha_index_right_ul">
+				{% for article in letter_list.second_column %}
+					<li><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></li>
+				{% endfor %}
+				</ul>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<!-- end of main blocks column right -->
+	<!-- start of main blocks column left -->
+	<div class="left_main_block">
+		<div class="mt10">{% banner %}</div>
+	</div>
+	<!-- end of main blocks column left -->	
+	<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

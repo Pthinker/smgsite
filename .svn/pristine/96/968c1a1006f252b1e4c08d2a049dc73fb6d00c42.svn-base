@@ -1,0 +1,87 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - {{ feature.headline }}{% endblock head_title %}
+{% block meta_info %}{% meta_info feature %}{% endblock meta_info %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/newseventsblog.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="main_block_sub_1">
+		<div class="main_block_sub_2">
+
+			<!-- start of main blocks column right -->
+			<div class="right_main_block">
+				<div class="right_sub_main_block">
+				
+					<!-- start of pages navigation -->
+					<div class="navigation">
+					
+						{% include 'site/share.html' %}
+						
+						<div class="clear" style="min-height:23px; height:23px;"></div>
+						
+						<div class="pages">
+							<a href="/features/Nutrition/">Nutrition</a>&nbsp;&gt;&nbsp;
+							<span id="/features/">{{ feature.headline|safe}}</span>
+						</div>
+						
+						<div class="clear"></div>
+						
+					</div>
+					<div class="clear"></div>
+					<!-- end of pages navigation -->
+					
+					<br />
+					
+					<!-- start of main content -->
+					<div id="library_topic_body">
+
+			
+							<!-- start blog post  -->
+							<div class="blog_post_container">
+								<div class="blog_post_content">
+									<!-- all content within this block is  entered in the admin form-->									
+									<div class="blog_post_title">
+										<h2>{{ feature.headline|safe }}</h2>
+										<p>Last updated: {{ feature.display_time|date:"M d, Y" }}</p> 
+									</div>
+									{% if feature.byline %}<p><b><i>By {% if feature.byline %}{% if feature.byline_link %}<a href="{{ feature.byline_link }}" >{{ feature.byline }}</a>{% else %}{{ feature.byline }}{% endif %}{% endif %} for Summit Medical Group</i></b></p>{% endif %}
+									{% if feature.reviewed_by %}<p><b><i>Reviewed by <a href="{{ feature.reviewed_by_link }}">{{ feature.reviewed_by }}</a></i></b></p>{% endif %}
+									{{ feature.content|safe }}
+								</div>
+							</div>
+							<!-- end blog post -->
+
+							{% if feature.related_recipes %}
+							<p><b>Related Recipes</b></p>
+							{% for recipe in feature.related_recipes.all %}
+							<ul class="arrows">
+								<li class="first"><a href="{{ recipe.get_absolute_url }}">{{ recipe.title }}</a></li>
+							</ul>
+							{% endfor %}
+							{% endif %}
+					
+							
+							</div>
+							<!-- end of main content -->
+						</div>
+					</div>
+					<!-- end of main blocks column right -->
+
+					<!-- start of main blocks column left -->
+					<div class="left_main_block">
+						<div class="mt10">{% banner %}</div>
+					</div>
+					<!-- end of main blocks column left -->
+					
+				</div>
+			</div>
+		</div>
+		<!-- end of main blocks -->
+{% endblock content %}

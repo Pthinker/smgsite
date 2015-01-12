@@ -1,0 +1,14 @@
+{% load thumbnail static %}
+<div class="news-item">
+    {% if item.display_image %}
+    {% thumbnail item.display_image "296x200" crop="center" as im %}
+        <img src="{{ im.url }}">
+    {% endthumbnail %}
+    {% else %}
+        <img src="{{ STATIC_URL }}images/no_news_image.png">
+    {% endif %}
+
+    <div class="date">{{ item.posting_time|date }}</div>
+    <div class="title"><a href="{{ item.get_absolute_url }}">{{ item.headline|safe }}</a></div>
+    <a class="more pull-right" href="{{ item.get_absolute_url }}">FULL ARTICLE</a>
+</div>

@@ -1,0 +1,164 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Corporate Health - Summit Medical Group{% endblock head_title %}
+
+{% block meta_info %}{% meta_info page %}{% endblock meta_info %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/themes.css" type="text/css" media="screen" />
+	<link rel="stylesheet"  href="/dynamic-css/themes_sub.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}/js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}/images/95x95_loading.jpg";
+		var error_url = "{{ MEDIA_URL }}/images/95x95_not_avail.jpg";
+	-->
+	</script>
+	<script src="{{ MEDIA_URL }}/js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+{% endblock head_extra %}
+
+{% block body_tag %}<body class="green_theme s_corporate">{% endblock body_tag %}
+{% block content %}
+<!-- start of Main Box -->
+	<div id="shadow_left"><div id="shadow_right">
+		<div id="container">
+
+			<!-- start of Top Row -->
+			{% header '908-673-7323' '' %}
+			<!-- end of top info -->
+
+		<!--main area starts-->
+		<!-- start of top menu tabs -->
+		<div id="top_menu_tabs">
+			<div class="wrap_top_menu_tabs">
+				<a href="/">Home</a>
+				<a class="active" href="/services/" title="Find a Specialist or Specialty in New Jersey">Services</a>
+				<a href="/doctors/" title="Find a Doctor or Practitioner in New Jersey">Practitioners</a>
+				<a href="/library/">Live Well Library</a>
+				<a class="w197" href="/mysummitmedicalgroup/">My Summit Medical Group</a>
+			</div>
+		</div>
+		<!-- end of top menu tabs -->
+			
+			<div class="services_top_stripe"></div>
+			
+			<!-- start of main blocks -->
+			<div id="main_block" class="main_block">
+				<div class="main_block_sub_1">
+					<div class="main_block_sub_2">
+
+						<!-- start of main blocks column right -->
+						<div class="right_main_block">
+							<div class="right_sub_main_block">
+							
+								<!-- start of pages navigation -->
+								<div class="navigation">
+									<div class="pages">
+										<a href="/services/">Services</a> / <a href="{{ service.get_absolute_url }}">{{ service.name }}</a> / {{ page.title }}
+									</div>
+									
+									{% include 'site/share.html' %}
+								</div>
+								<div class="clear"></div>
+								<!-- end of pages navigation -->
+								
+								<!-- start of main content -->
+								<div class="cols_2_fix_right_160_sub">
+		
+									<!-- start of left column of main content -->
+									<div class="cols_2_left_sub">
+									  <div class="cols_2_left_sub_sub">
+											<div class="h1_wrap"><h1>Corporate Health {{ service.name|upper }}</h1></div>
+											<!-- start of main information ("Content" from the service form)-->
+											<div class="main_image"><div class="shadowed_img"><em><em><em><em><em><img src="{{ MEDIA_URL }}/images/505x285_corporate_health.jpg" alt="Corporate Health" width="505" height="285" /></em></em></em></em></em></div></div>
+											<!-- start of main information -->
+											<div class="main_info">
+												{{ content|safe }}
+											</div>
+											<!-- end of main information -->
+									  </div>
+									</div>
+									<!-- end of left column of main content -->
+									
+									<!-- start of right column of main content -->
+									
+								</div>
+								<!-- end of main content -->
+							</div>
+						</div>
+						<!-- end of main blocks column right -->
+
+
+	
+						<!-- start of main blocks column left -->
+						<div class="left_main_block">
+
+							<div><a href="/"><img src="{{ MEDIA_URL }}/images/204x92_smg_return.gif" alt="SMG" width="204" height="92" border="0" /></a></div>
+
+							<div class="box_207 mt10">
+								<div class="box_207_bottom">
+									<div class="box_207_top">
+	
+										<!--"Offerings" from admin form. Note, list format is illustrative only (assume admin will format content as desired).-->
+										<h2 class="quick_links">Our Specialties</h2>
+										{{ service.offerings|safe }}
+
+										<!-- "Links for nav display" from admin form. Note we no longer distinguish local and remote links. -->
+										<h2 class="quick_links">Recommended Links</h2>
+										<div class="rain_box_wrap_0_6_28">
+											<div class="rain_box">
+												<div class="quick_links">
+													<ul class="arrows">
+														{% for resource in service.get_nav_links %}
+															<li><a href="{{ resource.url }}">{{ resource.name }}</a></li>
+														{% endfor %}
+													</ul>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+
+							<!-- "Related Services" from admin form.-->
+							{% if service.related_services.all %}
+							<div class="box_207 mt10">
+								<div class="box_207_bottom">
+									<div class="box_207_top">
+	
+										<h2 class="quick_links">You might also like</h2>
+										<div class="rain_box_wrap_0_6_28">
+											<div class="rain_box">
+												<div class="quick_links">
+													<ul class="arrows">
+														{% for related in service.related_services.all %}
+															<li><a href="{{ related.get_absolute_url }}">{{ related.name }}</a></li>
+														{% endfor %}
+													</ul>
+												</div>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							{% endif %}
+
+							<div class="mt10">
+								{% banner %}</div>
+						</div>
+						<!-- end of main blocks column left -->
+						
+					</div>
+				</div>
+			</div>
+			<!-- end of main blocks -->
+			
+		</div>
+		
+		<div id="bottom_white"><em><em></em></em></div>
+	</div></div>
+<!-- end of Main Box -->
+{% endblock content %}

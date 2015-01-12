@@ -1,0 +1,26 @@
+{% extends "page_content.html" %}
+
+{% block content_well %}
+
+<!--start of center column-->
+<div id="cent_col_573">
+
+<!--start SERVICE INFO box-->
+<div id="tab_box_573_top"><img src="{{ MEDIA_URL }}/images/573x40_tab_head_services.gif" alt="Services" width="573" height="40" hspace="0" vspace="0" border="0" usemap="#tab_header"><map name="tab_header" id="tab_header"><area shape="rect" coords="7,22,75,37" href="#" alt="Services" /></map></div>
+
+<div id="tab_box_573">
+
+{% include 'site/page_controls.html' %}
+
+<p class="breadcrumb_573"><a href="/services/">Services</a> > <a href="{{ service.get_absolute_url }}">{{ service.name }}</a> > <span class="navy_blue_bold">{{ title|upper }}</span></p>
+
+{% include template %}
+
+<div class="clearfloats"></div>
+</div>
+<!--end SERVICE INFO box-->
+
+</div>
+<!--end of center column-->
+
+{% endblock content_well %}

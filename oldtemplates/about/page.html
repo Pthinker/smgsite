@@ -1,0 +1,22 @@
+{% extends "page_content.html" %}
+
+{% block head_title %}Summit Medical Group - {{ title }}{% endblock head_title %}
+
+{% block content_well %}
+
+<div id="square_box_765_top"><img src="{{ MEDIA_URL }}/images/765x20_square_smg_box_top.gif" alt="Page box top" width="765" height="20" /></div>
+
+<!-- start 765px WHITE TAB BOX BOTTOM -->
+<div id="tab_box_765">
+
+{% include 'site/page_controls.html' %}
+
+<p class="page_header_blue_p">{{ title|upper }}</p>
+
+{% include template %}
+	
+	<div class="clearfloats"></div>
+</div>
+<!-- end 765px WHITE TAB BOX  BOTTOM -->
+
+{% endblock content_well %}

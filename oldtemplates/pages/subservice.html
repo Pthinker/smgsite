@@ -1,0 +1,72 @@
+{% extends "page_primary.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Services - {{ service.name }} - {{ page.title }}{% endblock head_title %}
+
+{% block meta_info %}{% meta_info page %}{% endblock meta_info %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/services.css" type="text/css" media="screen" />
+{% endblock head_extra %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+
+	<!-- start of main blocks column right -->
+	<div class="right_main_block">
+		<div class="right_sub_main_block">
+		
+			<!-- start of pages navigation -->
+			<div class="navigation">
+				{% include 'site/share.html' %}
+					
+				<div class="clear" style="min-height:23px; height:23px;"></div>
+				<div class="pages">
+					<a href="/services/">Services</a> / <a href="{{ service.get_absolute_url }}">{{ service.name }}</a> / {{ page.title|safe }}
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+				
+			<!-- end of pages navigation -->
+			
+			<!-- start of main content -->
+			<div class="cols_2_fix_right_160_sub">
+
+				<!-- start of left column of main content -->
+				<div class="cols_2_left_sub">
+				  <div class="cols_2_left_sub_sub">
+						<div class="main_info description_page">
+							<h2>{{ page.title|safe }}</h2>
+								{% if page.marketing_banner %}
+						<div class="divider"></div>
+						<a href="{{ page.marketing_banner.link.url }}">
+						<img src="{{ page.marketing_banner.image.url }}" /></a>
+						{% endif %}
+						{{ content|safe }}
+						</div>
+						<!-- end of main information -->
+
+						
+
+				  </div>
+				</div>
+				<!-- end of left column of main content -->
+				
+				
+			</div>
+			<!-- end of main content -->
+		</div>
+	</div>
+	<!-- end of main blocks column right -->
+			
+	<!-- start of main blocks column left -->
+	<div class="left_main_block">
+		<div class="mt10">{% banner %}</div>
+	</div>
+	<!-- end of main blocks column left -->
+			
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

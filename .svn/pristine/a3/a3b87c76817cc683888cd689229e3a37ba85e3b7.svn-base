@@ -1,0 +1,24 @@
+{% extends "pages/base.html" %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Server Error{% endblock head_title %}
+
+{% block content %}
+<!-- start of main blocks -->
+<div id="main_block" class="main_block">
+	<div class="right_main_block">
+		<div class="right_sub_main_block">
+			<h2>Error</h2>
+			<p><b>Dear Summit Medical Group visitor</b>:</p>
+			<p>We're sorry... Our website is having trouble with what you'd like to do. Please try again. If you still see this message, please email our Internet Marketing Specialist Joy Pierce Mathews at <a href="mailto:jmathews@smgnj.com">jmathews@smgnj.com</a></p>
+		</div>
+	</div> 
+	<!-- start of main blocks column left -->
+	<div class="left_main_block">
+		<div class="mt10">{% banner %}</div>
+	</div>
+	<!-- end of main blocks column left -->			
+<div class="clear"></div>
+</div>
+<!-- end of main blocks -->
+{% endblock content %}

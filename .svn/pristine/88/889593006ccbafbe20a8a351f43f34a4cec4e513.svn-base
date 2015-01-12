@@ -1,0 +1,27 @@
+{% extends "page_base.html" %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/msmgp.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}/images/95x95_loading.jpg";
+		var error_url = "{{ MEDIA_URL }}/images/95x95_not_avail.jpg";
+	-->
+	</script>
+	<script src="{{ MEDIA_URL }}js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+{% ifequal added "library" %}<meta http-equiv="refresh" content="1;url=#library">{% endifequal %} 
+{% ifequal added "doctor" %}<meta http-equiv="refresh" content="1;url=#doctor">{% endifequal %} 
+{% ifequal added "service" %}<meta http-equiv="refresh" content="1;url=#service">{% endifequal %}
+{% endblock head_extra %}
+
+{% block body %}
+{% include 'helpers/_menu_mysmg.html' %}
+<div id="main">
+    <div class="main-container">
+		{% block content %}
+		{% endblock content %}
+	<div class="clear"></div>
+	</div>	
+</div><!--main-->
+{% endblock body %}

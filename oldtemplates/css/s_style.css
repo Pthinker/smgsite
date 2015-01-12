@@ -1,0 +1,841 @@
+h3,a {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	color: #00457c;
+}
+
+a {
+	font-size: 12px;
+	color: #656769;
+}
+
+.s_left {
+	width: 240px;
+	float: left;
+}
+
+.s_right {
+	width: 718px;
+	float: right;
+	margin-top: 23px;
+	border-left: dotted 1px #999;
+	margin-bottom: 23px;
+}
+
+.left_pan1,.left_pan2,.left_link,.left_ban,.urgent_left_pan2 {
+	width: 207px;
+	height: 172px;
+	background: url({{ MEDIA_URL }}/images/s_left_pan1_b.gif) no-repeat;
+	margin-left: 23px;
+	margin-top: 23px;
+}
+
+.left_pan2 {
+	width: 207px;
+	height: 152px;
+	background: url({{ MEDIA_URL }}/images/s_left_pan2_b.gif) no-repeat;
+	margin-top: 10px;
+}
+
+.urgent_left_pan2 {
+	width: 207px;
+	height: 189px;
+	background: url({{ MEDIA_URL }}/images/urgent_left_pan2.gif) no-repeat;
+	margin-top: 10px;
+}
+
+.left_link {
+	width: 204px;
+	height: 92px;
+	background: url({{ MEDIA_URL }}/images/s_left_link.gif) no-repeat;
+	margin-top: 7px;
+}
+
+.left_ban {
+	background: url({{ MEDIA_URL }}/images/serv_ban.gif) norepeat;
+	width: 203px;
+	height: 171px;
+	margin-top: 11px;
+}
+
+.left_pan1 h3,.left_pan2 h3,.urgent_left_pan2 h3 {
+	margin-left: 12px;
+	padding-top: 7px;
+}
+
+.urgent_left_pan2 h3 {
+	color: #c41230;
+}
+
+.left_pan1 ul,.left_pan2 ul {
+	margin-top: 10px;
+	padding-left: 14px;
+	padding-right: 12px; 
+	*margin-left: 0px; 
+	*padding-left: 12px;
+}
+
+.left_pan2 ul { 
+	*padding-left: 8px;
+}
+
+.urgent_left_pan2 ul {
+	margin-top: 10px;
+	padding-left: 8px;
+	padding-right: 12px; 
+	*padding-left: 8px;
+}
+
+.left_pan1 ul li,.left_pan2 ul li,.urgent_left_pan2 ul li {
+	line-height: 12px;
+	margin-bottom: 15px;
+	background: url({{ MEDIA_URL }}/images/S_pointer.gif) no-repeat left top;
+	list-style-type: none;
+	padding-left: 15px;
+	text-indent: -15px;
+}
+
+.left_pan2 ul li,.urgent_left_pan2 ul li {
+	background: url({{ MEDIA_URL }}/images/s_arr.gif) no-repeat left top;
+	height: 12px;
+}
+
+.left_pan1 ul li a,.left_pan2 ul li a,.urgent_left_pan2 ul li a {
+	padding-left: 13px;
+	line-height: 10px;
+}
+
+.urgent_left_pan2 ul li a {
+	line-height: 10px;
+}
+
+.s_urgent ul {
+	margin-left: 0;
+}
+
+.s_serv,.s_urgent {
+	width: 195px;
+	height: 105px;
+	margin: 5px;
+	background: url({{ MEDIA_URL }}/images/s_line.gif) repeat-x top;
+	padding-top: 8px;
+}
+
+.s_urgent {
+	background: url({{ MEDIA_URL }}/images/urgent_line.gif) repeat-x top;
+}
+
+#s_menu {
+	height: 25px;
+	margin: 0 14px;
+	border-bottom: dotted 1px #999;
+}
+
+#menu_l {
+	width: 280px;
+	height: 18px;
+	float: left;
+}
+
+.menu_work {
+	width: 280px;
+	height: 25px;
+	margin-left: 27px;
+	float: right;
+}
+
+.menu_work ul {
+	margin-left: 10px;
+	margin-top: 0;
+	padding: 0;
+}
+
+.menu_work ul li {
+	float: left;
+	display: block;
+	width: 52px;
+	margin: 0;
+	padding: 0;
+	height: 18px;
+}
+
+.menu_work ul li.serv_text {
+	width: 70px;
+	background: url({{ MEDIA_URL }}/images/serv_text.gif) no-repeat left;
+	padding-left: 32px;
+}
+
+.menu_work ul li.serv_save_ok {
+	background: url({{ MEDIA_URL }}/images/save_ok.gif) no-repeat left;
+	margin-right: 7px;
+	width: 47px;
+}
+
+.menu_work ul li.serv_save {
+	background: url({{ MEDIA_URL }}/images/serv_save.gif) no-repeat left;
+}
+
+.menu_work ul li.serv_share {
+	background: url({{ MEDIA_URL }}/images/serv_share.gif) no-repeat left;
+}
+
+.menu_work ul li.serv_print {
+	background: url({{ MEDIA_URL }}/images/serv_print.gif) no-repeat left;
+	margin-right: 5px;
+}
+
+.menu_work ul li.serv_email {
+	background: url({{ MEDIA_URL }}/images/serv_mail.gif) no-repeat left;
+	margin-right: 5px;
+}
+
+.menu_work ul li a {
+	font-family: Verdana;
+	font-size: 9px;
+	font-weight: bold;
+	padding-left: 15px;
+	text-decoration: none;
+	color: #333;
+}
+
+.menu_work ul li.serv_save_ok a {
+	color: #029e3d;
+}
+
+.menu_work {
+	width: 280px;
+	height: 25px;
+	margin-left: 27px;
+	float: right;
+}
+
+a.s_down,a.s_up {
+	font-family: Arial;
+	font-size: 10px;
+	color: #1053ad;
+	text-decoration: none;
+}
+
+a.s_up {
+	text-decoration: none;
+}
+
+#s_info,#plastic_info,#spa_info,#urgent_info {
+	width: 537px;
+	min-height: 730px;
+	float: left;
+}
+
+#h_info {
+	height: 20px;
+	margin-left: 14px;
+	margin-right: 10px;
+	margin-bottom: 2px;
+	border-bottom: dotted 1px #999;
+}
+
+#plastic_head,#spa_head,#urgent_head {
+	height: 20px;
+	margin: 0 10px 2px 14px;
+	border-bottom: dotted 1px #999;
+	padding-top: 10px;
+}
+
+#plastic_head h3 {
+	color: #b26b01;
+}
+
+#spa_head h3 {
+	color: #6d1f7e;
+}
+
+#h_info {
+	padding-top: 10px;
+}
+
+#main_img {
+	background: url({{ MEDIA_URL }}/images/s_main_img.gif) no-repeat;
+	width: 526px;
+	height: 328px;
+	margin-left: 15px;
+}
+
+#plastic_border_img,#urgent_border_img {
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_border_img.gif) no-repeat;
+	width: 517px;
+	height: 232px;
+	margin-left: 15px;
+}
+
+#spa_border_img {
+	background: url({{ MEDIA_URL }}/images/spa_border_img.jpg) no-repeat;
+	width: 516px;
+	height: 228px;
+	margin-left: 15px;
+}
+
+.s_panels {
+	width: 170px;
+	min-height: 730px;
+	float: right;
+	margin-top: 15px;
+}
+
+#urgent_border_img {
+	background: url({{ MEDIA_URL }}/images/333.gif) no-repeat;
+}
+
+.panl1_cont {
+	background: url({{ MEDIA_URL }}/images/s_panel_1.gif) no-repeat;
+	width: 160px;
+	height: 150px;
+}
+
+.panl_htxt,.panl_txt,.panl_txt_n,.panl_txt_r {
+	font-size: 11px;
+	font-family: Arial;
+	color: #0270de;
+	margin-left: 10px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.panl_txt,.panl_txt_n,.panl_txt_r,.txt_d {
+	color: #8c8d8f;
+	padding: 2px;
+	margin-left: 7px;
+	margin-right: 7px;
+	padding-bottom: 7px;
+	text-align: left;
+}
+
+.txt_d {
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	font-size: 11px;
+}
+
+.panl_htxt {
+	padding-top: 8px;
+}
+
+.panl_txt_r {
+	font-weight: bold;
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
+.panl_txt_n {
+	text-align: justify;
+	padding-bottom: 0;
+}
+
+.panl2_cont {
+	width: 160px;
+	height: 140px;
+	margin-top: 10px;
+	background: url({{ MEDIA_URL }}/images/s_panel_2.gif) no-repeat;
+}
+
+#s_info p {
+	margin-top: 0;
+	margin-right: 15px;
+	margin-left: 15px;
+	color: #656769;
+}
+
+#s_info h3 {
+	margin-left: 15px;
+}
+
+#s_info a {
+	margin-left: 20px;
+	text-decoration: none;
+	color: #003b6b;
+}
+
+#s_info h4 {
+	font-size: 12px;
+	font-weight: normal;
+	color: #0270de;
+	margin: 5px 0 2px 20px;
+}
+
+#s_info .panl_txt_r {
+	padding-bottom: 2px;
+	padding-top: 5px;
+	font-size: 12px;
+}
+
+#s_info span {
+	color: #656769;
+	font-weight: bold;
+}
+
+.border_bot {
+	width: 520px;
+	height: 3px;
+	border-bottom: dotted 1px #656769;
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+#s_info h2 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #00457c;
+	margin-left: 15px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+/*corporate health*/
+.corporate_left_pan1,.corporate_left_pan2,.corporate_left_link,.left_ban {
+	width: 207px;
+	height: 212px;
+	background: url({{ MEDIA_URL }}/images/corporate_health_left_pan1.gif) no-repeat;
+	margin-left: 23px;
+	margin-top: 23px;
+}
+
+.corporate_left_pan2 {
+	width: 207px;
+	height: 152px;
+	background: url({{ MEDIA_URL }}/images/corporate_health_left_pan2.gif) no-repeat;
+	margin-top: 10px;
+}
+
+.plastic_left_pan1 {
+	width: 207px;
+	height: 272px;
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_left_pan1.gif) no-repeat;
+	margin-left: 23px;
+	margin-top: 23px;
+}
+
+.corporate_left_link {
+	width: 204px;
+	height: 92px;
+	background: url({{ MEDIA_URL }}/images/s_left_link.gif) no-repeat;
+	margin-top: 7px;
+}
+
+.left_ban {
+	background: url({{ MEDIA_URL }}/images/serv_ban.gif) no-repeat;
+	width: 203px;
+	height: 171px;
+	margin-top: 11px;
+}
+
+.corporate_left_pan1 h3,.corporate_left_pan2 h3 {
+	margin-left: 12px;
+	padding-top: 7px;
+	color: #00703c;
+}
+
+.corporate_left_pan1 ul,.corporate_left_pan2 ul,.plastic_left_pan1 ul,.spa_left_pan1 ul,.urgent_left_pan1 ul
+	{
+	margin-top: 10px;
+	padding-left: 14px;
+	padding-right: 10px; 
+	*padding-left: 0px; 
+	*margin-left: 10px;
+}
+
+.corporate_left_pan1 ul li,.corporate_left_pan2 ul li,.plastic_left_pan1 ul li,.spa_left_pan1 ul li
+	{
+	line-height: 14px;
+	margin-bottom: 15px;
+	background: url({{ MEDIA_URL }}/images/corporate_health_pointer.gif) no-repeat left top;
+	list-style-type: none;
+	padding-left: 15px;
+	text-indent: -15px;
+}
+
+.plastic_left_pan1 ul li {
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_pointer.gif) no-repeat left top;
+}
+
+.spa_left_pan1 ul li {
+	background: url({{ MEDIA_URL }}/images/spa_pointer.gif) no-repeat left top;
+}
+
+.corporate_left_pan2 ul li {
+	background: url({{ MEDIA_URL }}/images/s_arr.gif) no-repeat left center;
+	height: 12px;
+}
+
+.urgent_left_pan1 ul li {
+	background: url({{ MEDIA_URL }}/images/s_arr.gif) no-repeat left;
+	line-height: 14px;
+	margin-bottom: 15px;
+	list-style-type: none;
+	padding-left: 15px;
+	text-indent: -15px;
+}
+
+.corporate_left_pan1 ul li a,.corporate_left_pan2 ul li a,.plastic_left_pan1 ul li a,.spa_left_pan1 ul li a,.urgent_left_pan1 ul li a {
+	padding-left: 13px;
+	line-height: 10px;
+}
+
+.corporate_left_pan2 .s_serv {
+	width: 195px;
+	height: 105px;
+	margin: 5px;
+	background: url({{ MEDIA_URL }}/images/corporate_health_line.gif) repeat-x top;
+	padding-top: 8px;
+}
+
+.corporate_left_pan1 .s_serv {
+	width: 195px;
+	height: 105px;
+	margin: 5px;
+	background: url({{ MEDIA_URL }}/images/corporate_health_line.gif) repeat-x top;
+	padding-top: 8px;
+}
+
+.corporate_left_pan1 .s_serv ul li {
+	background: url({{ MEDIA_URL }}/images/s_arr.gif) no-repeat left center;
+	height: 12px;
+}
+
+.corporate_panl1_cont {
+	background: url({{ MEDIA_URL }}/images/corporate_health_right_pan1.gif)	no-repeat;
+	width: 160px;
+	height: 150px;
+}
+
+.corporate_panl2_cont {
+	width: 160px;
+	height: 140px;
+	margin-top: 10px;
+	background: url({{ MEDIA_URL }}/images/corporate_health_right_pan2.gif)	no-repeat;
+}
+
+.corporate_panl1_cont .panl_htxt,.corporate_panl2_cont .panl_htxt,#s_info .panl_htxt {
+	color: #00703c;
+}
+
+.corporate_panl3_cont {
+	width: 160px;
+	height: 300px;
+	background: url({{ MEDIA_URL }}/images/corporate_health_right_pan3.gif)	no-repeat;
+	margin-top: 10px;
+}
+
+.corporate_panl3_cont .panl_htxt {
+	color: #00703c;
+	font-weight: bold; 
+	*margin-top: 0; 
+	*padding-top: 5px;
+}
+
+.corporate_panl3_cont .panl_txt_ath {
+	color: #8c8d8f;
+	font-style: italic;
+	font-size: 12px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.corporate_panl3_cont .txt_d,#s_info .panl_txt {
+	font-size: 12px;
+}
+
+#s_info p {
+	margin-top: 0;
+	margin-right: 15px;
+	margin-left: 15px;
+	color: #656769;
+}
+
+#s_info .panl_htxt {
+	margin-left: 20px;
+	font-size: 12px;
+}
+
+#s_info a {
+	margin-left: 20px;;
+	color: #003b6b;
+}
+
+#s_info ul {
+	margin: 0;
+	padding-bottom: 12px;
+}
+
+#s_info ul li p {
+	height: 12px;
+	margin-top: 0;
+	margin-left: 2px;
+}
+
+.learn_more ul {
+	list-style-type: none;
+	padding-left: 10px;
+}
+
+#s_info .learn_more ul li a.tbd {
+	margin-left: 10px;
+}
+
+#corporate_main_img {
+	background: url({{ MEDIA_URL }}/images/corporate_health_border_img.gif);
+	width: 522px;
+	height: 308px;
+	margin-left: 15px;
+}
+
+/*plastic Surgery*/
+.plastic_left_pan2 {
+	width: 207px;
+	height: 122px;
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_left_pan2.gif);
+	margin-left: 23px;
+	margin-top: 10px;
+}
+
+.plastic_left_pan3 {
+	width: 207px;
+	height: 92px;
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_left_pan3.gif);
+	margin-left: 23px;
+	margin-top: 10px;
+}
+
+.plastic_left_pan1 h3,.plastic_left_pan2 h3,.plastic_left_pan3 h3,.spa_left_pan1 h3,.urgent_left_pan1 h3
+	{
+	margin-left: 12px;
+	padding-top: 7px;
+	color: #b26b01;
+}
+
+.plastic_left_pan3 p,.plastic_left_pan2 p,.spa_left_pan1 p {
+	margin-left: 12px;
+	padding-top: 7px;
+	padding-right: 5px;
+	color: #656769;
+}
+
+.plastic_left_pan3 a,.plastic_left_pan2 a {
+	margin-left: 12px;
+	padding-top: 7px;
+	color: #b26b01;
+}
+
+.plastic_left_pan3 p {
+	padding-top: 1px;
+	margin-top: 5px;
+	color: #656769;
+}
+
+.plastic_panl1_cont,.spa_panl1_cont,.urgent_panl1_cont {
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_right_pan1.gif) no-repeat;
+	width: 160px;
+	height: 150px;
+	margin-bottom: 10px;
+}
+
+.spa_panl1_cont {
+	background: url({{ MEDIA_URL }}/images/spa_right_pan1.gif) no-repeat;
+}
+
+.urgent_panl1_cont {
+	background: url({{ MEDIA_URL }}/images/urgent_right_pan1.gif) no-repeat;
+}
+
+.spa_panl1_cont p.panl_htxt {
+	color: #6d1f7e;
+}
+
+.urgent_panl1_cont p.panl_htxt {
+	color: #c41230;
+}
+
+.plastic_panl1_cont p.panl_htxt,.plastic_panl2_cont p.panl_htxt,.plastic_panl3_cont p.panl_htxt
+	{
+	color: #b26b01;
+}
+
+.plastic_panl2_cont {
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_right_pan2.gif) no-repeat;
+	width: 160px;
+	height: 113px;
+	margin-bottom: 10px;
+}
+
+.plastic_panl3_cont {
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_right_pan3.gif) no-repeat;
+	width: 160px;
+	height: 70px;
+	margin-bottom: 10px;
+}
+
+.plastic_panl2_cont ul,.plastic_panl3_cont ul,.spa_panl2_cont ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.plastic_panl2_cont ul li,.plastic_panl3_cont ul li,.spa_panl2_cont ul li
+	{
+	height: 20px;
+	list-style-type: none;
+	padding-left: 10px;
+}
+
+.plastic_panl2_cont ul li a,.plastic_panl3_cont ul li a,.spa_panl2_cont ul li a
+	{
+	font-size: 11px;
+	color: #656769;
+}
+
+#plastic_info h3 {
+	color: #b26b01;
+	margin-left: 15px;
+}
+
+#plastic_info p {
+	margin-left: 15px;
+	color: #656769;
+	margin-right: 15px;
+}
+
+#plastic_info h4 {
+	color: #b26b01;
+	font-size: 12px;
+	font-weight: normal;
+	margin-left: 15px;
+}
+
+#award1,#award2,#award3,#award4 {
+	width: 130px;
+	height: 115px;
+	float: left;
+}
+
+#award1 {
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_adard1.jpg) no-repeat bottom;
+}
+
+#award2 {
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_adard2.jpg) no-repeat bottom;
+}
+
+#award3 {
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_adard3.jpg) no-repeat bottom;
+}
+
+#award4 {
+	background: url({{ MEDIA_URL }}/images/plastic_surgery_adard4.jpg) no-repeat bottom;
+}
+
+/*sra*/
+.spa_left_pan1,.urgent_left_pan1 {
+	width: 207px;
+	height: 272px;
+	background: url({{ MEDIA_URL }}/images/spa_left_pan1.gif) no-repeat;
+	margin-left: 23px;
+	margin-top: 10px;
+}
+
+.spa_left_pan1 h3 {
+	color: #6d1f7e;
+}
+
+.spa_panl2_cont {
+	width: 160px;
+	height: 140px;
+	background: url({{ MEDIA_URL }}/images/spa_right_pan2.gif);
+	margin-bottom: 10px;
+}
+
+.spa_panl2_cont .panl_htxt,.spa_panl3_cont .panl_htxt {
+	color: #6d1f7e;
+}
+
+.spa_panl3_cont {
+	background: url({{ MEDIA_URL }}/images/spa_right_pan3.gif) no-repeat;
+	width: 160px;
+	height: 100px;
+	margin-bottom: 10px;
+}
+
+.spa_panl3_cont ul {
+	margin-top: 0px;
+}
+
+#spa_info p,#urgent_info p {
+	margin-left: 15px;
+	margin-right: 15px;
+	color: #656769;
+}
+
+#spa_info h3,#spa_info h4 {
+	margin-left: 15px;
+	color: #6d1f7e;
+}
+
+#spa_info ul li {
+	margin-bottom: 10px;
+	color: #656769;
+}
+
+/* Urgent care center */
+.urgent_left_pan1 {
+	background: url({{ MEDIA_URL }}/images/urgent_left_pan1.gif) no-repeat;
+}
+
+.urgent_left_pan1 h3 {
+	color: #c41230;
+}
+
+#urgent_info h3 {
+	color: #c41230;
+}
+
+#urgent_info span {
+	color: #c41230;
+}
+
+.urgent_panl2_cont {
+	background: url({{ MEDIA_URL }}/images/urgent_right_pan2.gif) no-repeat;
+	width: 160px;
+	height: 70px;
+	margin-bottom: 10px;
+}
+
+.urgent_panl2_cont p.panl_htxt,.urgent_panl3_cont p.panl_htxt {
+	color: #c41230;
+}
+
+.urgent_panl2_cont ul,.urgent_panl3_cont ul {
+	padding: 0;
+	margin: 0;
+}
+
+.urgent_panl3_cont ul {
+	margin-left: 20px;
+}
+
+.urgent_panl2_cont ul li,.urgent_panl3_cont ul li {
+	font-size: 11px;
+	color: #656769;
+	list-style-type: none;
+	padding-left: 10px;
+	margin-left: 0;
+}
+
+.urgent_panl3_cont ul li {
+	list-style-type: disc;
+	padding-left: 0;
+	padding-top: 4px;
+}
+
+.urgent_panl3_cont {
+	background: url({{ MEDIA_URL }}/images/urgent_right_pan3.gif) no-repeat;
+	width: 160px;
+	height: 391px;
+}

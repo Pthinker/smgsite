@@ -1,0 +1,3 @@
+{% if item.display_name %}{{ item.display_name }}, {% endif %}
+{{ item.address }}, {% if item.address2 %}{{ item.address2 }}, {% endif %}
+{{ item.city }}, {{ item.state }} {{ item.zipcode }} {% if location.phone %}{{ location.phone }}{% endif %}

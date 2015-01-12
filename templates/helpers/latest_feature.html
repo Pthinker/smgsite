@@ -1,0 +1,4 @@
+<div class="date">{{ feature.display_time|date }}</div>
+<div class="title"><a href="{{ feature.get_absolute_url }}">{{ feature.headline }}</a></div>
+{#<div class="text">{{ feature.content|safe|strip_tags|truncatewords:15 }}</div>#}
+<a class="more" href="/features/{{ feature.get_content_type_display }}/">READ MORE</a>

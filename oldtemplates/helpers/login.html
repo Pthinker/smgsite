@@ -1,0 +1,19 @@
+{% if user %}
+<div id="top_info">
+	<div class="left_top_info">We're here to help: <strong>908-273-4300</strong></div>
+	<div class="right_top_info">
+	        <p class="links"><a href="/mysmg/logout/">Log out</a></p>
+	        <p class="hello">Hello, {{ user.display_name }}. Welcome back.</p>
+	</div>
+</div>
+{% else %}
+<div id="top_info">
+	<div class="left_top_info">We are here to help: <strong>908-273-4300</strong></div>
+	<div class="right_top_info">
+		<<p>&nbsp;</p>
+		
+		<p class="hello">Tip: Click "Save" to add pages to <font face="Georgia"><i>My Summit Medical Group</i></font>.</p>
+	</div>
+	</div>
+</div>
+{% endif %}

@@ -1,0 +1,63 @@
+{% load helpers %}
+
+<p>&nbsp;</p>
+<p><i>Although these hours indicate when our staff members are available to answer phones and schedule your appointments, they are not necessarily the hours practitioners are in the office. Always check with your doctor first to confirm that he or she is in the office.</i></p>
+{% if location.starttime %}
+<p><b>Standard operating hours for this location
+are {{ location.starttime|time:"f A" }} - {{ location.endtime|time:"f A" }} {% days location %}.</b></p>
+
+{% endif %}
+
+{% if location.options %}
+<p>
+Some departments at {% if location.display_name %}{{ location.display_name }}, {% endif %}{{ location }} also have the following additional hours:
+</p>
+
+<div class="row">
+    <div class="col-md-8">
+
+        {% if weekday %}
+        <table class="table">
+            <thead><tr><th colspan="2">Weekdays</th></tr></thead>
+            {% for hours in weekday %}
+            <tr>
+                <td><a href="{{ hours.service.get_absolute_url }}">{{ hours.service }}</a></td>
+                <td align="right">{{ hours.hours }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
+        {% if saturday %}
+        <table class="table">
+            <thead><tr><th colspan="2">Saturdays</th></tr></thead>
+            {% for hours in saturday %}
+            <tr>
+                <td><a href="{{ hours.service.get_absolute_url }}">{{ hours.service }}</a></td>
+                <td align="right">{{ hours.hours }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+
+        {% if sunday %}
+        <table class="table">
+            <thead><tr><th colspan="2">Sundays</th></tr></thead>
+            {% for hours in sunday %}
+            <tr>
+                <td><a href="{{ hours.service.get_absolute_url }}">{{ hours.service }}</a></td>
+                <td align="right">{{ hours.hours }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+        
+    </div>
+</div>
+
+{% endif %}
+
+{% if location.hours_comments %}<p>{{ location.hours_comments|safe }}</p>{% endif %}
+
+<p><b>Weekend hours vary by service and practitioners' schedules. If you would like to schedule a weekend appointment, please call your doctor's office.
+ </b></p>

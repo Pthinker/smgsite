@@ -1,0 +1,197 @@
+/* Main search flyover */
+
+#searchcont {
+	position: absolute;
+	right: 0;
+}
+#searchcont form {
+    float: none;
+    position: absolute;
+    right: 0;
+    display: block;
+}
+#searchcont form a {
+    width: 36px; height: 27px; display: block;
+    font-family: 'GothamHTFMedium'; font-size: 15px; line-height: 27px; text-align: center;
+    border: 1px solid #a2c0de; color: #5d5d5d; background-color: #f5f5f5;
+    behavior: url(http://www.summitmedicalgroup.com/media/images/PIE.htc);
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+}
+
+#searchcont hr {
+    margin: 0 9px 9px;
+}
+
+#searchcont .item_search_block {
+    min-height: 36px;
+}
+
+#searchcont .search_flyover_header {
+    margin: 0 0 0 8px;
+    font-family: 'GothamHTFLight';
+    color: #595959;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#searchcont .item_search_element li {
+    font: normal 1em / 1.5em Arial, Helvetica, sans-serif;
+    color: #404040;
+}
+#searchcont .item_search_element li a {
+    font-size: 12px;
+    font-weight: bold;
+    color: #0047A8;
+}
+
+[class*=" ie"] body {
+    border: 0 medium;
+}
+[class*=" ie"] #searchcont form a {
+    right: 2px;
+}
+
+div#search-results {
+	position: absolute;
+	right: 38px;
+	top: 59px;
+	display: none;
+	width: 300px;
+	margin: 0;
+	padding: 0;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgb(165, 165, 165);
+	z-index: 9000;
+}
+
+div#search_flyover_header {
+	width: 291px;
+	margin: 0;
+	font: bold 16px/16px Arial, Helvetica;
+	padding: 8px 0 8px 9px;
+	color: rgb(14, 70, 124);
+	background-color: rgb(247, 250, 255);
+	border-top: 1px solid rgb(165, 165, 165);
+	border-bottom: 1px solid rgb(165, 165, 165);
+}
+
+div#search_flyover_header img {
+	margin: 9px 0 5px 8px;
+}
+
+div.item_search_element {
+	width: 288px;
+}
+
+div#search-results ul {
+	width: 275px;
+	list-style: none;
+	margin: 0 0 0 9px;
+	padding: 3px 0;
+	font: normal 11px Verdana, Arial, sans-serif;
+}
+
+div#search-results li {
+	margin: 4px 0;
+	padding: 3px 0;
+	color: rgb(139, 139, 139);
+	list-style: none;
+}
+
+div#search-results a {
+	color: rgb(49, 139, 228);
+	text-decoration: none;
+}
+
+div#doctors-results ul {
+	width: 275px;
+	margin: 4px 0;
+	font-size: .75em;
+}
+
+div#doctors-results li {
+	margin: 4px 0;
+}
+
+.more-results {
+	height: auto;
+	padding: 8px 8px 8px 0;
+	text-align: right;
+	background-color: rgb(247, 250, 255);
+	border-top: 1px solid rgb(165, 165, 165);
+	color: rgb(14, 70, 124)
+}
+
+#searchcont .more-results {
+    font: 14px/21px Arial, Helvetica, sans-serif
+    margin: 0 9px;
+}
+
+#searchcont .more-results span {
+    font-size: 14px;
+    font-family: 'GothamHTFLight';
+    color: #595959;
+    line-height: 21px;
+}
+
+#searchcont .more-results a {
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb( 14, 70, 124 );
+}
+
+#searchcont .more-results img {
+	margin: 6px 5px 0 5px;
+}
+
+.more-results a {
+	color: rgb(14, 70, 124);
+	font: italic 14px Georgia, serif;
+}
+
+#doctor_photo_flyover {
+	display: block;
+	visibility: hidden;
+	position: absolute;
+}
+
+.doctor_photo_flyover {
+	border: 1px solid #a5acb2;
+	width: 219px;
+	color: #656769;
+	font: 12px Arial, Helvetica, sans-serif;
+	padding: 6px 8px 0 8px;
+	background: #fff;
+}
+
+.doctor_photo_flyover img {
+	padding: 5px;
+	border: 1px solid #ccdcef;
+}
+
+.doctor_photo_flyover p.name {
+	margin: 0;
+	padding: 9px 0 5px 6px;
+	color: #004c75;
+	font-size: 1.25em;
+	font-weight: bold;
+}
+
+.doctor_photo_flyover dl {
+	margin: 0;
+	padding: 0 0 20px 6px;
+}
+
+.doctor_photo_flyover dl dt {
+	color: #0270de;
+	margin: 0;
+	padding: 0;
+}
+
+.doctor_photo_flyover dl dd {
+	margin: 0;
+	padding: 0;
+}

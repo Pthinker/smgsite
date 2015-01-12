@@ -1,0 +1,56 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+
+{% if message %}
+<ul class="errorlist"><li>{{ message }}</li></ul>
+{% endif %}
+
+{% if up %}
+	<b><a href="/editor/dir/{{ updir }}/">Up Directory</a></b>
+{% endif %}
+
+<br />
+<br />
+
+<table>
+	{% for file in files %}
+		<tr>
+			{% if file.isdir %}
+			<td><img src="{{ MEDIA_URL }}/images/16x16_folder_icon.gif" /></td>
+			{% else %}
+			<td><img src="{{ MEDIA_URL }}/images/16x16_document_icon.gif" /></td>
+			{% endif %}
+			<td>{{ file.name }}</td>
+			{% if file.isdir %}
+				<td><a href="/editor/dir/{{ file.path }}/{{ file.name }}/">Enter</a></td>
+				<td></td>
+			{% else %}
+				<td><a href="/editor/view/{{ file.path }}/{{ file.name }}">View</a></td>
+				<td><a href="/editor/source/{{ file.path }}/{{ file.name }}">Source</a></td>
+				<td><a href="/editor/edit/{{ file.path }}/{{ file.name }}">Edit</td>
+			{% endif %}
+		</tr>
+	{% endfor %}
+</table>
+
+<br />
+<hr />
+<br />
+
+<form name="newdir" method="GET" action="/editor/newdir/">
+	<input type="hidden" name="path" value="{{ curpath }}">
+	Directory: <input name="filename"></input>
+	<input type="submit" value="Create new directory under this directory" />
+</form>
+
+<br />
+
+<form name="newfile" method="GET" action="/editor/new/">
+	<input type="hidden" name="path" value="{{ curpath }}">
+	Filename: <input name="filename"></input>
+	<input type="submit" value="Create new file in this directory" />
+</form>
+
+{% endblock %}
+

@@ -1,0 +1,687 @@
+from random import randint
+import datetime
+import os
+import re
+import string
+
+from django import template
+from django.utils.html import escape
+from django.template.defaultfilters import stringfilter
+from django.utils.encoding import force_unicode
+from django.utils.safestring import mark_safe
+from django.db.models import Max
+from django.db.models import Q
+from django.conf import settings
+
+import smgsite.healthday.models as healthday
+import smgsite.articles.models as articles
+from smgsite.events.models import Event, Eventtime, EventBanner, Class
+from smgsite.blogs.models import Blog, BlogEntry
+from smgsite.marketing_banners.models import MarketingBanner, MBGroup
+from smgsite.doctors.models import Featured, Doctor
+from smgsite.mysmg.models import User
+from smgsite.site.models import HomepageImage, VideoTemplate, Location, ImageSlide
+from smgsite.services.models import Service
+
+from PIL import Image
+
+from bs4 import BeautifulSoup
+import HTMLParser
+
+SCALE_WIDTH = 'w'
+SCALE_HEIGHT = 'h'
+SCALE_BOTH = 'both'
+
+#TODO: There are a lot of tags in here, it might be worth culling unused ones and spliting the rest into seperate files.
+
+def scale(max_x, pair):
+	x, y = pair
+	new_y = (float(max_x) / x) * y
+	return int(max_x), int(new_y)
+
+
+register = template.Library()
+
+
+@register.filter(is_safe=True)
+@stringfilter
+def strip_style(content):
+	"""
+	remove the style attr from html content 
+	"""
+	soup = BeautifulSoup(content)
+	for tag in soup():
+	    for attribute in ["style"]:
+	        del tag[attribute]
+	return mark_safe(soup)
+
+@register.filter(is_safe=True)
+@stringfilter
+def strip_font_style(content):
+	"""
+	remove inline font-size from html content 
+	"""
+	content = re.sub('font-size\:[^;^"]+', '', content)
+	return mark_safe(content)
+
+@register.filter
+@stringfilter
+def split_to_list(value, splitter=',', autoescape=None):
+	value = mark_safe(value)
+	value = value.split(splitter)
+	result = ''
+	for v in value:
+		result += '<li>%s</li>\n' % (v)
+	return mark_safe(result)
+
+
+split_to_list.is_safe = True
+split_to_list.needs_autoescape = True
+
+
+@register.inclusion_tag('helpers/navigation_menu.html', takes_context=True)
+def show_menu(context):
+	"""
+		Render menu and add active to an item that matches the path
+	"""
+	items = settings.NAVIGATION_SETTINGS
+	path = context['request'].path
+	menu_items = []
+	for item in items:
+		if path == item['url']:
+			item['active'] = True
+		else:
+			item['active'] = False
+		menu_items.append(item)
+
+	return {'menu_items': menu_items, 'class': 'nav'}
+
+@register.inclusion_tag('helpers/navigation_menu_mobile.html', takes_context=True)
+def show_mobile_menu(context):
+	items = settings.NAVIGATION_SETTINGS
+	menu_items = []
+	for item in items:
+		menu_items.append({
+			'name': item['name'].replace('<br>', ' '),
+			'title': item['title'],
+			'url': item['url'],
+			'children': item.get('children', None),
+			})
+	return {'menu_items': menu_items, 'class': 'List'}
+
+@register.inclusion_tag('helpers/alphabet_list.html')
+def alphabet_list(l, space):
+	alphabet = map(chr, range(65, 91))
+	letterdict = dict.fromkeys([x.letter_key() for x in l])
+	letters = []
+	for letter in alphabet:
+		link = False
+		if letterdict.has_key(letter):
+			link = True
+		letters.append((letter, link))
+	return {'letters': letters, 'space': space}
+
+
+@register.inclusion_tag('helpers/headlines.html', takes_context=True)
+def headlines(context, source, count):
+	last_updated = None
+	if source == 'healthday':
+		results = healthday.Article.objects.order_by('-posting_time')[:count]
+		try:
+			last_updated = results[0].posting_time.strftime('%a %b %d %Y, %I:%M %p')
+		except IndexError:
+			pass
+	else:
+		results = articles.Article.objects.filter(headline_promo__gt=0).order_by('headline_promo')[:count]
+	return {'MEDIA_URL': context['MEDIA_URL'], 'headlines': results, 'last_updated': last_updated}
+
+@register.assignment_tag
+def get_news_articles(source, count):
+	if source == 'healthday':
+		results = healthday.Article.objects.order_by('-posting_time')[:count]
+	else:
+		results = articles.Article.objects.filter(headline_promo__gt=0).order_by('headline_promo')[:count]
+	return results
+	
+
+def headlines(context, source, count):
+	last_updated = None
+	if source == 'healthday':
+		results = healthday.Article.objects.order_by('-posting_time')[:count]
+		try:
+			last_updated = results[0].posting_time.strftime('%a %b %d %Y, %I:%M %p')
+		except IndexError:
+			pass
+	else:
+		results = articles.Article.objects.filter(headline_promo__gt=0).order_by('headline_promo')[:count]
+	return {'MEDIA_URL': context['MEDIA_URL'], 'headlines': results, 'last_updated': last_updated}
+
+
+@register.filter
+@stringfilter
+def whitespace(value):
+	return value.lstrip('&nbsp;')
+
+
+@register.filter
+@stringfilter
+def strip_tags(value):
+	value = re.sub(r'<[^>]*?>', '', force_unicode(value))
+	value = value.replace('&nbsp;', ' ')
+	return value.lstrip()
+
+
+@register.filter
+@stringfilter
+def remove_date(value):
+	p = 'News\) -- '
+	value = re.sub('.*?(?=%s)' % p, '', value)
+	return value.replace('News) -- ', '')
+
+
+@register.inclusion_tag('helpers/leader.html', takes_context=True)
+def leader(context):
+	leaders = articles.Article.objects.filter(leader_promo__gt=0).order_by('leader_promo')
+	if leaders:
+		leader = leaders[0]
+		thumbnails = []
+		for i in range(1, len(leaders) + 1):
+			thumbnails.append(i)
+	else:
+		leader = None
+		thumbnails = None
+	return {'MEDIA_URL': context['MEDIA_URL'], 'leader': leader, 'thumbnails': thumbnails}
+
+
+@register.inclusion_tag('helpers/slider_images.html')
+def display_front_slider():
+	slides = ImageSlide.objects.all()
+	return {'slides': slides}
+
+
+@register.inclusion_tag('helpers/events.html', takes_context=True)
+def events(context, count):
+	today = datetime.date.today()
+	eventtimes = Eventtime.objects.filter(startdate__gte=today).order_by('startdate', 'starttime')
+	finallist = []
+	for eventtime in eventtimes:
+		if eventtime.event.active == u'1' and eventtime.event.for_update <= 1:
+			finallist.append(eventtime)
+	return {'MEDIA_URL': context['MEDIA_URL'], 'events': finallist[:count]}
+
+
+""" Added tags to get events and classes by month for index page """
+
+
+class EventMonthsNode(template.Node):
+	def __init__(self, var):
+		self.var = var
+
+	def render(self, context):
+		"""
+			Get next 4 months if there is no events for the current month move to the next.
+		"""
+		start_month = 0
+		while True:
+			events = _events_by_month(1, start_month)
+			if len(events) > 0:
+				break
+			start_month = start_month + 1
+			if start_month == 12:
+				break
+		context[self.var] = [(x + start_month) for x in range(4)]
+		return ''
+
+
+@register.tag
+def get_event_months(parser, token):
+	try:
+		tag_name, as_tag, var = token.split_contents()
+	except ValueError:
+		raise template.TemplateSyntaxError("%r tag requires a single argument" % token.contents.split()[0])
+	return EventMonthsNode(var)
+
+
+def get_year_month(month_offset):
+	d = datetime.date.today()
+	month = d.month + month_offset
+	year = d.year
+	if month > 12:
+		month = month - 12
+		year = d.year + 1
+	return month, year
+
+
+@register.filter
+def get_range(value):
+	return range(value)
+
+
+@register.simple_tag
+def get_month(month_offset):
+	month, year = get_year_month(month_offset)
+	return datetime.date(year, month, 1).strftime('%B')
+
+
+def _events_by_month(count, month_offset):
+	month, year = get_year_month(month_offset)
+	today = datetime.date.today()
+	eventtimes = Eventtime.objects.filter(startdate__year=year, startdate__month=month, startdate__gte=today).order_by(
+		'startdate', 'starttime')
+	finallist = []
+	for eventtime in eventtimes:
+		if eventtime.event.active == u'1' and eventtime.event.for_update <= 1:
+			finallist.append(eventtime)
+	now = datetime.datetime.now()
+	return finallist[:count]
+
+
+def _monthly_events_from_date(count, date):
+	eventtimes = Eventtime.objects.filter(startdate__year=date.year, startdate__month=date.month, startdate__gte=date).order_by('startdate', 'starttime')
+	finallist = []
+	for eventtime in eventtimes:
+		if eventtime.event.active == u'1' and eventtime.event.for_update <= 1:
+			finallist.append(eventtime)
+	return finallist[:count]
+
+
+@register.inclusion_tag('helpers/events.html')
+def events_this_month(count):
+	date = datetime.date.today()
+	return {'eventtimes': _monthly_events_from_date(count, date)}
+
+
+@register.inclusion_tag('helpers/events.html', takes_context=True)
+def events_by_month(context, count, month_offset):
+	return {'MEDIA_URL': context['MEDIA_URL'], 'eventtimes': _events_by_month(count, month_offset)}
+
+
+@register.inclusion_tag('helpers/classes.html', takes_context=True)
+def classes_by_month(context, count, month_offset):
+	month, year = get_year_month(month_offset)
+	classes = Class.objects.filter(startdate__year=year, startdate__month=month).order_by('startdate', 'starttime')[
+			  :count]
+	return {'MEDIA_URL': context['MEDIA_URL'], 'events': events}
+
+
+@register.inclusion_tag('helpers/classes.html', takes_context=True)
+def classes(context, count):
+	now = datetime.datetime.now()
+	classes = Class.objects.filter(enddate__gte=now).order_by('startdate', 'starttime')[:count]
+	return {'MEDIA_URL': context['MEDIA_URL'], 'classes': classes}
+
+
+@register.inclusion_tag('helpers/blog.html', takes_context=True)
+def blog(context, blog, count):
+	posts = BlogEntry.objects.filter(blog=blog).order_by('-postdate')[:count]
+	return {'MEDIA_URL': context['MEDIA_URL'], 'blog': blog, 'posts': posts}
+
+
+@register.inclusion_tag('helpers/marketing_banner.html', takes_context=True)
+def banner(context):
+	import re
+
+	components = context['request'].path.strip('/').split('/')
+	banner = None
+	for i in range(len(components), 0, -1):
+		path = '/'.join(components[0:i])
+		groups = MBGroup.objects.filter(urls__icontains=path)
+		if groups:
+			ngroups = []
+			for group in groups:
+				m = re.search(r'%s/{0,1}([\r\n]|$)' % path, group.urls, re.M)
+				if m:
+					ngroups.append(group)
+			groups = ngroups
+		if groups:
+			group = groups[randint(0, len(groups) - 1)]
+			banners = group.banners.filter(active=u'1', for_update__lte=1)
+			if banners:
+				banner = banners[randint(0, len(banners) - 1)]
+			break
+	return {'MEDIA_URL': context['MEDIA_URL'], 'group': 'group', 'banner': banner}
+
+
+@register.inclusion_tag('helpers/header.html', takes_context=True)
+def header(context, phone, ucc):
+	request = context['request']
+	authenticated = request.session.get('authenticated')
+	if authenticated:
+		user = User.objects.get(username=request.session['username'])
+	else:
+		user = None
+	return {'MEDIA_URL': context['MEDIA_URL'], 'phone': phone, 'ucc': ucc, 'user': user}
+
+
+@register.inclusion_tag('helpers/new_header.html', takes_context=True)
+def new_header(context):
+	request = context['request']
+	authenticated = request.session.get('authenticated')
+	if authenticated:
+		user = User.objects.get(username=request.session['username'])
+	else:
+		user = None
+	return {'MEDIA_URL': context['MEDIA_URL'], 'user': user}
+
+
+@register.inclusion_tag('helpers/login.html', takes_context=True)
+def login_box(context):
+	request = context['request']
+	authenticated = request.session.get('authenticated')
+	if authenticated:
+		user = User.objects.get(username=request.session['username'])
+	else:
+		user = None
+	return {'MEDIA_URL': context['MEDIA_URL'], 'user': user}
+
+
+@register.inclusion_tag('helpers/meta_info.html', takes_context=True)
+def meta_info(context, item):
+	try:
+		info = item.meta_description()
+	except TypeError:
+		info = item.meta_description
+	except AttributeError:
+		info = ""
+	return {'MEDIA_URL': context['MEDIA_URL'], 'info': escape(info)}
+
+
+@register.inclusion_tag('helpers/meta_info.html', takes_context=True)
+def meta_keywords(context, item):
+	try:
+		info = item.keywords()
+	except TypeError:
+		info = item.keywords
+	except AttributeError:
+		info = ""
+	return {'MEDIA_URL': context['MEDIA_URL'], 'info': escape(info)}
+
+
+@register.inclusion_tag('helpers/seo_keywords.html', takes_context=True)
+def seo_keywords(context, item):
+	try:
+		info = item.seo_keywords()
+	except TypeError:
+		info = item.seo_keywords
+	except AttributeError:
+		info = ""
+	return {'MEDIA_URL': context['MEDIA_URL'], 'info': escape(info)}
+
+
+@register.inclusion_tag('helpers/featured.html', takes_context=True)
+def featured(context):
+	now = datetime.datetime.now()
+	featured = Featured.objects.filter(startdate__lte=now, enddate__gte=now)
+	if featured:
+		featured = featured[0]
+		doctor = featured.doctor
+	else:
+		featured = None
+		doctor = None
+	return {'MEDIA_URL': context['MEDIA_URL'], 'featured': featured, 'doctor': doctor}
+
+
+@register.inclusion_tag('helpers/latest_feature.html', takes_context=True)
+def latest_feature(context, content):
+	try:
+		if content:
+			key = [key for key, val in articles.Feature.FEATURES if val == content][0]
+			feature = articles.Feature.objects.filter(content_type=key).order_by('-posting_time')[0]
+		else:
+			feature = articles.Feature.objects.order_by('-posting_time')[0]
+	except IndexError:
+		feature = None
+	return {'MEDIA_URL': context['MEDIA_URL'], 'feature': feature}
+
+
+@register.inclusion_tag('helpers/featured_recipe.html', takes_context=True)
+def featured_recipe(context, mode):
+	try:
+		if mode and mode.lower() == 'featured':
+			recipe = articles.Recipe.objects.filter(featured=u'1')[0]
+			if not recipe:
+				recipe = articles.Recipe.objects.order_by('-display_time')[0]
+		else:
+			recipe = articles.Recipe.objects.order_by('-display_time')[0]
+	except IndexError:
+		recipe = None
+	return {'MEDIA_URL': context['MEDIA_URL'], 'recipe': recipe}
+
+
+@register.inclusion_tag('helpers/event_banner.html', takes_context=True)
+def event_banner(context):
+	try:
+		banner = EventBanner.objects.all()[0]
+	except IndexError:
+		banner = None
+	return {'MEDIA_URL': context['MEDIA_URL'], 'banner': banner}
+
+
+@register.inclusion_tag('helpers/location.html', takes_context=True)
+def location(context, location):
+	return {'MEDIA_URL': context['MEDIA_URL'], 'location': location}
+
+
+@register.inclusion_tag('helpers/homepage_image.html', takes_context=True)
+def homepage_image(context, location):
+	try:
+		key = [key for key, val in HomepageImage.PLACES if val == location][0]
+		image = HomepageImage.objects.get(location=key)
+	except HomepageImage.DoesNotExist:
+		image = None
+	return {'MEDIA_URL': context['MEDIA_URL'], 'image': image}
+
+
+@register.inclusion_tag('helpers/video_template.html', takes_context=True)
+def video_template(context, location):
+	try:
+		key = [key for key, val in VideoTemplate.PLACES if val == location][0]
+		templates = VideoTemplate.objects.filter(location=key)
+		template = templates[randint(0, len(templates) - 1)]
+	except VideoTemplate.DoesNotExist:
+		template = None
+	return {'MEDIA_URL': context['MEDIA_URL'], 'template': template}
+
+
+@register.inclusion_tag('helpers/accepting.html', takes_context=True)
+def accepting(context, doctor):
+	return {'MEDIA_URL': context['MEDIA_URL'], 'doctor': doctor, 'template': template}
+
+
+@register.inclusion_tag('helpers/byline.html', takes_context=True)
+def byline(context, article):
+	return {'MEDIA_URL': context['MEDIA_URL'], 'article': article}
+
+
+@register.inclusion_tag('helpers/location_days.html', takes_context=True)
+def days(context, location):
+	days = ''
+	if location.monday == '1' and location.tuesday == '1' and location.wednesday == '1' \
+		and location.thursday == '1' and location.friday == '1':
+		days = 'Mon - Fri'
+	else:
+		if location.monday == '1':
+			days = 'Mon'
+		if location.tuesday == '1':
+			if days:
+				days += '; '
+			days += 'Tue'
+		if location.wednesday == '1':
+			if days:
+				days += '; '
+			days += 'Wed'
+		if location.thursday == '1':
+			if days:
+				days += '; '
+			days += 'Thu'
+		if location.friday == '1':
+			if days:
+				days += '; '
+			days += 'Fri'
+	return {'MEDIA_URL': context['MEDIA_URL'], 'days': days}
+
+
+@register.filter(name='split')
+def split(value, delim=' '):
+	return value.split(delim)
+
+#TODO: Can we delete this one as we added a thrid party thumbnail component?
+@register.filter
+def thumbnail(_file, args='100,square'):
+	size = args.split(',')[0]
+	flag = args.split(',')[1] if len(args.split(',')) > 1 else None
+	# defining the size
+	if size.lower().endswith('h'):
+		mode = 'h'
+		size = size[:-1]
+		max_size = int(size.strip())
+	elif size.lower().endswith('w'):
+		mode = 'w'
+		size = size[:-1]
+		max_size = int(size.strip())
+	else:
+		mode = 'both'
+
+	size_name = '%s_%s' % (size, flag.split(':')[0]) if flag else size
+
+	# defining the filename and the miniature filename
+	filehead, filetail = os.path.split(_file.path)
+	basename, _format = os.path.splitext(filetail)
+	miniature = basename + '_' + size_name + _format
+	filename = _file.path
+	miniature_filename = os.path.join(filehead, miniature)
+	filehead, filetail = os.path.split(_file.url)
+	miniature_url = filehead + '/' + miniature
+	if os.path.exists(miniature_filename) and os.path.getmtime(filename) > os.path.getmtime(miniature_filename):
+		os.unlink(miniature_filename)
+		# if the image wasn't already resized, resize it
+	if not os.path.exists(miniature_filename):
+		image = Image.open(filename)
+		image_x, image_y = image.size
+
+		if mode == SCALE_HEIGHT:
+			image_y, image_x = scale(max_size, (image_y, image_x))
+		elif mode == SCALE_WIDTH:
+			image_x, image_y = scale(max_size, (image_x, image_y))
+		elif mode == SCALE_BOTH:
+			image_x, image_y = [int(x) for x in size.split('x')]
+		else:
+			raise Exception("Thumbnail size must be in ##w, ##h, or ##x## format.")
+
+		image = image.resize([image_x, image_y], Image.ANTIALIAS)
+
+		try:
+			image.save(miniature_filename, image.format, quality=90, optimize=1)
+		except:
+			image.save(miniature_filename, image.format, quality=90)
+
+		if flag:
+			image = Image.open(miniature_filename)
+			cx, cy = image.size
+			if flag  == 'square':
+				max_length = min(cx, cy)
+				pad_x = 0 if cx <= max_length else (cx - max_length) / 2
+				pad_y = 0 if cy <= max_length else (cy - max_length) / 2
+				image = image.crop((pad_x, pad_y, max_length + pad_x, max_length + pad_y))
+			else:
+				box = [int(x) for x in flag.split(':')[1].split(' ')]
+				image = image.crop((box[0], box[1], box[2], box[3]))
+
+			try:
+				image.save(miniature_filename, image.format, quality=90, optimize=1)
+			except:
+				image.save(miniature_filename, image.format, quality=90)
+
+	return miniature_url
+
+
+""" Doctors helpers """
+
+@register.inclusion_tag('helpers/doctors_grid.html', takes_context=True)
+def doctors_by_service(context, service_urlname):
+	service = Service.objects.get(urlname=service_urlname)
+	doctors = Doctor.objects.filter(Q(title_service__urlname=service_urlname) | Q(services__urlname=service_urlname)).order_by('last_name', 'first_name')
+	letters = order_doctors_by_letter(doctors)
+	return {'doctors': doctors, 'letters': letters}
+
+@register.inclusion_tag('helpers/doctors_grid.html', takes_context=True)
+def doctors_output(context, doctors):
+	letters = order_doctors_by_letter(doctors)
+	return {'doctors': doctors, 'letters': letters}
+
+class RowList(object):
+	def __init__(self, letter, rows):
+		self.letter = letter
+		self.rows = rows
+
+def order_doctors_by_letter(doctors):
+	pos = 0
+	letters = []
+	while pos < len(doctors):
+		letter = doctors[pos].letter_key()
+		x = pos
+		while x < len(doctors) and letter == doctors[x].letter_key():
+			x += 1
+		count = x - pos
+		offset = 0
+		rows = []
+		row = []
+		for doctor in doctors[pos:pos+count]:
+			if offset == 3:
+				rows.append(row)
+				row = []
+				offset = 0
+			row.append(doctor)
+			offset += 1
+		rows.append(row)
+		letters.append(RowList(letter, rows))
+		pos = pos + count
+	return letters
+
+
+@register.filter()
+def to_alpha(value):
+	return string.lowercase[value]
+
+@register.filter
+def partition(thelist, n):
+    """
+    Break a list into ``n`` pieces. The last list may be larger than the rest if
+    the list doesn't break cleanly. That is::
+
+        >>> l = range(10)
+
+        >>> partition(l, 2)
+        [[0, 1, 2, 3, 4], [5, 6, 7, 8, 9]]
+
+        >>> partition(l, 3)
+        [[0, 1, 2], [3, 4, 5], [6, 7, 8, 9]]
+
+        >>> partition(l, 4)
+        [[0, 1], [2, 3], [4, 5], [6, 7, 8, 9]]
+
+        >>> partition(l, 5)
+        [[0, 1], [2, 3], [4, 5], [6, 7], [8, 9]]
+
+    """
+    try:
+        n = int(n)
+        thelist = list(thelist)
+    except (ValueError, TypeError):
+        return [thelist]
+    p = len(thelist) / n
+    if not (len(thelist) % n == 0):
+    	p += 1
+    return [thelist[p*i:p*(i+1)] for i in range(n - 1)] + [thelist[p*(i+1):]]
+
+
+@register.inclusion_tag('articles/newsroom/includes/trending_topics.html')
+def render_trending_topics():
+	trendingtopics = articles.TrendingTopic.objects.all().order_by('sort_order')[:3]
+	return {'trendingtopics': trendingtopics,}
+
+@register.filter(name='unescape')
+def unescape(content):
+	h = HTMLParser.HTMLParser()
+	return h.unescape(content)
+

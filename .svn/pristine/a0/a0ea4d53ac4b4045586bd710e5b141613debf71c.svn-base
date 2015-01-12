@@ -1,0 +1,9 @@
+{{ object.first_name }}
+{{ object.last_name }}
+{{ object.hospitals.hospital }}
+{{ object.title_service.name }}
+{% for service in object.services.all()  %}
+    {{ service.name }}
+{% endfor %}
+{{ object.specialties.specialty }}
+{{ object.touch }}

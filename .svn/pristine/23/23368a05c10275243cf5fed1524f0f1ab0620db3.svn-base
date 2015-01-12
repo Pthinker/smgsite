@@ -1,0 +1,74 @@
+{% extends "services/Corporate-Health/corp_content.html" %}
+
+{% block head_title %}Summit Medical Group - Services > {{ service.name }}{% endblock head_title %}
+
+{% block content_well %}
+
+<!--start of center column-->
+<div id="cent_col_573">
+
+<!--start CORPORATE HEALTH CONTENT-->
+<div id="square_box_573_top"><img src="{{ MEDIA_URL }}/images/corp_573x20_box_top.gif" width="573" height="20" alt="Page Box Top"></div>
+<div id="tab_box_573">
+
+{% include 'site/page_controls.html' %}
+
+<img class="header_text" src="{{ MEDIA_URL }}/images/corp_143x10_subhd_corp_heal.gif" alt="Corporate Health" width="143" height="10">
+
+{{ service.content|safe }}
+
+<p><span class="bold">For more about how we can help your company, please call:</span> (908) 673-7323<br>
+<span class="bold">Location:</span> <a href="/location/bensley_pavilion/">1 Diamond Hill Road</a>,  Bensley Pavilion</p>
+
+<div class="clearfloats"></div>
+</div>
+<!--end CORPORATE HEALTH CONTENT box-->
+
+<div class="clearfloats"></div>
+</div>
+<!--end of center column-->
+
+<!-- start right column -->
+<div id="right_col_177">
+
+{% if doctors %}
+	<!-- start DOCTOR LIST box -->
+	<div id="right_col_177_box" class="right_col_doctors_box">
+
+	<div id="right_col_doctor_box_header"><img  class="right_col_doctor_header" src="{{ MEDIA_URL }}/images/corp_98x10_our_doctors.gif" alt="Our Doctors" width="98" height="10" border="0"></div>
+	<p class="font_minus_1">
+	<ul class="right_col_ul_doctors">
+		{% for doctor in doctors %}
+			<li class="right_col_li_doctors"><a class="dark_green" href="{{ doctor.get_absolute_url }}" onmouseover="photoOn(this, '{{ doctor.get_thumbnail_url }}', '{{ doctor.display_name }}, {{ doctor.letters }}')" onmouseout="photoOff()" onclick="photoOff()"><span class="bold">{{ doctor.display_name }}</span></a>, {{ doctor.letters }}</li>
+		{% endfor %}
+	</ul>
+	</p>
+
+	</div>
+	<!-- end DOCTOR LIST box -->
+
+	<div id="doctor_photo_flyover" class="doctor_photo_flyover">
+		<center>
+			<img id="doctor_image" src="{{ MEDIA_URL }}/images/100x130Load.gif" />
+			<p id="doctor_name"></p>
+		</center>
+	</div>
+
+{% endif %}
+
+<div class="clearfloats"></div>
+</div>
+<!-- end right column -->
+
+{% if printable %}
+	{% if service.related_services.select_related or service.get_nav_links %}
+		<!--start of RELATED RESOURCES div-->
+		<div id="page_content_area">
+		{% include 'services/resources.html' %}
+		</div>
+		<!--end of RELATED RESOURCES div-->
+	{% endif %}
+{% endif %}
+
+
+{% endblock content_well %}

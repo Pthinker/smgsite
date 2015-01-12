@@ -1,0 +1,8 @@
+<div class="slidesinner">    
+	<div class="slideshow">
+		<ul id="slider1">
+			{% for leader in leaders %}
+			<li>{{ leader.content|safe }}</li>
+			{% endfor %}
+		</ul>
+</div>

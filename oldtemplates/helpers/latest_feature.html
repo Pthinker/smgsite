@@ -1,0 +1,13 @@
+{% load helpers %}
+<div class="block">
+	<div class="date">{{ feature.display_time|date }}</div>
+	<div class="title"><a href="{{ feature.get_absolute_url }}">{{ feature.headline }}</a></div>
+	<div class="text">{{ feature.content|safe|strip_tags|truncatewords:15 }}</div>
+</div>
+<a class="arrowlink" href="/features/{{ feature.get_content_type_display }}/">All articles</a>
+{% comment %}
+<ul class="arrows">
+	<li class="first"><a href="{{ feature.get_absolute_url }}">{{ feature.headline }}</a></li>
+	<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/features/{{ feature.get_content_type_display }}/">Click here to read all {{ feature.get_content_type_display }} articles. &raquo;</a></li>
+</ul>
+{% endcomment %}

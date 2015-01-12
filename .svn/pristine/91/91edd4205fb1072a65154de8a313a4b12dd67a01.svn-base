@@ -1,0 +1,11 @@
+<div id="alphabet_nav_box">
+	<p>
+	{% for letter in letters %}
+			{% if letter|last %}
+				<a href="#letter-{{ letter|first }}">{{ letter|first }}</a>{% ifequal space 'space' %}&nbsp; &nbsp;{% endifequal %}
+			{% else %}
+				<span class="notopics">{{ letter|first }}</span>{% ifequal space 'space' %}&nbsp; &nbsp;{% endifequal %}
+			{% endif %}
+	{% endfor %}
+	</p>
+</div>

@@ -1,0 +1,66 @@
+<script type="text/javascript" charset="utf-8">
+<!--
+    var text_sml_on = "{{ MEDIA_URL }}/images/15x14_text_icon_sml_on.gif";
+    var text_sml_off = "{{ MEDIA_URL }}/images/15x14_text_icon_sml_off.gif";
+    var text_med_on = "{{ MEDIA_URL }}/images/15x14_text_icon_med_on.gif";
+    var text_med_off = "{{ MEDIA_URL }}/images/15x14_text_icon_med_off.gif";
+    var text_big_on = "{{ MEDIA_URL }}/images/17x14_text_icon_big_on.gif";
+    var text_big_off = "{{ MEDIA_URL }}/images/17x14_text_icon_big_off.gif";
+    // Preload images
+    new Image().src = text_sml_on;
+    new Image().src = text_sml_off;
+    new Image().src = text_med_on;
+    new Image().src = text_med_off;
+    new Image().src = text_big_on;
+    new Image().src = text_big_off;    
+    
+	function sh_widget()
+	{
+		var el = document.getElementById("share-widget");
+		el.style.display = ( el.style.display == "block" ) ? "none" : "block";
+	}
+	function sh_go( url )
+	{
+		window.open( url+self.location.href, '', 'width=800,height=600,scrollbars=1' );	
+	}
+//-->
+</script>
+<style>
+    .navigation{height:auto;}
+	.recommend{float:left;}
+	.recommend a{background:url({{ MEDIA_URL }}/images/recommend.png) top left no-repeat; width:270px; height:20px; float:left;}
+    </style>
+
+<div class="recommend">
+    <a href="javascript:void(0);" onclick="emailPopup();"></a>
+</div>
+<div class="buttons">
+	<div class="text_size_navigation">
+		<img id="text_sml_img" src="{{ MEDIA_URL }}/images/15x14_text_icon_sml_off.gif" alt="Make Text Small" width="15" height="14" onmouseover="highlight(this, '15px', '16px')" onclick="sizeText('sml')" /><img id="text_med_img" src="{{ MEDIA_URL }}/images/15x14_text_icon_med_on.gif" alt="Make Text Medium" width="15" height="14" onmouseover="highlight(this, '15px', '16px')" onclick="sizeText('med')" /><img id="text_big_img" src="{{ MEDIA_URL }}/images/17x14_text_icon_big_off.gif" alt="Make Text Large" width="17" height="14" onmouseover="highlight(this, '17px', '18px')" onclick="sizeText('big')" /><img src="{{ MEDIA_URL }}/images/53x14_text_size_text.gif" alt="Adjust The Text Size" width="53" height="14" />
+	</div>
+	<a href="javascript:void(0);" onclick="window.print();" class="print_navigation"></a>
+	
+	<!--<script type="text/javascript">var addthis_pub="yurim";var addthis_options="email,delicious,digg,facebook,linkedin,reddit,stumbleupon,twitter";var addthis_test0309 = false;</script>
+	<a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()" onclick="return addthis_sendto()"><img src="{{ MEDIA_URL }}images/48x14_page_navigation_share.gif" alt="Bookmark and Share" style="border: 0pt none ; margin: 0 0 0 14px;" width="48" height="14" /></a><script type="text/javascript" src="http://s7.addthis.com/js/200/addthis_widget.js"></script>-->
+	
+	<ul class="share-container">
+		<li style="position: relative;" onmouseover="sh_widget();" onmouseout="sh_widget()">
+			<img src="{{ MEDIA_URL }}images/48x14_page_navigation_share.gif" alt="Bookmark and Share" width="48" height="14" />
+			<ul id="share-widget">
+				<li>
+					<a class="share-email" href="javascript:void(0);" onclick="emailPopup();"><span>E-mail Page</span></a>
+					<a class="share-facebook" href="javascript:void(0);" onclick="sh_go('http://www.facebook.com/sharer.php?u=');"><span>Facebook</span></a>
+					<a class="share-twitter" href="javascript:void(0);" onclick="sh_go('http://twitter.com/home?status=');"><span>Twitter</span></a>
+					<a class="share-linkedin" href="javascript:void(0);" onclick="sh_go('http://www.linkedin.com/shareArticle?mini=true&url=');"><span>LinkedIn</span></a>
+					<a class="share-digg" href="javascript:void(0);" onclick="sh_go('http://digg.com/submit?url=');"><span>Digg</span></a>
+					<a class="share-stumbleupon" href="javascript:void(0);" onclick="sh_go('http://www.stumbleupon.com/submit?url=');"><span>StumbleUpon</span></a>
+					<a class="share-google" href="javascript:void(0);" onclick="sh_go('https://plus.google.com/share?url=');"><span>Google+</span></a>					
+				</li>
+			</ul>
+			<div style="clear: both;"></div>
+		</li>
+	</ul>
+		
+	
+	<div style="clear: both;"></div>
+</div>

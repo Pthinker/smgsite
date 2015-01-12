@@ -1,0 +1,32 @@
+{% extends "page_base.html" %}
+
+{% block head_title %}Summit Medical Group - Services{% endblock head_title %}
+{% block meta_info %}Summit Medical Group has a wide variety of services, specialities, and diagnostics. Browse our departments here.{% endblock meta_info %}
+
+{% block head_extra %}
+	<link rel="stylesheet"  href="/dynamic-css/services.css" type="text/css" media="screen" />
+	<script src="{{ MEDIA_URL }}js/page_tools.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8">
+	<!--
+		var blank_url = "{{ MEDIA_URL }}/images/95x95_loading.jpg";
+		var error_url = "{{ MEDIA_URL }}/images/95x95_not_avail.jpg";
+	-->
+	</script>
+	<script src="{{ MEDIA_URL }}js/doctor_flyover.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	var mysmg_model = "service";
+	var mysmg_title = "{{ service.name }}";
+	var mysmg_pk = {{ service.pk }};
+	</script>
+{% endblock head_extra %}
+
+{% block body %}
+{% include 'helpers/_menu_services.html' %}
+<div id="main">
+    <div class="main-container">
+		{% block content %}
+		{% endblock content %}
+	<div class="clear"></div>
+	</div>	
+</div><!--main-->
+{% endblock body %}

@@ -1,0 +1,1 @@
+*/30 * * * * www-data cd /var/www/dev-smg.syncresis.com/smgsite && /var/www/dev-smg.syncresis.com/venv/bin/python manage.py update_index --remove

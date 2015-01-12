@@ -1,0 +1,17 @@
+{% extends 'services/oncology_base.html' %}
+{% load helpers %}
+
+{% block meta_info %}{% meta_info service %}{% endblock meta_info %}
+{% block seo_keywords %}{% seo_keywords service %}{% endblock seo_keywords %}
+
+{% block page_head %}
+<div class="row section">
+        <div class="col-md-12 text-center">
+        <img class="img-responsive" src="{{ MEDIA_URL }}images/oncology_header.png" />
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+{{ service.content|safe }}
+{% endblock content %}

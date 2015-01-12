@@ -1,0 +1,19 @@
+{% comment %}
+Possible values for `doctor.accepting` are: (('A', 'Accepting'), ('P', 'No PCP'), ('N', 'Not Accepting'))
+{% endcomment %}
+{% if doctor.accepting_flag == 'N' %}
+    <p class="r_text_error">
+        <span class="r_icon_error">●</span>
+        I am not accepting new patients.
+    </p>
+{% else %}{% if doctor.accepting|length > 0 %}
+    <p class="r_text_success">
+        <span class="r_icon_success">●</span>
+        I am {{ doctor.accepting }}{% if doctor.unterminated %}.{% endif %}
+    </p>
+{% else %}
+    <p class="r_text_success">
+        <span class="r_icon_success">●</span>
+        I am accepting new patients.
+    </p>
+{% endif %}{% endif %}

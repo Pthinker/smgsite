@@ -1,0 +1,17 @@
+{% extends 'page_base.html' %}
+
+{% block head_title %}Summit Medical Group - Email This Page To A Friend{% endblock head_title %}
+{% block topbar %}{% endblock %}
+{% block nav %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block mobilenav %}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <br>
+    <img src="{{ STATIC_URL }}/images/main_logo.png" />
+    <h2>Your Email Has Been Sent</h2>
+    <p>Thank you for sharing this page with a friend.</p>
+    <p align=center><a href="javascript:window.close()">Close window</a></p>
+</div>
+{% endblock %}

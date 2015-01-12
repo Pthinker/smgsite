@@ -1,0 +1,66 @@
+
+
+<div class="footer">
+    <div class="container main">
+
+        <div class="col-md-3">
+            <h3><br>ABOUT US</h3>
+            <ul class="nav">
+                <li><a href="/newsroom/">Newsroom</a></li>
+                <li><a href="/about/Our_Awards/">Our Awards</a></li>
+                <li><a href="/about/careers/">Careers</a></li>
+                <li><a href="/about/">About Us</a></li>
+            </ul>
+            <br>
+            <a class="smg-foundation" href="http://www.smg-foundation.org"><img class="img-responsive" src="{{ STATIC_URL }}images/smg_foundation_logo.png" alt="smg foundation"></a><br>
+
+            
+
+        </div>
+
+        <div class="col-md-3">
+            <h3><br>FOR OUR PATIENTS</h3>
+            <ul class="nav">
+                <li><a href="/about/Medical_Records/"><b>Request Medical Records</b></a></li>
+                <li><a href="/locations/">Locations, Directions and Hours</a></li>
+                <li><a href="/about/Insurance/">Insurance</a></li>
+                <li><a href="/about/Bill_Payments/">Billing and Payments</a></li>
+                <li><a href="/library/">Live Well Library</a></li>
+                <li><a href="/site/unsubscribe/">Unsubscribe - Healthy Connections</a></li>
+                <li><a href="/about/Site_Help/">Site Help</a></li>
+                {% comment %}
+                <li><a href="http://www.paramountmedicalgroup.com/" onClick="recordOutboundLink(this, 'Outbound Links', 'paramountmedicalgroup.com');return false;"><b>Paramount Medical Group Patients</b></a></li>
+                {% endcomment %}
+                <a href="http://www.summithealthmanagement.com"><img class="img-responsive" src="{{ STATIC_URL }}images/summit_health_management_logo.png" alt="smg foundation"></a><br>
+            </ul>
+        </div>
+
+       
+
+        <div class="col-md-4">
+            <h3><br>CONTACT US</h3>
+            <ul class="nav contact-us-nav">
+                <li><a href="tel:9082734300">Main Number: <span class="number"><i></i> 908-273-4300</span></a></li>
+                <li>Urgent Care Centers:</li>
+            
+                <li class="grouped"><a href="tel:9082778880">Berkeley Heights: <span class="number">908-277-8880</span></a></li>
+				<li class="grouped"><a href="tel:9086737256">Westfield: <span class="number">908-673-7256</span></a></li>
+                <li><a href="tel:9087906500">Business Office/Billing Department:<br /> <span class="number"><i></i> 908-790-6500</span>&nbsp;&nbsp;Fax: 908-790-6593</a></li>
+                <li><a href="tel:9082778791">Employment Opportunities: <span class="number"><i></i> 908-277-8791</span></a></li>
+                <li><a href="tel:9087906520">Medical Records: <span class="number"><i></i> 908-790-6520</span></a></li>
+                <li><a href="tel:9082778928">Patient Relations: <span class="number"><i></i> 908-277-8928 </span></a></li>
+                <li><a href="mailto:billing@smgnj.com">Billing Questions: <b>billing@smgnj.com</b></a></li>
+                <li><a href="mailto:wecare@smgnj.com">General Inquiries: <b>wecare@smgnj.com</b></a></li>
+            </ul>
+        </div>
+
+        <div class="col-md-2 hidden-xs">
+            <h3>STAY CONNECTED</h3>
+            {% include 'includes/connected.html' %}
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="copy">&copy; {% now 'Y' %}  - Summit Medical Group</div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+{% extends 'page_base.html' %}
+{% load helpers %}
+
+{% block head_title %}Summit Medical Group - Upcoming Events{% endblock head_title %}
+
+{% block body %}
+
+{% include 'includes/top_banner.html' %}
+
+<div class="section-header-doctor">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="fa fa-file-text-o"></span> Event Regsitration</h2>     
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <p>You have successfully registered for the following Summit Medical Group events:</p>
+    <ul>{% for eventtime in eventtimes %}
+    <li><a href="{{ eventtime.event.get_absolute_url }}">{{ eventtime.event.title }} ({{ eventtime.timelong }})</a></li>
+    {% endfor %}</ul>
+
+    <p>You will receive an email confirming this registration within one business day. If you do not receive it, please contact us at the number below. If you are seeing this page, you do not need to register a second time.</p>
+
+    <p>You will also receive a reminder approximately 48 hours before each event takes place. If you have questions or would like to cancel, please call our Events Hotline at 908-277-8889 or e-mail us at <a href="mailto:events@smgnj.com">events@smgnj.com</a>.</p>
+
+</div>
+
+{% endblock %}
+
+
+
+

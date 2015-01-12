@@ -1,0 +1,9 @@
+{% extends 'articles/newsroom/base.html' %}
+{% load helpers %}
+{% load thumbnail %}
+
+{% block head_title %}{{ page.title }} | Summit Medical Group{% endblock head_title %}
+
+{% block content %}
+{{ page.content|safe }}
+{% endblock content %}

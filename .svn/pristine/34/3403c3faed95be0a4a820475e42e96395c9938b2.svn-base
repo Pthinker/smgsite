@@ -1,0 +1,86 @@
+{% extends "admin/base_site.html" %}
+{% load admin_list i18n %}
+{% block bodyclass %}change-list{% endblock %}
+{% if not is_popup %}{% block breadcrumbs %}<div class="breadcrumbs"><a href="../../">{% trans "Home" %}</a> &rsaquo; Event Registrations</div>{% endblock %}{% endif %}
+{% block coltype %}flex{% endblock %}
+{% block pretitle %}
+{% endblock %}
+{% block content %}
+<div id="content-main">
+<p>&nbsp;</p>
+<p>
+	<ul class="object-tools">
+		<li><a href="/admin/events/registration/export/unique/event_registrations.csv" class="addlink">Export contact information to a csv file</a></li>
+		<li><a href="/admin/events/registration/add/" class="addlink">Add Event Registrations</a></li>
+	</ul>
+</p>
+<h1>Upcoming Events</h1>
+<p><a href="/admin/events/registration/export/upcoming/event_registrations.csv">Export all upcoming</a> event registrations to a CSV file.</p>
+{% block object-tools %}
+{% endblock %}
+<div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
+{% block search %}{% endblock %}
+{% block date_hierarchy %}{% endblock %}
+{% block filters %}{% endblock %}
+{% block result_list %}
+<table cellspacing="0">
+<thead>
+<tr>
+<th>
+Event
+</th><th>
+Date
+</th><th>
+Registered
+</th>
+<th>Total Registered</th>
+</tr>
+</thead>
+<tbody>
+{% for eventtime in events_upcoming %}
+    <tr class="{% cycle 'row1' 'row2' %}">
+        <th><a href="list/?event={{ eventtime.event.pk }}">{{ eventtime.event.title }}</a></th>
+        <td class="nowrap">{{ eventtime.timelong }}</td>
+        <td>{{ eventtime.registration_set.all|length }}</td>
+        <td>{{ eventtime.event.registered }}</td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<br />
+<hr />
+<br />
+<h1>Archived Events</h1>
+<p><a href="/admin/events/registration/export/archived/export.csv">Export all archived</a> event registrations to a CSV file.</p>
+<div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
+<table cellspacing="0">
+<thead>
+<tr>
+<th>
+Event
+</th><th>
+Date
+</th><th>
+Registered
+</th>
+<th>Total Registered</th>
+</tr>
+</thead>
+<tbody>
+{% for eventtime in events_archived %}
+    <tr class="{% cycle 'row1' 'row2' %}">
+        <th><a href="list/?event={{ eventtime.event.pk }}">{{ eventtime.event.title }}</a></th>
+        <td class="nowrap">{{ eventtime.timelong }}</td>
+        <td>{{ eventtime.registration_set.all|length }}</td>
+        <td>{{ eventtime.event.registered }}</td>
+    </tr>
+{% endfor %}
+{% endblock %}
+{% block pagination %}{% endblock %}
+</tbody>
+</table>
+
+</div>
+</div>
+{% endblock %}

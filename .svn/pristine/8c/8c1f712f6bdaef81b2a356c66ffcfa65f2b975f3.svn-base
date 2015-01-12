@@ -1,0 +1,47 @@
+<div id="head">
+	<div class="headinner">
+		
+		{% block main_logo %}   	
+		<a id="mainlogo" class="logo" href="/"></a>
+		<a class="urgentcare" href="/service/Urgent-Care-Center/"></a>
+		{% endblock %}
+
+		<div class="spacer"></div>			
+		<div class="phone">
+			<p class="phoneone">We are here to help you!</p>
+			{% block main_phone %}
+			<p class="phonetwo">908<span>.</span>273<span>.</span>4300</p>
+			{% endblock %}
+		</div>	
+
+		{% if user %}
+		<div class="user">			
+			<span class="loggedin">Logged in, {{ user.display_name }}</span> - 
+			<span class="logout"><a href="/mysummitmedicalgroup/logout/">Logout</a></span>
+		</div>
+		{% else %}
+		<!--add login here? -->
+		{% endif %}
+		
+		<div style="clear:right;"></div>
+		<div id="searchcont">	
+		<form name="searchform" class="search" action="/search/" >
+			<div>
+                <input placeholder="Type search keywords here" id="search-input" name="search-input" type="text" autocomplete="off" onclick="document.forms['searchform'].elements[0].value=''" onkeyup="searchSite('search-input')" />
+            </div>
+			<a onclick="document.searchform.submit()">GO</a>
+		</form>
+		{% include 'site/search.html' %}
+		</div>
+		<div class="social">
+			<p>Follow us:</p>
+				<a class="yt" href="http://www.youtube.com/user/SMGNJ" onClick="recordOutboundLink(this, 'Outbound Links', 'YouTube');return false;"></a>
+				<a class="fb" href="http://www.facebook.com/summitmedicalnj" onClick="recordOutboundLink(this, 'Outbound Links', 'Facebook');return false;"></a>
+				<a class="tw" href="http://twitter.com/#!/SummitMedicalNJ" onClick="recordOutboundLink(this, 'Outbound Links', 'Twitter');return false;"></a>
+				<a class="g" href="https://plus.google.com/106587659066325037884" rel="publisher" onClick="recordOutboundLink(this, 'Outbound Links', 'Google Plus');return false;"></a>
+				<a class="p" href="http://pinterest.com/source/summitmedicalgroup.com/" onClick="recordOutboundLink(this, 'Outbound Links', 'Pinterest');return false;"></a>
+
+		</div>  			
+	</div>  
+	<div class="clear"></div>
+</div><!--head-->

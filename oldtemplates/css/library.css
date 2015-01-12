@@ -1,0 +1,135 @@
+@import url("basicstyle.css");
+
+#main_block_library_landing a {
+	color: #0c1f43;
+	text-decoration: none;
+}
+
+#main_block_library_landing a:hover {
+	text-decoration: underline;
+}
+
+#main_block_library_landing div.right_sub_main_block {
+	padding-bottom: 100px;
+}
+
+#main_block_library_landing div.library_list_block {
+	width: 300px;
+	float: left;
+}
+
+#main_block_library_landing div.library_list_block ul.library_list {
+	list-style: none;
+}
+
+#main_block_library_landing div.library_list_block ul.library_list li {
+	margin: 15px 0px;
+}
+
+#main_block_library_landing div.library_list_block ul.library_list li a
+	{
+	font: bold 14px Arial, sans-serif;
+}
+
+div#library_rh_img_thumbnail {
+	float: left;
+	width: 150px;
+	padding-top: 18px;
+	padding-left: 18px;
+}
+
+#alphabet_nav_box {
+	padding: 18px 12px 18px 12px;
+	border: 1px dotted #333;
+	background-color: #c1d5eb;
+	margin-top: 27px;
+	margin-bottom: 18px;
+}
+
+#alphabet_nav_box a {
+	margin-right: 12px;
+	text-decoration: none;
+	font: bold 14px Arial, sans-serif;
+}
+
+#alphabet_nav_box span.notopics {
+	margin-right: 12px;
+	color: #555;
+	font: bold 14px Arial, sans-serif;
+}
+
+div.library_list_block {
+	width: 40%;
+	float: left;
+}
+
+ul.library_list {
+	list-style: none;
+}
+
+ul.library_list li {
+	margin: 4px 0;
+	padding: 4px 0;
+}
+
+ul.library_list li a {
+	text-decoration: none;
+	font: bold 1.125em/1em Arial, sans-serif;
+}
+
+ul.library_list li a:hover {
+	text-decoration: underline;
+}
+
+div.library_topic_block ul.library_alpha_index_left_ul {
+	width: 40%;
+	float: left;
+	list-style: none;
+}
+
+div.library_topic_block ul.library_alpha_index_right_ul {
+	width: 40%;
+	float: left;
+	list-style: none;
+}
+
+div.library_topic_block ul.library_alpha_index_right_ul li {
+	margin: 3px 0;
+	padding: 3px 0;
+}
+
+div.library_topic_block ul.library_alpha_index_right_ul li a {
+	text-decoration: none;
+	font: normal 1.125em/1em Arial, sans-serif;
+}
+
+div.library_topic_block ul.library_alpha_index_right_ul li a:hover {
+	text-decoration: underline;
+}
+
+div.library_topic_block ul.library_alpha_index_left_ul li {
+	margin: 3px 0;
+	padding: 3px 0;
+}
+
+div.library_topic_block ul.library_alpha_index_left_ul li a {
+	text-decoration: none;
+	font: normal 1.125em/1em Arial, sans-serif;
+}
+
+div.library_topic_block ul.library_alpha_index_left_ul li a:hover {
+	text-decoration: underline;
+}
+
+div.library_letter {
+	clear: both;
+	width: 100%;
+	height: 2em;
+	border-bottom: 1px dotted #333;
+}
+
+div.library_topic_credits p {
+	margin: 9px 0px;
+	font: normal .90em/ 1.25em Arial, sans-serif;
+	color: #777;
+}

@@ -1,0 +1,59 @@
+{% extends "page_base.html" %}
+
+{% block body_class %}insurance{% endblock body_class %}
+
+{% block head_title %}{{ page.title }} | Summit Medical Group New Jersey{% endblock head_title %}
+
+
+{% block body %}
+
+<div class="section-header-doctor">
+    <div class="line"></div>
+    <div class="container">
+        <div class="row">
+            <h2><span class="fa fa-info"></span> Insurance</h2>  
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="/about/">About</a></li>
+        {% if page.title != 'Insurance' %}
+        <li><a href="/about/insurance/">Insurance</a></li>
+        {% endif %}
+        <li class="active">{{ page.title }}</li>
+        {% include 'site/includes/share.html' %}
+    </ol>
+</div>
+
+<div class="container">
+    <div class="row section">
+        <div class="col-md-12 ">
+        <img class="center-block" src="{{ STATIC_URL }}images/insurance_header.jpg" />
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+
+    {% block page_head %}{% endblock %}
+    <div class="row">
+        
+        <div class="col-md-3 sidebar">
+            <div class="list-group">
+                <a class="list-group-item" href="/about/insurance/">  Insurance at SMG  </a>
+                <a class="list-group-item" href="/about/insurance/Accepted-Plans/">  Accepted Plans </a>
+                <a class="list-group-item" href="/about/insurance/Our-Billing-Process/">  Our Billing Process  </a>
+                <a class="list-group-item" href="/about/Bill_Payments/">  Online Bill Pay</a>
+                <a class="list-group-item" href="/about/insurance/Patient-Accounts/">  Patient Accounts</a>
+            </div>
+        </div>
+
+        <div class="col-md-9 insurance-content">
+            {{ page.content|safe }}
+        </div>
+    </div>
+</div>     
+{% endblock %}
